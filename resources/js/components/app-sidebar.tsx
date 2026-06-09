@@ -22,22 +22,25 @@ import {
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 
+
+
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
     },
-    {
-        title: 'Analytics',
-        href: '/admin',
-        icon: BarChart3,
-    },
+{
+    title: 'Analytics',
+    href: '/admin/analytics',
+    icon: BarChart3,
+},
     {
         title: 'A/B Labs',
         href: '/admin/labs',
         icon: FlaskConical,
     },
+
 ];
 
 const footerNavItems: NavItem[] = [

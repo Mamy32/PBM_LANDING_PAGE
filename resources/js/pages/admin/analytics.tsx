@@ -1,4 +1,5 @@
 import { Head, router } from '@inertiajs/react';
+
 import {
     CreditCard,
     DollarSign,
@@ -25,9 +26,8 @@ import type {BreadcrumbItem} from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Dashboard', href: '/admin' },
-    { title: 'Analytics' },
+    { title: 'Analytics', href: '/admin/analytics' },
 ];
-
 interface AnalyticsProps {
     stats: {
         total_visits: number;
@@ -65,16 +65,16 @@ export default function Analytics({
     const handleRangeChange = (range: string) => {
         setSelectedRange(range);
         router.get(
-            route('admin.analytics'),
+            '/admin/analytics',
             { range },
-            { preserveState: true },
+            { preserveState: true }
         );
     };
 
     const handleExport = () => {
         window.open(
-            route('admin.analytics.export', { range: selectedRange }),
-            '_blank',
+            `/admin/export?range=${selectedRange}`,
+            '_blank'
         );
     };
 

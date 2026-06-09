@@ -7,55 +7,55 @@ import type { BreadcrumbItem } from '@/types';
 interface AdminDashboardProps {
     stats: {
         total_users: number;
-        total_courses: number;
-        total_modules: number;
-        active_courses: number;
+        total_visits: number;
+        unique_visitors: number;
+        total_events: number;
     };
 }
 
 export default function AdminDashboard({
-    stats = {
-        total_users: 0,
-        total_courses: 0,
-        total_modules: 0,
-        active_courses: 0,
-    },
+stats = {
+    total_users: 0,
+    total_visits: 0,
+    unique_visitors: 0,
+    total_events: 0,
+},
 }: Partial<AdminDashboardProps>) {
     const breadcrumbs: BreadcrumbItem[] = [
         { title: 'Admin', href: '/admin' },
         { title: 'Dashboard', href: '/admin/dashboard' },
     ];
 
-    const statCards = [
-        {
-            title: 'Total Users',
-            value: stats.total_users,
-            icon: Users,
-            color: 'from-cyan-400 to-blue-500',
-            glow: 'shadow-cyan-500/20',
-        },
-        {
-            title: 'Total Courses',
-            value: stats.total_courses,
-            icon: BookOpen,
-            color: 'from-purple-400 to-pink-500',
-            glow: 'shadow-purple-500/20',
-        },
-        {
-            title: 'Total Modules',
-            value: stats.total_modules,
-            icon: Play,
-            color: 'from-green-400 to-emerald-500',
-            glow: 'shadow-green-500/20',
-        },
-        {
-            title: 'Active Courses',
-            value: stats.active_courses,
-            icon: TrendingUp,
-            color: 'from-yellow-400 to-orange-500',
-            glow: 'shadow-yellow-500/20',
-        },
-    ];
+const statCards = [
+    {
+        title: 'Total Users',
+        value: stats.total_users,
+        icon: Users,
+        color: 'from-cyan-400 to-blue-500',
+        glow: 'shadow-cyan-500/20',
+    },
+    {
+        title: 'Total Visits',
+        value: stats.total_visits,
+        icon: Activity,
+        color: 'from-purple-400 to-pink-500',
+        glow: 'shadow-purple-500/20',
+    },
+    {
+        title: 'Unique Visitors',
+        value: stats.unique_visitors,
+        icon: TrendingUp,
+        color: 'from-green-400 to-emerald-500',
+        glow: 'shadow-green-500/20',
+    },
+    {
+        title: 'Total Events',
+        value: stats.total_events,
+        icon: Zap,
+        color: 'from-yellow-400 to-orange-500',
+        glow: 'shadow-yellow-500/20',
+    },
+];
 
     return (
         <AdminLayout breadcrumbs={breadcrumbs}>

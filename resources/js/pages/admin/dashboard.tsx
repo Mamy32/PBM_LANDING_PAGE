@@ -1,179 +1,186 @@
-import { useEffect, useState } from "react";
-import AnalyticsOverviewChart from "@/components/analytics/AnalyticsOverviewChart";
-export default function AdminDashboard() {
-    const [data, setData] = useState<any>(null);
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
+import AdminLayout from '@/layouts/admin-layout';
+import { Head } from '@inertiajs/react';
+import { Activity, BookOpen, Play, TrendingUp, Users, Zap } from 'lucide-react';
+import type { BreadcrumbItem } from '@/types';
+interface AdminDashboardProps {
+    stats: {
+        total_users: number;
+        total_courses: number;
+        total_modules: number;
+        active_courses: number;
+    };
+}
 
-    useEffect(() => {
-        fetch("/api/analytics/dashboard")
-            .then((res) => res.json())
-            .then((json) => setData(json));
-    }, []);
+export default function AdminDashboard({ stats }: AdminDashboardProps) {
+const breadcrumbs: BreadcrumbItem[] = [
+    { title: 'Admin', href: '/admin' },
+    { title: 'Dashboard', href: '/admin/dashboard' },
+];
 
-    if (!data) {
-        return (
-            <div className="p-8">
-                Loading analytics...
-            </div>
-        );
-    }
+    const statCards = [
+        {
+            title: 'Total Users',
+            value: stats.total_users,
+            icon: Users,
+            color: 'from-cyan-400 to-blue-500',
+            glow: 'shadow-cyan-500/20',
+        },
+        {
+            title: 'Total Courses',
+            value: stats.total_courses,
+            icon: BookOpen,
+            color: 'from-purple-400 to-pink-500',
+            glow: 'shadow-purple-500/20',
+        },
+        {
+            title: 'Total Modules',
+            value: stats.total_modules,
+            icon: Play,
+            color: 'from-green-400 to-emerald-500',
+            glow: 'shadow-green-500/20',
+        },
+        {
+            title: 'Active Courses',
+            value: stats.active_courses,
+            icon: TrendingUp,
+            color: 'from-yellow-400 to-orange-500',
+            glow: 'shadow-yellow-500/20',
+        },
+    ];
 
     return (
-        <div className="p-8">
-            <h1 className="text-3xl font-bold mb-8">
-                Analytics Dashboard
-            </h1>
+        <AdminLayout breadcrumbs={breadcrumbs}>
+            <Head title="Admin Dashboard" />
 
-            {/* Summary Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Visits
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.visits}
-                    </p>
+            <div className="relative space-y-8 p-6">
+                {/* Animated background elements */}
+                <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                    <div className="absolute -top-40 -right-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 blur-3xl"></div>
+                    <div className="absolute -bottom-40 -left-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl delay-1000"></div>
                 </div>
 
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Scrolls
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.scrolls}
-                    </p>
+                {/* Header with futuristic styling */}
+                <div className="relative">
+                    <div className="mb-2 flex items-center gap-4">
+                        <div className="h-8 w-2 animate-pulse rounded-full bg-gradient-to-b from-cyan-400 to-blue-500"></div>
+                        <h1 className="bg-gradient-to-r from-cyan-400 via-cyan-600 to-blue-500 bg-clip-text text-4xl font-bold text-transparent">
+                            Command Center
+                        </h1>
+                        <Zap className="h-8 w-8 animate-pulse text-yellow-400" />
+                    </div>
+                    <p className="ml-6 font-mono text-gray-400">SYSTEM STATUS: OPERATIONAL</p>
                 </div>
 
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Engagements
-                    </p>
+                {/* Enhanced stats cards */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    {statCards.map((stat, index) => (
+                        <Card
+                            key={index}
+                            className={`from-primary/10 via-primary/20 to-primary/10 border-primary/20 border bg-gradient-to-br transition-all duration-500 hover:scale-105 hover:border-cyan-400/50 hover:shadow-2xl ${stat.glow} group animate-fade-in cursor-pointer backdrop-blur-sm`}
+                            style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                            <div className="relative overflow-hidden p-6">
+                                {/* Card glow effect */}
+                                {/* <div
+                                    className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 transition-opacity duration-500 group-hover:opacity-10`}
+                                ></div> */}
 
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.engagements}
-                    </p>
+                                <div className="relative z-10 flex items-center justify-between">
+                                    <div>
+                                        <p className="mb-1 font-mono text-xs tracking-wider text-gray-500 uppercase">{stat.title}</p>
+                                        <p className="group-hover:text-primary text-foreground text-3xl font-bold transition-colors duration-300">
+                                            {stat.value.toLocaleString()}
+                                        </p>
+                                    </div>
+                                    <div
+                                        className={`rounded-xl bg-gradient-to-r p-4 ${stat.color} shadow-lg transition-transform duration-300 group-hover:scale-110`}
+                                    >
+                                        <stat.icon className="h-6 w-6 text-white" />
+                                    </div>
+                                </div>
+
+                                {/* Progress indicator */}
+                                <div className="bg-foreground/50 mt-4 h-1 overflow-hidden rounded-full">
+                                    <div
+                                        className={`h-full bg-gradient-to-r ${stat.color} -translate-x-full transform rounded-full transition-transform duration-1000 group-hover:translate-x-0`}
+                                    ></div>
+                                </div>
+                            </div>
+                        </Card>
+                    ))}
                 </div>
 
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        CTA Clicks
-                    </p>
+                <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
+                    {/* Enhanced Quick Actions */}
+                    <Card className="from-primary/20 via-primary/20 to-primary/10 border-primary/20 border bg-gradient-to-br backdrop-blur-sm transition-all duration-500 hover:border-cyan-400/30">
+                        <div className="p-6">
+                            <div className="mb-6 flex items-center gap-3">
+                                <Activity className="h-6 w-6 text-cyan-400" />
+                                <h3 className="to-foreground bg-gradient-to-r from-gray-500 bg-clip-text text-xl font-bold text-transparent">
+                                    Quick Actions
+                                </h3>
+                            </div>
+                            <div className="space-y-4">
+                                {[
+                                    { href: '/admin/courses', icon: BookOpen, label: 'Manage Courses', color: 'from-purple-500 to-pink-500' },
+                                    { href: '/admin/users', icon: Users, label: 'Manage Users', color: 'from-blue-500 to-cyan-500' },
+                                    { href: '/admin/modules', icon: Play, label: 'Manage Modules', color: 'from-green-500 to-emerald-500' },
+                                ].map((action, index) => (
+                                    <a
+                                        key={index}
+                                        href={action.href}
+                                        className="group bg-primary-foreground/40 border-primary/30 flex items-center gap-4 rounded-xl border p-4 transition-all duration-300 hover:scale-102 hover:border-cyan-400/50 hover:bg-zinc-700/50"
+                                    >
+                                        <div
+                                            className={`rounded-lg bg-gradient-to-r p-3 ${action.color} transition-transform duration-300 group-hover:scale-110`}
+                                        >
+                                            <action.icon className="h-5 w-5 text-white" />
+                                        </div>
+                                        <span className="text-foreground font-medium transition-colors group-hover:text-cyan-200">
+                                            {action.label}
+                                        </span>
+                                        <div className="ml-auto opacity-0 transition-opacity group-hover:opacity-100">
+                                            <div className="bg-primary-foreground h-2 w-2 animate-pulse rounded-full"></div>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </Card>
 
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.cta_clicks}
-                    </p>
-                </div>
-
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Conversions
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.conversions}
-                    </p>
-                </div>
-
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Payments
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.payments}
-                    </p>
-                </div>
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Total Events
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.total_events}
-                    </p>
-                </div>
-
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        CTR
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.ctr}%
-                    </p>
-                </div>
-
-                <div className="rounded-lg border p-6 shadow-sm">
-                    <p className="text-sm text-gray-500">
-                        Conversion Rate
-                    </p>
-
-                    <p className="text-3xl font-bold mt-2">
-                        {data.summary.conversion_rate}%
-                    </p>
+                    {/* Enhanced Recent Activity */}
+                    <Card className="from-primary/20 via-primary/20 to-primary/10 border-primary/20 border bg-gradient-to-br backdrop-blur-sm transition-all duration-500 hover:border-cyan-400/30">
+                        <div className="p-6">
+                            <div className="mb-6 flex items-center gap-3">
+                                <div className="h-3 w-3 animate-pulse rounded-full bg-green-400"></div>
+                                <h3 className="to-foreground bg-gradient-to-r from-gray-500 bg-clip-text text-xl font-bold text-transparent">
+                                    System Activity
+                                </h3>
+                            </div>
+                            <div className="space-y-4">
+                                {[
+                                    { status: 'success', message: 'New course created', time: '2 min ago', color: 'green' },
+                                    { status: 'warning', message: 'Module updated', time: '5 min ago', color: 'yellow' },
+                                    { status: 'info', message: 'User registered', time: '10 min ago', color: 'blue' },
+                                ].map((activity, index) => (
+                                    <div
+                                        key={index}
+                                        className="bg-primary-foreground/40 border-primary/30 flex items-center gap-4 rounded-lg border p-3 transition-colors hover:bg-zinc-700/30"
+                                    >
+                                        <div className={`h-3 w-3 bg-${activity.color}-400 animate-pulse rounded-full`}></div>
+                                        <span className="text-foreground flex-1 font-mono text-sm">{activity.message}</span>
+                                        <Badge variant="secondary" className="bg-primary/10 text-foreground font-mono text-xs">
+                                            {activity.time}
+                                        </Badge>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </Card>
                 </div>
             </div>
-            <h2 className="text-2xl font-bold mt-10 mb-4">
-                Analytics Overview
-            </h2>
-
-            <div className="border rounded-lg p-4">
-                <AnalyticsOverviewChart
-                    visits={data.summary.visits}
-                    scrolls={data.summary.scrolls}
-                    engagements={data.summary.engagements}
-                    ctaClicks={data.summary.cta_clicks}
-                    conversions={data.summary.conversions}
-                    payments={data.summary.payments}
-                />
-            </div>
-            {/* Recent Events */}
-            <h2 className="text-2xl font-bold mt-10 mb-4">
-                Latest Events
-            </h2>
-
-            <div className="overflow-x-auto">
-                <table className="w-full border border-gray-700">
-                    <thead>
-                        <tr>
-                            <th className="border p-2 text-left">ID</th>
-                            <th className="border p-2 text-left">Event</th>
-                            <th className="border p-2 text-left">Page</th>
-                            <th className="border p-2 text-left">IP</th>
-                            <th className="border p-2 text-left">Created</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {data.latest_events.map((event: any) => (
-                            <tr key={event.id}>
-                                <td className="border p-2">
-                                    {event.id}
-                                </td>
-
-                                <td className="border p-2">
-                                    {event.event_type}
-                                </td>
-
-                                <td className="border p-2">
-                                    {event.page_url || "-"}
-                                </td>
-
-                                <td className="border p-2">
-                                    {event.ip_address || "-"}
-                                </td>
-
-                                <td className="border p-2">
-                                    {new Date(
-                                        event.created_at
-                                    ).toLocaleString()}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        </AdminLayout>
     );
 }

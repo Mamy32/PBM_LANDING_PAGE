@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import AdminLayout from '@/layouts/admin-layout';
 import { Head } from '@inertiajs/react';
 import { Activity, BookOpen, Play, TrendingUp, Users, Zap } from 'lucide-react';
 import type { BreadcrumbItem } from '@/types';
@@ -14,7 +15,8 @@ interface AdminDashboardProps {
 
 export default function AdminDashboard({ stats }: AdminDashboardProps) {
 const breadcrumbs: BreadcrumbItem[] = [
-    { title: 'Dashboard', href: '/dashboard' },
+    { title: 'Admin', href: '/admin' },
+    { title: 'Dashboard', href: '/admin/dashboard' },
 ];
 
     const statCards = [
@@ -49,7 +51,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     ];
 
     return (
-        <>
+        <AdminLayout breadcrumbs={breadcrumbs}>
             <Head title="Admin Dashboard" />
 
             <div className="relative space-y-8 p-6">
@@ -179,6 +181,6 @@ const breadcrumbs: BreadcrumbItem[] = [
                     </Card>
                 </div>
             </div>
-        </>
+        </AdminLayout>
     );
 }

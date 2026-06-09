@@ -13,11 +13,18 @@ interface AdminDashboardProps {
     };
 }
 
-export default function AdminDashboard({ stats }: AdminDashboardProps) {
-const breadcrumbs: BreadcrumbItem[] = [
-    { title: 'Admin', href: '/admin' },
-    { title: 'Dashboard', href: '/admin/dashboard' },
-];
+export default function AdminDashboard({
+    stats = {
+        total_users: 0,
+        total_courses: 0,
+        total_modules: 0,
+        active_courses: 0,
+    },
+}: Partial<AdminDashboardProps>) {
+    const breadcrumbs: BreadcrumbItem[] = [
+        { title: 'Admin', href: '/admin' },
+        { title: 'Dashboard', href: '/admin/dashboard' },
+    ];
 
     const statCards = [
         {

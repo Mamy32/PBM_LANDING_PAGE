@@ -15,9 +15,5 @@ declare global {
         fbq?: (...args: any[]) => void;
     }
 }
-
 export {};
-interface Window {
-    fbq: (...args: unknown[]) => void;
-}
 

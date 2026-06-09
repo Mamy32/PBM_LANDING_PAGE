@@ -1,14 +1,13 @@
 import {
     BookOpen,
-    Check,
     Gift,
     PlayCircle,
     ShieldCheck,
     Table,
 } from 'lucide-react';
 
-import CtaButton from './cta-button';
 import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
 
 const valueItems = [
     { icon: PlayCircle, label: '40+ Video Tutorial', value: 'Rp 500.000' },

@@ -1,7 +1,7 @@
 import { CheckCircle, MessageCircle, Table, TrendingUp } from 'lucide-react';
 
-import CtaButton from './cta-button';
 import { useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
 
 const steps = [
     { number: '01', label: 'Tentukan Produk' },

@@ -45,6 +45,7 @@ export default function CtaButton({
                 id={id}
                 onClick={() => {
                     onClick?.();
+
                     if (href) {
                         window.location.href = href;
                     } else {

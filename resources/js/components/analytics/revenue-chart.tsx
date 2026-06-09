@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
 import { useMemo } from 'react';
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { cn } from '@/lib/utils';
 
 interface RevenueChartProps {
     data: Record<string, any[]>;
@@ -77,6 +77,7 @@ export function RevenueChart({ data, className }: RevenueChartProps) {
                                 if (name === 'revenue') {
                                     return [formatCurrency(value), 'Revenue'];
                                 }
+
                                 return [value, name.charAt(0).toUpperCase() + name.slice(1)];
                             }}
                         />

@@ -1,8 +1,8 @@
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
-import CtaButton from './cta-button';
 import { useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
 
 const faqItems = [
     {

@@ -9,8 +9,12 @@ export function useScrollTracking() {
     useEffect(() => {
         const handleScroll = () => {
             const now = Date.now();
+
             // Throttle scroll events to avoid spam
-            if (now - lastScrollTime.current < 200) return;
+            if (now - lastScrollTime.current < 200) {
+return;
+}
+
             lastScrollTime.current = now;
 
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -28,8 +32,9 @@ export function useScrollTracking() {
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, [trackScroll]);
 
-    return scrollDepths.current;
+    
 }

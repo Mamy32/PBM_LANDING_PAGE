@@ -34,7 +34,9 @@ export function useDwellTime() {
 
         const tick = () => {
             // Only increment if page is visible
-            if (!isVisible.current) return;
+            if (!isVisible.current) {
+return;
+}
 
             timeActive.current += TICK_INTERVAL;
 
@@ -43,12 +45,14 @@ export function useDwellTime() {
                 hasInitialTracked.current = true;
                 lastPingTime.current = timeActive.current;
                 sendPing(INITIAL_THRESHOLD, true);
+
                 return; // Don't check heartbeat on same tick
             }
 
             // Check 2: Heartbeat (every 30s after initial)
             if (hasInitialTracked.current) {
                 const timeSinceLastPing = timeActive.current - lastPingTime.current;
+
                 if (timeSinceLastPing >= HEARTBEAT_INTERVAL) {
                     lastPingTime.current = timeActive.current;
                     sendPing(HEARTBEAT_INTERVAL, false);
@@ -65,15 +69,11 @@ export function useDwellTime() {
         // Cleanup
         return () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
+
             if (tickerRef.current) {
                 clearInterval(tickerRef.current);
                 tickerRef.current = null;
             }
         };
     }, [sendPing]);
-
-    return {
-        isEngaged: hasInitialTracked.current,
-        timeActive: timeActive.current,
-    };
 }

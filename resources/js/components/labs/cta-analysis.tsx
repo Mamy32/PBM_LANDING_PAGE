@@ -1,38 +1,49 @@
+import { MousePointerClick, TrendingUp } from 'lucide-react';
+import { useMemo } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatPercent, toSafeArray } from '@/lib/safe-data';
 import type { CtaAnalysisProps, CtaLocation } from '@/types/analytics';
-import { MousePointerClick, TrendingUp } from 'lucide-react';
-import { useMemo } from 'react';
 
 export function CtaAnalysis({ data }: CtaAnalysisProps) {
     const safeData = toSafeArray(data);
-
-    if (safeData.length === 0) {
-        return (
-            <Card className="py-12 text-center">
-                <CardContent>
-                    <MousePointerClick className="text-muted-foreground mx-auto mb-4 h-10 w-10" />
-                    <p className="text-muted-foreground">No CTA performance data available</p>
-                </CardContent>
-            </Card>
-        );
-    }
 
     // Sort data: LP level by total conversions, CTA level by conversions
     const sortedData = useMemo(() => {
         return [...safeData]
             .map((lp) => {
                 const locations = toSafeArray<CtaLocation>(lp.cta_locations);
+
                 return {
                     ...lp,
-                    cta_locations: [...locations].sort((a, b) => (b.conversions ?? 0) - (a.conversions ?? 0)),
-                    total_conversions: locations.reduce((sum, cta) => sum + (cta.conversions ?? 0), 0),
-                    total_clicks: locations.reduce((sum, cta) => sum + (cta.click_count ?? 0), 0),
+                    cta_locations: [...locations].sort(
+                        (a, b) => (b.conversions ?? 0) - (a.conversions ?? 0)
+                    ),
+                    total_conversions: locations.reduce(
+                        (sum, cta) => sum + (cta.conversions ?? 0),
+                        0
+                    ),
+                    total_clicks: locations.reduce(
+                        (sum, cta) => sum + (cta.click_count ?? 0),
+                        0
+                    ),
                 };
             })
             .sort((a, b) => b.total_conversions - a.total_conversions);
     }, [safeData]);
+
+    if (safeData.length === 0) {
+        return (
+            <Card className="py-12 text-center">
+                <CardContent>
+                    <MousePointerClick className="text-muted-foreground mx-auto mb-4 h-10 w-10" />
+                    <p className="text-muted-foreground">
+                        No CTA performance data available
+                    </p>
+                </CardContent>
+            </Card>
+        );
+    }
 
     const formatLocation = (location: string) => {
         return location
@@ -140,6 +151,7 @@ export function CtaAnalysis({ data }: CtaAnalysisProps) {
                                 <div className="bg-muted/50 space-y-2 rounded-lg p-3">
                                     {lp.cta_locations.map((cta, index) => {
                                         const isTop = index === 0 && (cta.conversions ?? 0) > 0;
+
                                         return (
                                             <div
                                                 key={cta.location}

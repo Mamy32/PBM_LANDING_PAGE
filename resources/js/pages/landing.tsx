@@ -1,5 +1,9 @@
 import { Head } from '@inertiajs/react';
 
+import { useEffect} from 'react';
+import { useAnalytics } from '@/hooks/use-analytics';
+import { useDwellTime } from '@/hooks/use-dwell-time';
+import { useScrollTracking } from '@/hooks/use-scroll-tracking';
 import Faq from './landing/faq';
 import Footer from './landing/footer';
 import Guarantee from './landing/guarantee';
@@ -11,13 +15,9 @@ import Problem from './landing/problem';
 import Solution from './landing/solution';
 import Testimonials from './landing/testimonials';
 import ValueStack from './landing/value-stack';
-import { useEffect, useState } from 'react';
-import { useAnalytics } from '@/hooks/use-analytics';
-import { useDwellTime } from '@/hooks/use-dwell-time';
-import { useScrollTracking } from '@/hooks/use-scroll-tracking';
 
 export default function Landing() {
-    const { trackVisit, trackCTA } = useAnalytics();
+    const { trackVisit } = useAnalytics();
 
     // Force light mode on mount, restore on unmount
     useEffect(() => {

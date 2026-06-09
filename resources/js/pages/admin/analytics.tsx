@@ -1,3 +1,13 @@
+import { Head, router } from '@inertiajs/react';
+import {
+    CreditCard,
+    DollarSign,
+    Download,
+    Eye,
+    Target,
+    TrendingUp,
+} from 'lucide-react';
+import { useState } from 'react';
 import { ConversionFunnel } from '@/components/analytics/conversion-funnel';
 import { MetricCard } from '@/components/analytics/metric-card';
 import { ReferralChart } from '@/components/analytics/referral-chart';
@@ -11,17 +21,7 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import AdminLayout from '@/layouts/admin-layout';
-import { type BreadcrumbItem } from '@/types';
-import { Head, router } from '@inertiajs/react';
-import {
-    CreditCard,
-    DollarSign,
-    Download,
-    Eye,
-    Target,
-    TrendingUp,
-} from 'lucide-react';
-import { useState } from 'react';
+import type {BreadcrumbItem} from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Dashboard', href: '/admin' },

@@ -1,42 +1,3 @@
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from '@/components/ui/select';
-import AdminLayout from '@/layouts/admin-layout';
-import {
-    formatCurrency,
-    formatDuration,
-    formatNumber,
-    formatPercent,
-    safeNumber,
-    toSafeArray,
-} from '@/lib/safe-data';
-import type {
-    FunnelItem,
-    LabsPageProps,
-    MatrixItem,
-    QualityMetrics,
-} from '@/types/analytics';
-
-import { DateRangePicker } from '@/components/date-range-picker';
-import { AudienceSegmentation } from '@/components/labs/audience-segmentation';
-import { CtaAnalysis } from '@/components/labs/cta-analysis';
-import { DeviceComparison } from '@/components/labs/device-comparison';
 import { Head, router, useHttp } from '@inertiajs/react';
 import { format, parse } from 'date-fns';
 import {
@@ -71,6 +32,44 @@ import {
     XAxis,
     YAxis,
 } from 'recharts';
+import { DateRangePicker } from '@/components/date-range-picker';
+import { AudienceSegmentation } from '@/components/labs/audience-segmentation';
+import { CtaAnalysis } from '@/components/labs/cta-analysis';
+import { DeviceComparison } from '@/components/labs/device-comparison';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
+import AdminLayout from '@/layouts/admin-layout';
+import {
+    formatCurrency,
+    formatDuration,
+    formatNumber,
+    formatPercent,
+    toSafeArray,
+} from '@/lib/safe-data';
+import type {
+    FunnelItem,
+    LabsPageProps,
+    MatrixItem,
+    QualityMetrics,
+} from '@/types/analytics';
+
 
 // ==================== HELPERS ====================
 
@@ -78,7 +77,9 @@ const transformFunnelData = (
     funnel: FunnelItem[],
     selectedSources: string[],
 ) => {
-    if (funnel.length === 0 || selectedSources.length === 0) return [];
+    if (funnel.length === 0 || selectedSources.length === 0) {
+return [];
+}
 
     const stages = ['Visits', 'Engaged', 'Intent', 'Leads', 'Sales'];
 
@@ -87,6 +88,7 @@ const transformFunnelData = (
 
         selectedSources.forEach((source) => {
             const funnelItem = funnel.find((f) => f.landing_source === source);
+
             if (funnelItem) {
                 const steps = toSafeArray(funnelItem.steps);
                 const step = steps.find((s) => s.stage === stage);
@@ -153,6 +155,7 @@ export default function LabsIndex({
                 to: parse(filters.end_date, 'yyyy-MM-dd', new Date()),
             };
         }
+
         return undefined;
     });
 
@@ -178,7 +181,10 @@ export default function LabsIndex({
 
     // Find winner (highest RPV)
     const winner = useMemo(() => {
-        if (matrix.length === 0) return null;
+        if (matrix.length === 0) {
+return null;
+}
+
         return matrix.reduce((prev, curr) =>
             curr.rpv > prev.rpv ? curr : prev,
         );
@@ -189,9 +195,11 @@ export default function LabsIndex({
         return [...matrix].sort((a, b) => {
             const aVal = a[sortColumn];
             const bVal = b[sortColumn];
+
             if (sortDirection === 'asc') {
                 return (aVal as number) > (bVal as number) ? 1 : -1;
             }
+
             return (aVal as number) < (bVal as number) ? 1 : -1;
         });
     }, [matrix, sortColumn, sortDirection]);
@@ -199,6 +207,7 @@ export default function LabsIndex({
     // Paginated matrix
     const paginatedMatrix = useMemo(() => {
         const startIndex = (currentPage - 1) * itemsPerPage;
+
         return sortedMatrix.slice(startIndex, startIndex + itemsPerPage);
     }, [sortedMatrix, currentPage]);
 
@@ -246,6 +255,7 @@ export default function LabsIndex({
 
     const handleDateUpdate = (date: DateRange | undefined) => {
         setDateRange(date);
+
         // Only trigger router if both dates are selected
         if (date?.from && date?.to) {
             router.get(
@@ -271,11 +281,13 @@ export default function LabsIndex({
             range: filters.range,
             source: sourceValue,
         };
+
         // Preserve custom date range parameters
         if (filters.range === 'custom') {
             params.start_date = filters.start_date;
             params.end_date = filters.end_date;
         }
+
         router.get('/admin/labs', params, {
             preserveState: true,
             preserveScroll: true,
@@ -288,11 +300,13 @@ export default function LabsIndex({
             range: filters.range,
             source: undefined,
         };
+
         // Preserve custom date range parameters
         if (filters.range === 'custom') {
             params.start_date = filters.start_date;
             params.end_date = filters.end_date;
         }
+
         router.get('/admin/labs', params, {
             preserveState: true,
             preserveScroll: true,
@@ -967,7 +981,7 @@ export default function LabsIndex({
                                                 />
                                                 <Legend />
                                                 {selectedFunnelSources.map(
-                                                    (source, index) => (
+                                                    (source) => (
                                                         <Bar
                                                             key={source}
                                                             dataKey={source}
@@ -1051,6 +1065,7 @@ export default function LabsIndex({
                                                                             s.stage ===
                                                                             stage,
                                                                     );
+
                                                                 return (
                                                                     <td
                                                                         key={

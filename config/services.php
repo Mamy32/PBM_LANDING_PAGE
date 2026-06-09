@@ -35,9 +35,8 @@ return [
         ],
     ],
     'meta' => [
-    'pixel_id' => env('META_PIXEL_ID', ''),
-    'access_token' => env('META_ACCESS_TOKEN', ''),
-],
-
+        'pixel_id' => env('META_PIXEL_ID', ''),
+        'access_token' => env('META_ACCESS_TOKEN', ''),
+    ],
 
 ];

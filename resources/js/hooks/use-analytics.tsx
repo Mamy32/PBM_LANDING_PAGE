@@ -9,6 +9,7 @@ export function generateEventId(): string {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
         return crypto.randomUUID();
     }
+
     return `${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
 }
 
@@ -17,6 +18,7 @@ export function generateEventId(): string {
  */
 function getCookieValue(name: string): string | null {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+
     return match ? decodeURIComponent(match[2]) : null;
 }
 
@@ -35,7 +37,10 @@ interface AnalyticsEvent {
  * Get landing source from sessionStorage
  */
 export function getLandingSource(): string {
-    if (typeof window === 'undefined') return 'unknown';
+    if (typeof window === 'undefined') {
+return 'unknown';
+}
+
     return sessionStorage.getItem(LANDING_SOURCE_KEY) || window.location.pathname;
 }
 
@@ -44,7 +49,9 @@ export function useAnalytics() {
 
     // Initialize landing source on mount
     useEffect(() => {
-        if (typeof window === 'undefined') return;
+        if (typeof window === 'undefined') {
+return;
+}
 
         // Only set if not already present (preserve original entry point)
         if (!sessionStorage.getItem(LANDING_SOURCE_KEY)) {

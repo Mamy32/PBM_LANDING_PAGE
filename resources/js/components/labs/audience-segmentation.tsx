@@ -1,10 +1,10 @@
+import { Eye, Users } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatPercent, safeNumber, toSafeArray } from '@/lib/safe-data';
 import type { AudienceSegmentationProps, DepthAnalysis, Persona } from '@/types/analytics';
-import { Eye, Users } from 'lucide-react';
-import { useMemo, useState } from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const PERSONA_COLORS: Record<string, string> = {
     Bouncers: 'var(--destructive)',
@@ -31,6 +31,7 @@ export function AudienceSegmentation({ readers, heatmap }: AudienceSegmentationP
             personas.forEach((p) => {
                 dataPoint[p.name] = safeNumber(p.percentage);
             });
+
             return dataPoint;
         });
     }, [safeReaders]);
@@ -38,6 +39,7 @@ export function AudienceSegmentation({ readers, heatmap }: AudienceSegmentationP
     // Transform heatmap data for bar chart
     const heatmapChartData = useMemo(() => {
         const depths = [25, 50, 75, 90];
+
         return depths.map((depth) => {
             const dataPoint: Record<string, string | number> = { name: `${depth}%`, depth };
             safeHeatmap.forEach((h) => {
@@ -45,13 +47,18 @@ export function AudienceSegmentation({ readers, heatmap }: AudienceSegmentationP
                 const analysis = depthAnalysis.find((d) => d.depth === depth);
                 dataPoint[h.landing_source] = safeNumber(analysis?.percentage);
             });
+
             return dataPoint;
         });
     }, [safeHeatmap]);
 
     const personaNames = useMemo(() => {
-        if (safeReaders.length === 0) return [];
+        if (safeReaders.length === 0) {
+return [];
+}
+
         const personas = toSafeArray<Persona>(safeReaders[0].personas);
+
         return personas.map((p) => p.name);
     }, [safeReaders]);
 

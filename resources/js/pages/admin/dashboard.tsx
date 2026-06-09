@@ -1,5 +1,5 @@
-import AnalyticsOverviewChart from "@/components/analytics/AnalyticsOverviewChart";
 import { useEffect, useState } from "react";
+import AnalyticsOverviewChart from "@/components/analytics/AnalyticsOverviewChart";
 export default function AdminDashboard() {
     const [data, setData] = useState<any>(null);
 

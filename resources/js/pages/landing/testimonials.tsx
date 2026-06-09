@@ -1,8 +1,8 @@
 import { ChevronLeft, ChevronRight, Users, X } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import CtaButton from './cta-button';
 import { useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
 
 const gridImages = Array.from({ length: 4 }, (_, i) => ({
     id: `grid-${i + 1}`,
@@ -44,9 +44,17 @@ function Lightbox({
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose();
-            if (e.key === 'ArrowRight') goNext();
-            if (e.key === 'ArrowLeft') goPrev();
+            if (e.key === 'Escape') {
+onClose();
+}
+
+            if (e.key === 'ArrowRight') {
+goNext();
+}
+
+            if (e.key === 'ArrowLeft') {
+goPrev();
+}
         };
 
         document.body.style.overflow = 'hidden';
@@ -65,7 +73,10 @@ function Lightbox({
     };
 
     const handleTouchMove = (e: React.TouchEvent) => {
-        if (!isDragging.current) return;
+        if (!isDragging.current) {
+return;
+}
+
         touchDeltaX.current = e.touches[0].clientX - touchStartX.current;
         setDragOffset(touchDeltaX.current);
     };

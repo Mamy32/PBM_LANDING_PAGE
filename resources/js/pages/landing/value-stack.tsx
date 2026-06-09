@@ -1,7 +1,7 @@
 import { BookOpen, Gift, PlayCircle, Table } from 'lucide-react';
 
-import CtaButton from './cta-button';
 import { useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
 
 const deliverables = [
     {
@@ -59,6 +59,7 @@ export default function ValueStack() {
                 <div className="mt-12 grid gap-6 sm:mt-16 lg:grid-cols-3">
                     {deliverables.map((item) => {
                         const colors = colorMap[item.color];
+
                         return (
                             <div
                                 key={item.title}

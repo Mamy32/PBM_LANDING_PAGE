@@ -14,7 +14,7 @@ interface AdminDashboardProps {
 }
 
 export default function AdminDashboard({ stats }: AdminDashboardProps) {
-   const breadcrumbs = [
+    const breadcrumbs = [
     { title: 'Admin', href: '/admin' },
     { title: 'Dashboard', href: '/admin' },
 ];

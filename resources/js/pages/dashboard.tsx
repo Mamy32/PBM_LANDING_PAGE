@@ -2,7 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import AdminLayout from '@/layouts/admin-layout';
 import { Head } from '@inertiajs/react';
-import { Activity, BookOpen, Play, TrendingUp, Users, Zap } from 'lucide-react';
+import { Activity, TrendingUp, Users, Zap } from 'lucide-react';
 import type { BreadcrumbItem } from '@/types';
 interface AdminDashboardProps {
     stats: {
@@ -131,10 +131,25 @@ const statCards = [
                             </div>
                             <div className="space-y-4">
                                 {[
-                                    { href: '/admin/courses', icon: BookOpen, label: 'Manage Courses', color: 'from-purple-500 to-pink-500' },
-                                    { href: '/admin/users', icon: Users, label: 'Manage Users', color: 'from-blue-500 to-cyan-500' },
-                                    { href: '/admin/modules', icon: Play, label: 'Manage Modules', color: 'from-green-500 to-emerald-500' },
-                                ].map((action, index) => (
+    {
+        href: '/admin/analytics',
+        icon: Activity,
+        label: 'Analytics Dashboard',
+        color: 'from-purple-500 to-pink-500',
+    },
+    {
+        href: '/admin/labs',
+        icon: Zap,
+        label: 'A/B Testing Labs',
+        color: 'from-blue-500 to-cyan-500',
+    },
+    {
+        href: '/dashboard',
+        icon: Users,
+        label: 'User Dashboard',
+        color: 'from-green-500 to-emerald-500',
+    },
+].map((action, index) => (
                                     <a
                                         key={index}
                                         href={action.href}

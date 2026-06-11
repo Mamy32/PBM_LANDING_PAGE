@@ -22,25 +22,22 @@ import {
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 
-
-
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
     },
-{
-    title: 'Analytics',
-    href: '/admin/analytics',
-    icon: BarChart3,
-},
+    {
+        title: 'Analytics',
+        href: '/admin/analytics',
+        icon: BarChart3,
+    },
     {
         title: 'A/B Labs',
         href: '/admin/labs',
         icon: FlaskConical,
     },
-
 ];
 
 const footerNavItems: NavItem[] = [
@@ -58,7 +55,7 @@ const footerNavItems: NavItem[] = [
 
 export function AppSidebar() {
     return (
-        <Sidebar collapsible="icon" variant="inset">
+        <Sidebar collapsible="icon" variant="inset" suppressHydrationWarning>
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>

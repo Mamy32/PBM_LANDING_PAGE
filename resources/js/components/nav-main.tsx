@@ -24,10 +24,10 @@ export function NavMain({ items = [] }: { items: NavItem[] }) {
                             tooltip={{ children: item.title }}
                         >
                             <Link href={item.href} prefetch>
-                                {item.icon && <item.icon className="shrink-0" />}
-                                <span className="truncate group-data-[collapsible=icon]:opacity-0 group-data-[collapsible=icon]:w-0 group-data-[collapsible=icon]:overflow-hidden transition-all duration-200">
-                                    {item.title}
-                                </span>
+                                {item.icon && (
+                                    <item.icon className="size-4 shrink-0" />
+                                )}
+                                <span className="truncate">{item.title}</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

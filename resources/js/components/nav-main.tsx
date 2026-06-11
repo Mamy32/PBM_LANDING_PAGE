@@ -23,13 +23,16 @@ export function NavMain({ items = [] }: { items: NavItem[] }) {
                             isActive={isCurrentUrl(item.href)}
                             tooltip={{ children: item.title }}
                         >
-                    <Link
+<Link
     href={item.href}
     prefetch
     className="flex items-center gap-2 w-full overflow-hidden"
 >
     {item.icon && <item.icon />}
-    <span className="truncate">{item.title}</span>
+
+    <span className="truncate group-data-[collapsible=icon]:hidden">
+        {item.title}
+    </span>
 </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

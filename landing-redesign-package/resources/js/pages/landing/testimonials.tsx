@@ -18,24 +18,6 @@ const carouselImages = Array.from({ length: 8 }, (_, i) => ({
 
 const allImages = [...gridImages, ...carouselImages];
 
-const quoteTestimonials = [
-    {
-        name: 'Harriet',
-        role: 'ex-Singapore Management Consultant',
-        quote: 'I learned a lot from Shaun\'s training — especially cara berpikir kritis + framework buat solve issues. Kepake pas gue handle salah satu project B2B terbesar Grab di GrabFood.',
-    },
-    {
-        name: 'Thomas',
-        role: 'INSEAD MBA Candidate',
-        quote: "Shaun's introduction to framework really helped me because I was never taught that in non-business major, especially at a non-target Indo school.",
-    },
-    {
-        name: 'Vanessa',
-        role: 'Graduating Senior, Oxford University',
-        quote: 'Having a clear starting point of the types of approach I was able to use was most helpful — jadi kebayang the different options we have to best present ourselves.',
-    },
-];
-
 function Lightbox({
     images,
     currentIndex,
@@ -184,57 +166,39 @@ export default function Testimonials() {
     return (
         <section
             id="testimoni"
-            className="relative overflow-hidden bg-gradient-to-b from-[#0C1F13] via-[#0A1A0F] to-[#0C1F13] py-20 sm:py-28"
+            className="relative overflow-hidden bg-gradient-to-b from-lp-blue-900 via-[#0b1840] to-lp-blue-900 py-20 sm:py-28"
         >
             <div className="pointer-events-none absolute inset-0 opacity-60">
-                <div className="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-[#4ADE80]/8 blur-[120px]" />
+                <div className="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-lp-yellow-400/10 blur-[120px]" />
             </div>
 
             <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-3xl text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[#4ADE80]/30 bg-[#4ADE80]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#4ADE80]">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-lp-yellow-400/30 bg-lp-yellow-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-lp-yellow-300">
                         <Users className="h-3.5 w-3.5" />
-                        Apa Kata Alumni?
+                        7.000+ Alumni
                     </span>
-                    <h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                    <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
                         Mereka udah paham aturan mainnya.{' '}
-                        <span className="text-[#4ADE80]">
-                            Sekarang giliran lo.
+                        <span className="text-lp-yellow-400">
+                            Sekarang giliran kamu.
                         </span>
                     </h2>
                     <p className="mt-4 text-base text-white/65 sm:text-lg">
-                        Para alumni Shaundju Academy sudah membuktikannya di perusahaan top dunia.
+                        Ribuan pebisnis pemula di seluruh Indonesia sudah
+                        merasakan manfaatnya.
                     </p>
                 </div>
 
-                {/* Quote testimonials */}
-                <div className="mt-12 grid gap-5 sm:grid-cols-3">
-                    {quoteTestimonials.map((t) => (
-                        <div
-                            key={t.name}
-                            className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-[#4ADE80]/25"
-                        >
-                            <Quote className="h-6 w-6 text-[#4ADE80]/60 mb-4" />
-                            <p className="text-sm leading-relaxed text-white/75 italic">
-                                &ldquo;{t.quote}&rdquo;
-                            </p>
-                            <div className="mt-5 pt-4 border-t border-white/10">
-                                <p className="text-sm font-bold text-white">{t.name}</p>
-                                <p className="text-xs text-white/50 mt-0.5">{t.role}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
                 {/* Stats strip */}
-                <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:gap-8">
+                <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:gap-8">
                     {[
-                        { v: '1.000+', l: 'Members' },
+                        { v: '7.000+', l: 'Alumni' },
                         { v: '4.9/5', l: 'Rating' },
-                        { v: 'Top 1%', l: 'Karier alumni' },
+                        { v: '95%', l: 'Selesai materi' },
                     ].map((s) => (
                         <div key={s.l} className="text-center">
-                            <p className="text-2xl font-extrabold text-[#4ADE80] sm:text-3xl">
+                            <p className="text-2xl font-bold text-lp-yellow-400 sm:text-3xl">
                                 {s.v}
                             </p>
                             <p className="mt-1 text-xs uppercase tracking-wider text-white/50 sm:text-sm">
@@ -251,7 +215,7 @@ export default function Testimonials() {
                             key={img.id}
                             type="button"
                             onClick={() => openLightbox(i)}
-                            className="group relative aspect-square cursor-pointer overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/30 transition-transform duration-300 hover:scale-[1.02] hover:border-[#4ADE80]/35"
+                            className="group relative aspect-square cursor-pointer overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/30 transition-transform duration-300 hover:scale-[1.02] hover:border-lp-yellow-400/40"
                         >
                             <img
                                 src={img.src}
@@ -259,8 +223,8 @@ export default function Testimonials() {
                                 className="h-full w-full object-cover"
                                 loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F13]/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                            <Quote className="absolute right-3 top-3 h-5 w-5 text-[#4ADE80]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-lp-blue-900/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                            <Quote className="absolute right-3 top-3 h-5 w-5 text-lp-yellow-400/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                         </button>
                     ))}
                 </div>
@@ -281,7 +245,7 @@ export default function Testimonials() {
                                         onClick={() =>
                                             openLightbox(globalIndex)
                                         }
-                                        className="aspect-square w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl border border-white/10 shadow-md shadow-black/30 transition-transform duration-300 hover:scale-[1.03] hover:border-[#4ADE80]/35 sm:w-40 md:w-48 lg:w-52"
+                                        className="aspect-square w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl border border-white/10 shadow-md shadow-black/30 transition-transform duration-300 hover:scale-[1.03] hover:border-lp-yellow-400/40 sm:w-40 md:w-48 lg:w-52"
                                     >
                                         <img
                                             src={img.src}
@@ -304,7 +268,7 @@ export default function Testimonials() {
                         onClick={() =>
                             trackCTA(
                                 'testimonials_section',
-                                'Saya Juga Mau Hasil Seperti Mereka',
+                                'Dapatkan Panduannya Sekarang',
                                 '#harga',
                             )
                         }

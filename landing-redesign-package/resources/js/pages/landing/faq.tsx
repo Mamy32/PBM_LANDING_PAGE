@@ -3,44 +3,45 @@ import { useState } from 'react';
 
 const faqItems = [
     {
-        question: 'Apakah kelas ini cocok untuk fresh graduate?',
+        question: 'Apakah saya bisa diskusi setelah pembelian?',
         answer:
-            'Ya. Semakin cepat memahami dunia kerja, semakin cepat karier Anda berkembang. Modul untuk First Jobbers dirancang khusus untuk yang baru memulai perjalanan karier.',
+            'Tentu saja bisa! Setelah kamu membeli panduan, kamu bisa berdiskusi dengan saya terkait materi melalui DM Instagram atau Email.',
     },
     {
-        question: 'Apakah kelas ini cocok untuk karyawan berpengalaman?',
+        question: 'Apakah cocok untuk yang benar-benar pemula?',
         answer:
-            'Ya. Cocok untuk profesional yang merasa kariernya mulai stagnan dan ingin naik ke level berikutnya. Paket Managers dirancang khusus untuk akselerasi ke posisi eksekutif.',
+            'Sangat cocok! Panduan ini memang dirancang khusus untuk pemula yang baru mau mulai bisnis. Semua materi dijelaskan dari dasar, tanpa asumsi kamu sudah tahu apapun sebelumnya. Bahasa yang dipakai juga sederhana dan mudah dimengerti.',
     },
     {
-        question: 'Apakah pembelajarannya live?',
+        question: 'Saya tidak paham teknologi, apakah bisa mengikuti?',
         answer:
-            'Tidak. Kelas dapat diakses online secara fleksibel sesuai waktu Anda. Anda juga mendapatkan akses ke rekaman live session dari batch-batch sebelumnya.',
+            'Bisa! Kamu hanya perlu tahu cara menggunakan Google Spreadsheet dan menonton video. Jika kamu bisa membuka YouTube dan mengetik di komputer atau HP, kamu sudah cukup siap. Setiap langkah dijelaskan secara detail di video tutorial.',
     },
     {
-        question: 'Apakah ada sesi mentoring langsung dengan Coach Shaun?',
+        question: 'Berapa lama akses materinya?',
         answer:
-            'Untuk paket Managers, terdapat fitur Review PR Personal langsung oleh Shaun Dju. Materi juga disusun untuk dipelajari secara mandiri dan sistematis.',
+            'Kamu mendapatkan akses selamanya. Sekali bayar, semua materi — video, spreadsheet, dan e-book — bisa kamu akses kapan saja tanpa batas waktu. Termasuk semua update materi di masa depan.',
     },
     {
-        question: 'Berapa lama akses kelas diberikan?',
+        question: 'Apakah ada garansi uang kembali?',
         answer:
-            'Sesuai kebijakan akses yang berlaku saat pembelian. Pastikan Anda membaca ketentuan sebelum melakukan pembelian.',
+            'Ya, ada 100% garansi uang kembali. Kalau kamu merasa panduan ini tidak sesuai dengan ekspektasimu, saya kembalikan uangmu tanpa pertanyaan dan tanpa ribet.',
     },
     {
-        question: 'Apakah materinya hanya teori?',
+        question: 'Bagaimana cara aksesnya setelah bayar?',
         answer:
-            'Tidak. Setiap modul dilengkapi tugas praktik (PR) yang dapat langsung diterapkan di dunia kerja. Setelah selesai satu BAB, ada assignment yang bisa langsung Anda coba di kantor.',
+            'Setelah pembayaran berhasil, kamu akan langsung mendapatkan akses ke semua materi. Video tutorial, template spreadsheet, dan e-book bisa langsung kamu akses dan mulai pelajari.',
     },
     {
-        question: 'Apakah kelas ini menjamin promosi atau kenaikan gaji?',
+        question: 'Apakah ini semacam skema cepat kaya?',
         answer:
-            'Tidak. Namun Anda akan mempelajari kemampuan dan strategi yang digunakan para top performer untuk berkembang lebih cepat dalam karier. Hasilnya bergantung pada usaha dan konsistensi Anda.',
+            'Bukan, sama sekali bukan. Panduan ini adalah buku panduan praktis yang mengajarkan langkah-langkah fundamental membangun bisnis lokal. Hasilnya bergantung pada usaha dan konsistensi kamu.',
     },
     {
-        question: 'Apa perbedaan paket First Jobbers dan Managers?',
+        question:
+            'Apakah panduan ini cocok untuk membangun bisnis skala besar atau korporat?',
         answer:
-            'Paket First Jobbers terdiri dari 4 modul, cocok untuk yang baru masuk dunia kerja dan ingin 2x salary dalam 3 tahun. Paket Managers terdiri dari 5 modul dan dilengkapi Review PR Personal langsung oleh Shaun, dirancang untuk mencapai posisi eksekutif dan gaji 3 digit.',
+            'Tidak. Panduan ini berfokus untuk bangun Bisnis Lokal dan Small Business dari nol. Saya sengaja menghindari teori korporat yang rumit agar kamu bisa langsung fokus pada langkah praktis dan bisa segera mendapatkan pembeli pertama.',
     },
 ];
 
@@ -54,17 +55,17 @@ export default function Faq() {
     return (
         <section
             id="faq"
-            className="relative bg-[#0C1F13] py-20 sm:py-28"
+            className="relative bg-lp-blue-900 py-20 sm:py-28"
         >
             <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
-                        <HelpCircle className="h-3.5 w-3.5 text-[#4ADE80]" />
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                        <HelpCircle className="h-3.5 w-3.5 text-lp-yellow-400" />
                         FAQ
                     </span>
-                    <h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                    <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
                         Pertanyaan yang{' '}
-                        <span className="text-[#4ADE80]">
+                        <span className="text-lp-yellow-400">
                             sering ditanyakan
                         </span>
                     </h2>
@@ -81,8 +82,8 @@ export default function Faq() {
                                 key={index}
                                 className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
                                     isOpen
-                                        ? 'border-[#4ADE80]/35 bg-white/[0.05]'
-                                        : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                                        ? 'border-lp-yellow-400/40 bg-white/[0.06]'
+                                        : 'border-white/10 bg-white/[0.03] hover:border-white/20'
                                 }`}
                             >
                                 <button
@@ -91,9 +92,9 @@ export default function Faq() {
                                     className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-7"
                                 >
                                     <span
-                                        className={`text-sm font-bold sm:text-base ${
+                                        className={`text-sm font-semibold sm:text-base ${
                                             isOpen
-                                                ? 'text-[#4ADE80]'
+                                                ? 'text-lp-yellow-400'
                                                 : 'text-white'
                                         }`}
                                     >
@@ -102,7 +103,7 @@ export default function Faq() {
                                     <span
                                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                                             isOpen
-                                                ? 'rotate-45 bg-[#4ADE80] text-[#0C1F13]'
+                                                ? 'rotate-45 bg-lp-yellow-400 text-lp-blue-900'
                                                 : 'bg-white/10 text-white/70'
                                         }`}
                                     >
@@ -132,7 +133,7 @@ export default function Faq() {
                         Masih ada pertanyaan lain?{' '}
                         <a
                             href="#footer"
-                            className="font-bold text-[#4ADE80] underline-offset-4 hover:underline"
+                            className="font-semibold text-lp-yellow-400 underline-offset-4 hover:underline"
                         >
                             Hubungi kami sekarang
                         </a>

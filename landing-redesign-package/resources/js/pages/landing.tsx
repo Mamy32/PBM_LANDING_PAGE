@@ -46,15 +46,16 @@ export default function Landing() {
         <>
             <Head>
                 <title>
-                    Cara Dapet Gaji Ratusan Juta/Bulan Sebelum Umur 30 — Shaundju Academy
+                    Panduan 23 Langkah Bangun Bisnis Lokal — Mulai Bisnismu Hari
+                    Ini
                 </title>
                 <meta
                     name="description"
-                    content="Pelajari strategi yang digunakan para top performer untuk mempercepat kenaikan penghasilan. 75+ materi, lifetime access, komunitas privat. Dipercaya 1.000+ professionals."
+                    content="Panduan langkah demi langkah untuk memulai bisnis lokal dari nol. 40+ video tutorial, 80+ template spreadsheet, dan 70+ halaman e-book. Dipercaya 7.000+ pebisnis pemula."
                 />
             </Head>
 
-            <div className="min-h-screen bg-[#0C1F13] text-white antialiased selection:bg-[#4ADE80] selection:text-[#0C1F13]">
+            <div className="min-h-screen bg-lp-blue-900 text-white antialiased selection:bg-lp-yellow-400 selection:text-lp-blue-900">
                 <Navbar />
                 <Hero />
                 <Problem />

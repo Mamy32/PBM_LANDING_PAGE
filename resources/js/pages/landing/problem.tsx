@@ -2,52 +2,50 @@ import { AlertCircle } from 'lucide-react';
 
 const painPoints = [
     {
-        title: 'Bingung mulai dari mana',
-        body: 'Mau belajar bisnis tapi tidak tahu harus ke siapa dan langkah pertamanya apa.',
+        title: 'Kerja keras tiap hari, yang dipromosi orang lain',
+        body: 'Lo udah all-in, lembur, ambil ekstra kerjaan — tapi atasan malah pilih orang yang kelihatan lebih "visible" dari lo.',
     },
     {
-        title: 'Takut salah langkah',
-        body: 'Khawatir buang waktu di hal yang salah sebelum bisnis benar-benar jalan.',
+        title: 'Ngarep naik gaji cuma modal loyalitas',
+        body: 'Bertahun-tahun setia di perusahaan, tapi gaji lo stuck. Loyalitas doang ternyata gak cukup.',
     },
     {
-        title: 'Takut gagal & rugi',
-        body: 'Modal terbatas, satu kesalahan kecil rasanya bisa langsung menghabiskannya.',
+        title: 'Sering ambil kerjaan di luar jobdesc, kompensasinya sama',
+        body: 'Lo bantu tim lain, kerja double, tapi nilai dan gaji lo gak berubah. Kerja lebih, dapat sama.',
     },
     {
-        title: 'Tidak ada panduan jelas',
-        body: 'Belum ada blueprint step-by-step yang bisa kamu ikuti dari nol sampai jadi.',
+        title: 'Gak tahu cara positioning diri yang benar',
+        body: 'Lo rajin, lo pintar — tapi atasan gak ngeliat lo sebagai kandidat leader. Sesuatu yang salah dari cara lo present diri.',
     },
     {
-        title: 'Overload informasi',
-        body: 'Konten di internet terlalu banyak dan saling bertentangan — bukannya jelas, malah pusing.',
+        title: 'Karier stagnan padahal udah pengalaman',
+        body: 'Udah beberapa tahun kerja, tapi rasanya naik jabatan makin susah. Padahal teman angkatan lo udah jauh di depan.',
     },
     {
-        title: 'Niat lama, eksekusi nol',
-        body: 'Sudah bertahun-tahun ingin mulai bisnis, tapi terus-terusan ditunda.',
+        title: 'Networking banyak tapi gak ada hasilnya',
+        body: 'Lo rajin attend event, connect sama orang baru — tapi gak pernah convert jadi peluang nyata buat karier lo.',
     },
 ];
 
 export default function Problem() {
     return (
-        <section id="masalah" className="relative bg-lp-blue-900 py-20 sm:py-28">
-            <div className="pointer-events-none absolute inset-0 opacity-40">
-                <div className="absolute left-1/4 top-1/3 h-72 w-72 rounded-full bg-red-500/10 blur-3xl" />
+        <section id="masalah" className="relative bg-[#0C1F13] py-20 sm:py-28">
+            <div className="pointer-events-none absolute inset-0 opacity-50">
+                <div className="absolute left-1/4 top-1/3 h-72 w-72 rounded-full bg-red-500/8 blur-3xl" />
             </div>
 
             <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
-                        <AlertCircle className="h-3.5 w-3.5 text-lp-yellow-400" />
-                        Reality Check
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+                        <AlertCircle className="h-3.5 w-3.5 text-[#4ADE80]" />
+                        The Reality Check
                     </span>
-                    <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-                        Kalau kamu{' '}
-                        <span className="text-lp-yellow-400">relate</span> sama
-                        ini, kamu nggak sendiri.
+                    <h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                        Kalo lo{' '}
+                        <span className="text-[#4ADE80]">relate</span> sama ini..
                     </h2>
                     <p className="mt-4 text-base text-white/60 sm:text-lg">
-                        Hampir semua calon pebisnis pemula mentok di hal yang
-                        sama. Lihat dulu, ada poin yang nempel di kamu?
+                        Hampir semua karyawan top performer mentok di titik yang sama. Lo gak sendiri — tapi ada yang beda dari cara mereka keluar dari situasi ini.
                     </p>
                 </div>
 
@@ -55,11 +53,11 @@ export default function Problem() {
                     {painPoints.map((p, i) => (
                         <div
                             key={p.title}
-                            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-lp-yellow-400/30 hover:bg-white/[0.06]"
+                            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-[#4ADE80]/30 hover:bg-white/[0.06]"
                         >
-                            <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-lp-yellow-400/0 blur-2xl transition-all duration-500 group-hover:bg-lp-yellow-400/20" />
+                            <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#4ADE80]/0 blur-2xl transition-all duration-500 group-hover:bg-[#4ADE80]/15" />
                             <div className="relative">
-                                <span className="inline-block text-xs font-semibold tracking-wider text-lp-yellow-400/80">
+                                <span className="inline-block text-xs font-bold tracking-wider text-[#4ADE80]/70">
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
                                 <h3 className="mt-3 text-lg font-bold text-white">

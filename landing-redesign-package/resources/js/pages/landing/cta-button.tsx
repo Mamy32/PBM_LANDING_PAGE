@@ -28,15 +28,15 @@ export default function CtaButton({
 
     const variantClasses =
         variant === 'primary'
-            ? 'bg-[#4ADE80] text-[#0C1F13] shadow-xl shadow-[#4ADE80]/25 hover:bg-[#22C55E] hover:shadow-2xl hover:shadow-[#4ADE80]/40 hover:-translate-y-0.5 ring-1 ring-[#22C55E]/60'
+            ? 'bg-lp-yellow-400 text-lp-blue-900 shadow-xl shadow-lp-yellow-400/25 hover:bg-lp-yellow-300 hover:shadow-2xl hover:shadow-lp-yellow-400/40 hover:-translate-y-0.5 ring-1 ring-lp-yellow-300/60'
             : variant === 'dark'
-              ? 'bg-[#0C1F13] text-white shadow-lg shadow-black/30 hover:bg-black hover:-translate-y-0.5 ring-1 ring-white/10'
-              : 'bg-white text-[#0C1F13] shadow-lg hover:bg-[#F0FFF4] hover:-translate-y-0.5 ring-1 ring-white/40';
+              ? 'bg-lp-blue-900 text-white shadow-lg shadow-black/30 hover:bg-black hover:-translate-y-0.5 ring-1 ring-white/10'
+              : 'bg-white text-lp-blue-900 shadow-lg hover:bg-lp-yellow-50 hover:-translate-y-0.5 ring-1 ring-white/40';
 
     const proofText =
-        context === 'dark' ? 'text-white/60' : 'text-[#0C1F13]/60';
+        context === 'dark' ? 'text-white/60' : 'text-lp-slate-500';
     const proofIcon =
-        context === 'dark' ? 'text-[#4ADE80]' : 'text-[#16A34A]';
+        context === 'dark' ? 'text-lp-yellow-400' : 'text-lp-blue-600';
 
     const features = [
         '75+ Materi',
@@ -60,7 +60,7 @@ export default function CtaButton({
                             ?.scrollIntoView({ behavior: 'smooth' });
                     }
                 }}
-                className={`group inline-flex items-center justify-center gap-2 rounded-full font-bold tracking-tight transition-all duration-300 ${sizeClasses} ${variantClasses}`}
+                className={`group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-300 ${sizeClasses} ${variantClasses}`}
             >
                 <span>{text}</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />

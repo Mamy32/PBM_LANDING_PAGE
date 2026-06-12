@@ -4,17 +4,71 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 
-const gridImages = Array.from({ length: 4 }, (_, i) => ({
-    id: `grid-${i + 1}`,
-    src: `/storage/testimoni/testi${i + 1}.webp`,
-    alt: `Testimoni pelanggan ${i + 1}`,
-}));
+const gridImages = [
+    {
+        id: 'grid-1',
+        src: '/images/shaundju/Asset 2.png',
+        alt: 'Testimoni pelanggan 1',
+    },
+    {
+        id: 'grid-2',
+        src: '/images/shaundju/Asset 3.png',
+        alt: 'Testimoni pelanggan 2',
+    },
+    {
+        id: 'grid-3',
+        src: '/images/shaundju/Asset 4.png',
+        alt: 'Testimoni pelanggan 3',
+    },
+    {
+        id: 'grid-4',
+        src: '/images/shaundju/Asset 5.png',
+        alt: 'Testimoni pelanggan 4',
+    },
+];
 
-const carouselImages = Array.from({ length: 8 }, (_, i) => ({
-    id: `carousel-${i + 1}`,
-    src: `/storage/testimoni/testi${i + 5}.webp`,
-    alt: `Testimoni pelanggan ${i + 5}`,
-}));
+const carouselImages = [
+    {
+        id: 'carousel-1',
+        src: '/images/shaundju/Asset 6.png',
+        alt: 'Testimoni pelanggan 5',
+    },
+    {
+        id: 'carousel-2',
+        src: '/images/shaundju/Asset 7.png',
+        alt: 'Testimoni pelanggan 6',
+    },
+    {
+        id: 'carousel-3',
+        src: '/images/shaundju/Asset 8.png',
+        alt: 'Testimoni pelanggan 7',
+    },
+    {
+        id: 'carousel-4',
+        src: '/images/shaundju/Asset 9.png',
+        alt: 'Testimoni pelanggan 8',
+    },
+    {
+        id: 'carousel-5',
+        src: '/images/shaundju/Asset 10.png',
+        alt: 'Testimoni pelanggan 9',
+    },
+    {
+        id: 'carousel-6',
+        src: '/images/shaundju/Asset 11.png',
+        alt: 'Testimoni pelanggan 10',
+    },
+    {
+        id: 'carousel-7',
+        src: '/images/shaundju/Asset 12.png',
+        alt: 'Testimoni pelanggan 11',
+    },
+    {
+        id: 'carousel-8',
+        src: '/images/shaundju/Asset 13.png',
+        alt: 'Testimoni pelanggan 12',
+    },
+];
 
 const allImages = [...gridImages, ...carouselImages];
 

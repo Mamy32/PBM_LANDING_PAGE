@@ -105,7 +105,7 @@ export default function Hero() {
                             <div className="relative overflow-hidden rounded-[2rem] border border-[#4ADE80]/20 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-2 shadow-2xl shadow-black/50 backdrop-blur-sm">
                                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#1A3A22] to-[#0C1F13]">
                                     <img
-                                        src="/storage/mentor/mentor.jpeg"
+                                        src="/images/shaundju/shaundju-02.png"
                                         alt="Shaun Djuhari"
                                         className="h-full w-full object-cover"
                                         loading="eager"

@@ -36,7 +36,7 @@ export default function Instructor() {
                             <div className="relative overflow-hidden rounded-[1.75rem] border border-[#4ADE80]/20 bg-white/[0.04] p-2 shadow-2xl shadow-black/50">
                                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                                     <img
-                                        src="/storage/mentor/mentor.jpeg"
+                                        src="/images/shaundju/shaundju-02.png"
                                         alt="Shaun Djuhari"
                                         className="h-full w-full object-cover"
                                         loading="lazy"

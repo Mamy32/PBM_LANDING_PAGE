@@ -116,7 +116,7 @@ return (
                 </div>
 
                 {/* Managers */}
-               <div className="mx-auto w-full max-w-md rounded-[24px] border border-[#9DFF70] bg-[#123C2D] p-6 md:max-w-none md:p-10">
+            <div className="mx-auto w-full max-w-md rounded-[24px] border border-[#9DFF70] bg-[#123C2D] p-6 md:max-w-none md:p-10">
 
                     <h3 className="text-center font-serif text-2xl md:text-4xl font-semibold text-[#9DFF70]">
                         Penetrate Executive Status

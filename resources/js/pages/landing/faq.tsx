@@ -49,36 +49,36 @@ export default function Faq() {
     return (
         <section
             id="faq"
-            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-24"
+            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-16 lg:py-24"
         >
-            <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 {/* Header */}
                 <div className="text-center">
-                    <div className="inline-flex items-center rounded-full border border-white px-5 py-2 text-sm text-white">
+                    <div className="inline-flex items-center rounded-full border border-white px-4 py-2 text-xs sm:text-sm text-white">
                         FAQ
                         <ChevronDown className="ml-2 h-4 w-4" />
                     </div>
 
-                    <h2 className="mt-8 font-serif text-5xl font-semibold leading-tight text-[#9DFF70]">
+                    <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-semibold leading-tight text-[#9DFF70]">
                         Pertanyaan yang sering ditanyakan
                     </h2>
                 </div>
 
                 {/* FAQ Card */}
-                <div className="mx-auto mt-14 max-w-5xl rounded-[32px] bg-[#ECECEC] px-10 py-8">
+                <div className="mx-auto mt-10 lg:mt-14 max-w-5xl rounded-2xl lg:rounded-[32px] bg-[#ECECEC] px-5 sm:px-8 lg:px-10 py-6 lg:py-8">
                     {faqItems.map((item, index) => {
                         const isOpen = openIndex === index;
 
                         return (
                             <div
                                 key={index}
-                                className="border-b border-black/10 py-6 last:border-none"
+                                className="border-b border-black/10 py-4 sm:py-6 last:border-none"
                             >
                                 <button
                                     onClick={() => toggle(index)}
                                     className="flex w-full items-center justify-between text-left"
                                 >
-                                    <span className="text-lg font-semibold text-[#123C2D]">
+                                    <span className="pr-4 text-base sm:text-lg font-semibold text-[#123C2D]">
                                         {item.question}
                                     </span>
 
@@ -90,7 +90,7 @@ export default function Faq() {
                                 </button>
 
                                 {isOpen && (
-                                    <p className="mt-4 text-base leading-relaxed text-[#123C2D]/80">
+                                    <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#123C2D]/80">
                                         {item.answer}
                                     </p>
                                 )}
@@ -100,8 +100,8 @@ export default function Faq() {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-14 text-center">
-                    <p className="mb-5 text-white/80">
+                <div className="mt-10 lg:mt-14 text-center">
+                    <p className="mb-5 text-sm sm:text-base text-white/80">
                         Masih ada pertanyaan lain? Hubungi kami sekarang.
                     </p>
 
@@ -109,7 +109,7 @@ export default function Faq() {
                         href="https://wa.me/6281234567890"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center rounded-full bg-[#9DFF70] px-8 py-4 text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-105"
+                        className="inline-flex items-center rounded-full bg-[#9DFF70] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-105"
                     >
                         Chat via WA
                         <ChevronDown className="-rotate-90 ml-2 h-4 w-4" />

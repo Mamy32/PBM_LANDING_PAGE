@@ -59,8 +59,8 @@ export default function Landing() {
                 <Navbar />
                 <Hero />
                 <SuccessStory />
-                <Problem />
                 <Solution />
+                <Problem />
                 <ValueStack />
                 <Testimonials />
                 <Instructor />

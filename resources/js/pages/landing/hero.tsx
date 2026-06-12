@@ -85,7 +85,7 @@ export default function Hero() {
                                 ))}
                             </div>
                             <div>
-                               <img
+                            <img
                                     src="/images/shaundju/stars.png"
                                     alt="5 Star Rating"
                                     className="h-5 w-auto"

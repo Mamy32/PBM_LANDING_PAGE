@@ -1,6 +1,6 @@
 import { useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
-
+import { Star } from 'lucide-react';
 export default function Hero() {
     const { trackCTA } = useAnalytics();
 
@@ -38,11 +38,14 @@ export default function Hero() {
 
                         {/* MEMBERS BADGE */}
                         <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/40 px-5 py-2">
-                            <img
-                                src="/images/shaundju/stars.png"
-                                alt="Rating"
-                                className="h-4 w-auto"
-                            />
+                            <div className="flex items-center gap-0.5">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <Star
+                                    key={star}
+                                    className="h-3.5 w-3.5 fill-[#FFD54A] text-[#FFD54A]"
+                                />
+                            ))}
+                        </div>
 
                             <span className="text-sm font-medium text-white">
                                 JOIN 1.000 MEMBERS
@@ -53,10 +56,20 @@ export default function Hero() {
                                 alt="Members"
                                 className="h-8 w-auto"
                             />
+                            <img
+                                src="/images/shaundju/testi02.png"
+                                alt="Members"
+                                className="h-8 w-auto"
+                            />
+                            <img
+                                src="/images/shaundju/testi04.png"
+                                alt="Members"
+                                className="h-8 w-auto"
+                            />
                         </div>
 
                         {/* HEADLINE */}
-                        <h1 className="mt-10 font-serif text-[56px] leading-[1.05] text-white lg:text-[78px]">
+                        <h1 className="mt-10 font-serif text-[50px] leading-[1.05] text-white lg:text-[78px]">
                             Cara Dapet Gaji
                             <br />
                             <span className="text-[#A8FF7E]">

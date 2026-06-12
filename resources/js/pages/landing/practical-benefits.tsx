@@ -22,7 +22,13 @@ const benefits = [
 
 export default function PracticalBenefits() {
     return (
-        <section className="bg-gradient-to-r from-[#0B3D2E] via-[#072B1F] to-[#031610] py-28">
+        <section
+    className="relative overflow-hidden py-28"
+    style={{
+        background:
+            'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
+    }}
+>
             <div className="mx-auto max-w-6xl px-6">
                 {/* Main Heading */}
                 <div className="text-center">

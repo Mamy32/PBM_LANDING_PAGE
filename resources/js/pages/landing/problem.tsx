@@ -31,11 +31,11 @@ export default function Problem() {
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     {/* LEFT */}
                     <div>
-                        <div className="mb-10 inline-flex items-center rounded-full border border-[#173F33] px-4 py-2 text-sm text-[#173F33]">
+                        <div className="mb-10 inline-flex items-center rounded-full border border-[#fff] px-4 py-2 text-sm text-[#fff]">
                             The Reality Check
                         </div>
 
-                        <h2 className="font-serif text-5xl leading-tight text-[#173F33]">
+                        <h2 className="font-serif text-5xl leading-tight text-[#fff]">
                             Kalo lo
                             <br />
                             <span className="text-[#8EEA6D]">

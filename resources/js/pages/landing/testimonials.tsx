@@ -6,42 +6,42 @@ const testimonials = [
     {
         name: 'Thomas',
         role: 'INSEAD MBA Candidate',
-        image: '/images/shaundju/thomas.webp',
+        image: '/images/shaundju/testi01.png',
         quote:
             'Apa yang Shaun ngomongin itu bener semua brokkk, apalagi yang project management, client relationship, dll.',
     },
     {
         name: 'Jihad',
         role: 'Strategy at Pluang, ex-Shopee',
-        image: '/images/shaundju/jihad.webp',
+        image: '/images/shaundju/testi02.png',
         quote:
             "Shaun's introduction to framework really helped me because I was never taught that in non-business major.",
     },
     {
         name: 'Harriet',
         role: 'ex-Singapore Management Consultant',
-        image: '/images/shaundju/harriet.webp',
+        image: '/images/shaundju/testi03.png',
         quote:
             'Shaun showed me how to treat clients as real people.',
     },
     {
         name: 'Vanessa',
         role: 'Graduating Senior, Oxford University',
-        image: '/images/shaundju/vanessa.webp',
+        image: '/images/shaundju/testi04.png',
         quote:
             'Having a clear starting point was most helpful.',
     },
     {
         name: 'Abdul',
         role: 'Assistant Manager at Grab',
-        image: '/images/shaundju/abdul.webp',
+        image: '/images/shaundju/testi05.png',
         quote:
             'I learned a lot dari training lo terutama cara berpikir kritis.',
     },
     {
         name: 'Cyndi',
         role: 'Final Year Student, NUS Singapore',
-        image: '/images/shaundju/cyndi.webp',
+        image: '/images/shaundju/testi08.png',
         quote:
             'I really admired how professionally you work.',
     },
@@ -80,13 +80,13 @@ export default function Testimonials() {
                 <div className="mx-auto mt-20 flex flex-col items-center justify-center gap-10 lg:flex-row">
 
                     <img
-                        src="/images/shaundju/testimony-phone.webp"
+                        src="/images/shaundju/proof.png"
                         alt="Phone testimonial"
                         className="w-[380px] max-w-full"
                     />
 
                     <img
-                        src="/images/shaundju/testimony-chat.webp"
+                        src="/images/shaundju/screenshot1.png"
                         alt="Chat testimonials"
                         className="w-[170px] max-w-full"
                     />

@@ -1,9 +1,15 @@
 export default function Footer() {
     return (
-        <footer
-            id="footer"
-            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D]"
-        >
+                        <footer
+  className="
+    py-24
+    bg-gradient-to-r
+    from-[#0B3D2E]
+    via-[#072B1F]
+    to-[#031610]
+    overflow-hidden
+  "
+>
             <div className="mx-auto max-w-7xl px-6 py-10">
                 {/* Top Row */}
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">

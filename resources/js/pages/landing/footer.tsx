@@ -2,7 +2,7 @@ export default function Footer() {
     return (
     <footer
 className="
-    py-24
+    py-16 lg:py-24
     bg-gradient-to-r
     from-[#0B3D2E]
     via-[#072B1F]
@@ -10,20 +10,20 @@ className="
     overflow-hidden
 "
 >
-            <div className="mx-auto max-w-7xl px-6 py-10">
+           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 lg:py-10">
                 {/* Top Row */}
-                <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+               <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
                     {/* Logo */}
                     <div>
                     <img
     src="/images/shaundju/logo_footer.png"
     alt="Shaundju Academy"
-    className="h-14 w-auto brightness-0 invert"
+    className="h-10 sm:h-12 lg:h-14 w-auto brightness-0 invert"
 />
                     </div>
 
                     {/* Links */}
-                    <div className="flex items-center gap-8">
+                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-8">
                         <a
                             href="/privacy-policy"
                             className="text-sm text-white hover:text-[#9DFF70]"
@@ -41,11 +41,11 @@ className="
                 </div>
 
                 {/* Divider */}
-                <div className="my-8 h-px bg-white/10" />
+               <div className="my-6 lg:my-8 h-px bg-white/10" />
 
                 {/* Copyright */}
                 <div className="text-center">
-                    <p className="text-sm text-white/70">
+                    <p className="text-xs sm:text-sm text-white/70">
                         © {new Date().getFullYear()} Shaundju Academy. All rights reserved
                     </p>
                 </div>

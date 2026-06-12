@@ -62,8 +62,8 @@ export default function Landing() {
                 <Solution />
                 <Problem />
                 <PracticalBenefits />
-                <ValueStack />
                 <Testimonials />
+                <ValueStack />
                 <Instructor />
                 <Pricing />
                 <Guarantee />

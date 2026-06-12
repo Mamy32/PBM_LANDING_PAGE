@@ -87,7 +87,7 @@ class AnalyticsController extends Controller
 
         $engagementRate = UserAnalytic::where('event_type', 'engagement')
             ->where('created_at', '>=', $startDate)
-            ->where('event_data->type', 'dwell_time')
+            ->where('event_data->type', 'dwell_ping')
             ->distinct('session_id')
             ->count();
 
@@ -158,7 +158,7 @@ class AnalyticsController extends Controller
 
         $engaged = UserAnalytic::where('event_type', 'engagement')
             ->where('created_at', '>=', $startDate)
-            ->where('event_data->type', 'dwell_time')
+            ->where('event_data->type', 'dwell_ping')
             ->distinct('session_id')
             ->count();
 

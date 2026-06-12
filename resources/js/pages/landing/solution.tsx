@@ -5,7 +5,7 @@ export default function Solution() {
     const { trackCTA } = useAnalytics();
 
     return (
-       <section
+    <section
     id="solusi"
     className="bg-[#A6C98D] py-24"
 >

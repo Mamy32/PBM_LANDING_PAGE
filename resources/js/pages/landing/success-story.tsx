@@ -72,7 +72,7 @@ export default function SuccessStory() {
             {/* RIGHT CARD */}
             <div className="p-4 shadow-lg">
                 <img
-                    src="/images/shaundju/promote.png"
+                    src="/images/shaundju/promote.jpg"
                     alt="Career Timeline"
                     className="w-full"
                 />

@@ -1,6 +1,6 @@
 import { Head } from '@inertiajs/react';
 
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import { useDwellTime } from '@/hooks/use-dwell-time';
 import { useScrollTracking } from '@/hooks/use-scroll-tracking';
@@ -55,7 +55,7 @@ export default function Landing() {
                 />
             </Head>
 
-            <div className="min-h-screen bg-white text-lp-slate-800">
+            <div className="min-h-screen bg-lp-blue-900 text-white antialiased selection:bg-lp-yellow-400 selection:text-lp-blue-900">
                 <Navbar />
                 <Hero />
                 <Problem />

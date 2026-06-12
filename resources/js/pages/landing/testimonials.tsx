@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Users, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote, Users, X } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useAnalytics } from '@/hooks/use-analytics';
@@ -45,16 +45,16 @@ function Lightbox({
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
-onClose();
-}
+                onClose();
+            }
 
             if (e.key === 'ArrowRight') {
-goNext();
-}
+                goNext();
+            }
 
             if (e.key === 'ArrowLeft') {
-goPrev();
-}
+                goPrev();
+            }
         };
 
         document.body.style.overflow = 'hidden';
@@ -74,8 +74,8 @@ goPrev();
 
     const handleTouchMove = (e: React.TouchEvent) => {
         if (!isDragging.current) {
-return;
-}
+            return;
+        }
 
         touchDeltaX.current = e.touches[0].clientX - touchStartX.current;
         setDragOffset(touchDeltaX.current);
@@ -97,10 +97,9 @@ return;
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md"
             onClick={onClose}
         >
-            {/* Close button */}
             <button
                 onClick={onClose}
                 className="absolute top-4 right-4 z-10 cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
@@ -109,12 +108,10 @@ return;
                 <X className="h-6 w-6" />
             </button>
 
-            {/* Counter */}
             <div className="absolute top-4 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80">
                 {currentIndex + 1} / {images.length}
             </div>
 
-            {/* Prev button */}
             <button
                 onClick={(e) => {
                     e.stopPropagation();
@@ -126,7 +123,6 @@ return;
                 <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
-            {/* Next button */}
             <button
                 onClick={(e) => {
                     e.stopPropagation();
@@ -138,7 +134,6 @@ return;
                 <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
-            {/* Image */}
             <div
                 className="flex max-h-[85vh] w-full max-w-lg items-center justify-center px-14 sm:px-20"
                 onClick={(e) => e.stopPropagation()}
@@ -169,34 +164,58 @@ export default function Testimonials() {
     };
 
     return (
-        <section id="testimoni" className="bg-lp-blue-50/50 py-16 sm:py-24">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className="mx-auto max-w-2xl text-center">
-                    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-lp-blue-100 px-4 py-2">
-                        <Users className="h-5 w-5 text-lp-blue-600" />
-                        <span className="text-sm font-semibold text-lp-blue-700">
-                            7.000+ Orang Sudah Bergabung
+        <section
+            id="testimoni"
+            className="relative overflow-hidden bg-gradient-to-b from-lp-blue-900 via-[#0b1840] to-lp-blue-900 py-20 sm:py-28"
+        >
+            <div className="pointer-events-none absolute inset-0 opacity-60">
+                <div className="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-lp-yellow-400/10 blur-[120px]" />
+            </div>
+
+            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-lp-yellow-400/30 bg-lp-yellow-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-lp-yellow-300">
+                        <Users className="h-3.5 w-3.5" />
+                        7.000+ Alumni
+                    </span>
+                    <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                        Mereka udah paham aturan mainnya.{' '}
+                        <span className="text-lp-yellow-400">
+                            Sekarang giliran kamu.
                         </span>
-                    </div>
-                    <h2 className="text-2xl font-semibold text-lp-slate-900 sm:text-3xl lg:text-4xl">
-                        Dipercaya oleh ribuan
-                        <br />
-                        pebisnis pemula di seluruh Indonesia
                     </h2>
-                    <p className="mt-4 text-base text-lp-slate-500 sm:text-lg">
-                        Ini kata mereka yang sudah merasakan manfaatnya.
+                    <p className="mt-4 text-base text-white/65 sm:text-lg">
+                        Ribuan pebisnis pemula di seluruh Indonesia sudah
+                        merasakan manfaatnya.
                     </p>
                 </div>
 
+                {/* Stats strip */}
+                <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:gap-8">
+                    {[
+                        { v: '7.000+', l: 'Alumni' },
+                        { v: '4.9/5', l: 'Rating' },
+                        { v: '95%', l: 'Selesai materi' },
+                    ].map((s) => (
+                        <div key={s.l} className="text-center">
+                            <p className="text-2xl font-bold text-lp-yellow-400 sm:text-3xl">
+                                {s.v}
+                            </p>
+                            <p className="mt-1 text-xs uppercase tracking-wider text-white/50 sm:text-sm">
+                                {s.l}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
                 {/* 2x2 Image Grid */}
-                <div className="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-3 sm:mt-16 sm:gap-4">
+                <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:gap-4">
                     {gridImages.map((img, i) => (
                         <button
                             key={img.id}
                             type="button"
                             onClick={() => openLightbox(i)}
-                            className="aspect-square cursor-pointer overflow-hidden rounded-xl shadow-sm transition-transform duration-200 hover:scale-[1.02] sm:rounded-2xl"
+                            className="group relative aspect-square cursor-pointer overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/30 transition-transform duration-300 hover:scale-[1.02] hover:border-lp-yellow-400/40"
                         >
                             <img
                                 src={img.src}
@@ -204,14 +223,15 @@ export default function Testimonials() {
                                 className="h-full w-full object-cover"
                                 loading="lazy"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-lp-blue-900/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                            <Quote className="absolute right-3 top-3 h-5 w-5 text-lp-yellow-400/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                         </button>
                     ))}
                 </div>
 
-                {/* Horizontal Carousel */}
+                {/* Carousel */}
                 <div className="mt-6 overflow-hidden sm:mt-8">
                     <div className="animate-carousel flex gap-3 sm:gap-4">
-                        {/* Duplicate images for seamless infinite loop */}
                         {[...carouselImages, ...carouselImages].map(
                             (img, index) => {
                                 const globalIndex =
@@ -225,7 +245,7 @@ export default function Testimonials() {
                                         onClick={() =>
                                             openLightbox(globalIndex)
                                         }
-                                        className="aspect-square w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl shadow-sm transition-transform duration-200 hover:scale-[1.03] sm:w-40 md:w-48 lg:w-52"
+                                        className="aspect-square w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl border border-white/10 shadow-md shadow-black/30 transition-transform duration-300 hover:scale-[1.03] hover:border-lp-yellow-400/40 sm:w-40 md:w-48 lg:w-52"
                                     >
                                         <img
                                             src={img.src}
@@ -240,12 +260,22 @@ export default function Testimonials() {
                     </div>
                 </div>
 
-                <div className="mt-12 sm:mt-14">
-                    <CtaButton id="testimonial-cta" onClick={() => trackCTA('testimonials_section', 'Dapatkan Panduannya Sekarang', '#harga')} />
+                <div className="mt-14 sm:mt-16">
+                    <CtaButton
+                        id="testimonial-cta"
+                        text="Saya Juga Mau Hasil Seperti Mereka"
+                        size="large"
+                        onClick={() =>
+                            trackCTA(
+                                'testimonials_section',
+                                'Dapatkan Panduannya Sekarang',
+                                '#harga',
+                            )
+                        }
+                    />
                 </div>
             </div>
 
-            {/* Lightbox Modal */}
             {lightboxIndex !== null && (
                 <Lightbox
                     images={allImages}

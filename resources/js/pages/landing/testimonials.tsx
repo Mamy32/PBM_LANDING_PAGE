@@ -76,40 +76,35 @@ export default function Testimonials() {
                     </p>
                 </div>
 
-{/* Screenshots */}
-<div className="mx-auto max-w-4xl">
-    <div className="grid items-start gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        {/* Main proof image */}
-        <div className="flex justify-center">
-            <img
-                src="/images/shaundju/proof.png"
-                alt="Success Story"
-                className="w-[70%] rounded-xl lg:w-[75%]"
-            />
-        </div>
+                {/* Screenshots */}
+                <div className="mx-auto mt-20 flex flex-col items-center justify-center gap-10 lg:flex-row">
 
-        {/* Small screenshots */}
-        <div className="grid grid-cols-3 gap-3 lg:grid-cols-1">
-            <img
-                src="/images/shaundju/Screenshot1.png"
-                alt="Testimonial 1"
-                className="w-full rounded-lg"
-            />
+                    <img
+                        src="/images/shaundju/proof.png"
+                        alt="Phone testimonial"
+                        className="w-[380px] max-w-full"
+                    />
 
-            <img
-                src="/images/shaundju/Screenshot2.png"
-                alt="Testimonial 2"
-                className="w-full rounded-lg"
-            />
+                    <div className="flex flex-col gap-4">
+                            <img
+                                src="/images/shaundju/Screenshot1.png"
+                                alt="Testimonial 1"
+                                className="w-full rounded-lg"
+                            />
 
-            <img
-                src="/images/shaundju/Screenshot3.png"
-                alt="Testimonial 3"
-                className="w-full rounded-lg"
-            />
-        </div>
-    </div>
-</div>
+                            <img
+                                src="/images/shaundju/Screenshot2.png"
+                                alt="Testimonial 2"
+                                className="w-full rounded-lg"
+                            />
+
+                            <img
+                                src="/images/shaundju/Screenshot3.png"
+                                alt="Testimonial 3"
+                                className="w-full rounded-lg"
+                            />
+                    </div>
+                </div>
 
                 {/* Testimonial Cards */}
                 <div className="mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

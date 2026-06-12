@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-                        <footer
+    <footer
   className="
     py-24
     bg-gradient-to-r
@@ -15,11 +15,11 @@ export default function Footer() {
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                     {/* Logo */}
                     <div>
-                        <img
-                            src="/images/shaundju/logo_footer.png"
-                            alt="Shaundju Academy"
-                            className="h-10 w-auto"
-                        />
+                       <img
+    src="/images/shaundju/logo_footer.png"
+    alt="Shaundju Academy"
+    className="h-14 w-auto brightness-0 invert"
+/>
                     </div>
 
                     {/* Links */}

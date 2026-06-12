@@ -19,7 +19,7 @@ return (
                     Select Your Package
                 </div>
 
-                <h2 className="mt-8 font-serif text-5xl font-semibold leading-tight text-white">
+                <h2 className="mt-8 font-serif text-3xl md:text-5xl font-semibold leading-tight text-white">
                     Pilih Paket yang Sesuai dengan
                     <br />
                     Target Karier Lo Saat Ini
@@ -27,12 +27,12 @@ return (
             </div>
 
             {/* Pricing Cards */}
-            <div className="mt-16 grid gap-10 lg:grid-cols-2">
+            <div className="mt-10 grid gap-6 md:gap-10 lg:grid-cols-2">
 
                 {/* First Jobbers */}
-                <div className="rounded-[32px] bg-[#E4EBE2] p-10">
+                <div className="rounded-[24px] bg-[#E4EBE2] p-6 md:p-10">
 
-                    <h3 className="text-center font-serif text-4xl font-semibold text-[#123C2D]">
+                    <h3 className="text-center font-serif text-2xl md:text-4xl font-semibold text-[#123C2D]">
                         2x Salary in 3 Years PLUS 5x Salary in 10 years
                     </h3>
 
@@ -44,7 +44,7 @@ return (
                         Rp2.500.000
                     </p>
 
-                    <p className="text-center text-5xl text-[#123C2D]">
+                    <p className="text-center text-3xl md:text-5xl text-[#123C2D]">
                         Rp1.950.000
                     </p>
 
@@ -54,7 +54,7 @@ return (
                         </span>
                     </div>
 
-                    <div className="mt-10 space-y-5 text-[#123C2D]">
+                    <div className="mt-6 space-y-3 md:mt-10 md:space-y-5 text-[#123C2D]">
                         <div className="flex gap-3">
                             <Check className="h-5 w-5" />
                             <span>Akses ke Modul 1, 2, 3, 4</span>
@@ -85,7 +85,7 @@ return (
                     </div>
 
 <button
-    className="mt-12 w-full rounded-full bg-[#B8C8C0] py-4 text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-[1.02]"
+    className="mt-12 w-full rounded-full bg-[#B8C8C0] py-3 md:py-4 text-base md:text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-[1.02]"
     onClick={() => {
         const eventId = generateEventId();
 
@@ -116,9 +116,9 @@ return (
                 </div>
 
                 {/* Managers */}
-                <div className="rounded-[32px] border border-[#9DFF70] bg-[#123C2D] p-10">
+                <div className="rounded-[24px] border border-[#9DFF70] bg-[#123C2D] p-6 md:p-10">
 
-                    <h3 className="text-center font-serif text-4xl font-semibold text-[#9DFF70]">
+                    <h3 className="text-center font-serif text-2xl md:text-4xl font-semibold text-[#9DFF70]">
                         Penetrate Executive Status
                         <br />
                         & Triple Digit Salary
@@ -132,7 +132,7 @@ return (
                         Rp3.500.000
                     </p>
 
-                    <p className="text-center text-5xl text-white">
+                    <p className="text-center text-3xl md:text-5xl text-white">
                         Rp2.950.000
                     </p>
 
@@ -142,7 +142,7 @@ return (
                         </span>
                     </div>
 
-                    <div className="mt-10 space-y-5 text-white">
+                    <div className="mt-6 space-y-3 md:mt-10 md:space-y-5 text-white">
                         <div className="flex gap-3">
                             <Check className="h-5 w-5 text-[#9DFF70]" />
                             <span>Akses ke Modul 1, 2, 3, 4, 5</span>
@@ -173,7 +173,7 @@ return (
                     </div>
 
                   <button
-    className="mt-12 w-full rounded-full bg-[#9DFF70] py-4 text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-[1.02]"
+    className="mt-12 w-full rounded-full bg-[#9DFF70] py-3 md:py-4 text-base md:text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-[1.02]"
     onClick={() => {
         const eventId = generateEventId();
 

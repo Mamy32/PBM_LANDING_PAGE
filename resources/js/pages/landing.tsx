@@ -6,7 +6,6 @@ import { useDwellTime } from '@/hooks/use-dwell-time';
 import { useScrollTracking } from '@/hooks/use-scroll-tracking';
 import Faq from './landing/faq';
 import Footer from './landing/footer';
-import Guarantee from './landing/guarantee';
 import Hero from './landing/hero';
 import Instructor from './landing/instructor';
 import Navbar from './landing/navbar';
@@ -14,9 +13,9 @@ import Pricing from './landing/pricing';
 import Problem from './landing/problem';
 import Solution from './landing/solution';
 import Testimonials from './landing/testimonials';
-import ValueStack from './landing/value-stack';
 import SuccessStory from './landing/success-story';
 import PracticalBenefits from './landing/practical-benefits';
+import MediaFeatures from './landing/media-features';
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -64,9 +63,8 @@ export default function Landing() {
                 <PracticalBenefits />
                 <Testimonials />
                 <Instructor />
-                <ValueStack />
+                <MediaFeatures />
                 <Pricing />
-                <Guarantee />
                 <Faq />
                 <Footer />
             </div>

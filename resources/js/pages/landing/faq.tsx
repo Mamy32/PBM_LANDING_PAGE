@@ -1,46 +1,41 @@
-import { HelpCircle, Plus } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 const faqItems = [
     {
         question: 'Apakah kelas ini cocok untuk fresh graduate?',
         answer:
-            'Ya. Semakin cepat memahami dunia kerja, semakin cepat karier Anda berkembang. Modul untuk First Jobbers dirancang khusus untuk yang baru memulai perjalanan karier.',
+            'Ya. Semakin cepat memahami dunia kerja, semakin cepat karier Anda berkembang.',
     },
     {
         question: 'Apakah kelas ini cocok untuk karyawan berpengalaman?',
         answer:
-            'Ya. Cocok untuk profesional yang merasa kariernya mulai stagnan dan ingin naik ke level berikutnya. Paket Managers dirancang khusus untuk akselerasi ke posisi eksekutif.',
+            'Ya. Cocok untuk profesional yang merasa kariernya mulai stagnan dan ingin naik ke level berikutnya.',
     },
     {
         question: 'Apakah pembelajarannya live?',
         answer:
-            'Tidak. Kelas dapat diakses online secara fleksibel sesuai waktu Anda. Anda juga mendapatkan akses ke rekaman live session dari batch-batch sebelumnya.',
+            'Tidak. Kelas dapat diakses online secara fleksibel sesuai waktu Anda.',
     },
     {
-        question: 'Apakah ada sesi mentoring langsung dengan Coach Shaun?',
+        question: 'Apakah ada sesi mentoring langsung dengan Pak Shaun?',
         answer:
-            'Untuk paket Managers, terdapat fitur Review PR Personal langsung oleh Shaun Dju. Materi juga disusun untuk dipelajari secara mandiri dan sistematis.',
+            'Tidak. Materi disusun untuk dipelajari secara mandiri dan sistematis.',
     },
     {
         question: 'Berapa lama akses kelas diberikan?',
         answer:
-            'Sesuai kebijakan akses yang berlaku saat pembelian. Pastikan Anda membaca ketentuan sebelum melakukan pembelian.',
+            'Sesuai kebijakan akses yang berlaku saat pembelian.',
     },
     {
         question: 'Apakah materinya hanya teori?',
         answer:
-            'Tidak. Setiap modul dilengkapi tugas praktik (PR) yang dapat langsung diterapkan di dunia kerja. Setelah selesai satu BAB, ada assignment yang bisa langsung Anda coba di kantor.',
+            'Tidak. Setiap modul dilengkapi tugas praktik yang dapat langsung diterapkan di dunia kerja.',
     },
     {
         question: 'Apakah kelas ini menjamin promosi atau kenaikan gaji?',
         answer:
-            'Tidak. Namun Anda akan mempelajari kemampuan dan strategi yang digunakan para top performer untuk berkembang lebih cepat dalam karier. Hasilnya bergantung pada usaha dan konsistensi Anda.',
-    },
-    {
-        question: 'Apa perbedaan paket First Jobbers dan Managers?',
-        answer:
-            'Paket First Jobbers terdiri dari 4 modul, cocok untuk yang baru masuk dunia kerja dan ingin 2x salary dalam 3 tahun. Paket Managers terdiri dari 5 modul dan dilengkapi Review PR Personal langsung oleh Shaun, dirancang untuk mencapai posisi eksekutif dan gaji 3 digit.',
+            'Tidak. Namun Anda akan mempelajari kemampuan yang dibutuhkan untuk berkembang lebih cepat dalam karier.',
     },
 ];
 
@@ -54,89 +49,71 @@ export default function Faq() {
     return (
         <section
             id="faq"
-            className="relative bg-[#0C1F13] py-20 sm:py-28"
+            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-24"
         >
-            <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl px-6">
+                {/* Header */}
                 <div className="text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
-                        <HelpCircle className="h-3.5 w-3.5 text-[#4ADE80]" />
+                    <div className="inline-flex items-center rounded-full border border-white px-5 py-2 text-sm text-white">
                         FAQ
-                    </span>
-                    <h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-                        Pertanyaan yang{' '}
-                        <span className="text-[#4ADE80]">
-                            sering ditanyakan
-                        </span>
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                    </div>
+
+                    <h2 className="mt-8 font-serif text-5xl font-semibold leading-tight text-[#9DFF70]">
+                        Pertanyaan yang sering ditanyakan
                     </h2>
-                    <p className="mt-4 text-base text-white/60 sm:text-lg">
-                        Belum nemu jawabannya? Hubungi kami langsung.
-                    </p>
                 </div>
 
-                <div className="mt-12 space-y-3 sm:mt-14">
+                {/* FAQ Card */}
+                <div className="mx-auto mt-14 max-w-5xl rounded-[32px] bg-[#ECECEC] px-10 py-8">
                     {faqItems.map((item, index) => {
                         const isOpen = openIndex === index;
+
                         return (
                             <div
                                 key={index}
-                                className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
-                                    isOpen
-                                        ? 'border-[#4ADE80]/35 bg-white/[0.05]'
-                                        : 'border-white/10 bg-white/[0.02] hover:border-white/20'
-                                }`}
+                                className="border-b border-black/10 py-6 last:border-none"
                             >
                                 <button
-                                    id={`faq-item-${index}`}
                                     onClick={() => toggle(index)}
-                                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-7"
+                                    className="flex w-full items-center justify-between text-left"
                                 >
-                                    <span
-                                        className={`text-sm font-bold sm:text-base ${
-                                            isOpen
-                                                ? 'text-[#4ADE80]'
-                                                : 'text-white'
-                                        }`}
-                                    >
+                                    <span className="text-lg font-semibold text-[#123C2D]">
                                         {item.question}
                                     </span>
-                                    <span
-                                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                                            isOpen
-                                                ? 'rotate-45 bg-[#4ADE80] text-[#0C1F13]'
-                                                : 'bg-white/10 text-white/70'
+
+                                    <ChevronDown
+                                        className={`h-5 w-5 text-[#123C2D] transition-transform duration-300 ${
+                                            isOpen ? 'rotate-180' : ''
                                         }`}
-                                    >
-                                        <Plus className="h-4 w-4" />
-                                    </span>
+                                    />
                                 </button>
-                                <div
-                                    className={`grid transition-all duration-300 ease-in-out ${
-                                        isOpen
-                                            ? 'grid-rows-[1fr] opacity-100'
-                                            : 'grid-rows-[0fr] opacity-0'
-                                    }`}
-                                >
-                                    <div className="overflow-hidden">
-                                        <p className="px-5 pb-6 text-sm leading-relaxed text-white/70 sm:px-7 sm:text-base">
-                                            {item.answer}
-                                        </p>
-                                    </div>
-                                </div>
+
+                                {isOpen && (
+                                    <p className="mt-4 text-base leading-relaxed text-[#123C2D]/80">
+                                        {item.answer}
+                                    </p>
+                                )}
                             </div>
                         );
                     })}
                 </div>
 
-                <div className="mt-12 text-center">
-                    <p className="text-sm text-white/60">
-                        Masih ada pertanyaan lain?{' '}
-                        <a
-                            href="#footer"
-                            className="font-bold text-[#4ADE80] underline-offset-4 hover:underline"
-                        >
-                            Hubungi kami sekarang
-                        </a>
+                {/* Bottom CTA */}
+                <div className="mt-14 text-center">
+                    <p className="mb-5 text-white/80">
+                        Masih ada pertanyaan lain? Hubungi kami sekarang.
                     </p>
+
+                    <a
+                        href="https://wa.me/6281234567890"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-full bg-[#9DFF70] px-8 py-4 text-lg font-semibold text-[#123C2D] transition-all duration-300 hover:scale-105"
+                    >
+                        Chat via WA
+                        <ChevronDown className="-rotate-90 ml-2 h-4 w-4" />
+                    </a>
                 </div>
             </div>
         </section>

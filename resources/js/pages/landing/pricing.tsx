@@ -11,7 +11,7 @@ return (
         id="harga"
         className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-24"
     >
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
             {/* Header */}
             <div className="text-center">
@@ -27,10 +27,10 @@ return (
             </div>
 
             {/* Pricing Cards */}
-            <div className="mt-10 grid gap-6 md:gap-10 lg:grid-cols-2">
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
 
                 {/* First Jobbers */}
-                <div className="rounded-[24px] bg-[#E4EBE2] p-6 md:p-10">
+                <div className="mx-auto w-full max-w-md rounded-[24px] bg-[#E4EBE2] p-6 md:max-w-none md:p-10">
 
                     <h3 className="text-center font-serif text-2xl md:text-4xl font-semibold text-[#123C2D]">
                         2x Salary in 3 Years PLUS 5x Salary in 10 years
@@ -116,7 +116,7 @@ return (
                 </div>
 
                 {/* Managers */}
-                <div className="rounded-[24px] border border-[#9DFF70] bg-[#123C2D] p-6 md:p-10">
+               <div className="mx-auto w-full max-w-md rounded-[24px] border border-[#9DFF70] bg-[#123C2D] p-6 md:max-w-none md:p-10">
 
                     <h3 className="text-center font-serif text-2xl md:text-4xl font-semibold text-[#9DFF70]">
                         Penetrate Executive Status

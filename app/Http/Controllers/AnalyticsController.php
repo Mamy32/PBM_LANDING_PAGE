@@ -156,11 +156,12 @@ class AnalyticsController extends Controller
             ->distinct('session_id')
             ->count();
 
-        $engaged = UserAnalytic::where('event_type', 'engagement')
-            ->where('created_at', '>=', $startDate)
-            ->where('event_data->type', 'dwell_ping')
-            ->distinct('session_id')
-            ->count();
+$engaged = UserAnalytic::where('event_type', 'engagement')
+    ->where('created_at', '>=', $startDate)
+    ->where('event_data->type', 'dwell_ping')
+    ->pluck('session_id')
+    ->unique()
+    ->count();
 
         $registrations = UserAnalytic::where('event_type', 'conversion')
             ->where('created_at', '>=', $startDate)

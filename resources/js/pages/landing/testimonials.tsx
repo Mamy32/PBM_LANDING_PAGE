@@ -85,7 +85,7 @@ export default function Testimonials() {
                         className="w-[380px] max-w-full"
                     />
 
-                    <div className="flex flex-col gap-4">
+                    <div className="flex w-[220px] flex-col gap-4">
                             <img
                                 src="/images/shaundju/Screenshot1.png"
                                 alt="Testimonial 1"

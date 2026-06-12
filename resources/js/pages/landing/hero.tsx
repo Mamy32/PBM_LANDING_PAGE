@@ -27,7 +27,7 @@ export default function Hero() {
                 <div className="grid min-h-screen items-center gap-10 lg:grid-cols-2">
 
                     {/* LEFT SIDE */}
-                    <div className="pt-20 lg:pt-0">
+                    <div className="pb-12 pt-10 text-center lg:pb-0 lg:pt-0 lg:text-left">
 
                         {/* LOGO */}
                         <img
@@ -126,7 +126,7 @@ hover:scale-[1.02]
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div className="relative order-first flex justify-center lg:order-last lg:justify-end">
+                    <div className="relative flex justify-center lg:order-last lg:justify-end">
 
                         <img
                             src="/images/shaundju/photo_header.png"

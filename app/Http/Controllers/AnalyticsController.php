@@ -113,9 +113,9 @@ private function getAnalyticsStats($startDate)
         'total_visits' => $totalVisits,
         'unique_visitors' => $uniqueVisitors,
 
-        'engagement_rate' => $totalVisits > 0
-            ? round(($engagementUsers / $totalVisits) * 100, 2)
-            : 0,
+        'engagement_rate' => $uniqueVisitors > 0
+    ? round(($engagementUsers / $uniqueVisitors) * 100, 2)
+    : 0,
 
         'conversion_rate' => $totalVisits > 0
             ? round(($registrations / $totalVisits) * 100, 2)

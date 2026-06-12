@@ -1,100 +1,47 @@
-import { Instagram, Mail, MessageCircle } from 'lucide-react';
-
 export default function Footer() {
     return (
         <footer
             id="footer"
-            className="relative border-t border-white/10 bg-[#080F0A] py-14 sm:py-16"
+            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D]"
         >
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    {/* Brand */}
+            <div className="mx-auto max-w-7xl px-6 py-10">
+                {/* Top Row */}
+                <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+                    {/* Logo */}
                     <div>
-                        <div className="flex items-center gap-2.5">
-                            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#4ADE80] text-sm font-extrabold text-[#0C1F13]">
-                                S
-                            </span>
-                            <span className="text-base font-bold text-white">
-                                Shaundju<span className="text-[#4ADE80]"> Academy</span>
-                            </span>
-                        </div>
-                        <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-                            Platform akselerasi karier untuk profesional yang serius naik ke level berikutnya.
-                        </p>
+                        <img
+                            src="/images/shaundju/logo_footer.png"
+                            alt="Shaundju Academy"
+                            className="h-10 w-auto"
+                        />
                     </div>
 
                     {/* Links */}
-                    <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">
-                            Navigasi
-                        </p>
-                        <ul className="mt-4 space-y-2.5 text-sm">
-                            {[
-                                { href: '#materi', label: 'Materi' },
-                                { href: '#testimoni', label: 'Testimoni' },
-                                { href: '#harga', label: 'Harga' },
-                                { href: '#faq', label: 'FAQ' },
-                            ].map((l) => (
-                                <li key={l.href}>
-                                    <a
-                                        href={l.href}
-                                        className="text-white/65 transition-colors hover:text-[#4ADE80]"
-                                    >
-                                        {l.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">
-                            Hubungi Kami
-                        </p>
-                        <div className="mt-4 flex gap-3">
-                            {[
-                                { icon: MessageCircle, label: 'WhatsApp' },
-                                { icon: Instagram, label: 'Instagram' },
-                                { icon: Mail, label: 'Email' },
-                            ].map((s) => (
-                                <a
-                                    key={s.label}
-                                    href="#"
-                                    aria-label={s.label}
-                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all duration-200 hover:border-[#4ADE80]/40 hover:bg-[#4ADE80]/10 hover:text-[#4ADE80]"
-                                >
-                                    <s.icon className="h-4 w-4" />
-                                </a>
-                            ))}
-                        </div>
+                    <div className="flex items-center gap-8">
                         <a
-                            href="#harga"
-                            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#4ADE80] px-5 py-2.5 text-sm font-bold text-[#0C1F13] transition-all duration-200 hover:bg-[#22C55E] hover:-translate-y-0.5"
+                            href="/privacy-policy"
+                            className="text-sm text-white hover:text-[#9DFF70]"
                         >
-                            Mulai Sekarang
+                            Kebijakan Privasi
+                        </a>
+
+                        <a
+                            href="/terms"
+                            className="text-sm text-white hover:text-[#9DFF70]"
+                        >
+                            Syarat & Ketentuan
                         </a>
                     </div>
                 </div>
 
-                <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-                    <p className="text-xs text-white/45">
-                        © {new Date().getFullYear()} Shaundju Academy. All rights reserved.
+                {/* Divider */}
+                <div className="my-8 h-px bg-white/10" />
+
+                {/* Copyright */}
+                <div className="text-center">
+                    <p className="text-sm text-white/70">
+                        © {new Date().getFullYear()} Shaundju Academy. All rights reserved
                     </p>
-                    <div className="flex items-center gap-6">
-                        <a
-                            href="#"
-                            className="text-xs text-white/55 transition-colors hover:text-white/80"
-                        >
-                            Kebijakan Privasi
-                        </a>
-                        <a
-                            href="#"
-                            className="text-xs text-white/55 transition-colors hover:text-white/80"
-                        >
-                            Syarat &amp; Ketentuan
-                        </a>
-                    </div>
                 </div>
             </div>
         </footer>

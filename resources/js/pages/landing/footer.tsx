@@ -1,21 +1,21 @@
 export default function Footer() {
     return (
     <footer
-  className="
+className="
     py-24
     bg-gradient-to-r
     from-[#0B3D2E]
     via-[#072B1F]
     to-[#031610]
     overflow-hidden
-  "
+"
 >
             <div className="mx-auto max-w-7xl px-6 py-10">
                 {/* Top Row */}
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                     {/* Logo */}
                     <div>
-                       <img
+                    <img
     src="/images/shaundju/logo_footer.png"
     alt="Shaundju Academy"
     className="h-14 w-auto brightness-0 invert"

@@ -12,13 +12,13 @@ export default function MediaFeatures() {
                 <div className="mb-16 flex justify-center gap-6">
 
                     <img
-                        src="/images/shaundju/overpost-logo01.png"
+                        src="/images/shaundju/logo01.png"
                         alt="The Overpost"
                         className="h-16 w-16 rounded-full object-cover"
                     />
 
                     <img
-                        src="/images/shaundju/suaraberkelas-logo02.png"
+                        src="/images/shaundju/logo02.png"
                         alt="Suara Berkelas"
                         className="h-16 w-16 rounded-full object-cover"
                     />

@@ -74,66 +74,66 @@ class AnalyticsController extends Controller
         return response()->json(['success' => true]);
     }
 
-private function getAnalyticsStats($startDate)
-{
-    $totalVisits = UserAnalytic::where('event_type', 'visit')
-        ->where('created_at', '>=', $startDate)
-        ->count();
+    private function getAnalyticsStats($startDate)
+    {
+        $totalVisits = UserAnalytic::where('event_type', 'visit')
+            ->where('created_at', '>=', $startDate)
+            ->count();
 
-    $uniqueVisitors = UserAnalytic::where('event_type', 'visit')
-        ->where('created_at', '>=', $startDate)
-        ->distinct('session_id')
-        ->count();
+        $uniqueVisitors = UserAnalytic::where('event_type', 'visit')
+            ->where('created_at', '>=', $startDate)
+            ->distinct('session_id')
+            ->count();
 
-    $engagementUsers = UserAnalytic::where('event_type', 'engagement')
-        ->where('created_at', '>=', $startDate)
-        ->where('event_data->type', 'dwell_ping')
-        ->pluck('session_id')
-        ->unique()
-        ->count();
+        $engagementUsers = UserAnalytic::where('event_type', 'engagement')
+            ->where('created_at', '>=', $startDate)
+            ->where('event_data->type', 'dwell_ping')
+            ->pluck('session_id')
+            ->unique()
+            ->count();
 
-    $registrations = UserAnalytic::where('event_type', 'conversion')
-        ->where('created_at', '>=', $startDate)
-        ->where('event_data->type', 'registration')
-        ->distinct('session_id')
-        ->count();
+        $registrations = UserAnalytic::where('event_type', 'conversion')
+            ->where('created_at', '>=', $startDate)
+            ->where('event_data->type', 'registration')
+            ->distinct('session_id')
+            ->count();
 
-    $paymentAnalytics = UserAnalytic::where('event_type', 'payment')
-        ->where('created_at', '>=', $startDate)
-        ->where('event_data->status', 'success')
-        ->get();
+        $paymentAnalytics = UserAnalytic::where('event_type', 'payment')
+            ->where('created_at', '>=', $startDate)
+            ->where('event_data->status', 'success')
+            ->get();
 
-    $payments = $paymentAnalytics->count();
+        $payments = $paymentAnalytics->count();
 
-    $revenue = $paymentAnalytics->sum(function ($analytic) {
-        return (float) ($analytic->event_data['amount'] ?? 0);
-    });
+        $revenue = $paymentAnalytics->sum(function ($analytic) {
+            return (float) ($analytic->event_data['amount'] ?? 0);
+        });
 
-    return [
-        'total_visits' => $totalVisits,
-        'unique_visitors' => $uniqueVisitors,
+        return [
+            'total_visits' => $totalVisits,
+            'unique_visitors' => $uniqueVisitors,
 
-        'engagement_rate' => $uniqueVisitors > 0
-    ? round(($engagementUsers / $uniqueVisitors) * 100, 2)
-    : 0,
+            'engagement_rate' => $uniqueVisitors > 0
+        ? round(($engagementUsers / $uniqueVisitors) * 100, 2)
+        : 0,
 
-        'conversion_rate' => $totalVisits > 0
-            ? round(($registrations / $totalVisits) * 100, 2)
-            : 0,
+            'conversion_rate' => $totalVisits > 0
+                ? round(($registrations / $totalVisits) * 100, 2)
+                : 0,
 
-        'conversion_to_payment_rate' => $registrations > 0
-            ? round(($payments / $registrations) * 100, 2)
-            : 0,
+            'conversion_to_payment_rate' => $registrations > 0
+                ? round(($payments / $registrations) * 100, 2)
+                : 0,
 
-        'payment_rate' => $totalVisits > 0
-            ? round(($payments / $totalVisits) * 100, 2)
-            : 0,
+            'payment_rate' => $totalVisits > 0
+                ? round(($payments / $totalVisits) * 100, 2)
+                : 0,
 
-        'total_revenue' => $revenue,
-        'registrations' => $registrations,
-        'payments' => $payments,
-    ];
-}
+            'total_revenue' => $revenue,
+            'registrations' => $registrations,
+            'payments' => $payments,
+        ];
+    }
 
     private function getChartData($startDate)
     {

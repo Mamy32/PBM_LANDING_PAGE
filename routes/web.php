@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LabsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 
 Route::inertia('/', 'landing')->name('home');
 
@@ -12,7 +12,7 @@ Route::post('/analytics/track', [AnalyticsController::class, 'track'])->name('an
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard');
+        ->name('dashboard');
 
     // Admin routes
     Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {

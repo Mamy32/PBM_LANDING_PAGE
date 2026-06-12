@@ -1,8 +1,8 @@
+import { Head } from '@inertiajs/react';
+import { Activity, TrendingUp, Users, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import AdminLayout from '@/layouts/admin-layout';
-import { Head } from '@inertiajs/react';
-import { Activity, TrendingUp, Users, Zap } from 'lucide-react';
 import type { BreadcrumbItem } from '@/types';
 interface AdminDashboardProps {
     stats: {

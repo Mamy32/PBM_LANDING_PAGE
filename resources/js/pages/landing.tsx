@@ -8,14 +8,14 @@ import Faq from './landing/faq';
 import Footer from './landing/footer';
 import Hero from './landing/hero';
 import Instructor from './landing/instructor';
+import MediaFeatures from './landing/media-features';
 import Navbar from './landing/navbar';
+import PracticalBenefits from './landing/practical-benefits';
 import Pricing from './landing/pricing';
 import Problem from './landing/problem';
 import Solution from './landing/solution';
-import Testimonials from './landing/testimonials';
 import SuccessStory from './landing/success-story';
-import PracticalBenefits from './landing/practical-benefits';
-import MediaFeatures from './landing/media-features';
+import Testimonials from './landing/testimonials';
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 

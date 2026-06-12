@@ -1,6 +1,5 @@
-import { useAnalytics } from '@/hooks/use-analytics';
-import CtaButton from './cta-button';
 import { Star } from 'lucide-react';
+import { useAnalytics } from '@/hooks/use-analytics';
 export default function Hero() {
     const { trackCTA } = useAnalytics();
 

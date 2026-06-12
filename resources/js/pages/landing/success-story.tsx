@@ -1,5 +1,3 @@
-import CtaButton from './cta-button';
-
 export default function SuccessStory() {
     return (
         <section className="bg-[#EEF5EA] py-24">

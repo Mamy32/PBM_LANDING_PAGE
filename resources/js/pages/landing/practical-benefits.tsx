@@ -63,10 +63,8 @@ export default function PracticalBenefits() {
                         </span>
                     </h3>
 
-                   <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg lg:text-xl">
-                        Setiap selesai satu BAB,
-                        <br />
-                        ada tugas yang bisa langsung lo coba di kantor.
+                <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg lg:text-xl">
+                        Ini 3 topik yang bakal gue ajarin"
                     </p>
                 </div>
 
@@ -101,23 +99,7 @@ export default function PracticalBenefits() {
                     <CtaButton text="Mulai Belajar Sekarang" />
                 </div>
 
-                {/* Features */}
-                <div className="mt-8 flex flex-col items-center gap-3 text-center text-sm text-white/80 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
-                    <div className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-[#9DFF70]" />
-                        <span>75+ Materi Strategi Naik Gaji</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-[#9DFF70]" />
-                        <span>Lifetime Access</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-[#9DFF70]" />
-                        <span>Join Top Performer Community</span>
-                    </div>
-                </div>
+                
             </div>
         </section>
     );

@@ -26,8 +26,8 @@ export default function Hero() {
                 <div className="grid min-h-screen items-center gap-10 lg:grid-cols-2">
 
                     {/* LEFT SIDE */}
-                    <div className="pb-12 pt-10 text-center lg:pb-0 lg:pt-0 lg:text-left">
-
+                    <div className="pb-12 pt-20 lg:pt-0 text-center lg:pb-0 lg:pt-0 lg:text-left">
+                    
                         {/* LOGO */}
                         <img
                             src="/images/shaundju/logo_header.png"

@@ -32,7 +32,7 @@ export default function Hero() {
                         <img
                             src="/images/shaundju/logo_header.png"
                             alt="Shaundju Academy"
-                            className="h-10 sm:h-12 lg:h-16 w-auto"
+                            className="mx-auto h-16 w-auto sm:h-20 lg:mx-0 lg:h-16"
                         />
 
                         {/* MEMBERS BADGE */}

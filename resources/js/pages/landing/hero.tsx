@@ -117,7 +117,7 @@ hover:scale-[1.02]
                         </div>
 
                         {/* BENEFITS */}
-                        <div className="mt-8 flex flex-col gap-3 text-sm text-white sm:flex-row sm:flex-wrap sm:gap-6">
+                        <div className="mt-6 flex flex-col gap-2 text-xs text-white sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-6 sm:text-sm">
                             <div>✓ 75+ Materi Strategi Naik Gaji</div>
                             <div>✓ Lifetime Access</div>
                             <div>✓ Join Top Performer Community</div>

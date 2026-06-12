@@ -7,30 +7,32 @@ export default function Solution() {
     return (
     <section
     id="solusi"
-    className="bg-[#A6C98D] py-24"
+   className="bg-[#8FB278] py-24 lg:py-32"
 >
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:gap-28 lg:grid-cols-2">
 
             {/* IMAGE */}
             <div className="flex justify-center">
-                <div className="overflow-hidden rounded-2xl lg:rounded-[28px] border border-[#C7F2A5] bg-[#052E26]">
-                    <img
-                        src="/images/shaundju/mentor.png"
-                        alt="Shaun"
-                        className="h-[320px] sm:h-[420px] lg:h-[520px] w-auto object-cover"
-                    />
-                </div>
-            </div>
+    <div className="rounded-[28px] border border-[#A8FF7E] p-3">
+        <div className="overflow-hidden rounded-[24px] bg-[#052E26]">
+            <img
+                src="/images/shaundju/mentor.png"
+                alt="Shaun"
+                className="h-[320px] sm:h-[420px] lg:h-[520px] w-auto object-cover"
+            />
+        </div>
+    </div>
+</div>
 
             {/* CONTENT */}
-            <div className="text-center lg:text-left">
+        <div className="max-w-[520px] text-center lg:text-left">
 
                 <div className="mb-4 inline-flex items-center rounded-full border border-[#16352A] px-4 py-2 text-xs sm:text-sm text-[#16352A]">
                     Solution
                 </div>
 
-                <h2 className="max-w-md font-serif text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+                <h2 className="max-w-[500px] font-serif text-4xl sm:text-5xl lg:text-[64px] leading-[1.1] text-white">
                     Disini Gua bakal
                     <br />
                     bongkar hacks
@@ -57,20 +59,30 @@ export default function Solution() {
                                 '#harga',
                             )
                         }
+                        className="
+rounded-full
+bg-gradient-to-r
+from-[#234538]
+to-[#102D24]
+text-[#A8FF7E]
+font-bold
+border border-white/10
+shadow-lg
+"
                     />
                 </div>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
-                    <div className="rounded-full bg-white/40 px-4 py-2 text-center text-xs sm:text-sm text-[#16352A]">
+                    <div className="rounded-full border border-white/80 bg-transparent px-3 py-1 text-center text-xs sm:text-sm text-[#16352A]">
                         ✓ 75+ Materi Strategi Naik Gaji
                     </div>
 
-                    <div className="rounded-full bg-white/40 px-4 py-2 text-center text-xs sm:text-sm text-[#16352A]">
+                    <div className="rounded-full border border-white/80 bg-transparent px-3 py-1 text-center text-xs sm:text-sm text-[#16352A]">
                         ✓ Lifetime Access
                     </div>
 
-                    <div className="rounded-full bg-white/40 px-4 py-2 text-center text-xs sm:text-sm text-[#16352A]">
+                    <div className="rounded-full border border-white/80 bg-transparent px-3 py-1 text-center text-xs sm:text-sm text-[#16352A]">
                         ✓ Join Top Performer Community
                     </div>
 

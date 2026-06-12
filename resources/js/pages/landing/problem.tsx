@@ -17,7 +17,16 @@ export default function Problem() {
     ];
 
     return (
-        <section className="bg-[#DDE7D5] py-24">
+        <section
+  className="
+    py-24
+    bg-gradient-to-r
+    from-[#0B3D2E]
+    via-[#072B1F]
+    to-[#031610]
+    overflow-hidden
+  "
+>
             <div className="mx-auto max-w-6xl px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     {/* LEFT */}

@@ -86,7 +86,7 @@ export default function Testimonials() {
                     />
 
                     <img
-                        src="/images/shaundju/screenshot1.png"
+                        src="/images/shaundju/Screenshot1.png"
                         alt="Chat testimonials"
                         className="w-[170px] max-w-full"
                     />

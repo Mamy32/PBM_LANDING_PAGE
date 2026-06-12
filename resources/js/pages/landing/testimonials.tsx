@@ -59,33 +59,33 @@ export default function Testimonials() {
                     'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
             }}
         >
-            <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
                 {/* Header */}
                 <div className="text-center">
-                    <div className="inline-flex items-center rounded-full border border-white/40 px-4 py-1 text-sm text-white">
+                    <div className="inline-flex items-center rounded-full border border-white/40 px-4 py-1 text-xs sm:text-sm text-white">
                         Testimony
                     </div>
 
-                    <h2 className="mt-6 font-serif text-5xl font-bold text-[#9DFF70]">
+                    <h2 className="mt-6 font-serif text-4xl font-bold text-[#9DFF70] sm:text-5xl">
                         Apa Kata Alumni?
                     </h2>
 
-                    <p className="mt-4 text-xl text-white">
+                    <p className="mt-4 text-base text-white sm:text-lg lg:text-xl">
                         Mereka Udah Paham Aturan Mainnya, Sekarang Giliran Lo
                     </p>
                 </div>
 
                 {/* Screenshots */}
-                <div className="mx-auto mt-20 flex flex-col items-center justify-center gap-10 lg:flex-row">
+                <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:gap-10">
 
                     <img
                         src="/images/shaundju/proof.png"
                         alt="Phone testimonial"
-                        className="w-[380px] max-w-full"
+                        className="w-[260px] sm:w-[320px] lg:w-[380px] max-w-full"
                     />
 
-                    <div className="flex w-[220px] flex-col gap-4">
+                    <div className="flex w-[150px] sm:w-[180px] lg:w-[220px] flex-col gap-3 lg:gap-4">
                             <img
                                 src="/images/shaundju/Screenshot1.png"
                                 alt="Testimonial 1"
@@ -107,17 +107,17 @@ export default function Testimonials() {
                 </div>
 
                 {/* Testimonial Cards */}
-                <div className="mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
                     {testimonials.map((item) => (
                         <div
                             key={item.name}
-                            className="rounded-[28px] bg-[#04261B] p-8"
+                            className="rounded-2xl lg:rounded-[28px] bg-[#04261B] p-5 sm:p-6 lg:p-8"
                         >
                             <div className="flex items-center gap-4">
                                 <img
                                     src={item.image}
                                     alt={item.name}
-                                    className="h-14 w-14 rounded-full object-cover"
+                                    className="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover"
                                 />
 
                                 <div>
@@ -131,9 +131,9 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            <Quote className="mt-6 h-8 w-8 text-white" />
+                            <Quote className="mt-4 sm:mt-6 h-6 w-6 sm:h-8 sm:w-8 text-white" />
 
-                            <p className="mt-4 text-sm leading-relaxed text-white/80">
+                            <p className="mt-3 sm:mt-4 text-sm leading-relaxed text-white/80">
                                 {item.quote}
                             </p>
                         </div>
@@ -141,7 +141,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-16 text-center">
+                <div className="mt-12 lg:mt-16 text-center">
                     <CtaButton
                         id="testimonial-cta"
                         text="Bongkar Hacks-nya Sekarang"
@@ -157,7 +157,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Features */}
-                <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white">
+                <div className="mt-8 flex flex-col items-center gap-3 text-center text-sm text-white sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
                     <div className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-[#9DFF70]" />
                         <span>75+ Materi Strategi Naik Gaji</span>

@@ -29,10 +29,10 @@ export default function PracticalBenefits() {
             'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
     }}
 >
-            <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 {/* Main Heading */}
                 <div className="text-center">
-                    <h2 className="font-serif text-5xl leading-tight md:text-6xl">
+                    <h2 className="font-serif text-4xl leading-tight sm:text-5xl md:text-6xl">
                         <span className="text-[#9DFF70]">
                             Ini saatnya
                         </span>
@@ -44,7 +44,7 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* Badge */}
-                <div className="mt-16 flex justify-center">
+                <div className="mt-10 sm:mt-16 flex justify-center">
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm text-white">
                         Cuma di Shaundju Academy
                         <ChevronDown className="h-4 w-4" />
@@ -53,7 +53,7 @@ export default function PracticalBenefits() {
 
                 {/* Secondary Heading */}
                 <div className="mx-auto mt-14 max-w-4xl text-center">
-                    <h3 className="font-serif text-4xl leading-tight md:text-6xl">
+                    <h3 className="font-serif text-3xl leading-tight sm:text-5xl md:text-6xl">
                         <span className="text-[#9DFF70]">
                             Gak cuma teori,
                         </span>
@@ -63,7 +63,7 @@ export default function PracticalBenefits() {
                         </span>
                     </h3>
 
-                    <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/90">
+                   <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg lg:text-xl">
                         Setiap selesai satu BAB,
                         <br />
                         ada tugas yang bisa langsung lo coba di kantor.
@@ -71,11 +71,11 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* Cards */}
-                <div className="mt-20 grid gap-8 md:grid-cols-3">
+                <div className="mt-12 grid gap-6 md:grid-cols-3 lg:mt-20">
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className="flex min-h-[320px] flex-col items-center rounded-[28px] bg-[#04261B] px-8 py-10 text-center"
+                            className="flex min-h-[260px] sm:min-h-[300px] flex-col items-center rounded-2xl lg:rounded-[28px] bg-[#04261B] px-5 sm:px-6 lg:px-8 py-8 sm:py-10 text-center"
                         >
                             <div className="mb-8 flex h-24 w-24 items-center justify-center rounded-full border border-[#9DFF70]">
                                 <img
@@ -97,12 +97,12 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-20 flex justify-center">
+                <div className="mt-12 lg:mt-20 flex justify-center">
                     <CtaButton text="Mulai Belajar Sekarang" />
                 </div>
 
                 {/* Features */}
-                <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/80">
+                <div className="mt-8 flex flex-col items-center gap-3 text-center text-sm text-white/80 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
                     <div className="flex items-center gap-2">
                         <Check className="h-4 w-4 text-[#9DFF70]" />
                         <span>75+ Materi Strategi Naik Gaji</span>

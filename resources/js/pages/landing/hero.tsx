@@ -68,7 +68,7 @@ export default function Hero() {
                         </div>
 
                         {/* HEADLINE */}
-                        <h1 className="mt-8 font-serif text-[42px] leading-[1.05] text-white sm:text-[50px] lg:text-[75px]">
+                        <h1 className="mt-8 font-serif text-[42px] leading-[1.05] text-white sm:text-[56px] lg:text-[78px]">
                             Cara Dapet Gaji
                             <br />
                             <span className="text-[#A8FF7E]">

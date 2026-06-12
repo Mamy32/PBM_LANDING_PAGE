@@ -23,8 +23,8 @@ export default function Hero() {
                 <div className="absolute right-0 top-0 h-full w-[25%] bg-[#00FF66]/5 blur-[220px]" />
             </div>
 
-            <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
-                <div className="grid min-h-screen items-center lg:grid-cols-2">
+            <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div className="grid min-h-screen items-center gap-10 lg:grid-cols-2">
 
                     {/* LEFT SIDE */}
                     <div className="pt-20 lg:pt-0">
@@ -33,11 +33,11 @@ export default function Hero() {
                         <img
                             src="/images/shaundju/logo_header.png"
                             alt="Shaundju Academy"
-                            className="h-16 w-auto"
+                            className="h-10 sm:h-12 lg:h-16 w-auto"
                         />
 
                         {/* MEMBERS BADGE */}
-                        <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/40 px-5 py-2">
+                        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-2 text-center sm:mt-10">
                             <div className="flex items-center gap-0.5">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Star
@@ -47,29 +47,29 @@ export default function Hero() {
                             ))}
                         </div>
 
-                            <span className="text-sm font-medium text-white">
+                            <span className="text-xs sm:text-sm font-medium text-white">
                                 JOIN 1.000 MEMBERS
                             </span>
 
                             <img
                                 src="/images/shaundju/testi08.png"
                                 alt="Members"
-                                className="h-8 w-auto"
+                                className="h-6 sm:h-8 w-auto"
                             />
                             <img
                                 src="/images/shaundju/testi02.png"
                                 alt="Members"
-                                className="h-8 w-auto"
+                                className="h-6 sm:h-8 w-auto"
                             />
                             <img
                                 src="/images/shaundju/testi04.png"
                                 alt="Members"
-                                className="h-8 w-auto"
+                                className="h-6 sm:h-8 w-auto"
                             />
                         </div>
 
                         {/* HEADLINE */}
-                        <h1 className="mt-10 font-serif text-[50px] leading-[1.05] text-white lg:text-[78px]">
+                        <h1 className="mt-8 font-serif text-[42px] leading-[1.05] text-white sm:text-[56px] lg:text-[78px]">
                             Cara Dapet Gaji
                             <br />
                             <span className="text-[#A8FF7E]">
@@ -80,7 +80,7 @@ export default function Hero() {
                         </h1>
 
                         {/* DESCRIPTION */}
-                        <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/85">
+                        <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
                             Capek <strong>networking & kerja keras</strong> setiap hari
                             tapi gaji gak naik-naik? Pelajari strategi yang digunakan
                             para top performer untuk mempercepat kenaikan penghasilan.
@@ -91,28 +91,34 @@ export default function Hero() {
                             <button
                                 onClick={handleCtaClick}
                                 className="
-                                rounded-full
-                                px-10
-                                py-4
-                                text-3xl
-                                font-bold
-                                text-[#B8FF8D]
-                                bg-gradient-to-b
-                                from-[#3E6652]
-                                to-[#244437]
-                                border
-                                border-[#9FFF9F]/20
-                                shadow-[0_0_40px_rgba(120,255,120,0.15)]
-                                transition-all
-                                hover:scale-[1.02]
-                            "
+w-full
+sm:w-auto
+rounded-full
+px-6
+sm:px-10
+py-3
+sm:py-4
+text-lg
+sm:text-2xl
+lg:text-3xl
+font-bold
+text-[#B8FF8D]
+bg-gradient-to-b
+from-[#3E6652]
+to-[#244437]
+border
+border-[#9FFF9F]/20
+shadow-[0_0_40px_rgba(120,255,120,0.15)]
+transition-all
+hover:scale-[1.02]
+"
                             >
                                 Saya Mau Naik Gaji
                             </button>
                         </div>
 
                         {/* BENEFITS */}
-                        <div className="mt-10 flex flex-wrap gap-6 text-sm text-white">
+                        <div className="mt-8 flex flex-col gap-3 text-sm text-white sm:flex-row sm:flex-wrap sm:gap-6">
                             <div>✓ 75+ Materi Strategi Naik Gaji</div>
                             <div>✓ Lifetime Access</div>
                             <div>✓ Join Top Performer Community</div>
@@ -120,17 +126,19 @@ export default function Hero() {
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div className="relative flex justify-center lg:justify-end">
+                    <div className="relative order-first flex justify-center lg:order-last lg:justify-end">
 
                         <img
                             src="/images/shaundju/photo_header.png"
                             alt="Shaun Djuhari"
                             className="
-                                w-full
-                                max-w-[700px]
-                                object-contain
-                                drop-shadow-[0_0_40px_rgba(0,0,0,0.5)]
-                            "
+w-full
+max-w-[320px]
+sm:max-w-[450px]
+lg:max-w-[700px]
+object-contain
+drop-shadow-[0_0_40px_rgba(0,0,0,0.5)]
+"
                         />
                     </div>
                 </div>

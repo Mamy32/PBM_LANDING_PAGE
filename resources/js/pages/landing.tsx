@@ -16,7 +16,7 @@ import Solution from './landing/solution';
 import Testimonials from './landing/testimonials';
 import ValueStack from './landing/value-stack';
 import SuccessStory from './landing/success-story';
-
+import PracticalBenefits from './landing/practical-benefits';
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -61,6 +61,7 @@ export default function Landing() {
                 <SuccessStory />
                 <Solution />
                 <Problem />
+                <PracticalBenefits />
                 <ValueStack />
                 <Testimonials />
                 <Instructor />

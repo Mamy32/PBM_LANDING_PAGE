@@ -85,11 +85,11 @@ export default function Hero() {
                                 ))}
                             </div>
                             <div>
-                                <div className="flex items-center gap-1 text-[#4ADE80]">
-                                    {[1, 2, 3, 4, 5].map((i) => (
-                                        <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                                    ))}
-                                </div>
+                               <img
+                                    src="/images/shaundju/stars.png"
+                                    alt="5 Star Rating"
+                                    className="h-5 w-auto"
+                                />
                                 <p className="text-xs text-white/60">
                                     Dipercaya 1.000+ professionals
                                 </p>

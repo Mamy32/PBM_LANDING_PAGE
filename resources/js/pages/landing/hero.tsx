@@ -23,16 +23,16 @@ export default function Hero() {
             </div>
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-               <div className="grid min-h-screen items-center gap-10 pt-10 lg:grid-cols-2 lg:pt-25">
+                  <div className="grid min-h-screen items-center gap-10 pt-10 lg:grid-cols-2 lg:pt-25">
 
                     {/* LEFT SIDE */}
-                    <div className="pb-12 pt-20 lg:pt-0 text-center lg:pb-0 lg:pt-0 lg:text-left">
-                    
+                    <div className="pb-12 pt-10 text-center lg:pb-0 lg:pt-0 lg:text-left">
+
                         {/* LOGO */}
                         <img
                             src="/images/shaundju/logo_header.png"
                             alt="Shaundju Academy"
-                            className="h-1 sm:h-12 lg:h-16 w-auto"
+                            className="h-10 sm:h-12 lg:h-16 w-auto"
                         />
 
                         {/* MEMBERS BADGE */}

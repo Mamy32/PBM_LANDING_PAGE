@@ -15,6 +15,7 @@ import Problem from './landing/problem';
 import Solution from './landing/solution';
 import Testimonials from './landing/testimonials';
 import ValueStack from './landing/value-stack';
+import SuccessStory from './landing/success-story';
 
 export default function Landing() {
     const { trackVisit } = useAnalytics();
@@ -57,6 +58,7 @@ export default function Landing() {
             <div className="min-h-screen bg-[#0C1F13] text-white antialiased selection:bg-[#4ADE80] selection:text-[#0C1F13]">
                 <Navbar />
                 <Hero />
+                <SuccessStory />
                 <Problem />
                 <Solution />
                 <ValueStack />

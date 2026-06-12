@@ -1,6 +1,15 @@
 export default function MediaFeatures() {
     return (
-        <section className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-24">
+                <section
+  className="
+    py-24
+    bg-gradient-to-r
+    from-[#0B3D2E]
+    via-[#072B1F]
+    to-[#031610]
+    overflow-hidden
+  "
+>
             <div className="mx-auto max-w-6xl px-6">
 
                 {/* Title */}

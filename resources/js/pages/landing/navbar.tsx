@@ -27,10 +27,6 @@ export default function Navbar() {
                         className="h-12 w-auto object-contain"
                         loading="eager" decoding="async"
                     />
-
-                    <span className="text-lg font-bold tracking-tight text-white">
-                        Shaundju<span className="text-[#4ADE80]"> Academy</span>
-                    </span>
                 </a>
                 <a
                     href="#harga"

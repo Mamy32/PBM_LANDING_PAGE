@@ -91,17 +91,17 @@ export default function Testimonials() {
         <img
             src="/images/shaundju/Screenshot1.png"
             alt="Testimonial 1"
-            className="h-[120px] sm:h-[140px] lg:h-[160px] w-full rounded-xl object-cover object-top"
+            className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
         <img
             src="/images/shaundju/Screenshot2.png"
             alt="Testimonial 2"
-            className="h-[120px] sm:h-[140px] lg:h-[160px] w-full rounded-xl object-cover object-top"
+            className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
         <img
             src="/images/shaundju/Screenshot3.png"
             alt="Testimonial 3"
-            className="h-[120px] sm:h-[140px] lg:h-[160px] w-full rounded-xl object-cover object-top"
+            className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
     </div>
 

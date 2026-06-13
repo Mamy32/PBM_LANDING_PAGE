@@ -64,7 +64,7 @@ export default function PracticalBenefits() {
                     </h3>
 
                 <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg lg:text-xl">
-                        Ini 3 topik yang bakal gue ajarin"
+                        "ini 3 topik yang bakal gue ajarin disini"
                     </p>
                 </div>
 

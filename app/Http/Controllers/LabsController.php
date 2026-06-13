@@ -46,6 +46,7 @@ class LabsController extends Controller
                 'cta' => $this->abTestingService->getCtaPerformance($startDate, $endDate, $sourceFilter),
                 'readers' => $this->abTestingService->getReaderSegmentation($startDate, $endDate, $sourceFilter),
                 'heatmap' => $this->abTestingService->getScrollHeatmap($startDate, $endDate, $sourceFilter),
+                'section_heatmap' => $this->abTestingService->getSectionHeatmap($startDate, $endDate, $sourceFilter),
             ];
         });
 

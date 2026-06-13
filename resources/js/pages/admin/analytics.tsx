@@ -5,6 +5,7 @@ import {
     DollarSign,
     Download,
     Eye,
+    ShoppingCart,
     Target,
     TrendingUp,
 } from 'lucide-react';
@@ -33,11 +34,14 @@ interface AnalyticsProps {
         total_visits: number;
         unique_visitors: number;
         engagement_rate: number;
-        conversion_rate: number;
+        engaged_users: number;
+        initiate_checkout_rate: number;
+        initiate_checkout_count: number;
+        lead_rate: number;
+        leads: number;
         conversion_to_payment_rate: number;
         payment_rate: number;
         total_revenue: number;
-        registrations: number;
         payments: number;
     };
     chartData: Record<string, any[]>;
@@ -158,16 +162,22 @@ export default function Analytics({
                                 title="Engagement Rate"
                                 value={`${stats.engagement_rate}%`}
                                 icon={TrendingUp}
-                                description="15+ second dwell time"
+                                description={`${stats.engaged_users} engaged (15s+ dwell & >25% scroll)`}
                             />
                             <MetricCard
-                                title="Conversion Rate"
-                                value={`${stats.conversion_rate}%`}
+                                title="Initiate Checkout Rate"
+                                value={`${stats.initiate_checkout_rate}%`}
+                                icon={ShoppingCart}
+                                description={`${stats.initiate_checkout_count} initiated checkout`}
+                            />
+                            <MetricCard
+                                title="Lead Rate"
+                                value={`${stats.lead_rate}%`}
                                 icon={Target}
-                                description={`${stats.registrations} registrations`}
+                                description={`${stats.leads} leads from checkout`}
                             />
                             <MetricCard
-                                title="Conversion to Payment Rate"
+                                title="Lead to Payment Rate"
                                 value={`${stats.conversion_to_payment_rate}%`}
                                 icon={CreditCard}
                                 description={`${stats.payments} successful payments`}

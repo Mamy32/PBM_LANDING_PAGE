@@ -1,9 +1,11 @@
 import { Head } from '@inertiajs/react';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import { useDwellTime } from '@/hooks/use-dwell-time';
 import { useScrollTracking } from '@/hooks/use-scroll-tracking';
+import { useSectionTracking } from '@/hooks/use-section-tracking';
+import Curriculum from './landing/curriculum';
 import Faq from './landing/faq';
 import Footer from './landing/footer';
 import Hero from './landing/hero';
@@ -37,6 +39,25 @@ export default function Landing() {
     useScrollTracking();
     useDwellTime();
 
+    // Canonical section order for heatmap tracking
+    const sectionIds = useMemo(
+        () => [
+            'hero',
+            'success-story',
+            'solusi',
+            'problem',
+            'benefits',
+            'testimoni',
+            'pengajar',
+            'media-features',
+            'curriculum',
+            'harga',
+            'faq',
+        ],
+        [],
+    );
+    useSectionTracking(sectionIds);
+
     // Track page visit on mount
     useEffect(() => {
         trackVisit();
@@ -64,6 +85,7 @@ export default function Landing() {
                 <Testimonials />
                 <Instructor />
                 <MediaFeatures />
+                <Curriculum />
                 <Pricing />
                 <Faq />
                 <Footer />

@@ -23,7 +23,7 @@ function getCookieValue(name: string): string | null {
 }
 
 interface AnalyticsEvent {
-    event_type: 'visit' | 'scroll' | 'engagement' | 'conversion' | 'payment' | 'cta_click';
+    event_type: 'visit' | 'scroll' | 'engagement' | 'conversion' | 'payment' | 'cta_click' | 'initiate_checkout' | 'lead' | 'section_view';
     event_data?: Record<string, any>;
     referral_source?: string;
     utm_source?: string;
@@ -196,6 +196,51 @@ return;
         [track],
     );
 
+    const trackInitiateCheckout = useCallback(
+        (courseId: string, data?: Record<string, any>) => {
+            track({
+                event_type: 'initiate_checkout',
+                event_data: {
+                    course_id: courseId,
+                    page: window.location.pathname,
+                    timestamp: new Date().toISOString(),
+                    ...data,
+                },
+            });
+        },
+        [track],
+    );
+
+    const trackLead = useCallback(
+        (type: string, data?: Record<string, any>) => {
+            track({
+                event_type: 'lead',
+                event_data: {
+                    type,
+                    page: window.location.pathname,
+                    timestamp: new Date().toISOString(),
+                    ...data,
+                },
+            });
+        },
+        [track],
+    );
+
+    const trackSectionView = useCallback(
+        (sectionId: string, data?: Record<string, any>) => {
+            track({
+                event_type: 'section_view',
+                event_data: {
+                    section: sectionId,
+                    page: window.location.pathname,
+                    timestamp: new Date().toISOString(),
+                    ...data,
+                },
+            });
+        },
+        [track],
+    );
+
     return {
         track,
         trackVisit,
@@ -204,5 +249,8 @@ return;
         trackConversion,
         trackPayment,
         trackCTA,
+        trackInitiateCheckout,
+        trackLead,
+        trackSectionView,
     };
 }

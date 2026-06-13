@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { formatPercent, safeNumber, toSafeArray } from '@/lib/safe-data';
 import type { DeviceComparisonProps, DeviceMetrics } from '@/types/analytics';
 
-const DEFAULT_DEVICE: DeviceMetrics = { visits: 0, payments: 0, conversion_rate: 0 };
+const DEFAULT_DEVICE: DeviceMetrics = { visits: 0, leads: 0, conversion_rate: 0 };
 
 export function DeviceComparison({ data }: DeviceComparisonProps) {
     const safeData = toSafeArray(data);

@@ -18,6 +18,7 @@ export default function Problem() {
 
     return (
         <section
+            id="problem"
   className="
     py-24
     bg-gradient-to-r

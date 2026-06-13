@@ -6,6 +6,7 @@ use App\Http\Controllers\LabsController;
 use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'landing')->name('home');
+Route::inertia('/checkout', 'checkout')->name('checkout');
 
 // Public analytics tracking (must be outside auth middleware)
 Route::post('/analytics/track', [AnalyticsController::class, 'track'])->name('analytics.track');

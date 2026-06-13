@@ -85,16 +85,28 @@ class AnalyticsController extends Controller
             ->distinct('session_id')
             ->count();
 
-        $engagementUsers = UserAnalytic::where('event_type', 'engagement')
+        // Engaged = sessions with BOTH 15+ sec dwell AND >25% scroll depth
+        $dwellSessions = UserAnalytic::where('event_type', 'engagement')
             ->where('created_at', '>=', $startDate)
             ->where('event_data->type', 'dwell_ping')
-            ->pluck('session_id')
-            ->unique()
+            ->distinct()
+            ->pluck('session_id');
+
+        $scrollSessions = UserAnalytic::where('event_type', 'scroll')
+            ->where('created_at', '>=', $startDate)
+            ->whereRaw("CAST(json_extract(event_data, '$.depth') AS DECIMAL(10,2)) >= 25")
+            ->distinct()
+            ->pluck('session_id');
+
+        $engagementUsers = $dwellSessions->intersect($scrollSessions)->unique()->count();
+
+        $initiateCheckoutCount = UserAnalytic::where('event_type', 'initiate_checkout')
+            ->where('created_at', '>=', $startDate)
+            ->distinct('session_id')
             ->count();
 
-        $registrations = UserAnalytic::where('event_type', 'conversion')
+        $leads = UserAnalytic::where('event_type', 'lead')
             ->where('created_at', '>=', $startDate)
-            ->where('event_data->type', 'registration')
             ->distinct('session_id')
             ->count();
 
@@ -114,15 +126,22 @@ class AnalyticsController extends Controller
             'unique_visitors' => $uniqueVisitors,
 
             'engagement_rate' => $uniqueVisitors > 0
-        ? round(($engagementUsers / $uniqueVisitors) * 100, 2)
-        : 0,
-
-            'conversion_rate' => $totalVisits > 0
-                ? round(($registrations / $totalVisits) * 100, 2)
+                ? round(($engagementUsers / $uniqueVisitors) * 100, 2)
                 : 0,
+            'engaged_users' => $engagementUsers,
 
-            'conversion_to_payment_rate' => $registrations > 0
-                ? round(($payments / $registrations) * 100, 2)
+            'initiate_checkout_rate' => $engagementUsers > 0
+                ? round(($initiateCheckoutCount / $engagementUsers) * 100, 2)
+                : 0,
+            'initiate_checkout_count' => $initiateCheckoutCount,
+
+            'lead_rate' => $initiateCheckoutCount > 0
+                ? round(($leads / $initiateCheckoutCount) * 100, 2)
+                : 0,
+            'leads' => $leads,
+
+            'conversion_to_payment_rate' => $leads > 0
+                ? round(($payments / $leads) * 100, 2)
                 : 0,
 
             'payment_rate' => $totalVisits > 0
@@ -130,7 +149,6 @@ class AnalyticsController extends Controller
                 : 0,
 
             'total_revenue' => $revenue,
-            'registrations' => $registrations,
             'payments' => $payments,
         ];
     }
@@ -143,7 +161,7 @@ class AnalyticsController extends Controller
             'event_type'
         )
             ->where('created_at', '>=', $startDate)
-            ->whereIn('event_type', ['visit', 'engagement', 'conversion', 'payment'])
+            ->whereIn('event_type', ['visit', 'engagement', 'initiate_checkout', 'lead', 'payment'])
             ->groupBy(['date', 'event_type'])
             ->orderBy('date')
             ->get()
@@ -169,15 +187,28 @@ class AnalyticsController extends Controller
             ->distinct('session_id')
             ->count();
 
-        $engaged = UserAnalytic::where('event_type', 'engagement')
+        // Engaged = sessions with BOTH 15+ sec dwell AND >25% scroll depth
+        $dwellSessions = UserAnalytic::where('event_type', 'engagement')
             ->where('created_at', '>=', $startDate)
             ->where('event_data->type', 'dwell_ping')
+            ->distinct()
+            ->pluck('session_id');
+
+        $scrollSessions = UserAnalytic::where('event_type', 'scroll')
+            ->where('created_at', '>=', $startDate)
+            ->whereRaw("CAST(json_extract(event_data, '$.depth') AS DECIMAL(10,2)) >= 25")
+            ->distinct()
+            ->pluck('session_id');
+
+        $engaged = $dwellSessions->intersect($scrollSessions)->unique()->count();
+
+        $initiateCheckout = UserAnalytic::where('event_type', 'initiate_checkout')
+            ->where('created_at', '>=', $startDate)
             ->distinct('session_id')
             ->count();
 
-        $registrations = UserAnalytic::where('event_type', 'conversion')
+        $leads = UserAnalytic::where('event_type', 'lead')
             ->where('created_at', '>=', $startDate)
-            ->where('event_data->type', 'registration')
             ->distinct('session_id')
             ->count();
 
@@ -190,7 +221,8 @@ class AnalyticsController extends Controller
         return [
             ['stage' => 'Visits', 'count' => $visits, 'percentage' => 100],
             ['stage' => 'Engaged', 'count' => $engaged, 'percentage' => $visits > 0 ? round(($engaged / $visits) * 100, 1) : 0],
-            ['stage' => 'Registered', 'count' => $registrations, 'percentage' => $visits > 0 ? round(($registrations / $visits) * 100, 1) : 0],
+            ['stage' => 'Initiate Checkout', 'count' => $initiateCheckout, 'percentage' => $visits > 0 ? round(($initiateCheckout / $visits) * 100, 1) : 0],
+            ['stage' => 'Leads', 'count' => $leads, 'percentage' => $visits > 0 ? round(($leads / $visits) * 100, 1) : 0],
             ['stage' => 'Paid', 'count' => $payments, 'percentage' => $visits > 0 ? round(($payments / $visits) * 100, 1) : 0],
         ];
     }

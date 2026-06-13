@@ -7,43 +7,37 @@ const testimonials = [
         name: 'Thomas',
         role: 'INSEAD MBA Candidate',
         image: '/images/shaundju/testi02.webp',
-        quote:
-            'Apa yang Shaun ngomongin itu bener semua brokkk, apalagi yang project management, client relationship, dll.',
+        quote: 'Apa yang Shaun ngomongin itu bener semua brokkk, apalagi yang project management, client relationship, dll.',
     },
     {
         name: 'Jihad',
         role: 'Strategy at Pluang, ex-Shopee',
         image: '/images/shaundju/testi04.webp',
-        quote:
-            "Shaun's introduction to framework really helped me because I was never taught that in non-business major.",
+        quote: "Shaun's introduction to framework really helped me because I was never taught that in non-business major, especially at a non-target Indo school.",
     },
     {
         name: 'Harriet',
         role: 'ex-Singapore Management Consultant',
         image: '/images/shaundju/testi01.webp',
-        quote:
-            'Shaun showed me how to treat clients as real people.',
+        quote: 'Most importantly Shaun showed me how to treat clients as real people instead of as a means to finish the project, I never had a doubt that Shaun is a good boss.',
     },
     {
         name: 'Vanessa',
         role: 'Graduating Senior, Oxford University',
         image: '/images/shaundju/testi05.webp',
-        quote:
-            'Having a clear starting point was most helpful.',
+        quote: 'Having a clear starting point of the types of slide I was able to design, was most helpful, jadi kebayang the different options we have to best present info/data & can work from there what intuitively makes sense.',
     },
     {
         name: 'Abdul',
         role: 'Assistant Manager at Grab',
-        image: '/images/shaundju/testi03.webp',
-        quote:
-            'I learned a lot dari training lo terutama cara berpikir kritis.',
+        image: '/images/shaundju/testi07.webp',
+        quote: 'I learned a lot dari training lo terutama cara berpikir kritis + framework buat solve issues. Kepake pas gue handle salah satu project B2B terbesar Grab di GrabFood. So thank you ya Coach Shaun.',
     },
     {
         name: 'Cyndi',
         role: 'Final Year Student, NUS Singapore',
         image: '/images/shaundju/testi08.webp',
-        quote:
-            'I really admired how professionally you work.',
+        quote: 'From observing your work style I really admired how you work very gercep and how you handle clients juga, something that I wanna work towards!',
     },
 ];
 
@@ -53,18 +47,17 @@ export default function Testimonials() {
     return (
         <section
             id="testimoni"
-            className="relative overflow-hidden pb-24 pt-12 sm:pt-16"
+            className="relative overflow-hidden pt-12 pb-24 sm:pt-16"
             style={{
                 background:
                     'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
             }}
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
-
                 {/* Header */}
                 <div className="text-center">
-                    <div className="inline-flex items-center rounded-full border border-white/40 px-4 py-1 text-xs sm:text-sm text-white">
-                        Testimony
+                    <div className="inline-flex items-center rounded-full border border-white/40 px-4 py-1 text-xs text-white sm:text-sm">
+                        Testimonials
                     </div>
 
                     <h2 className="mt-6 font-serif text-4xl font-bold text-[#9DFF70] sm:text-5xl">
@@ -76,54 +69,57 @@ export default function Testimonials() {
                     </p>
                 </div>
 
-{/* Screenshots */}
-<div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:items-start lg:gap-10">
+                {/* Screenshots */}
+                <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:items-start lg:gap-10">
+                    {/* Left: main proof image */}
+                    <img
+                        src="/images/shaundju/proof.webp"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Phone testimonial"
+                        className="w-[280px] max-w-full rounded-2xl sm:w-[340px] lg:w-[380px]"
+                    />
 
-    {/* Left: main proof image */}
-    <img
-        src="/images/shaundju/proof.webp"
-        loading="lazy" decoding="async"
-        alt="Phone testimonial"
-        className="w-[280px] sm:w-[340px] lg:w-[380px] max-w-full rounded-2xl"
-    />
-
-    {/* Right: 3 screenshots — same width as proof, equal height */}
-    <div className="flex w-[280px] sm:w-[340px] lg:w-[380px] flex-col gap-3">
-        <img
-            src="/images/shaundju/Screenshot1.webp"
-            loading="lazy" decoding="async"
-            alt="Testimonial 1"
-            className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
-        />
-        <img
-            src="/images/shaundju/Screenshot2.webp"
-            loading="lazy" decoding="async"
-            alt="Testimonial 2"
-            className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
-        />
-        <img
-            src="/images/shaundju/Screenshot3.webp"
-            loading="lazy" decoding="async"
-            alt="Testimonial 3"
-            className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
-        />
-    </div>
-
-</div>
+                    {/* Right: 3 screenshots — same width as proof, equal height */}
+                    <div className="flex w-[280px] flex-col gap-3 sm:w-[340px] lg:w-[380px]">
+                        <img
+                            src="/images/shaundju/Screenshot1.webp"
+                            loading="lazy"
+                            decoding="async"
+                            alt="Testimonial 1"
+                            className="h-[200px] w-full rounded-xl object-cover object-top sm:h-[240px] lg:h-[280px]"
+                        />
+                        <img
+                            src="/images/shaundju/Screenshot2.webp"
+                            loading="lazy"
+                            decoding="async"
+                            alt="Testimonial 2"
+                            className="h-[200px] w-full rounded-xl object-cover object-top sm:h-[240px] lg:h-[280px]"
+                        />
+                        <img
+                            src="/images/shaundju/Screenshot3.webp"
+                            loading="lazy"
+                            decoding="async"
+                            alt="Testimonial 3"
+                            className="h-[200px] w-full rounded-xl object-cover object-top sm:h-[240px] lg:h-[280px]"
+                        />
+                    </div>
+                </div>
 
                 {/* Testimonial Cards */}
                 <div className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
                     {testimonials.map((item) => (
                         <div
                             key={item.name}
-                            className="rounded-2xl lg:rounded-[28px] bg-[#04261B] p-5 sm:p-6 lg:p-8"
+                            className="rounded-2xl bg-[#04261B] p-5 sm:p-6 lg:rounded-[28px] lg:p-8"
                         >
                             <div className="flex items-center gap-4">
                                 <img
                                     src={item.image}
                                     alt={item.name}
-                                    className="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover"
-                                    loading="lazy" decoding="async"
+                                    className="h-12 w-12 rounded-full object-cover sm:h-14 sm:w-14"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
 
                                 <div>
@@ -137,9 +133,9 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            <Quote className="mt-4 sm:mt-6 h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                            <Quote className="mt-4 h-6 w-6 text-white sm:mt-6 sm:h-8 sm:w-8" />
 
-                            <p className="mt-3 sm:mt-4 text-sm leading-relaxed text-white/80">
+                            <p className="mt-3 text-sm leading-relaxed text-white/80 sm:mt-4">
                                 {item.quote}
                             </p>
                         </div>
@@ -147,16 +143,15 @@ export default function Testimonials() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-12 lg:mt-16 text-center">
+                <div className="mt-12 text-center lg:mt-16">
                     <CtaButton
                         id="testimonial-cta"
-                        text="Bongkar Hacks-nya Sekarang"
-                        size="large"
+                        text="Mulai Belajar Sekarang"
                         onClick={() =>
                             trackCTA(
                                 'testimonials_section',
-                                'Bongkar Hacks-nya Sekarang',
-                                '#harga'
+                                'Mulai Belajar Sekarang',
+                                '#harga',
                             )
                         }
                     />
@@ -165,4 +160,3 @@ export default function Testimonials() {
         </section>
     );
 }
-

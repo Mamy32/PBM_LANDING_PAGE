@@ -1,6 +1,7 @@
 export default function MediaFeatures() {
     return (
                 <section
+                    id="media-features"
 className="
   py-16 lg:py-24
   bg-gradient-to-r

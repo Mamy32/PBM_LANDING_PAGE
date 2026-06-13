@@ -75,16 +75,12 @@ export function initializeTheme(): void {
         return;
     }
 
-    if (!localStorage.getItem('appearance')) {
-        localStorage.setItem('appearance', 'system');
-        setCookie('appearance', 'system');
-    }
-
-    currentAppearance = getStoredAppearance();
-    applyTheme(currentAppearance);
-
-    // Set up system theme change listener
-    mediaQuery()?.addEventListener('change', handleSystemThemeChange);
+    // Force light mode globally — dark mode is disabled for this project.
+    document.documentElement.classList.remove('dark');
+    document.documentElement.style.colorScheme = 'light';
+    localStorage.setItem('appearance', 'light');
+    setCookie('appearance', 'light');
+    currentAppearance = 'light';
 }
 
 export function useAppearance(): UseAppearanceReturn {

@@ -9,10 +9,13 @@ export interface MatrixItem {
     landing_source: string;
     visits: number;
     bounce_rate: number;
+    initiate_checkout_rate: number;
     lead_cr: number;
     strict_cr: number;
     rpv: number;
     revenue: number;
+    initiate_checkouts: number;
+    leads: number;
     conversions: number;
     intent_rate: number;
     payments: number;
@@ -42,15 +45,15 @@ export interface QualityMetrics {
 
 export interface QualityItem {
     landing_source: string;
-    buyers: QualityMetrics;
-    non_buyers: QualityMetrics;
+    leads: QualityMetrics;
+    non_leads: QualityMetrics;
 }
 
 // ── Device Performance ──────────────────────────────────────
 
 export interface DeviceMetrics {
     visits: number;
-    payments: number;
+    leads: number;
     conversion_rate: number;
 }
 
@@ -104,6 +107,21 @@ export interface HeatmapData {
     depth_analysis: DepthAnalysis[];
 }
 
+// ── Section Scroll Heatmap ──────────────────────────────────
+
+export interface SectionViewData {
+    id: string;
+    name: string;
+    views: number;
+    pct: number;
+    drop_from_prev: number;
+}
+
+export interface SectionHeatmapItem {
+    landing_source: string;
+    sections: SectionViewData[];
+}
+
 // ── Filters ─────────────────────────────────────────────────
 
 export interface LabsFilters {
@@ -123,6 +141,7 @@ export interface LabsPageProps {
     cta: CtaData[];
     readers: ReaderData[];
     heatmap: HeatmapData[];
+    section_heatmap: SectionHeatmapItem[];
     availableSources: string[];
     filters: LabsFilters;
 }
@@ -140,4 +159,5 @@ export interface CtaAnalysisProps {
 export interface AudienceSegmentationProps {
     readers: ReaderData[];
     heatmap: HeatmapData[];
+    sectionHeatmap?: SectionHeatmapItem[];
 }

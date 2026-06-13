@@ -24,12 +24,14 @@ className="
                         src="/images/shaundju/logo01.webp"
                         alt="The Overpost"
                         className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover"
+                        loading="lazy" decoding="async"
                     />
 
                     <img
                         src="/images/shaundju/logo02.webp"
                         alt="Suara Berkelas"
                         className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover"
+                        loading="lazy" decoding="async"
                     />
 
                 </div>
@@ -41,12 +43,14 @@ className="
                         src="/images/shaundju/video01.webp"
                         alt="Interview 1"
                     className="w-full rounded-xl shadow-xl"
+                    loading="lazy" decoding="async"
                     />
 
                     <img
                         src="/images/shaundju/video02.webp"
                         alt="Interview 2"
                         className="w-full rounded-xl shadow-xl"
+                        loading="lazy" decoding="async"
                     />
 
                 </div>

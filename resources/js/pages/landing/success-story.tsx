@@ -13,6 +13,7 @@ export default function SuccessStory() {
                 src="/images/shaundju/logo_company.webp"
                 alt="Companies"
                 className="w-full max-w-6xl"
+                loading="lazy" decoding="async"
             />
         </div>
 
@@ -53,6 +54,7 @@ export default function SuccessStory() {
                         src="/images/shaundju/gaji200jt.webp"
                         alt="Salary Proof"
                         className="w-full max-w-xs sm:max-w-md lg:max-w-lg"
+                        loading="lazy" decoding="async"
                     />
                 </div>
 
@@ -73,6 +75,7 @@ export default function SuccessStory() {
                     src="/images/shaundju/promote.webp"
                     alt="Career Timeline"
                     className="w-full"
+                    loading="lazy" decoding="async"
                 />
             </div>
         </div>

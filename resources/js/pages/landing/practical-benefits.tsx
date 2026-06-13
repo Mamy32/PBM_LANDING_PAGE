@@ -80,6 +80,7 @@ export default function PracticalBenefits() {
                                     src={benefit.icon}
                                     alt=""
                                     className="h-12 w-12 object-contain"
+                                    loading="lazy" decoding="async"
                                 />
                             </div>
 

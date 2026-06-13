@@ -82,6 +82,7 @@ export default function Testimonials() {
     {/* Left: main proof image */}
     <img
         src="/images/shaundju/proof.webp"
+        loading="lazy" decoding="async"
         alt="Phone testimonial"
         className="w-[280px] sm:w-[340px] lg:w-[380px] max-w-full rounded-2xl"
     />
@@ -90,16 +91,19 @@ export default function Testimonials() {
     <div className="flex w-[280px] sm:w-[340px] lg:w-[380px] flex-col gap-3">
         <img
             src="/images/shaundju/Screenshot1.webp"
+            loading="lazy" decoding="async"
             alt="Testimonial 1"
             className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
         <img
             src="/images/shaundju/Screenshot2.webp"
+            loading="lazy" decoding="async"
             alt="Testimonial 2"
             className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
         <img
             src="/images/shaundju/Screenshot3.webp"
+            loading="lazy" decoding="async"
             alt="Testimonial 3"
             className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
@@ -119,6 +123,7 @@ export default function Testimonials() {
                                     src={item.image}
                                     alt={item.name}
                                     className="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover"
+                                    loading="lazy" decoding="async"
                                 />
 
                                 <div>

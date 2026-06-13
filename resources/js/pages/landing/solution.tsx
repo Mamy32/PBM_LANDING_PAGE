@@ -25,6 +25,7 @@ export default function Solution() {
                                     src="/images/shaundju/mentor.webp"
                                     alt="Shaun"
                                     className="h-[320px] sm:h-[420px] lg:h-[520px] w-auto object-cover"
+                                    loading="lazy" decoding="async"
                                 />
                             </div>
                         </div>

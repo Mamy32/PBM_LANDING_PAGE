@@ -29,12 +29,12 @@ export default defineConfig({
         }),
     ],
     build: {
-        rollupOptions: {
-            output: {
-                assetFileNames: 'assets/[name]-[hash][extname]',
-            },
+    rollupOptions: {
+        output: {
+            assetFileNames: 'assets/[name]-[hash][extname]',
         },
-        chunkSizeWarningLimit: 1000,
-        cssMinify: true,
     },
+    chunkSizeWarningLimit: 1000,
+    cssMinify: true,
+},
 });

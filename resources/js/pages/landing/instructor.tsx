@@ -31,7 +31,7 @@ export default function Instructor() {
                             src="/images/shaundju/oners.webp"
                             alt="Shaun Djuhari"
                             className="h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px] rounded-full object-cover"
-                            loading="lazy"
+                            loading="lazy" decoding="async"
                         />
 
                         <div className="mt-6 rounded-full bg-[#9DFF70] px-6 py-2 sm:px-8 sm:py-3">

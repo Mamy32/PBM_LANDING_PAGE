@@ -53,7 +53,7 @@ export default function Testimonials() {
     return (
         <section
             id="testimoni"
-            className="relative overflow-hidden py-24"
+            className="relative overflow-hidden pb-24 pt-12 sm:pt-16"
             style={{
                 background:
                     'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',

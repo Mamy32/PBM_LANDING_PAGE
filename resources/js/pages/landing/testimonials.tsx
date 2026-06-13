@@ -13,7 +13,7 @@ const testimonials = [
     {
         name: 'Jihad',
         role: 'Strategy at Pluang, ex-Shopee',
-        image: '/images/shaundju/testi03.png',
+        image: '/images/shaundju/testi04.png',
         quote:
             "Shaun's introduction to framework really helped me because I was never taught that in non-business major.",
     },
@@ -34,7 +34,7 @@ const testimonials = [
     {
         name: 'Abdul',
         role: 'Assistant Manager at Grab',
-        image: '/images/shaundju/testi04.png',
+        image: '/images/shaundju/testi03.png',
         quote:
             'I learned a lot dari training lo terutama cara berpikir kritis.',
     },

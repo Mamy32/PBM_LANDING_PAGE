@@ -36,6 +36,5 @@ export default defineConfig({
         },
         chunkSizeWarningLimit: 1000,
         cssMinify: true,
-        minify: 'esbuild',
     },
 });

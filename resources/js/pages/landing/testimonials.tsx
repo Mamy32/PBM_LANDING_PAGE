@@ -38,13 +38,7 @@ const testimonials = [
         quote:
             'I learned a lot dari training lo terutama cara berpikir kritis.',
     },
-    {
-        name: 'Cyndi',
-        role: 'Final Year Student, NUS Singapore',
-        image: '/images/shaundju/testi08.png',
-        quote:
-            'I really admired how professionally you work.',
-    },
+    
 ];
 
 export default function Testimonials() {

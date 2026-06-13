@@ -34,7 +34,7 @@ const testimonials = [
     {
         name: 'Abdul',
         role: 'Assistant Manager at Grab',
-        image: '/images/shaundju/testi003.png',
+        image: '/images/shaundju/testi03.png',
         quote:
             'I learned a lot dari training lo terutama cara berpikir kritis.',
     },

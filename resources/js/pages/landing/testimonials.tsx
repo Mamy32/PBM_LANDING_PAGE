@@ -6,35 +6,35 @@ const testimonials = [
     {
         name: 'Thomas',
         role: 'INSEAD MBA Candidate',
-        image: '/images/shaundju/testi01.png',
+        image: '/images/shaundju/testi02.png',
         quote:
             'Apa yang Shaun ngomongin itu bener semua brokkk, apalagi yang project management, client relationship, dll.',
     },
     {
         name: 'Jihad',
         role: 'Strategy at Pluang, ex-Shopee',
-        image: '/images/shaundju/testi02.png',
+        image: '/images/shaundju/testi04.png',
         quote:
             "Shaun's introduction to framework really helped me because I was never taught that in non-business major.",
     },
     {
         name: 'Harriet',
         role: 'ex-Singapore Management Consultant',
-        image: '/images/shaundju/testi03.png',
+        image: '/images/shaundju/testi01.png',
         quote:
             'Shaun showed me how to treat clients as real people.',
     },
     {
         name: 'Vanessa',
         role: 'Graduating Senior, Oxford University',
-        image: '/images/shaundju/testi04.png',
+        image: '/images/shaundju/testi05.png',
         quote:
             'Having a clear starting point was most helpful.',
     },
     {
         name: 'Abdul',
         role: 'Assistant Manager at Grab',
-        image: '/images/shaundju/testi05.png',
+        image: '/images/shaundju/testi003.png',
         quote:
             'I learned a lot dari training lo terutama cara berpikir kritis.',
     },

@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LabsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 
 Route::inertia('/', 'landing')->name('home');
 

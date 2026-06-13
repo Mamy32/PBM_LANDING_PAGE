@@ -25,31 +25,32 @@ class AbTestingService
 
         $matrix = [];
         foreach ($counts as $source => $typeCounts) {
-            $visits      = $typeCounts['visit']      ?? 0;
-            $engaged     = $typeCounts['engagement'] ?? 0;
+            $visits = $typeCounts['visit'] ?? 0;
+            $engaged = $typeCounts['engagement'] ?? 0;
             $conversions = $typeCounts['conversion'] ?? 0;
-            $payments    = $typeCounts['payment']    ?? 0;
-            $ctaClicks   = $typeCounts['cta_click']  ?? 0;
+            $payments = $typeCounts['payment'] ?? 0;
+            $ctaClicks = $typeCounts['cta_click'] ?? 0;
 
-            $bounced    = $bouncedBySource[$source] ?? ($visits - $engaged);
-            $revenue    = (float) ($revenueBySource[$source] ?? 0);
+            $bounced = $bouncedBySource[$source] ?? ($visits - $engaged);
+            $revenue = (float) ($revenueBySource[$source] ?? 0);
 
             $matrix[] = [
                 'landing_source' => $source,
-                'visits'         => $visits,
-                'bounce_rate'    => round($this->safePct($bounced, $visits), 2),
-                'intent_rate'    => round($this->safePct($ctaClicks, $visits), 2),
-                'lead_cr'        => round($this->safePct($conversions, $visits), 2),
-                'strict_cr'      => round($this->safePct($payments, $visits), 2),
-                'rpv'            => $visits > 0 ? round($revenue / $visits, 2) : 0,
-                'revenue'        => $revenue,
-                'conversions'    => $conversions,
-                'payments'       => $payments,
-                'cta_clicks'     => $ctaClicks,
+                'visits' => $visits,
+                'bounce_rate' => round($this->safePct($bounced, $visits), 2),
+                'intent_rate' => round($this->safePct($ctaClicks, $visits), 2),
+                'lead_cr' => round($this->safePct($conversions, $visits), 2),
+                'strict_cr' => round($this->safePct($payments, $visits), 2),
+                'rpv' => $visits > 0 ? round($revenue / $visits, 2) : 0,
+                'revenue' => $revenue,
+                'conversions' => $conversions,
+                'payments' => $payments,
+                'cta_clicks' => $ctaClicks,
             ];
         }
 
         usort($matrix, fn ($a, $b) => $b['rpv'] <=> $a['rpv']);
+
         return $matrix;
     }
 
@@ -64,20 +65,20 @@ class AbTestingService
 
         $funnel = [];
         foreach ($counts as $source => $typeCounts) {
-            $visits  = $typeCounts['visit']      ?? 0;
+            $visits = $typeCounts['visit'] ?? 0;
             $engaged = $typeCounts['engagement'] ?? 0;
-            $intent  = $typeCounts['cta_click']  ?? 0;
-            $leads   = $typeCounts['conversion'] ?? 0;
-            $sales   = $typeCounts['payment']    ?? 0;
+            $intent = $typeCounts['cta_click'] ?? 0;
+            $leads = $typeCounts['conversion'] ?? 0;
+            $sales = $typeCounts['payment'] ?? 0;
 
             $funnel[] = [
                 'landing_source' => $source,
                 'steps' => [
                     ['stage' => 'Visits',  'count' => $visits,  'percentage' => 100],
                     ['stage' => 'Engaged', 'count' => $engaged, 'percentage' => round($this->safePct($engaged, $visits), 1)],
-                    ['stage' => 'Intent',  'count' => $intent,  'percentage' => round($this->safePct($intent,  $visits), 1)],
-                    ['stage' => 'Leads',   'count' => $leads,   'percentage' => round($this->safePct($leads,   $visits), 1)],
-                    ['stage' => 'Sales',   'count' => $sales,   'percentage' => round($this->safePct($sales,   $visits), 1)],
+                    ['stage' => 'Intent',  'count' => $intent,  'percentage' => round($this->safePct($intent, $visits), 1)],
+                    ['stage' => 'Leads',   'count' => $leads,   'percentage' => round($this->safePct($leads, $visits), 1)],
+                    ['stage' => 'Sales',   'count' => $sales,   'percentage' => round($this->safePct($sales, $visits), 1)],
                 ],
             ];
         }
@@ -92,27 +93,27 @@ class AbTestingService
             return [];
         }
 
-        $visitData       = $this->batchVisitSessionsWithUserAgent($startDate, $endDate, $sourceFilter);
+        $visitData = $this->batchVisitSessionsWithUserAgent($startDate, $endDate, $sourceFilter);
         $paymentSessions = $this->batchPaymentSessionIds($startDate, $endDate, $sourceFilter);
 
         $performance = [];
         foreach ($sources as $source) {
-            $src      = $source->landing_source;
-            $visits   = $visitData[$src]       ?? collect();
+            $src = $source->landing_source;
+            $visits = $visitData[$src] ?? collect();
             $payments = $paymentSessions[$src] ?? collect();
 
-            $mobile  = $visits->filter(fn ($r) => $this->isMobileDevice($r->user_agent));
+            $mobile = $visits->filter(fn ($r) => $this->isMobileDevice($r->user_agent));
             $desktop = $visits->reject(fn ($r) => $this->isMobileDevice($r->user_agent));
 
-            $mobileIds  = $mobile->pluck('session_id')->unique();
+            $mobileIds = $mobile->pluck('session_id')->unique();
             $desktopIds = $desktop->pluck('session_id')->unique();
 
-            $mobPay  = $payments->intersect($mobileIds)->count();
+            $mobPay = $payments->intersect($mobileIds)->count();
             $deskPay = $payments->intersect($desktopIds)->count();
 
             $performance[] = [
                 'landing_source' => $src,
-                'mobile'  => ['visits' => $mobileIds->count(),  'payments' => $mobPay,  'conversion_rate' => round($this->safeDiv($mobPay,  $mobileIds->count())  * 100, 2)],
+                'mobile' => ['visits' => $mobileIds->count(),  'payments' => $mobPay,  'conversion_rate' => round($this->safeDiv($mobPay, $mobileIds->count()) * 100, 2)],
                 'desktop' => ['visits' => $desktopIds->count(), 'payments' => $deskPay, 'conversion_rate' => round($this->safeDiv($deskPay, $desktopIds->count()) * 100, 2)],
             ];
         }
@@ -148,20 +149,20 @@ class AbTestingService
         return $ctaClicks->groupBy('landing_source')->map(function ($sourceClicks, $landingSource) use ($leadSessions) {
             $locations = $sourceClicks->groupBy('cta_location')->map(function ($locationClicks, $location) use ($leadSessions) {
                 $uniqueSessions = $locationClicks->pluck('session_id')->unique();
-                $leads          = $uniqueSessions->intersect($leadSessions)->count();
+                $leads = $uniqueSessions->intersect($leadSessions)->count();
 
                 return [
-                    'location'    => $location,
+                    'location' => $location,
                     'click_count' => $uniqueSessions->count(),
-                    'leads'       => $leads,
-                    'lead_rate'   => round($this->safeDiv($leads, $uniqueSessions->count()) * 100, 2),
+                    'leads' => $leads,
+                    'lead_rate' => round($this->safeDiv($leads, $uniqueSessions->count()) * 100, 2),
                 ];
             })->sortByDesc('leads')->values()->all();
 
             return [
                 'landing_source' => $landingSource,
-                'cta_locations'  => $locations,
-                'total_clicks'   => $sourceClicks->pluck('session_id')->unique()->count(),
+                'cta_locations' => $locations,
+                'total_clicks' => $sourceClicks->pluck('session_id')->unique()->count(),
             ];
         })->values()->all();
     }
@@ -173,13 +174,13 @@ class AbTestingService
             return [];
         }
 
-        $allSessions  = $this->batchAllSessions($startDate, $endDate, $sourceFilter);
+        $allSessions = $this->batchAllSessions($startDate, $endDate, $sourceFilter);
         $scrollDepths = $this->batchMaxScrollDepth($startDate, $endDate, $sourceFilter);
-        $dwellTimes   = $this->batchTotalDwellTime($startDate, $endDate, $sourceFilter);
+        $dwellTimes = $this->batchTotalDwellTime($startDate, $endDate, $sourceFilter);
 
         $segmentation = [];
         foreach ($sources as $source) {
-            $src      = $source->landing_source;
+            $src = $source->landing_source;
             $sessions = $allSessions[$src] ?? collect();
 
             if ($sessions->isEmpty()) {
@@ -190,7 +191,7 @@ class AbTestingService
 
             foreach ($sessions as $sessionId) {
                 $depth = $scrollDepths[$sessionId] ?? 0;
-                $dwell = $dwellTimes[$sessionId]   ?? 0;
+                $dwell = $dwellTimes[$sessionId] ?? 0;
 
                 if ($depth < 25 && $dwell < 15) {
                     $personas['bouncers']++;
@@ -208,10 +209,10 @@ class AbTestingService
                 'landing_source' => $src,
                 'total_sessions' => $total,
                 'personas' => [
-                    ['name' => 'Bouncers',     'description' => 'Low scroll (<25%) & low dwell (<15s)',      'count' => $personas['bouncers'],     'percentage' => round($this->safeDiv($personas['bouncers'],     $total) * 100, 1)],
-                    ['name' => 'Skimmers',     'description' => 'High scroll (>75%) but quick read (<60s)', 'count' => $personas['skimmers'],     'percentage' => round($this->safeDiv($personas['skimmers'],     $total) * 100, 1)],
+                    ['name' => 'Bouncers',     'description' => 'Low scroll (<25%) & low dwell (<15s)',      'count' => $personas['bouncers'],     'percentage' => round($this->safeDiv($personas['bouncers'], $total) * 100, 1)],
+                    ['name' => 'Skimmers',     'description' => 'High scroll (>75%) but quick read (<60s)', 'count' => $personas['skimmers'],     'percentage' => round($this->safeDiv($personas['skimmers'], $total) * 100, 1)],
                     ['name' => 'Deep Readers', 'description' => 'Extended engagement (>120s)',              'count' => $personas['deep_readers'], 'percentage' => round($this->safeDiv($personas['deep_readers'], $total) * 100, 1)],
-                    ['name' => 'Casuals',      'description' => 'Moderate engagement',                     'count' => $personas['casuals'],      'percentage' => round($this->safeDiv($personas['casuals'],      $total) * 100, 1)],
+                    ['name' => 'Casuals',      'description' => 'Moderate engagement',                     'count' => $personas['casuals'],      'percentage' => round($this->safeDiv($personas['casuals'], $total) * 100, 1)],
                 ],
             ];
         }
@@ -248,20 +249,20 @@ class AbTestingService
             }
 
             $sourceDepths = $depthsBySource[$source] ?? collect();
-            $depthData    = [];
+            $depthData = [];
 
             foreach ([25, 50, 75, 90] as $threshold) {
-                $reaching    = $sourceDepths->filter(fn ($r) => (float) $r->max_depth >= $threshold)->count();
+                $reaching = $sourceDepths->filter(fn ($r) => (float) $r->max_depth >= $threshold)->count();
                 $depthData[] = [
-                    'depth'      => $threshold,
-                    'sessions'   => $reaching,
+                    'depth' => $threshold,
+                    'sessions' => $reaching,
                     'percentage' => round($this->safeDiv($reaching, $totalVisits) * 100, 1),
                 ];
             }
 
             $heatmap[] = [
                 'landing_source' => $source,
-                'total_visits'   => $totalVisits,
+                'total_visits' => $totalVisits,
                 'depth_analysis' => $depthData,
             ];
         }
@@ -276,21 +277,21 @@ class AbTestingService
             return [];
         }
 
-        $allSessions     = $this->batchAllSessions($startDate, $endDate, $sourceFilter);
+        $allSessions = $this->batchAllSessions($startDate, $endDate, $sourceFilter);
         $paymentSessions = $this->batchPaymentSessionIds($startDate, $endDate, $sourceFilter);
-        $scrollDepths    = $this->batchMaxScrollDepth($startDate, $endDate, $sourceFilter);
-        $dwellTimes      = $this->batchTotalDwellTime($startDate, $endDate, $sourceFilter);
+        $scrollDepths = $this->batchMaxScrollDepth($startDate, $endDate, $sourceFilter);
+        $dwellTimes = $this->batchTotalDwellTime($startDate, $endDate, $sourceFilter);
 
         $analysis = [];
         foreach ($sources as $source) {
-            $src       = $source->landing_source;
-            $sessions  = $allSessions[$src]     ?? collect();
-            $buyers    = $paymentSessions[$src] ?? collect();
+            $src = $source->landing_source;
+            $sessions = $allSessions[$src] ?? collect();
+            $buyers = $paymentSessions[$src] ?? collect();
             $nonBuyers = $sessions->diff($buyers);
 
             $analysis[] = [
                 'landing_source' => $src,
-                'buyers'     => $this->calcQualityMetrics($buyers,    $scrollDepths, $dwellTimes),
+                'buyers' => $this->calcQualityMetrics($buyers, $scrollDepths, $dwellTimes),
                 'non_buyers' => $this->calcQualityMetrics($nonBuyers, $scrollDepths, $dwellTimes),
             ];
         }
@@ -333,6 +334,7 @@ class AbTestingService
         foreach ($rows as $row) {
             $result[$row->landing_source][$row->event_type] = $row->cnt;
         }
+
         return $result;
     }
 
@@ -396,6 +398,7 @@ class AbTestingService
         foreach ($rows as $row) {
             $result[$row->landing_source][] = $row->session_id;
         }
+
         return array_map(fn ($ids) => collect(array_unique($ids)), $result);
     }
 
@@ -417,6 +420,7 @@ class AbTestingService
         foreach ($rows as $row) {
             $result[$row->landing_source][] = $row->session_id;
         }
+
         return array_map(fn ($ids) => collect(array_unique($ids)), $result);
     }
 
@@ -439,6 +443,7 @@ class AbTestingService
         foreach ($rows as $row) {
             $result[$row->landing_source][] = $row;
         }
+
         return array_map(fn ($rows) => collect($rows), $result);
     }
 
@@ -493,12 +498,12 @@ class AbTestingService
         }
 
         $depths = $sessionIds->map(fn ($id) => (float) ($scrollDepths[$id] ?? 0));
-        $dwells = $sessionIds->map(fn ($id) => (float) ($dwellTimes[$id]   ?? 0));
+        $dwells = $sessionIds->map(fn ($id) => (float) ($dwellTimes[$id] ?? 0));
 
         return [
-            'count'            => $sessionIds->count(),
+            'count' => $sessionIds->count(),
             'avg_scroll_depth' => round($depths->avg() ?? 0, 1),
-            'avg_dwell_time'   => round($dwells->avg() ?? 0, 1),
+            'avg_dwell_time' => round($dwells->avg() ?? 0, 1),
         ];
     }
 
@@ -512,6 +517,7 @@ class AbTestingService
                 return true;
             }
         }
+
         return false;
     }
 

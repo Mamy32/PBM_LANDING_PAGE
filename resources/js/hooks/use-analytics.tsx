@@ -174,7 +174,7 @@ return;
                 },
             });
         },
-        [track],
+        [track, coursePrice],
     );
 
     const trackCTA = useCallback(

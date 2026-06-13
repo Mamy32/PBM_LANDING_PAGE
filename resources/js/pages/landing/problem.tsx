@@ -27,15 +27,15 @@ export default function Problem() {
     overflow-hidden
   "
 >
-            <div className="mx-auto max-w-6xl px-6">
-                <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
                     {/* LEFT */}
-                    <div>
-                        <div className="mb-10 inline-flex items-center rounded-full border border-[#fff] px-4 py-2 text-sm text-[#fff]">
+                    <div className="text-center lg:text-left">
+                        <div className="mb-6 inline-flex items-center rounded-full border border-[#fff] px-4 py-2 text-xs sm:text-sm text-[#fff]">
                             The Reality Check
                         </div>
 
-                        <h2 className="font-serif text-5xl leading-tight text-[#fff]">
+                        <h2 className="font-serif text-4xl leading-tight text-[#fff] sm:text-5xl">
                             Kalo lo
                             <br />
                             <span className="text-[#8EEA6D]">
@@ -45,7 +45,7 @@ export default function Problem() {
                     </div>
 
                     {/* RIGHT CARD */}
-                    <div className="rounded-[28px] border border-[#8EEA6D] bg-[#062B22] p-10">
+                    <div className="rounded-2xl lg:rounded-[28px] border border-[#8EEA6D] bg-[#062B22] p-5 sm:p-8 lg:p-10">
                         <div className="space-y-8">
                             {problems.map((item, index) => (
                                 <div key={index}>

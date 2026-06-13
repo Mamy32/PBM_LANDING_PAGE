@@ -23,7 +23,7 @@ const benefits = [
 export default function PracticalBenefits() {
     return (
         <section
-    className="relative overflow-hidden py-28"
+    className="relative overflow-hidden pt-28 pb-12 sm:pb-16"
     style={{
         background:
             'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',

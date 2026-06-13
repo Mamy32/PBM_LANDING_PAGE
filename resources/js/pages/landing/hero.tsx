@@ -117,10 +117,25 @@ hover:scale-[1.02]
                         </div>
 
                         {/* BENEFITS */}
-                        <div className="mt-6 flex flex-col gap-2 text-xs text-white sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-6 sm:text-sm">
-                            <div>✓ 75+ Materi Strategi Naik Gaji</div>
-                            <div>✓ Lifetime Access</div>
-                            <div>✓ Join Top Performer Community</div>
+                        <div className="mt-6 flex flex-row flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white sm:mt-8 sm:text-sm lg:flex-nowrap">
+                            <div className="flex items-center gap-1.5">
+                                <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2.5 7l3 3 6-6" stroke="#9DFF70" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                75+ Materi Strategi Naik Gaji
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                                <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2.5 7l3 3 6-6" stroke="#9DFF70" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                Lifetime Access
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                                <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2.5 7l3 3 6-6" stroke="#9DFF70" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                Join Top Performer Community
+                            </div>
                         </div>
                     </div>
 

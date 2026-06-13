@@ -68,7 +68,7 @@ export default function Hero() {
                         </div>
 
                         {/* HEADLINE */}
-                        <h1 className="mt-8 font-serif text-[42px] leading-[1.05] text-white sm:text-[56px] lg:text-[78px]">
+                        <h1 className="mt-8 font-serif text-[42px] leading-[1.05] text-white sm:text-[56px] lg:text-[56px]">
                             Cara Dapet Gaji
                             <br />
                             <span className="text-[#A8FF7E]">
@@ -79,7 +79,7 @@ export default function Hero() {
                         </h1>
 
                         {/* DESCRIPTION */}
-                        <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+                        <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg lg:text-base">
                             Capek <strong>networking & kerja keras</strong> setiap hari
                             tapi gaji gak naik-naik? Pelajari strategi yang digunakan
                             para top performer untuk mempercepat kenaikan penghasilan.

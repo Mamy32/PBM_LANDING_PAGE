@@ -28,7 +28,7 @@ export default function Instructor() {
                     <div className="flex flex-col items-center">
 
                         <img
-                            src="/images/shaundju/oners.png"
+                            src="/images/shaundju/oners.webp"
                             alt="Shaun Djuhari"
                             className="h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px] rounded-full object-cover"
                             loading="lazy"

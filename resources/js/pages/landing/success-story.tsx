@@ -10,7 +10,7 @@ export default function SuccessStory() {
             </div>
 
             <img
-                src="/images/shaundju/logo_company.png"
+                src="/images/shaundju/logo_company.webp"
                 alt="Companies"
                 className="w-full max-w-6xl"
             />
@@ -38,7 +38,7 @@ export default function SuccessStory() {
                 <div className="mt-6 flex flex-wrap items-center gap-3">
 
                     <img
-                        src="/images/shaundju/oners.png"
+                        src="/images/shaundju/oners.webp"
                         alt="Shaun"
                         className="h-16 w-16 rounded-full sm:h-20 sm:w-20 lg:h-24 lg:w-24"
                     />
@@ -50,7 +50,7 @@ export default function SuccessStory() {
 
                 <div className="mt-8">
                     <img
-                        src="/images/shaundju/gaji200jt.png"
+                        src="/images/shaundju/gaji200jt.webp"
                         alt="Salary Proof"
                         className="w-full max-w-xs sm:max-w-md lg:max-w-lg"
                     />
@@ -70,7 +70,7 @@ export default function SuccessStory() {
             {/* RIGHT CARD */}
             <div className="bg-white p-4 shadow-lg">
                 <img
-                    src="/images/shaundju/promote.jpg"
+                    src="/images/shaundju/promote.webp"
                     alt="Career Timeline"
                     className="w-full"
                 />

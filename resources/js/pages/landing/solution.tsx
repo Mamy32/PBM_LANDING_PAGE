@@ -22,7 +22,7 @@ export default function Solution() {
                         <div className="rounded-[28px] border border-[#A8FF7E] p-3">
                             <div className="overflow-hidden rounded-[24px] bg-[#052E26]">
                                 <img
-                                    src="/images/shaundju/mentor.png"
+                                    src="/images/shaundju/mentor.webp"
                                     alt="Shaun"
                                     className="h-[320px] sm:h-[420px] lg:h-[520px] w-auto object-cover"
                                 />

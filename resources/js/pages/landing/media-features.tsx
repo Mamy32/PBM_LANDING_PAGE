@@ -21,13 +21,13 @@ className="
                <div className="mb-10 lg:mb-16 flex justify-center gap-4 sm:gap-6">
 
                     <img
-                        src="/images/shaundju/logo01.png"
+                        src="/images/shaundju/logo01.webp"
                         alt="The Overpost"
                         className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover"
                     />
 
                     <img
-                        src="/images/shaundju/logo02.png"
+                        src="/images/shaundju/logo02.webp"
                         alt="Suara Berkelas"
                         className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover"
                     />
@@ -38,13 +38,13 @@ className="
                 <div className="grid gap-4 lg:gap-6 lg:grid-cols-2">
 
                     <img
-                        src="/images/shaundju/video01.png"
+                        src="/images/shaundju/video01.webp"
                         alt="Interview 1"
                     className="w-full rounded-xl shadow-xl"
                     />
 
                     <img
-                        src="/images/shaundju/video02.png"
+                        src="/images/shaundju/video02.webp"
                         alt="Interview 2"
                         className="w-full rounded-xl shadow-xl"
                     />

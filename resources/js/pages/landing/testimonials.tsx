@@ -6,42 +6,42 @@ const testimonials = [
     {
         name: 'Thomas',
         role: 'INSEAD MBA Candidate',
-        image: '/images/shaundju/testi02.png',
+        image: '/images/shaundju/testi02.webp',
         quote:
             'Apa yang Shaun ngomongin itu bener semua brokkk, apalagi yang project management, client relationship, dll.',
     },
     {
         name: 'Jihad',
         role: 'Strategy at Pluang, ex-Shopee',
-        image: '/images/shaundju/testi04.png',
+        image: '/images/shaundju/testi04.webp',
         quote:
             "Shaun's introduction to framework really helped me because I was never taught that in non-business major.",
     },
     {
         name: 'Harriet',
         role: 'ex-Singapore Management Consultant',
-        image: '/images/shaundju/testi01.png',
+        image: '/images/shaundju/testi01.webp',
         quote:
             'Shaun showed me how to treat clients as real people.',
     },
     {
         name: 'Vanessa',
         role: 'Graduating Senior, Oxford University',
-        image: '/images/shaundju/testi05.png',
+        image: '/images/shaundju/testi05.webp',
         quote:
             'Having a clear starting point was most helpful.',
     },
     {
         name: 'Abdul',
         role: 'Assistant Manager at Grab',
-        image: '/images/shaundju/testi03.png',
+        image: '/images/shaundju/testi03.webp',
         quote:
             'I learned a lot dari training lo terutama cara berpikir kritis.',
     },
     {
         name: 'Cyndi',
         role: 'Final Year Student, NUS Singapore',
-        image: '/images/shaundju/testi08.png',
+        image: '/images/shaundju/testi08.webp',
         quote:
             'I really admired how professionally you work.',
     },
@@ -81,7 +81,7 @@ export default function Testimonials() {
 
     {/* Left: main proof image */}
     <img
-        src="/images/shaundju/proof.png"
+        src="/images/shaundju/proof.webp"
         alt="Phone testimonial"
         className="w-[280px] sm:w-[340px] lg:w-[380px] max-w-full rounded-2xl"
     />
@@ -89,17 +89,17 @@ export default function Testimonials() {
     {/* Right: 3 screenshots — same width as proof, equal height */}
     <div className="flex w-[280px] sm:w-[340px] lg:w-[380px] flex-col gap-3">
         <img
-            src="/images/shaundju/Screenshot1.png"
+            src="/images/shaundju/Screenshot1.webp"
             alt="Testimonial 1"
             className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
         <img
-            src="/images/shaundju/Screenshot2.png"
+            src="/images/shaundju/Screenshot2.webp"
             alt="Testimonial 2"
             className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />
         <img
-            src="/images/shaundju/Screenshot3.png"
+            src="/images/shaundju/Screenshot3.webp"
             alt="Testimonial 3"
             className="h-[200px] sm:h-[240px] lg:h-[280px] w-full rounded-xl object-cover object-top"
         />

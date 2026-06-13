@@ -30,7 +30,7 @@ export default function Hero() {
 
                         {/* LOGO */}
                         <img
-                            src="/images/shaundju/logo_header.png"
+                            src="/images/shaundju/logo_header.webp"
                             alt="Shaundju Academy"
                             className="mx-auto h-16 w-auto sm:h-20 lg:mx-0 lg:h-16"
                         />
@@ -51,17 +51,17 @@ export default function Hero() {
                             </span>
 
                             <img
-                                src="/images/shaundju/testi08.png"
+                                src="/images/shaundju/testi08.webp"
                                 alt="Members"
                                 className="h-6 sm:h-8 w-auto"
                             />
                             <img
-                                src="/images/shaundju/testi02.png"
+                                src="/images/shaundju/testi02.webp"
                                 alt="Members"
                                 className="h-6 sm:h-8 w-auto"
                             />
                             <img
-                                src="/images/shaundju/testi04.png"
+                                src="/images/shaundju/testi04.webp"
                                 alt="Members"
                                 className="h-6 sm:h-8 w-auto"
                             />
@@ -143,7 +143,7 @@ hover:scale-[1.02]
                     <div className="relative flex justify-center lg:order-last lg:justify-end">
 
                         <img
-                            src="/images/shaundju/photo_header.png"
+                            src="/images/shaundju/photo_header.webp"
                             alt="Shaun Djuhari"
                             className="
 w-full

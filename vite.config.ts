@@ -28,4 +28,14 @@ export default defineConfig({
             formVariants: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                assetFileNames: 'assets/[name]-[hash][extname]',
+            },
+        },
+        chunkSizeWarningLimit: 1000,
+        cssMinify: true,
+        minify: 'esbuild',
+    },
 });

@@ -16,7 +16,7 @@ className="
                     {/* Logo */}
                     <div>
                     <img
-    src="/images/shaundju/logo_footer.png"
+    src="/images/shaundju/logo_footer.webp"
     alt="Shaundju Academy"
     className="h-10 sm:h-12 lg:h-14 w-auto brightness-0 invert"
 />

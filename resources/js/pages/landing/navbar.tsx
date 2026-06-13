@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
                 <a href="/" className="flex items-center gap-4">
                     <img
-                        src="/images/shaundju/logo_header.png"
+                        src="/images/shaundju/logo_header.webp"
                         alt="Shaundju Academy Logo"
                         className="h-12 w-auto object-contain"
                     />

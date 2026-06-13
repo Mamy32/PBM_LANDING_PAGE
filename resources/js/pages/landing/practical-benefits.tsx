@@ -5,18 +5,18 @@ const benefits = [
     {
         title: 'Jadi Kandidat Rebutan,\nBukan Penunggu Giliran',
         description: 'Jadi nama yang selalu muncul di pikiran atasan',
-        icon: '/images/shaundju/benefit1.png',
+        icon: '/images/shaundju/benefit1.webp',
     },
     {
         title: 'Komunikasi yang Bikin Lo\nKelihatan Lebih Senior\ndari Jabatan Lo',
         description:
             'Belajar cara presentasi & ngomong yang bikin orang dengerin lo',
-        icon: '/images/shaundju/benefit2.png',
+        icon: '/images/shaundju/benefit2.webp',
     },
     {
         title: 'Ubah Cara\nAtasan Ngeliat Lo',
         description: 'Dari staff rajin jadi calon manajer',
-        icon: '/images/shaundju/benefit3.png',
+        icon: '/images/shaundju/benefit3.webp',
     },
 ];
 

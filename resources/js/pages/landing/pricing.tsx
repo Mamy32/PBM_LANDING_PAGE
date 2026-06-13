@@ -49,7 +49,7 @@ return (
                     </p>
 
                     <div className="mt-4 flex justify-center">
-                        <span className="rounded-full border border-[#123C2D] px-4 py-1 text-sm">
+                        <span className="rounded-full border border-[#123C2D] px-4 py-1 text-sm text-[#000000]">
                             4 Modules
                         </span>
                     </div>

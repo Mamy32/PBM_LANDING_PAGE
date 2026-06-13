@@ -66,7 +66,7 @@ export default function Solution() {
                         </div>
 
                         {/* Feature tags — inline, small, no border */}
-                        <div className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-2 lg:justify-start">
+                        <div className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-2 lg:justify-start lg:flex-nowrap">
                             {[
                                 '75+ Materi Strategi Naik Gaji',
                                 'Lifetime Access',

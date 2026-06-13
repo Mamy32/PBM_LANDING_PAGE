@@ -20,11 +20,14 @@ export default function Navbar() {
             }`}
         >
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-                <a href="/" className="flex items-center gap-2.5">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-lg text-sm font-bold text-[#0C1F13]">
-                        <img src="/images/shaundju/logo_header.png" alt="Shaundju Academy Logo" />
-                    </span>
-                    <span className="text-base font-bold tracking-tight text-white sm:text-lg">
+                <a href="/" className="flex items-center gap-4">
+                    <img
+                        src="/images/shaundju/logo_header.png"
+                        alt="Shaundju Academy Logo"
+                        className="h-12 w-auto object-contain"
+                    />
+
+                    <span className="text-lg font-bold tracking-tight text-white">
                         Shaundju<span className="text-[#4ADE80]"> Academy</span>
                     </span>
                 </a>

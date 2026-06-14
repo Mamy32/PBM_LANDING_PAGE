@@ -5,31 +5,41 @@ import { useAnalytics } from '@/hooks/use-analytics';
 const faqItems = [
     {
         question: 'Apakah kelas ini cocok untuk fresh graduate?',
-        answer: 'Ya. Semakin cepat memahami dunia kerja, semakin cepat karier Anda berkembang.',
+        answer: 'Ya, sangat cocok. Di awal karier, banyak hal yang tidak diajarkan di kampus, mulai dari cara berkomunikasi dengan atasan, membangun kredibilitas, hingga strategi naik jabatan. Semakin cepat Anda memahami ini, semakin cepat Anda menonjol dibanding rekan sebaya.',
     },
     {
-        question: 'Apakah kelas ini cocok untuk karyawan berpengalaman?',
-        answer: 'Ya. Cocok untuk profesional yang merasa kariernya mulai stagnan dan ingin naik ke level berikutnya.',
+        question:
+            'Apakah kelas ini cocok untuk karyawan yang sudah berpengalaman?',
+        answer: 'Ya. Kelas ini dirancang untuk profesional yang merasa kariernya mulai stagnan, sudah bekerja keras, tapi pertumbuhan terasa lambat. Anda akan belajar cara mengubah pendekatan agar bisa naik ke level berikutnya.',
     },
     {
-        question: 'Apakah pembelajarannya live?',
-        answer: 'Tidak. Kelas dapat diakses online secara fleksibel sesuai waktu Anda.',
+        question:
+            'Apakah ada jadwal kelas atau sesi tatap muka dengan Pak Shaun?',
+        answer: 'Tidak ada jadwal kelas tetap dan tidak ada sesi tatap muka. Namun, Anda mendapatkan akses ke seluruh rekaman kelas sebelumnya yang bisa ditonton kapan saja, sesering yang Anda mau, sesuai ritme belajar Anda.',
     },
     {
         question: 'Apakah ada sesi mentoring langsung dengan Pak Shaun?',
-        answer: 'Tidak. Materi disusun untuk dipelajari secara mandiri dan sistematis.',
+        answer: 'Tidak ada sesi mentoring one-on-one. Seluruh materi disusun secara sistematis agar bisa dipelajari secara mandiri. Dari konsep dasar hingga penerapan praktis di dunia kerja nyata.',
     },
     {
-        question: 'Berapa lama akses kelas diberikan?',
-        answer: 'Sesuai kebijakan akses yang berlaku saat pembelian.',
+        question: 'Apakah kelasnya live atau bisa diakses kapan saja?',
+        answer: 'Kelas ini sepenuhnya on-demand dan tidak ada sesi live. Anda bisa menonton materi kapan saja dan dari mana saja, tanpa terikat jadwal. Cocok untuk Anda yang sibuk dengan pekerjaan atau aktivitas lain.',
+    },
+    {
+        question: 'Berapa lama saya bisa mengakses materi?',
+        answer: 'Akses ke seluruh modul diberikan seumur hidup (lifetime access). Tidak ada batas waktu. Anda bisa kembali menonton ulang materi kapan pun dibutuhkan.',
     },
     {
         question: 'Apakah materinya hanya teori?',
-        answer: 'Tidak. Setiap modul dilengkapi tugas praktik yang dapat langsung diterapkan di dunia kerja.',
+        answer: 'Tidak. Setiap modul dilengkapi dengan tugas praktik yang bisa langsung Anda terapkan di situasi kerja nyata. Tujuannya bukan sekadar paham secara konsep, tapi bisa langsung dieksekusi.',
+    },
+    {
+        question: 'Bagaimana cara mengakses kelas setelah membeli?',
+        answer: 'Setelah pembayaran dikonfirmasi, Anda akan mendapatkan akses langsung melalui email. Login ke platform, dan semua materi langsung tersedia untuk ditonton kapan saja.',
     },
     {
         question: 'Apakah kelas ini menjamin promosi atau kenaikan gaji?',
-        answer: 'Tidak. Namun Anda akan mempelajari kemampuan yang dibutuhkan untuk berkembang lebih cepat dalam karier.',
+        answer: 'Tidak ada jaminan langsung, hasil tetap bergantung pada konsistensi dan penerapan Anda. Namun, kelas ini membekali Anda dengan kemampuan konkret yang dibutuhkan untuk tumbuh lebih cepat dan diperhatikan di tempat kerja.',
     },
 ];
 

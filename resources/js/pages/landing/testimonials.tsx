@@ -82,27 +82,33 @@ export default function Testimonials() {
 
                     {/* Right: 3 screenshots — same width as proof, equal height */}
                     <div className="flex w-[280px] flex-col gap-3 sm:w-[340px] lg:w-[380px]">
-                        <img
-                            src="/images/shaundju/Screenshot1.webp"
-                            loading="lazy"
-                            decoding="async"
-                            alt="Testimonial 1"
-                            className="h-[200px] w-full rounded-xl object-cover object-top sm:h-[240px] lg:h-[280px]"
-                        />
-                        <img
-                            src="/images/shaundju/Screenshot2.webp"
-                            loading="lazy"
-                            decoding="async"
-                            alt="Testimonial 2"
-                            className="h-[200px] w-full rounded-xl object-cover object-top sm:h-[240px] lg:h-[280px]"
-                        />
-                        <img
-                            src="/images/shaundju/Screenshot3.webp"
-                            loading="lazy"
-                            decoding="async"
-                            alt="Testimonial 3"
-                            className="h-[200px] w-full rounded-xl object-cover object-top sm:h-[240px] lg:h-[280px]"
-                        />
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                            <img
+                                src="/images/shaundju/testimoni2.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Testimonial 1"
+                                className="h-full w-full object-cover object-top"
+                            />
+                        </div>
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                            <img
+                                src="/images/shaundju/Screenshot2.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Testimonial 2"
+                                className="h-full w-full object-cover object-top"
+                            />
+                        </div>
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                            <img
+                                src="/images/shaundju/Screenshot3.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Testimonial 3"
+                                className="h-full w-full object-cover object-top"
+                            />
+                        </div>
                     </div>
                 </div>
 

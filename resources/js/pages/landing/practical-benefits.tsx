@@ -46,7 +46,7 @@ export default function PracticalBenefits() {
                 <div className="mt-10 flex justify-center sm:mt-16">
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm text-white">
                         Cuma di Shaundju Academy
-                        <ChevronDown className="h-4 w-4" />
+                        {/* <ChevronDown className="h-4 w-4" /> */}
                     </div>
                 </div>
 

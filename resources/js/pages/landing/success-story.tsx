@@ -30,7 +30,7 @@ export default function SuccessStory() {
 
                 {/* Headline */}
                 <h2 className="mt-16 text-center font-serif text-3xl leading-tight text-[#1F3B32] sm:text-4xl lg:mt-24 lg:text-5xl">
-                    Gue Dapetin 100 Juta/Bulan di Usia 25
+                    Gue Dapetin 100 Juta/Bulan di Usia 29
                 </h2>
 
                 {/* Main Content */}

@@ -18,6 +18,7 @@ import Problem from './landing/problem';
 import Solution from './landing/solution';
 import SuccessStory from './landing/success-story';
 import Testimonials from './landing/testimonials';
+import VideoTeaser from './landing/video-teaser';
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -52,6 +53,7 @@ export default function Landing() {
             'media-features',
             'curriculum',
             'harga',
+            'video-teaser',
             'faq',
         ],
         [],
@@ -67,7 +69,8 @@ export default function Landing() {
         <>
             <Head>
                 <title>
-                    Cara Dapet Gaji Ratusan Juta/Bulan Sebelum Umur 30 — Shaundju Academy
+                    Cara Dapet Gaji Ratusan Juta/Bulan Sebelum Umur 30 —
+                    Shaundju Academy
                 </title>
                 <meta
                     name="description"
@@ -87,6 +90,7 @@ export default function Landing() {
                 <MediaFeatures />
                 <Curriculum />
                 <Pricing />
+                <VideoTeaser />
                 <Faq />
                 <Footer />
             </div>

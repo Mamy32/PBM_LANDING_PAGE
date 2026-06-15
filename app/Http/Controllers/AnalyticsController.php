@@ -37,7 +37,7 @@ class AnalyticsController extends Controller
         Log::info('Analytics Request:', $request->all());
 
         $sessionId = $request->session()->getId();
-        $ipHash = hash('sha256', $request->ip().config('app.key'));
+        $ipHash = hash('sha256', $request->ip() . config('app.key'));
 
         UserAnalytic::create([
             'session_id' => $sessionId,
@@ -66,8 +66,15 @@ class AnalyticsController extends Controller
             }
 
             $metaEvent = $request->input('event_data.meta_event');
+
             if ($eventType === 'cta_click' && $metaEvent === 'AddToCart') {
                 $metaService->sendAddToCart($request, $eventId);
+            }
+
+            if ($eventType === 'lead' && $metaEvent === 'Purchase') {
+                $amount   = (float) ($request->input('event_data.amount') ?? 0);
+                $currency = $request->input('event_data.currency', 'IDR');
+                $metaService->sendPurchase($request, $eventId, $amount, $currency);
             }
         }
 

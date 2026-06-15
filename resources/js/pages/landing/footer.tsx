@@ -24,7 +24,7 @@ export default function Footer() {
                 {/* Copyright */}
                 <div className="text-center">
                     <p className="text-xs text-white/70 sm:text-sm">
-                        © {new Date().getFullYear()} Shaundju Academy. All
+                        © {new Date().getFullYear()} PT Akademi Jurus Maut. All
                         rights reserved
                     </p>
                 </div>

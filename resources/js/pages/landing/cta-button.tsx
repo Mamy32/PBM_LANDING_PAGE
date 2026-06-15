@@ -28,7 +28,7 @@ export default function CtaButton({
 
     const variantClasses =
         variant === 'primary'
-            ? 'bg-[#4ADE80] text-[#0C1F13] shadow-lg shadow-[#4ADE80]/25 hover:bg-[#22C55E] hover:shadow-2xl hover:shadow-[#4ADE80]/40 hover:-translate-y-0.5 ring-1 ring-[#22C55E]/60'
+            ? 'bg-[#4ADE80] text-[#0C1F13] shadow-lg shadow-[#4ADE80]/25 hover:bg-[#22C55E] hover:shadow-sm hover:shadow-[#4ADE80]/40 hover:-translate-y-0.5 ring-1 ring-[#22C55E]/60'
             : variant === 'dark'
               ? 'bg-[#0C1F13] text-white shadow-lg shadow-black/30 hover:bg-black hover:-translate-y-0.5 ring-1 ring-white/10'
               : 'bg-white text-[#0C1F13] shadow-lg hover:bg-[#F0FFF4] hover:-translate-y-0.5 ring-1 ring-white/40';

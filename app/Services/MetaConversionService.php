@@ -93,6 +93,43 @@ class MetaConversionService
     }
 
     /**
+     * Send a Purchase event to Meta Conversions API.
+     *
+     * @param  float   $value     Order value in the given currency
+     * @param  string  $currency  ISO 4217 currency code (e.g. 'IDR')
+     */
+    public function sendPurchase(Request $request, string $eventId, float $value = 0, string $currency = 'IDR'): void
+    {
+        if (! $this->isConfigured()) {
+            return;
+        }
+
+        $userData = $this->buildUserData($request);
+
+        $content = (new Content)
+            ->setProductId('shaundju-academy')
+            ->setQuantity(1);
+
+        $customData = (new CustomData)
+            ->setContentName('Shaundju Academy')
+            ->setContentType('product')
+            ->setValue($value > 0 ? $value : 1950000)
+            ->setCurrency($currency)
+            ->setContents([$content]);
+
+        $event = (new Event)
+            ->setEventName('Purchase')
+            ->setEventTime(time())
+            ->setEventId($eventId)
+            ->setEventSourceUrl($request->header('Referer', $request->url()))
+            ->setActionSource(ActionSource::WEBSITE)
+            ->setUserData($userData)
+            ->setCustomData($customData);
+
+        $this->sendEvents([$event]);
+    }
+
+    /**
      * Build UserData from the HTTP request with browser cookie matching.
      */
     private function buildUserData(Request $request): UserData

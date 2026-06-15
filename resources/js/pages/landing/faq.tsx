@@ -110,7 +110,7 @@ export default function Faq() {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-10 text-center lg:mt-14">
+                {/* <div className="mt-10 text-center lg:mt-14">
                     <p className="mb-5 text-sm text-white/80 sm:text-base">
                         Masih ada pertanyaan lain? Hubungi kami sekarang.
                     </p>
@@ -123,7 +123,7 @@ export default function Faq() {
                         Chat via WA
                         <ChevronDown className="ml-2 h-4 w-4 -rotate-90" />
                     </button>
-                </div>
+                </div> */}
             </div>
         </section>
     );

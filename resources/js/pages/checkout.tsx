@@ -1,6 +1,6 @@
 import { Head, router } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
-import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 // ── Course data ──────────────────────────────────────────────────────
 const courses = [
@@ -149,7 +149,7 @@ export default function Checkout() {
     const selectedCourse = courses.find((c) => c.id === form.courseId);
     const countdown = useCountdown();
 
-    const { trackLead } = useAnalytics();
+    const { trackPurchase } = useAnalytics();
 
     // Force light mode
     useEffect(() => {
@@ -188,17 +188,13 @@ export default function Checkout() {
             return;
         }
 
-        const eventId = generateEventId();
-
-        const orderType =
-            selectedCourse?.id === 'managers'
-                ? 'pricing_manager'
-                : 'pricing_first_jobber';
-
-        // track as lead
-        trackLead(orderType, {
-            amount: selectedCourse?.price ?? 0,
-            event_id: eventId,
+        // Fire Meta Pixel Purchase + CAPI Purchase (server-side) with deduplication
+        trackPurchase(selectedCourse?.price ?? 0, 'IDR', {
+            course_id: form.courseId,
+            order_type:
+                selectedCourse?.id === 'managers'
+                    ? 'pricing_manager'
+                    : 'pricing_first_jobber',
         });
 
         // Build WA message

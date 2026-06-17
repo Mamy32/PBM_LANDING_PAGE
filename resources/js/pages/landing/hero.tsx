@@ -151,8 +151,11 @@ export default function Hero() {
                         <img
                             src="/images/shaundju/photo_header.webp"
                             alt="Shaun Djuhari"
+                            fetchPriority="high"
                             loading="eager"
                             decoding="async"
+                            width="700"
+                            height="800"
                             className="w-full max-w-[320px] object-contain drop-shadow-[0_0_40px_rgba(0,0,0,0.5)] sm:max-w-[450px] lg:max-w-[700px]"
                         />
                     </div>

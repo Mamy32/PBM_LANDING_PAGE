@@ -33,9 +33,11 @@ export default function Navbar() {
                     <img
                         src="/images/shaundju/logo_header.webp"
                         alt="Shaundju Academy Logo"
-                        className="h-12 w-auto object-contain"
+                        width="180"
+                        height="60"
                         loading="eager"
                         decoding="async"
+                        className="h-12 w-auto object-contain"
                     />
                 </a>
                 <button

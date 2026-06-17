@@ -109,24 +109,6 @@ function WhatsAppIcon({ className = 'h-5 w-5' }: { className?: string }) {
     );
 }
 
-// ── Lock Icon SVG ────────────────────────────────────────────────────
-function LockIcon({ className = 'h-4 w-4' }: { className?: string }) {
-    return (
-        <svg
-            className={className}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-        </svg>
-    );
-}
-
 // ══════════════════════════════════════════════════════════════════════
 // CHECKOUT PAGE
 // ══════════════════════════════════════════════════════════════════════
@@ -518,26 +500,32 @@ export default function Checkout() {
                                 100% secure – instant access after payment
                             </p>
 
-                            {/* Secure Badge */}
-                            <div className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 shadow-sm">
-                                <LockIcon className="h-3.5 w-3.5 text-[#1A3A22]" />
-                                <span className="text-xs font-bold tracking-wider text-[#1A3A22]">
-                                    SECURE
-                                </span>
-                            </div>
+                            {/* SSL Secure Badge */}
+                            <img
+                                src="/images/shaundju/checkout-payment/ssl-payment.png"
+                                alt="SSL Secure Payment"
+                                loading="lazy"
+                                decoding="async"
+                                className="h-10 w-auto object-contain sm:h-12"
+                            />
 
                             {/* Payment Logos */}
                             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-                                {['BCA', 'mandiri', 'QRIS', 'VISA', 'MC'].map(
-                                    (name) => (
-                                        <span
-                                            key={name}
-                                            className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs font-bold tracking-wide text-gray-600 shadow-sm sm:px-4 sm:py-2 sm:text-sm"
-                                        >
-                                            {name}
-                                        </span>
-                                    ),
-                                )}
+                                {[
+                                    { src: '/images/shaundju/checkout-payment/bca-payment.png', alt: 'BCA' },
+                                    { src: '/images/shaundju/checkout-payment/mandiri-payment.png', alt: 'Mandiri' },
+                                    { src: '/images/shaundju/checkout-payment/qris-payment.png', alt: 'QRIS' },
+                                    { src: '/images/shaundju/checkout-payment/visa-mc-payment.png', alt: 'Visa & Mastercard' },
+                                ].map((logo) => (
+                                    <img
+                                        key={logo.alt}
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="h-8 w-auto object-contain sm:h-10"
+                                    />
+                                ))}
                             </div>
                         </div>
 

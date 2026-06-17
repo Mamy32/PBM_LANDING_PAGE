@@ -186,7 +186,10 @@ export default function LabsIndex({
     };
 
     const availablePages = useMemo(
-        () => [...new Set(matrix.map((m) => normalizePath(m.landing_source)))].sort(),
+        () =>
+            [
+                ...new Set(matrix.map((m) => normalizePath(m.landing_source))),
+            ].sort(),
         [matrix],
     );
 
@@ -539,7 +542,11 @@ export default function LabsIndex({
                             <div className="flex items-center gap-2">
                                 <Globe className="h-4 w-4 text-muted-foreground" />
                                 <Select
-                                    value={selectedPages.length === 1 ? selectedPages[0] : '__multi__'}
+                                    value={
+                                        selectedPages.length === 1
+                                            ? selectedPages[0]
+                                            : '__multi__'
+                                    }
                                     onValueChange={(val) => {
                                         if (val === '__all__') {
                                             clearPageFilter();
@@ -564,9 +571,15 @@ export default function LabsIndex({
                                         {availablePages.map((page) => (
                                             <SelectItem key={page} value={page}>
                                                 <span className="flex items-center gap-2">
-                                                    <span className={`inline-block h-2 w-2 rounded-full ${
-                                                        selectedPages.includes(page) ? 'bg-primary' : 'bg-muted-foreground/30'
-                                                    }`} />
+                                                    <span
+                                                        className={`inline-block h-2 w-2 rounded-full ${
+                                                            selectedPages.includes(
+                                                                page,
+                                                            )
+                                                                ? 'bg-primary'
+                                                                : 'bg-muted-foreground/30'
+                                                        }`}
+                                                    />
                                                     {page}
                                                 </span>
                                             </SelectItem>
@@ -654,7 +667,8 @@ export default function LabsIndex({
                     {isPageFiltered && (
                         <Badge variant="secondary" className="gap-1">
                             <Globe className="h-3 w-3" />
-                            {selectedPages.length} page{selectedPages.length > 1 ? 's' : ''} selected
+                            {selectedPages.length} page
+                            {selectedPages.length > 1 ? 's' : ''} selected
                         </Badge>
                     )}
                 </div>
@@ -1301,12 +1315,15 @@ export default function LabsIndex({
                         )}
 
                         {/* ==================== SECTION D: CTA ANALYSIS ==================== */}
-                        {filteredCta && filteredCta.length > 0 && <CtaAnalysis data={filteredCta} />}
+                        {filteredCta && filteredCta.length > 0 && (
+                            <CtaAnalysis data={filteredCta} />
+                        )}
 
                         {/* ==================== SECTION E: AUDIENCE SEGMENTATION ==================== */}
                         {((filteredReaders && filteredReaders.length > 0) ||
                             (filteredHeatmap && filteredHeatmap.length > 0) ||
-                            (filteredSectionHeatmap && filteredSectionHeatmap.length > 0)) && (
+                            (filteredSectionHeatmap &&
+                                filteredSectionHeatmap.length > 0)) && (
                             <AudienceSegmentation
                                 readers={filteredReaders || []}
                                 heatmap={filteredHeatmap || []}

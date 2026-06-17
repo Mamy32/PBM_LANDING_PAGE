@@ -5,23 +5,26 @@ const SECTION_SEEN_PREFIX = 'section_seen_';
 
 /**
  * Minimum continuous visibility duration (ms) required to count a section as "seen".
- * 500ms is enough to filter out fast-scrolls while capturing genuine pauses.
+ * 500ms filters fast-scrolls while capturing genuine pauses.
  */
 const DWELL_MS = 500;
 
 /**
- * Track which sections a user scrolls into view.
+ * Automatically track all <section> elements that have an `id` attribute.
+ *
+ * No predefined list needed — the hook scans the DOM on mount and observes
+ * every matching element. New sections added to the page are picked up
+ * automatically without updating any config.
  *
  * Strategy:
- *  - IntersectionObserver with threshold:0 detects entry/exit for sections of any height
- *    (sections taller than the viewport can never achieve 50% simultaneous visibility).
- *  - A 500ms dwell timer is started on entry and cancelled on exit, so fast-scrolls
- *    through a section do NOT trigger an event — only genuine pauses count.
+ *  - querySelectorAll('section[id]') discovers sections dynamically.
+ *  - IntersectionObserver with threshold:0.2 detects entry/exit for sections
+ *    of any height (tall sections can never achieve 50% simultaneous visibility).
+ *  - A 500ms dwell timer is started on entry and cancelled on exit, so
+ *    fast-scrolls do NOT trigger an event — only genuine pauses count.
  *  - Each section fires exactly once per session (deduplicated via sessionStorage).
- *
- * @param sectionIds - list of DOM element IDs to observe
  */
-export function useSectionTracking(sectionIds: string[]) {
+export function useSectionTracking() {
     const { trackSectionView } = useAnalytics();
     const observerRef = useRef<IntersectionObserver | null>(null);
     // Map of sectionId → pending dwell timer
@@ -82,24 +85,22 @@ export function useSectionTracking(sectionIds: string[]) {
                 });
             },
             {
-                // threshold: 0 detects any entry/exit regardless of section height.
-                // Data quality is maintained by the DWELL_MS timer above:
-                // only users who pause ≥500ms on a section are counted.
+                // threshold: 0.2 — fires when 20% of the section enters the viewport.
+                // Data quality is maintained by the DWELL_MS timer above.
                 threshold: 0.2,
             },
         );
 
         observerRef.current = observer;
 
-        // Observe all section elements (rAF ensures DOM is fully painted)
+        // Auto-discover all <section id="..."> elements (rAF ensures DOM is fully painted)
         requestAnimationFrame(() => {
-            sectionIds.forEach((id) => {
-                const element = document.getElementById(id);
-                if (element) {
-                    const storageKey = `${SECTION_SEEN_PREFIX}${id}`;
-                    if (!sessionStorage.getItem(storageKey)) {
-                        observer.observe(element);
-                    }
+            const sections =
+                document.querySelectorAll<HTMLElement>('section[id]');
+            sections.forEach((el) => {
+                const storageKey = `${SECTION_SEEN_PREFIX}${el.id}`;
+                if (!sessionStorage.getItem(storageKey)) {
+                    observer.observe(el);
                 }
             });
         });
@@ -110,5 +111,5 @@ export function useSectionTracking(sectionIds: string[]) {
             dwellTimers.current.forEach(clearTimeout);
             dwellTimers.current.clear();
         };
-    }, [sectionIds, trackSectionView]);
+    }, [trackSectionView]); // no sectionIds dependency — DOM is the source of truth
 }

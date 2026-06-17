@@ -67,7 +67,7 @@ class AnalyticsController extends Controller
 
             $metaEvent = $request->input('event_data.meta_event');
 
-            if ($eventType === 'cta_click' && $metaEvent === 'AddToCart') {
+            if ($eventType === 'lead' && $metaEvent === 'AddToCart') {
                 $metaService->sendAddToCart($request, $eventId);
             }
 

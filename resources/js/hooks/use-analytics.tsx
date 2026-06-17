@@ -255,12 +255,30 @@ export function useAnalytics() {
 
     const trackLead = useCallback(
         (type: string, data?: Record<string, any>) => {
+            // Gunakan event_id dari caller jika ada, atau generate baru
+            const eventId: string = data?.event_id ?? generateEventId();
+
+            // 1. Browser-side Meta Pixel AddToCart
+            if (typeof (window as any).fbq === 'function') {
+                const pixelPayload = data?.value
+                    ? { value: data.value, currency: data.currency ?? 'IDR' }
+                    : {};
+                (window as any).fbq('track', 'AddToCart', pixelPayload, {
+                    eventID: eventId,
+                });
+            }
+
+            // 2. Server-side CAPI via backend (dedup via same eventId)
             track({
                 event_type: 'lead',
                 event_data: {
                     type,
                     page: window.location.pathname,
                     timestamp: new Date().toISOString(),
+                    event_id: eventId,
+                    meta_event: 'AddToCart',
+                    _fbp: getCookieValue('_fbp'),
+                    _fbc: getCookieValue('_fbc'),
                     ...data,
                 },
             });

@@ -20,7 +20,7 @@ const courses = [
     },
 ];
 
-const WA_NUMBER = '62881080545047';
+const WA_NUMBER = '6287841393601';
 
 // ── Helpers ──────────────────────────────────────────────────────────
 function formatRupiah(n: number) {

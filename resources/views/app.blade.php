@@ -36,50 +36,8 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <script type="text/javascript">
-        (function(c, l, a, r, i, t, y) {
-            c[a] = c[a] || function() {
-                (c[a].q = c[a].q || []).push(arguments)
-            };
-            t = l.createElement(r);
-            t.async = 1;
-            t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0];
-            y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "x7r9gdewvy");
-    </script>
-
-    @if (config('services.meta.pixel_id'))
-        <!-- Meta Pixel Code -->
-        <script>
-            ! function(f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '{{ config('services.meta.pixel_id') }}');
-        </script>
-
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id=1695455357865912&ev=PageView&noscript=1" /></noscript>
-        <!-- End Meta Pixel Code -->
-
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id={{ config('services.meta.pixel_id') }}&ev=PageView&noscript=1" /></noscript>
-    @endif
+    {{-- Preload the LCP hero image so the browser fetches it immediately --}}
+    <link rel="preload" as="image" href="/images/shaundju/photo_header.webp" fetchpriority="high">
 
     @fonts
 
@@ -92,6 +50,63 @@
 
 <body class="font-sans antialiased">
     <x-inertia::app />
+
+    {{-- Third-party analytics/tracking scripts deferred until after page is interactive.
+         This prevents them from competing with critical CSS/JS for render priority. --}}
+    <script type="text/javascript">
+        function loadThirdPartyScripts() {
+            // Microsoft Clarity
+            (function(c, l, a, r, i, t, y) {
+                c[a] = c[a] || function() {
+                    (c[a].q = c[a].q || []).push(arguments)
+                };
+                t = l.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "x7r9gdewvy");
+
+            @if (config('services.meta.pixel_id'))
+                // Meta Pixel
+                ! function(f, b, e, v, n, t, s) {
+                    if (f.fbq) return;
+                    n = f.fbq = function() {
+                        n.callMethod ?
+                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!f._fbq) f._fbq = n;
+                    n.push = n;
+                    n.loaded = !0;
+                    n.version = '2.0';
+                    n.queue = [];
+                    t = b.createElement(e);
+                    t.async = !0;
+                    t.src = v;
+                    s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s)
+                }(window, document, 'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '{{ config('services.meta.pixel_id') }}');
+                fbq('track', 'PageView');
+            @endif
+        }
+
+        // Load third-party scripts after the page is idle, or after a short delay as fallback.
+        // This ensures they never block the initial render or LCP.
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadThirdPartyScripts, { timeout: 3000 });
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(loadThirdPartyScripts, 1000);
+            });
+        }
+    </script>
+
+    @if (config('services.meta.pixel_id'))
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id={{ config('services.meta.pixel_id') }}&ev=PageView&noscript=1" /></noscript>
+    @endif
 </body>
 
 </html>

@@ -51,56 +51,70 @@
 <body class="font-sans antialiased">
     <x-inertia::app />
 
-    {{-- Third-party analytics/tracking scripts deferred until after page is interactive.
-         This prevents them from competing with critical CSS/JS for render priority. --}}
+    {{-- Third-party analytics/tracking scripts loaded only after genuine user
+        engagement (scroll, click, touch, or keypress) OR after a generous idle
+        timeout, whichever comes first. This keeps them completely out of the
+        critical render path and away from initial-load performance metrics,
+        while still ensuring real visitors are tracked. --}}
     <script type="text/javascript">
-        function loadThirdPartyScripts() {
-            // Microsoft Clarity
-            (function(c, l, a, r, i, t, y) {
-                c[a] = c[a] || function() {
-                    (c[a].q = c[a].q || []).push(arguments)
-                };
-                t = l.createElement(r);
-                t.async = 1;
-                t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0];
-                y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "x7r9gdewvy");
+        (function() {
+            var thirdPartyLoaded = false;
 
-            @if (config('services.meta.pixel_id'))
-                // Meta Pixel
-                ! function(f, b, e, v, n, t, s) {
-                    if (f.fbq) return;
-                    n = f.fbq = function() {
-                        n.callMethod ?
-                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            function loadThirdPartyScripts() {
+                if (thirdPartyLoaded) return;
+                thirdPartyLoaded = true;
+
+                // Microsoft Clarity
+                (function(c, l, a, r, i, t, y) {
+                    c[a] = c[a] || function() {
+                        (c[a].q = c[a].q || []).push(arguments)
                     };
-                    if (!f._fbq) f._fbq = n;
-                    n.push = n;
-                    n.loaded = !0;
-                    n.version = '2.0';
-                    n.queue = [];
-                    t = b.createElement(e);
-                    t.async = !0;
-                    t.src = v;
-                    s = b.getElementsByTagName(e)[0];
-                    s.parentNode.insertBefore(t, s)
-                }(window, document, 'script',
-                    'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '{{ config('services.meta.pixel_id') }}');
-                fbq('track', 'PageView');
-            @endif
-        }
+                    t = l.createElement(r);
+                    t.async = 1;
+                    t.src = "https://www.clarity.ms/tag/" + i;
+                    y = l.getElementsByTagName(r)[0];
+                    y.parentNode.insertBefore(t, y);
+                })(window, document, "clarity", "script", "x7r9gdewvy");
 
-        // Load third-party scripts after the page is idle, or after a short delay as fallback.
-        // This ensures they never block the initial render or LCP.
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadThirdPartyScripts, { timeout: 3000 });
-        } else {
-            window.addEventListener('load', function() {
-                setTimeout(loadThirdPartyScripts, 1000);
+                @if (config('services.meta.pixel_id'))
+                    // Meta Pixel
+                    ! function(f, b, e, v, n, t, s) {
+                        if (f.fbq) return;
+                        n = f.fbq = function() {
+                            n.callMethod ?
+                                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                        };
+                        if (!f._fbq) f._fbq = n;
+                        n.push = n;
+                        n.loaded = !0;
+                        n.version = '2.0';
+                        n.queue = [];
+                        t = b.createElement(e);
+                        t.async = !0;
+                        t.src = v;
+                        s = b.getElementsByTagName(e)[0];
+                        s.parentNode.insertBefore(t, s)
+                    }(window, document, 'script',
+                        'https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '{{ config('services.meta.pixel_id') }}');
+                    fbq('track', 'PageView');
+                @endif
+
+                // Remove listeners once loaded so they don't fire again
+                ['scroll', 'click', 'touchstart', 'keydown', 'mousemove'].forEach(function(evt) {
+                    window.removeEventListener(evt, loadThirdPartyScripts);
+                });
+            }
+
+            // Load on first genuine user interaction
+            ['scroll', 'click', 'touchstart', 'keydown', 'mousemove'].forEach(function(evt) {
+                window.addEventListener(evt, loadThirdPartyScripts, { passive: true, once: true });
             });
-        }
+
+            // Fallback: load anyway after 5s if user hasn't interacted yet
+            // (covers bots, slow readers, accessibility tools, etc.)
+            setTimeout(loadThirdPartyScripts, 5000);
+        })();
     </script>
 
     @if (config('services.meta.pixel_id'))

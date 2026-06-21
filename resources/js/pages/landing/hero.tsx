@@ -43,6 +43,8 @@ export default function Hero() {
                             <img
                                 src="/images/shaundju/testi08.webp"
                                 alt="Members"
+                                width={32}
+                                height={32}
                                 className="h-6 w-auto sm:h-8"
                                 loading="lazy"
                                 decoding="async"
@@ -50,6 +52,8 @@ export default function Hero() {
                             <img
                                 src="/images/shaundju/testi02.webp"
                                 alt="Members"
+                                width={32}
+                                height={32}
                                 className="h-6 w-auto sm:h-8"
                                 loading="lazy"
                                 decoding="async"
@@ -57,6 +61,8 @@ export default function Hero() {
                             <img
                                 src="/images/shaundju/testi04.webp"
                                 alt="Members"
+                                width={32}
+                                height={32}
                                 className="h-6 w-auto sm:h-8"
                                 loading="lazy"
                                 decoding="async"

@@ -123,6 +123,8 @@ export default function Testimonials() {
                                 <img
                                     src={item.image}
                                     alt={item.name}
+                                    width={56}
+                                    height={56}
                                     className="h-12 w-12 rounded-full object-cover sm:h-14 sm:w-14"
                                     loading="lazy"
                                     decoding="async"

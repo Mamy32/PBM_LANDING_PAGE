@@ -23,6 +23,8 @@ export default function SuccessStory() {
                         src="/images/shaundju/logo_company.webp"
                         alt="Companies"
                         className="w-full max-w-6xl"
+                        width={665}
+                        height={86}
                         loading="lazy"
                         decoding="async"
                     />
@@ -50,6 +52,8 @@ export default function SuccessStory() {
                                 src="/images/shaundju/oners.webp"
                                 alt="Shaun"
                                 className="h-16 w-16 rounded-full sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+                                    width={96}
+                                height={96}
                             />
 
                             <div className="rounded-full bg-[#1F3B32] px-3 py-2 text-sm text-white sm:px-4">
@@ -61,6 +65,8 @@ export default function SuccessStory() {
                             <img
                                 src="/images/shaundju/gaji200jt.webp"
                                 alt="Salary Proof"
+                                    width={560}
+                                height={190}
                                 className="w-full max-w-xs sm:max-w-md lg:max-w-lg"
                                 loading="lazy"
                                 decoding="async"
@@ -84,6 +90,8 @@ export default function SuccessStory() {
                             src="/images/shaundju/promote.webp"
                             alt="Career Timeline"
                             className="w-full"
+                                width={609}
+                            height={958}
                             loading="lazy"
                             decoding="async"
                         />

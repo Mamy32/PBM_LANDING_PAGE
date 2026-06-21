@@ -23,6 +23,8 @@ export default function Solution() {
                                     src="/images/shaundju/mentor.webp"
                                     alt="Shaun"
                                     className="h-[320px] w-auto object-cover sm:h-[420px] lg:h-[520px]"
+                                    width={381}
+                                    height={520}
                                     loading="lazy"
                                     decoding="async"
                                 />

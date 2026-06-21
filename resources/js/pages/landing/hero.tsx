@@ -153,18 +153,26 @@ export default function Hero() {
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div className="relative flex justify-center lg:order-last lg:justify-end">
-                        <img
-                            src="/images/shaundju/photo_header.webp"
-                            alt="Shaun Djuhari"
-                            fetchPriority="high"
-                            loading="eager"
-                            decoding="async"
-                            width="700"
-                            height="800"
-                            className="w-full max-w-[320px] object-contain drop-shadow-[0_0_40px_rgba(0,0,0,0.5)] sm:max-w-[450px] lg:max-w-[700px]"
-                        />
-                    </div>
+              <div className="relative flex justify-center lg:order-last lg:justify-end">
+    <img
+        src="/images/shaundju/photo_header-700.webp"
+        srcSet="
+            /images/shaundju/photo_header-320.webp 320w,
+            /images/shaundju/photo_header-450.webp 450w,
+            /images/shaundju/photo_header-700.webp 700w
+        "
+        sizes="(max-width: 640px) 320px,
+               (max-width: 1024px) 450px,
+               700px"
+        alt="Shaun Djuhari"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        width="700"
+        height="800"
+        className="w-full max-w-[320px] object-contain drop-shadow-[0_0_40px_rgba(0,0,0,0.5)] sm:max-w-[450px] lg:max-w-[700px]"
+    />
+</div>
                 </div>
             </div>
 

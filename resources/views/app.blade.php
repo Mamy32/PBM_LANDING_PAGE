@@ -42,7 +42,31 @@
     @fonts
 
     @viteReactRefresh
-    @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
+
+    {{-- Load app CSS non-blocking: browser downloads it at normal priority but
+         doesn't block first paint waiting for it. The noscript fallback covers
+         browsers/crawlers with JS disabled. This is the standard "media swap"
+         technique for deferring non-critical CSS. --}}
+    @php
+        $cssFile = null;
+        $manifestPath = public_path('build/manifest.json');
+        if (file_exists($manifestPath)) {
+            $manifest = json_decode(file_get_contents($manifestPath), true);
+            $cssFile = $manifest['resources/css/app.css']['file'] ?? null;
+        }
+    @endphp
+
+    @if ($cssFile)
+        <link rel="preload" href="{{ asset('build/' . $cssFile) }}" as="style">
+        <link rel="stylesheet" href="{{ asset('build/' . $cssFile) }}" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="{{ asset('build/' . $cssFile) }}"></noscript>
+    @else
+        {{-- Dev server fallback (HMR) --}}
+        @vite(['resources/css/app.css'])
+    @endif
+
+    @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
+
     <x-inertia::head>
         <title>{{ config('app.name', 'Laravel') }}</title>
     </x-inertia::head>
@@ -52,10 +76,10 @@
     <x-inertia::app />
 
     {{-- Third-party analytics/tracking scripts loaded only after genuine user
-        engagement (scroll, click, touch, or keypress) OR after a generous idle
-        timeout, whichever comes first. This keeps them completely out of the
-        critical render path and away from initial-load performance metrics,
-        while still ensuring real visitors are tracked. --}}
+         engagement (scroll, click, touch, or keypress) OR after a generous idle
+         timeout, whichever comes first. This keeps them completely out of the
+         critical render path and away from initial-load performance metrics,
+         while still ensuring real visitors are tracked. --}}
     <script type="text/javascript">
         (function() {
             var thirdPartyLoaded = false;

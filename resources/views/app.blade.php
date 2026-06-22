@@ -37,7 +37,12 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     {{-- Preload the LCP hero image so the browser fetches it immediately --}}
-    <link rel="preload" as="image" href="/images/shaundju/photo_header.webp" fetchpriority="high">
+    <link
+    rel="preload"
+    as="image"
+    href="/images/shaundju/photo_header.webp"
+    media="(min-width:1024px)"
+>
 
     @fonts
 

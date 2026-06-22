@@ -25,6 +25,7 @@ export default function SuccessStory() {
                         className="w-full max-w-6xl"
                         width={665}
                         height={86}
+                        fetchPriority="low"
                         loading="lazy"
                         decoding="async"
                     />
@@ -51,6 +52,7 @@ export default function SuccessStory() {
                             <img
                                 src="/images/shaundju/oners.webp"
                                 alt="Shaun"
+                                fetchPriority="low"
                                 className="h-16 w-16 rounded-full sm:h-20 sm:w-20 lg:h-24 lg:w-24"
                                     width={96}
                                 height={96}
@@ -92,6 +94,7 @@ export default function SuccessStory() {
                             className="w-full"
                                 width={609}
                             height={958}
+                            fetchPriority="low"
                             loading="lazy"
                             decoding="async"
                         />

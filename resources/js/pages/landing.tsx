@@ -1,24 +1,26 @@
 import { Head } from '@inertiajs/react';
-
+import Navbar from './landing/navbar';
+import Hero from './landing/hero';
+import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import { useDwellTime } from '@/hooks/use-dwell-time';
 import { useScrollTracking } from '@/hooks/use-scroll-tracking';
 import { useSectionTracking } from '@/hooks/use-section-tracking';
-import Curriculum from './landing/curriculum';
-import Faq from './landing/faq';
-import Footer from './landing/footer';
-import Hero from './landing/hero';
-import Instructor from './landing/instructor';
-import MediaFeatures from './landing/media-features';
-import Navbar from './landing/navbar';
-import PracticalBenefits from './landing/practical-benefits';
-import Pricing from './landing/pricing';
-import Problem from './landing/problem';
-import Solution from './landing/solution';
-import SuccessStory from './landing/success-story';
-import Testimonials from './landing/testimonials';
-import VideoTeaser from './landing/video-teaser';
+
+
+const SuccessStory = lazy(() => import('./landing/success-story'));
+const Solution = lazy(() => import('./landing/solution'));
+const Problem = lazy(() => import('./landing/problem'));
+const PracticalBenefits = lazy(() => import('./landing/practical-benefits'));
+const Testimonials = lazy(() => import('./landing/testimonials'));
+const Instructor = lazy(() => import('./landing/instructor'));
+const MediaFeatures = lazy(() => import('./landing/media-features'));
+const Curriculum = lazy(() => import('./landing/curriculum'));
+const Pricing = lazy(() => import('./landing/pricing'));
+const VideoTeaser = lazy(() => import('./landing/video-teaser'));
+const Faq = lazy(() => import('./landing/faq'));
+const Footer = lazy(() => import('./landing/footer'));
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -61,8 +63,10 @@ export default function Landing() {
             </Head>
 
             <div className="min-h-screen bg-[#0C1F13] text-white antialiased selection:bg-[#4ADE80] selection:text-[#0C1F13]">
-                <Navbar />
-                <Hero />
+            <Navbar />
+            <Hero />
+
+            <Suspense fallback={null}>
                 <SuccessStory />
                 <Solution />
                 <Problem />
@@ -75,6 +79,7 @@ export default function Landing() {
                 <VideoTeaser />
                 <Faq />
                 <Footer />
+            </Suspense>
             </div>
         </>
     );

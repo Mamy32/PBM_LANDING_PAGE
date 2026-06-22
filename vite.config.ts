@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react';
 import laravel from 'laravel-vite-plugin';
 import { bunny } from 'laravel-vite-plugin/fonts';
 import { defineConfig } from 'vite';
-import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
     plugins: [
@@ -27,11 +26,6 @@ export default defineConfig({
         tailwindcss(),
         wayfinder({
             formVariants: true,
-        }),
-        visualizer({
-            filename: 'stats.html',
-            gzipSize: true,
-            brotliSize: true,
         }),
     ],
     build: {

@@ -8,8 +8,16 @@ import SettingsLayout from '@/layouts/settings/layout';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Shaun Dju Academy';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const pages = import.meta.glob('./pages/**/*.tsx') as Record<string, any>;
+
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
+    resolve: (name) => {
+        const page = pages[`./pages/${name}.tsx`];
+        if (!page) throw new Error(`Page not found: ${name}`);
+        return page();
+    },
     layout: (name) => {
         switch (true) {
             case name.startsWith('auth/'):

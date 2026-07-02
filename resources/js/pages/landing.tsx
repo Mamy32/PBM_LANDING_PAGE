@@ -67,8 +67,8 @@ export default function Landing() {
             <Hero />
 
             <Suspense fallback={null}>
-                <SuccessStory />
                 <Solution />
+                <SuccessStory />
                 <Problem />
                 <PracticalBenefits />
                 <Testimonials />

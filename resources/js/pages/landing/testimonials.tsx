@@ -79,37 +79,6 @@ export default function Testimonials() {
                         alt="Phone testimonial"
                         className="w-[280px] max-w-full rounded-2xl sm:w-[340px] lg:w-[380px]"
                     />
-
-                    {/* Right: 3 screenshots — same width as proof, equal height */}
-                    <div className="flex w-[280px] flex-col gap-3 sm:w-[340px] lg:w-[380px]">
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
-                            <img
-                                src="/images/shaundju/testimoni2.webp"
-                                loading="lazy"
-                                decoding="async"
-                                alt="Testimonial 1"
-                                className="h-full w-full object-cover object-top"
-                            />
-                        </div>
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
-                            <img
-                                src="/images/shaundju/Screenshot2.webp"
-                                loading="lazy"
-                                decoding="async"
-                                alt="Testimonial 2"
-                                className="h-full w-full object-cover object-top"
-                            />
-                        </div>
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
-                            <img
-                                src="/images/shaundju/Screenshot3.webp"
-                                loading="lazy"
-                                decoding="async"
-                                alt="Testimonial 3"
-                                className="h-full w-full object-cover object-top"
-                            />
-                        </div>
-                    </div>
                 </div>
 
                 {/* Testimonial Cards */}
@@ -149,6 +118,37 @@ export default function Testimonials() {
                         </div>
                     ))}
                 </div>
+                                    {/* Right: 3 screenshots — same width as proof, equal height */}
+                    <div className="flex w-[280px] flex-col gap-3 sm:w-[340px] lg:w-[380px]">
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                            <img
+                                src="/images/shaundju/testimoni2.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Testimonial 1"
+                                className="h-full w-full object-cover object-top"
+                            />
+                        </div>
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                            <img
+                                src="/images/shaundju/Screenshot2.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Testimonial 2"
+                                className="h-full w-full object-cover object-top"
+                            />
+                        </div>
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                            <img
+                                src="/images/shaundju/Screenshot3.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Testimonial 3"
+                                className="h-full w-full object-cover object-top"
+                            />
+                        </div>
+                    </div>
+
 
                 {/* CTA */}
                 <div className="mt-12 text-center lg:mt-16">

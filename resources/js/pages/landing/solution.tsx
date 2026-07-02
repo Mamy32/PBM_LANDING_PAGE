@@ -39,18 +39,18 @@ export default function Solution() {
                         </div>
 
                         <h2 className="max-w-[500px] font-serif text-4xl leading-[1.1] font-semibold text-white sm:text-5xl">
-                            Gua bakal
+                            Diperebutkan
                             <br />
-                            bongkar hacks
+                            Perusahaan-
                             <br />
-                            karyawan top 1%
+                            Perusahaan Besar
                         </h2>
 
                         <p className="mt-6 max-w-md text-lg leading-relaxed text-white sm:text-2xl">
-                            biar lo naik jadi strategic leader dan tembus gaji
+                            Dulu gue yang kirim-kirim CV, sekarang rekruiter yang DM duluan. berkat branding dan reputasi yang bener, banyak alumni Shaun Academy dapet tawaran
                             <span className="font-semibold text-[#B8FF8B] italic">
                                 {' '}
-                                100 juta pertama.
+                                startup bank, hingga perusahaan multinasional.
                             </span>
                         </p>
 

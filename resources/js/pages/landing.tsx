@@ -70,9 +70,9 @@ export default function Landing() {
             <Suspense fallback={null}>
                 <CompanyLogos />
                 <Problem />
+                <PracticalBenefits />
                 <SuccessStory />
                 <Solution />
-                <PracticalBenefits />
                 <Testimonials />
                 <Instructor />
                 <MediaFeatures />

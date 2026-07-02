@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react';
 import { useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
 
 export default function Solution() {
     const { trackCTA } = useAnalytics();
@@ -37,55 +37,17 @@ export default function Solution() {
                             </span>
                         </p>
 
-                        {/* Button — dark pill, left-aligned, no outer container */}
-                        <div className="mt-8 flex justify-center lg:justify-start">
-                            <button
-                                id="solution-cta"
-                                type="button"
-                                onClick={handleClick}
-                                className="group inline-flex items-center gap-2 rounded-full bg-[#1A3A22] px-7 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0C2016] sm:text-lg"
-                            >
-                                <span>Bongkar Hacks-nya Sekarang</span>
-                                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
-                            </button>
-                        </div>
-
-                        {/* Feature tags — inline, small, no border */}
-                        <div className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-2 lg:flex-nowrap lg:justify-start">
-                            {[
-                                '75+ Materi Strategi Naik Gaji',
-                                'Lifetime Access',
-                                '1000+ Members',
-                            ].map((f) => (
-                                <span
-                                    key={f}
-                                    className="inline-flex items-center gap-1.5 text-xs text-[#16352A] sm:text-sm"
-                                >
-                                    <svg
-                                        className="h-3.5 w-3.5 shrink-0"
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <circle
-                                            cx="7"
-                                            cy="7"
-                                            r="7"
-                                            fill="#16352A"
-                                            fillOpacity="0.25"
-                                        />
-                                        <path
-                                            d="M4 7l2 2 4-4"
-                                            stroke="#16352A"
-                                            strokeWidth="1.5"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                    {f}
-                                </span>
-                            ))}
-                        </div>
+                    {/* CTA */}
+                    <div className="mt-8 flex justify-center lg:justify-start">
+                        <CtaButton
+                            id="solution-cta"
+                            text="Bongkar Hacks-nya Sekarang"
+                            variant="dark"
+                            size="large"
+                            context="light"
+                            onClick={handleClick}
+                        />
+                    </div>
                     </div>
                     {/* IMAGE */}
                     <div className="flex justify-center">

@@ -10,10 +10,10 @@ export default function CompanyLogos({
     badgeText = "#274A3B",
 }: CompanyLogosProps) {
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center py-6">
             {/* Badge */}
             <div
-                className="mb-5 rounded-full border px-5 py-2 text-sm"
+                className="mb-6 rounded-full border px-5 py-2 text-sm font-medium"
                 style={{
                     borderColor: badgeBorder,
                     color: badgeText,
@@ -22,41 +22,35 @@ export default function CompanyLogos({
                 Dipercaya oleh professional dari
             </div>
 
-            {/* Marquee */}
-            <div className="relative w-full overflow-hidden py-2">
+            {/* Logo Slider */}
+            <div className="relative w-full overflow-hidden pb-6">
                 {/* Left Fade */}
                 <div
-                    className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20"
+                    className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16"
                     style={{
-                        background: `linear-gradient(to right, ${background}, transparent)`,
+                        background: `linear-gradient(to right, ${background} 0%, transparent 100%)`,
                     }}
                 />
 
                 {/* Right Fade */}
                 <div
-                    className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20"
+                    className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16"
                     style={{
-                        background: `linear-gradient(to left, ${background}, transparent)`,
+                        background: `linear-gradient(to left, ${background} 0%, transparent 100%)`,
                     }}
                 />
 
-                <div className="flex min-w-max animate-marquee items-center">
+                {/* Marquee */}
+                <div className="flex animate-marquee whitespace-nowrap">
                     {[...Array(2)].map((_, duplicate) => (
-                        <div
+                        <img
                             key={duplicate}
-                            className="flex shrink-0 items-center"
-                        >
-                            {Array.from({ length: 6 }).map((_, i) => (
-                                <img
-                                    key={`${duplicate}-${i}`}
-                                    src="/images/shaundju/logo_company.webp"
-                                    alt="Companies"
-                                    className="mr-12 h-10 w-auto sm:h-12 lg:h-14"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                            ))}
-                        </div>
+                            src="/images/shaundju/logo_company.webp"
+                            alt="Companies"
+                            className="h-10 w-auto shrink-0 sm:h-12 lg:h-14"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     ))}
                 </div>
             </div>

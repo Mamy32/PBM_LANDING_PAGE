@@ -27,7 +27,7 @@ export default function CtaButton({
 }: CtaButtonProps) {
     const sizeClasses =
     size === 'large'
-        ? 'px-7 py-4 text-lg min-w-[170px] sm:px-9 sm:py-5 sm:text-lg'
+        ? 'px-6 py-4 text-[17px] min-w-[170px] sm:px-9 sm:py-5 sm:text-lg'
         : 'px-7 py-4 text-sm sm:text-base';
     const variantClasses =
         variant === 'hero'

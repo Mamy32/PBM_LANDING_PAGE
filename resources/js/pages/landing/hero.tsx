@@ -25,7 +25,7 @@ export default function Hero() {
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
                 <div className="grid min-h-screen items-center gap-5 pt-3 md:gap-8 lg:grid-cols-2 lg:pt-4">
                     {/* LEFT SIDE */}
-                    <div className="pt-10 pb-12 text-center lg:pt-0 lg:pb-0 lg:text-left">
+                    <div className="max-w-[620px] pt-10 pb-12 text-center lg:pt-0 lg:pb-0 lg:text-left">
                         {/* MEMBERS BADGE */}
                         <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-2 text-center sm:mt-10">
                             <div className="flex items-center gap-0.5">
@@ -83,7 +83,7 @@ export default function Hero() {
                         </h1>
 
                         {/* DESCRIPTION */}
-                        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/85 sm:max-w-xl sm:text-lg lg:mx-0 lg:text-base">
+                       <p className="mx-auto mt-6 max-w-md text-[17px] leading-8 text-white/85 sm:max-w-xl sm:text-xl lg:mx-0 lg:max-w-lg lg:text-xl">
                             Capek <strong>networking & kerja keras</strong>{' '}
                             setiap hari tapi gaji gak naik-naik? Pelajari
                             strategi yang digunakan para top performer untuk
@@ -115,7 +115,7 @@ export default function Hero() {
                 variant="hero"
                 showArrow={false}
                 onClick={handleCtaClick}
-                className="w-full"
+                className="w-[90%]"
             />
         </div>
 

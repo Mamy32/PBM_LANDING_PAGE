@@ -14,9 +14,9 @@ export default function Solution() {
     return (
         <section id="solusi" className="bg-[#8FB278] py-21 lg:py-28">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-28">
+               <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-20">
                     {/* CONTENT */}
-                    <div className="max-w-[520px] text-center lg:text-left">
+                    <div className="mx-auto max-w-[520px] text-center md:mx-0 md:text-left">
                         <div className="mb-4 inline-flex items-center rounded-full border border-[#16352A] px-4 py-2 text-xs text-[#16352A] sm:text-sm">
                             Di ShaunDju Academy
                         </div>
@@ -38,7 +38,7 @@ export default function Solution() {
                         </p>
 
                     {/* CTA */}
-                    <div className="mt-8 flex justify-center lg:justify-start">
+                    <div className="mt-8 flex justify-center md:justify-start">
                         <CtaButton
                             id="solution-cta"
                             text="Bongkar Hacks-nya Sekarang"
@@ -54,7 +54,7 @@ export default function Solution() {
                         <div className="rounded-[32px] border-2 border-[#A8FF7E] p-4 shadow-[0_0_30px_rgba(168,255,126,0.18)]">
                             <div className="overflow-hidden rounded-[28px] bg-[#052E26]">
                                 <video
-                                    className="h-[420px] w-auto object-cover sm:h-[520px] lg:h-[700px]"
+                                    className="h-[380px] w-auto object-cover sm:h-[480px] md:h-[560px] lg:h-[700px]"
                                     width={512}
                                     height={700}
                                     autoPlay

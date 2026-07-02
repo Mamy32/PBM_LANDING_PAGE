@@ -180,8 +180,10 @@ export default function Testimonials() {
                 </div>
                 {/* Right: 3 screenshots — same width as proof, equal height */}
                 <div className="mx-auto mt-10 flex flex-col gap-3 sm:mt-12 lg:mt-13 lg:w-full lg:max-w-5xl">
-                    <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-center lg:gap-6">
-                        <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
+                    <div className="mx-auto mt-10 grid max-w-6xl gap-5
+                md:grid-cols-2
+                lg:grid-cols-3">
+                        <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
                         <ZoomableImage
                                 src="/images/shaundju/testimoni2.webp"
                                 alt="Testimonial 1"
@@ -189,7 +191,7 @@ export default function Testimonials() {
                             />
                         </div>
 
-                        <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
+                        <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
                             <ZoomableImage
                                 src="/images/shaundju/Screenshot2.webp"
                                 alt="Testimonial 2"
@@ -197,7 +199,7 @@ export default function Testimonials() {
                             />
                         </div>
 
-                        <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
+                        <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
                             <ZoomableImage
                                 src="/images/shaundju/Screenshot3.webp"
                                 alt="Testimonial 3"

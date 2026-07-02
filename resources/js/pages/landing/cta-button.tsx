@@ -78,9 +78,20 @@ const sizeClasses =
                             ?.scrollIntoView({ behavior: 'smooth' });
                     }
                 }}
-                className={`group inline-flex ${
-    compact ? "w-auto" : "w-full"
-} items-center justify-center rounded-full font-bold tracking-tight transition-all duration-300 ${sizeClasses} ${variantClasses}`}
+                className={`
+    group
+    inline-flex
+    ${compact ? "w-auto" : "w-full sm:w-auto"}
+    items-center
+    justify-center
+    rounded-full
+    font-bold
+    tracking-tight
+    transition-all
+    duration-300
+    ${sizeClasses}
+    ${variantClasses}
+`}
             >
                 <span>{text}</span>
 

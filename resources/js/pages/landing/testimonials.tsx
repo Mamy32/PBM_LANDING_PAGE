@@ -95,7 +95,7 @@ export default function Testimonials() {
                         Testimonials
                     </div>
                     <h2 className="mt-6 font-serif text-4xl font-bold text-[#9DFF70] sm:text-5xl">
-                        APA Kata Alumni?
+                        Apa Kata Alumni?
                     </h2>
 
                     <p className="mt-4 text-base text-white sm:text-lg lg:text-xl">
@@ -106,7 +106,7 @@ export default function Testimonials() {
                         Dipromosi ke
                     </h2>
 
-                    <p className="mt-4 text-base text-[#9DFF70] sm:text-lg lg:text-xl">
+                    <p className="mt-4 text-base text-[#9DFF70] sm:text-4xl lg:text-xl">
                         Senior Assistant Vice President
                     </p>
                 </div>
@@ -131,7 +131,7 @@ export default function Testimonials() {
                         </h3>
 
                         {/* Proof Screenshot */}
-                        <div className="mt-6 rounded-[24px] border-2 border-[#A8FF7E] p-2 shadow-[0_0_20px_rgba(168,255,126,0.15)]">
+                        <div className="mt-4 rounded-[24px] border-2 border-[#A8FF7E] p-2 shadow-[0_0_20px_rgba(168,255,126,0.15)]">
                             <ZoomableImage
                                 src="/images/shaundju/proof1.webp"
                                 alt="Phone testimonial"

@@ -98,16 +98,6 @@ export default function Hero() {
                                 Saya Mau Naik Gaji
                             </button>
 
-                            {/* Mobile only */}
-                            <img
-                                src="/images/shaundju/photo_header.webp"
-                                alt="Shaun Djuhari"
-                                width={220}
-                                height={250}
-                                loading="eager"
-                                decoding="async"
-                                className="h-[220px] w-auto object-contain lg:hidden"
-                            />
                         </div>
                         
 

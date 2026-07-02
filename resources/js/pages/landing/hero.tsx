@@ -174,20 +174,6 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-
-                    {/* RIGHT SIDE */}
-                    <div className="relative hidden justify-center lg:flex lg:order-last lg:justify-end">
-                        <img
-                            src="/images/shaundju/photo_header.webp"
-                            alt="Shaun Djuhari"
-                            fetchPriority="high"
-                            loading="eager"
-                            decoding="async"
-                            width="700"
-                            height="800"
-                            className="w-full max-w-[700px] object-contain drop-shadow-[0_0_40px_rgba(0,0,0,0.5)]"
-                        />
-                    </div>
                 </div>
             </div>
 

@@ -5,7 +5,7 @@ interface CompanyLogosProps {
 }
 
 export default function CompanyLogos({
-    background = "#8FB278",
+    background = "#EEF5EA",
     badgeBorder = "#274A3B",
     badgeText = "#274A3B",
 }: CompanyLogosProps) {

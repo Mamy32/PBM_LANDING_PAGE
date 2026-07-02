@@ -90,7 +90,7 @@ export default function Hero() {
                             penghasilan.
                         </p>
                         {/* Desktop CTA */}
-                        <div className="mt-8 hidden lg:flex lg:justify-start">
+                        <div className="mt-8 hidden lg:flex lg:justify-start items-start">
                             <CtaButton
                                 id="hero-cta-desktop"
                                 text="Saya Mau Naik Gaji"

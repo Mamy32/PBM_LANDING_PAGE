@@ -91,45 +91,44 @@ export default function Hero() {
                         </p>
 
                        {/* MOBILE CTA + IMAGE */}
-                        <div className="mt-8 lg:hidden">
-                            <div className="flex items-end justify-between gap-2">
+                            <div className="mt-8 lg:hidden">
+    <div className="flex items-start justify-between gap-2">
 
-                                {/* LEFT */}
-                                <div className="flex w-[48%] flex-col">
-                                    <CtaButton
-                                        id="hero-cta"
-                                        text="Saya Mau Naik Gaji"
-                                        size="large"
-                                        vertical
-                                        variant="hero"
-                                        showArrow={false}
-                                        onClick={handleCtaClick}
-                                        className="w-full"
-                                    />
-                                </div>
+        {/* LEFT */}
+        <div className="mt-5 flex w-[42%] flex-col">
+            <CtaButton
+                id="hero-cta"
+                text="Saya Mau Naik Gaji"
+                size="large"
+                vertical
+                variant="hero"
+                showArrow={false}
+                onClick={handleCtaClick}
+                className="w-full"
+            />
+        </div>
 
-                                {/* RIGHT */}
-                                <div className="flex w-[52%] justify-end self-end">
-                                    <img
-                                        src="/images/shaundju/photo_header.webp"
-                                        alt="Shaun Djuhari"
-                                        width={240}
-                                        height={340}
-                                        loading="eager"
-                                        decoding="async"
-                                        className="
-                                            mt-8
-                                            w-full
-                                            max-w-[220px]
-                                            object-contain
-                                            scale-110
-                                            translate-y-5
-                                        "
-                                    />
-                                </div>
+        {/* RIGHT */}
+        <div className="flex w-[58%] justify-end">
+            <img
+                src="/images/shaundju/photo_header.webp"
+                alt="Shaun Djuhari"
+                width={280}
+                height={420}
+                loading="eager"
+                decoding="async"
+                className="
+                    w-full
+                    max-w-[250px]
+                    object-contain
+                    scale-[1.18]
+                    translate-y-8
+                "
+            />
+        </div>
 
-                            </div>
-                        </div>
+    </div>
+</div>
                     </div>
 
                     {/* RIGHT SIDE */}

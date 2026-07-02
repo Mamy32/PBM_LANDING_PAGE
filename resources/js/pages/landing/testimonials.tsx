@@ -137,9 +137,9 @@ export default function Testimonials() {
                     ))}
                 </div>
                 {/* Right: 3 screenshots — same width as proof, equal height */}
-                <div className="mt-10 flex justify-center sm:mt-12 lg:mt-16">
-                    <div className="mx-auto flex w-[280px] flex-col gap-4 sm:w-[340px] lg:w-[380px]">
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                <div className="mx-auto mt-10 flex flex-col gap-3 sm:mt-12 lg:mt-16 lg:w-full lg:max-w-5xl">
+                    <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-center lg:gap-6">
+                        <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
                             <img
                                 src="/images/shaundju/testimoni2.webp"
                                 loading="lazy"
@@ -148,7 +148,8 @@ export default function Testimonials() {
                                 className="h-full w-full object-cover object-top"
                             />
                         </div>
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+
+                        <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
                             <img
                                 src="/images/shaundju/Screenshot2.webp"
                                 loading="lazy"
@@ -157,7 +158,8 @@ export default function Testimonials() {
                                 className="h-full w-full object-cover object-top"
                             />
                         </div>
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
+
+                        <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
                             <img
                                 src="/images/shaundju/Screenshot3.webp"
                                 loading="lazy"

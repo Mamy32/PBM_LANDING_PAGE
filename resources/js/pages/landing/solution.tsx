@@ -89,12 +89,12 @@ export default function Solution() {
                     </div>
                     {/* IMAGE */}
                     <div className="flex justify-center">
-                        <div className="rounded-[28px] border border-[#A8FF7E] p-3">
-                            <div className="overflow-hidden rounded-[24px] bg-[#052E26]">
+                        <div className="rounded-[32px] border-2 border-[#A8FF7E] p-4 shadow-[0_0_30px_rgba(168,255,126,0.18)]">
+                            <div className="overflow-hidden rounded-[28px] bg-[#052E26]">
                                 <video
-                                    className="h-[320px] w-auto object-cover sm:h-[420px] lg:h-[520px]"
-                                    width={381}
-                                    height={520}
+                                    className="h-[420px] w-auto object-cover sm:h-[520px] lg:h-[700px]"
+                                    width={512}
+                                    height={700}
                                     autoPlay
                                     loop
                                     muted

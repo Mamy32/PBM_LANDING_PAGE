@@ -89,6 +89,17 @@ export default function Hero() {
                             strategi yang digunakan para top performer untuk
                             mempercepat kenaikan penghasilan.
                         </p>
+                        {/* Desktop CTA */}
+<div className="mt-8 hidden lg:block">
+    <CtaButton
+        id="hero-cta-desktop"
+        text="Saya Mau Naik Gaji"
+        size="large"
+        variant="hero"
+        showArrow={false}
+        onClick={handleCtaClick}
+    />
+</div>
 
                        {/* MOBILE CTA + IMAGE */}
                             <div className="mt-8 lg:hidden">

@@ -6,7 +6,7 @@ export default function CompanyLogos() {
                 alt="Companies"
                 className="w-full max-w-6xl"
                 width={665}
-                height={86}
+                height={100}
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"

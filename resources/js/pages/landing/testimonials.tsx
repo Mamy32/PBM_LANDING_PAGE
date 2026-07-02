@@ -60,26 +60,26 @@ export default function Testimonials() {
                         Testimonials
                     </div>
 
-                    <h2 className="mt-6 font-serif text-4xl font-bold text-[#9DFF70] sm:text-5xl">
-                        Apa Kata Alumni?
+                    <h2 className="mt-6 font-serif text-4xl font-bold text-white sm:text-5xl">
+                        Dipromosi ke
                     </h2>
 
-                    <p className="mt-4 text-base text-white sm:text-lg lg:text-xl">
-                        Mereka Udah Paham Aturan Mainnya, Sekarang Giliran Lo
+                    <p className="mt-4 text-base text-[#9DFF70] sm:text-lg lg:text-xl">
+                        Senior Assistant Vice President
                     </p>
                 </div>
 
                 {/* Screenshots */}
                <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:items-start lg:gap-10">
                     <div className="flex w-full max-w-[380px] flex-col items-center">
-                        {/* Profile Photo */}
-                        <div className="mb-4 overflow-hidden rounded-full border-4 border-white/15 shadow-lg">
+                       {/* Profile Photo */}
+                        <div className="mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-white/15 shadow-lg">
                             <img
                                 src="/images/shaundju/profile.webp"
                                 alt="Niek Astrini"
-                                className="h-28 w-28 object-cover sm:h-32 sm:w-32"
                                 loading="lazy"
                                 decoding="async"
+                                className="h-full w-full object-cover"
                             />
                         </div>
 
@@ -90,7 +90,7 @@ export default function Testimonials() {
 
                         {/* Proof Screenshot */}
                         <img
-                            src="/images/shaundju/proof.webp"
+                            src="/images/shaundju/proof1.webp"
                             loading="lazy"
                             decoding="async"
                             alt="Phone testimonial"
@@ -136,8 +136,9 @@ export default function Testimonials() {
                         </div>
                     ))}
                 </div>
-                                    {/* Right: 3 screenshots — same width as proof, equal height */}
-                    <div className="flex w-[280px] flex-col gap-3 sm:w-[340px] lg:w-[380px]">
+                {/* Right: 3 screenshots — same width as proof, equal height */}
+                <div className="mt-10 flex justify-center sm:mt-12 lg:mt-16">
+                    <div className="mx-auto flex w-[280px] flex-col gap-4 sm:w-[340px] lg:w-[380px]">
                         <div className="aspect-[4/3] w-full overflow-hidden rounded-xl">
                             <img
                                 src="/images/shaundju/testimoni2.webp"
@@ -166,6 +167,8 @@ export default function Testimonials() {
                             />
                         </div>
                     </div>
+                </div>
+
 
 
                 {/* CTA */}

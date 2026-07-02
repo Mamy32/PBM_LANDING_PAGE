@@ -102,7 +102,7 @@ export default function Solution() {
                                     preload="metadata"
                                 >
                                     <source
-                                        src="/images/shaundju/solution.webm"
+                                        src="/images/shaundju/solution_gif.webm"
                                         type="video/webm"
                                     />
                                 </video>

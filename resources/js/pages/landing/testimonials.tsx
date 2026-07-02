@@ -102,17 +102,17 @@ export default function Testimonials() {
                         Mereka Udah Aturan Mainnya, Sekarang Giliran Lo!
                     </p>
 
-                    <h2 className="mt-6 font-serif text-4xl font-bold text-white sm:text-5xl">
+                    <h2 className="mt-5 font-serif text-4xl font-bold text-white sm:text-5xl">
                         Dipromosi ke
                     </h2>
 
-                    <p className="mt-4 text-base text-[#9DFF70] sm:text-4xl lg:text-xl">
+                    <p className="mt-5 text-2xl font-semibold leading-tight text-[#9DFF70] sm:text-3xl md:text-4xl lg:text-5xl">
                         Senior Assistant Vice President
                     </p>
                 </div>
 
                 {/* Screenshots */}
-               <div className="mx-auto mt-10 flex flex-col items-center justify-center gap-6 lg:mt-17 lg:flex-row lg:items-start lg:gap-10">
+                <div className="mx-auto mt-9 flex flex-col items-center justify-center gap-6 lg:mt-17 lg:flex-row lg:items-start lg:gap-10">
                     <div className="flex w-full max-w-[380px] flex-col items-center">
                        {/* Profile Photo */}
                         <div className="mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-white/15 shadow-lg">

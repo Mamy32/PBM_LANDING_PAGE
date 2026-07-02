@@ -23,7 +23,7 @@ export default function Hero() {
             </div>
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-               <div className="grid min-h-screen items-center gap-5 pt-3 md:gap-8 lg:grid-cols-2 lg:pt-4">
+                <div className="grid min-h-screen items-center gap-5 pt-3 md:gap-8 lg:grid-cols-2 lg:pt-4">
                     {/* LEFT SIDE */}
                     <div className="pt-10 pb-12 text-center lg:pt-0 lg:pb-0 lg:text-left">
                         {/* MEMBERS BADGE */}
@@ -90,27 +90,36 @@ export default function Hero() {
                             mempercepat kenaikan penghasilan.
                         </p>
 
-                        {/* CTA */}
-                        <div className="mt-8">
-                            <CtaButton
-                                id="hero-cta"
-                                text="Saya Mau Naik Gaji"
-                                size="large"
-                                onClick={handleCtaClick}
-                            />
-                        </div>
+                        {/* MOBILE CTA + IMAGE */}
+                        <div className="mt-8 lg:hidden">
+                            <div className="flex items-end justify-between gap-4">
 
-                        {/* Mobile Hero Image */}
-                        <div className="mt-8 flex justify-center lg:hidden">
-                            <img
-                                src="/images/shaundju/photo_header.webp"
-                                alt="Shaun Djuhari"
-                                width={280}
-                                height={330}
-                                loading="eager"
-                                decoding="async"
-                                className="w-full max-w-[280px] object-contain"
-                            />
+                                {/* Left */}
+                                <div className="flex flex-1 flex-col">
+
+                                    <CtaButton
+                                        id="hero-cta"
+                                        text="Saya Mau Naik Gaji"
+                                        size="large"
+                                        vertical
+                                        variant="hero"
+                                        className="w-full"
+                                        onClick={handleCtaClick}
+                                    />
+
+                                </div>
+
+                                {/* Right */}
+                                <img
+                                    src="/images/shaundju/photo_header.webp"
+                                    alt="Shaun Djuhari"
+                                    width={180}
+                                    height={250}
+                                    loading="eager"
+                                    decoding="async"
+                                    className="w-[42%] max-w-[180px] object-contain"
+                                />
+                            </div>
                         </div>
                     </div>
 

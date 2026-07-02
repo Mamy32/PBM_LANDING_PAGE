@@ -117,7 +117,7 @@ export default function Hero() {
                 showArrow={false}
                 compact
                 onClick={handleCtaClick}
-                className="w-[145px] sm:w-auto"
+                className="w-[130px] sm:w-auto"
             />
         </div>
 

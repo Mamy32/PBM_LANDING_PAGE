@@ -71,7 +71,7 @@ export default function Hero() {
                         </div>
 
                         {/* HEADLINE */}
-                        <h1 className="mt-8 text-left font-serif text-[52px] leading-[0.95] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                        <h1 className="mt-8 text-left font-serif text-[42px] leading-[1] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
                             Cara Dapet Gaji
                             <br />
                             <span className="text-[#A8FF7E]">
@@ -117,6 +117,7 @@ export default function Hero() {
                 showArrow={false}
                 compact
                 onClick={handleCtaClick}
+                className="w-[145px] sm:w-auto"
             />
         </div>
 

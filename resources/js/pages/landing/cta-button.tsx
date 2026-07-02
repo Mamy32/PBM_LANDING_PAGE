@@ -29,15 +29,17 @@ export default function CtaButton({
 }: CtaButtonProps) {
 const sizeClasses =
     size === 'large'
-        ? 'px-8 py-4 text-base min-w-[190px] sm:px-10 sm:py-5 sm:text-lg'
+        ? 'px-5 py-3 text-[15px] min-w-[150px] sm:px-10 sm:py-5 sm:text-lg sm:min-w-[220px]'
         : 'px-7 py-4 text-sm sm:text-base';
     const variantClasses =
-        variant === 'hero'
+variant === 'hero'
     ? `
         bg-gradient-to-b
         from-[#466D59]
         to-[#2F5442]
         text-[#C8FF88]
+        text-[14px]
+        sm:text-lg
         border border-[#5C846F]
         shadow-[0_8px_25px_rgba(0,0,0,0.18)]
         hover:from-[#507764]

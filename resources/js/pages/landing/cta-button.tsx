@@ -8,6 +8,7 @@ interface CtaButtonProps {
     size?: 'default' | 'large';
     context?: 'light' | 'dark';
     vertical?: boolean;
+    showArrow?: boolean;   // <-- add this
     onClick?: () => void;
     href?: string;
 }
@@ -20,17 +21,27 @@ export default function CtaButton({
     size = 'default',
     context = 'dark',
     vertical = false,
+    showArrow = true,
     onClick,
     href,
 }: CtaButtonProps) {
     const sizeClasses =
-        size === 'large'
-            ? 'px-9 py-5 text-base sm:text-lg'
-            : 'px-7 py-4 text-sm sm:text-base';
-
+    size === 'large'
+        ? 'px-7 py-4 text-lg min-w-[170px] sm:px-9 sm:py-5 sm:text-lg'
+        : 'px-7 py-4 text-sm sm:text-base';
     const variantClasses =
         variant === 'hero'
-            ? 'bg-gradient-to-b from-[#466D59] to-[#2F5442] text-[#C8FF88] border border-[#5C846F] shadow-[0_8px_25px_rgba(0,0,0,0.18)] hover:from-[#507764] hover:to-[#385D4B]'
+    ? `
+        bg-gradient-to-b
+        from-[#466D59]
+        to-[#2F5442]
+        text-[#C8FF88]
+        border border-[#5C846F]
+        shadow-[0_8px_25px_rgba(0,0,0,0.18)]
+        hover:from-[#507764]
+        hover:to-[#385D4B]
+        whitespace-nowrap
+      `
             : variant === 'primary'
               ? 'bg-[#4ADE80] text-[#0C1F13] shadow-lg shadow-[#4ADE80]/25 hover:bg-[#22C55E] hover:shadow-[#4ADE80]/40 hover:-translate-y-0.5 ring-1 ring-[#22C55E]/60'
               : variant === 'dark'
@@ -69,10 +80,13 @@ export default function CtaButton({
             >
                 <span>{text}</span>
 
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
+                {showArrow && (
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
+                )}
             </button>
 
             <div
+
                 className={
                     vertical
                         ? `flex flex-col items-start gap-2 text-xs ${proofText}`

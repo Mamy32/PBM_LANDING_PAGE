@@ -90,35 +90,44 @@ export default function Hero() {
                             mempercepat kenaikan penghasilan.
                         </p>
 
-                        {/* MOBILE CTA + IMAGE */}
+                       {/* MOBILE CTA + IMAGE */}
                         <div className="mt-8 lg:hidden">
-                            <div className="flex items-end justify-between gap-4">
+                            <div className="flex items-end justify-between gap-2">
 
-                                {/* Left */}
-                                <div className="flex flex-1 flex-col">
-
+                                {/* LEFT */}
+                                <div className="flex w-[48%] flex-col">
                                     <CtaButton
                                         id="hero-cta"
                                         text="Saya Mau Naik Gaji"
                                         size="large"
                                         vertical
                                         variant="hero"
-                                        className="w-full"
+                                        showArrow={false}
                                         onClick={handleCtaClick}
+                                        className="w-full"
                                     />
-
                                 </div>
 
-                                {/* Right */}
-                                <img
-                                    src="/images/shaundju/photo_header.webp"
-                                    alt="Shaun Djuhari"
-                                    width={180}
-                                    height={250}
-                                    loading="eager"
-                                    decoding="async"
-                                    className="w-[42%] max-w-[180px] object-contain"
-                                />
+                                {/* RIGHT */}
+                                <div className="flex w-[52%] justify-end self-end">
+                                    <img
+                                        src="/images/shaundju/photo_header.webp"
+                                        alt="Shaun Djuhari"
+                                        width={240}
+                                        height={340}
+                                        loading="eager"
+                                        decoding="async"
+                                        className="
+                                            mt-8
+                                            w-full
+                                            max-w-[220px]
+                                            object-contain
+                                            scale-110
+                                            translate-y-5
+                                        "
+                                    />
+                                </div>
+
                             </div>
                         </div>
                     </div>

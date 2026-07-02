@@ -25,9 +25,9 @@ export default function Hero() {
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
                 <div className="grid min-h-screen items-center gap-5 pt-3 md:gap-8 lg:grid-cols-2 lg:pt-4">
                     {/* LEFT SIDE */}
-                    <div className="max-w-[620px] pt-10 pb-12 text-center lg:pt-0 lg:pb-0 lg:text-left">
+                    <div className="max-w-[620px] pt-10 pb-12 text-left lg:pt-0 lg:pb-0">
                         {/* MEMBERS BADGE */}
-                        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-2 text-center sm:mt-10">
+                        <div className="mx-auto mt-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-2 text-center sm:mt-10 lg:mx-0">
                             <div className="flex items-center gap-0.5">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <Star
@@ -71,7 +71,7 @@ export default function Hero() {
                         </div>
 
                         {/* HEADLINE */}
-                        <h1 className="mt-8 font-serif text-4xl leading-[1.05] text-white sm:text-5xl xl:text-6xl">
+                        <h1 className="mt-8 text-left font-serif text-[52px] leading-[0.95] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
                             Cara Dapet Gaji
                             <br />
                             <span className="text-[#A8FF7E]">
@@ -83,19 +83,19 @@ export default function Hero() {
                         </h1>
 
                         {/* DESCRIPTION */}
-                       <p className="mx-auto mt-6 max-w-md text-[17px] leading-8 text-white/85 sm:max-w-xl sm:text-xl lg:mx-0 lg:max-w-lg lg:text-xl">
+                        <p className="mt-6 max-w-lg text-left text-[16px] leading-8 text-white/85 sm:text-lg lg:text-xl">
                             Capek <strong>networking & kerja keras</strong>{' '}
-                            setiap hari tapi gaji gak naik-naik? Pelajari
-                            strategi yang digunakan para top performer untuk
-                            mempercepat kenaikan penghasilan.
+                            setiap hari tapi gaji gak naik-naik? Pelajari strategi yang
+                            digunakan para top performer untuk mempercepat kenaikan
+                            penghasilan.
                         </p>
                         {/* Desktop CTA */}
-                        <div className="mt-8 hidden lg:block">
+                        <div className="mt-8 hidden lg:flex lg:justify-start">
                             <CtaButton
                                 id="hero-cta-desktop"
                                 text="Saya Mau Naik Gaji"
-                                size="large"
                                 variant="hero"
+                                size="large"
                                 compact
                                 showArrow={false}
                                 onClick={handleCtaClick}
@@ -107,7 +107,7 @@ export default function Hero() {
     <div className="flex items-start justify-between gap-2">
 
         {/* LEFT */}
-        <div className="mt-5 flex w-[42%] flex-col items-start">
+        <div className="mt-4 flex w-[35%] flex-col items-start">
             <CtaButton
                 id="hero-cta"
                 text="Saya Mau Naik Gaji"
@@ -121,7 +121,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-        <div className="flex w-[58%] justify-end">
+        <div className="flex w-[58%] justify-end items-end">
             <img
                 src="/images/shaundju/photo_header.webp"
                 alt="Shaun Djuhari"
@@ -131,10 +131,10 @@ export default function Hero() {
                 decoding="async"
                 className="
                     w-full
-                    max-w-[250px]
+                    max-w-[270px]
                     object-contain
-                    scale-[1.18]
-                    translate-y-8
+                    scale-[1.22]
+                    translate-y-10
                 "
             />
         </div>

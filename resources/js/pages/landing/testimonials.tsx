@@ -89,13 +89,15 @@ export default function Testimonials() {
                         </h3>
 
                         {/* Proof Screenshot */}
-                        <img
-                            src="/images/shaundju/proof1.webp"
-                            loading="lazy"
-                            decoding="async"
-                            alt="Phone testimonial"
-                            className="mt-6 w-[280px] max-w-full rounded-2xl sm:w-[340px] lg:w-[380px]"
-                        />
+                        <div className="mt-6 rounded-[24px] border-2 border-[#A8FF7E] p-2 shadow-[0_0_20px_rgba(168,255,126,0.15)]">
+                            <img
+                                src="/images/shaundju/proof1.webp"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Phone testimonial"
+                                className="w-[280px] max-w-full rounded-[18px] sm:w-[340px] lg:w-[380px]"
+                            />
+                        </div>
                     </div>
                 </div>
 

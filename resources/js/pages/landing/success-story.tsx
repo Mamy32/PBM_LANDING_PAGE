@@ -18,17 +18,6 @@ export default function SuccessStory() {
                     <div className="mb-10 rounded-full border border-[#274A3B] px-5 py-2 text-sm text-[#274A3B]">
                         Dipercaya oleh professional dari
                     </div>
-
-                    <img
-                        src="/images/shaundju/logo_company.webp"
-                        alt="Companies"
-                        className="w-full max-w-6xl"
-                        width={665}
-                        height={86}
-                        fetchPriority="low"
-                        loading="lazy"
-                        decoding="async"
-                    />
                 </div>
 
                 {/* Headline */}

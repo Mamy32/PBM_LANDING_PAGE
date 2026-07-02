@@ -20,6 +20,7 @@ const Curriculum = lazy(() => import('./landing/curriculum'));
 const Pricing = lazy(() => import('./landing/pricing'));
 const VideoTeaser = lazy(() => import('./landing/video-teaser'));
 const Faq = lazy(() => import('./landing/faq'));
+const CompanyLogos = lazy(() => import('./landing/company-logo'));
 const Footer = lazy(() => import('./landing/footer'));
 export default function Landing() {
     const { trackVisit } = useAnalytics();
@@ -67,9 +68,10 @@ export default function Landing() {
             <Hero />
 
             <Suspense fallback={null}>
-                <Solution />
-                <SuccessStory />
+                <CompanyLogos />
                 <Problem />
+                <SuccessStory />
+                <Solution />
                 <PracticalBenefits />
                 <Testimonials />
                 <Instructor />

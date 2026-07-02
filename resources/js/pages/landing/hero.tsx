@@ -89,14 +89,25 @@ export default function Hero() {
                             mempercepat kenaikan penghasilan.
                         </p>
 
-                        {/* CTA */}
-                        <div className="mt-10">
+                       {/* CTA + Mobile Hero */}
+                        <div className="mt-10 flex items-end justify-between gap-4 lg:block">
                             <button
                                 onClick={handleCtaClick}
-                                className="w-full cursor-pointer rounded-full border border-[#9FFF9F]/20 bg-gradient-to-b from-[#3E6652] to-[#244437] px-6 py-3 text-lg font-bold text-[#B8FF8D] shadow-[0_0_40px_rgba(120,255,120,0.15)] transition-all hover:scale-[1.02] sm:w-auto sm:px-10 sm:py-4 sm:text-2xl"
+                                className="cursor-pointer rounded-full border border-[#9FFF9F]/20 bg-gradient-to-b from-[#3E6652] to-[#244437] px-6 py-3 text-base font-bold text-[#B8FF8D] shadow-[0_0_40px_rgba(120,255,120,0.15)] transition-all hover:scale-[1.02] sm:px-8 sm:py-4 sm:text-xl lg:px-10 lg:text-2xl"
                             >
                                 Saya Mau Naik Gaji
                             </button>
+
+                            {/* Mobile only */}
+                            <img
+                                src="/images/shaundju/photo_header.webp"
+                                alt="Shaun Djuhari"
+                                width={220}
+                                height={250}
+                                loading="eager"
+                                decoding="async"
+                                className="h-[220px] w-auto object-contain lg:hidden"
+                            />
                         </div>
                         {/* MOBILE HERO IMAGE */}
                         <div className="mt-8 flex justify-center lg:hidden">
@@ -112,7 +123,7 @@ export default function Hero() {
                         </div>
 
                         {/* BENEFITS */}
-                        <div className="mt-8 flex flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white sm:mt-8 lg:flex-nowrap lg:gap-x-5 lg:text-xs">
+                        <div className="mt-6 flex flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white sm:mt-8 lg:flex-nowrap lg:gap-x-5 lg:text-xs">
                             <div className="flex items-center gap-1 whitespace-nowrap">
                                 <svg
                                     className="h-3 w-3 shrink-0"

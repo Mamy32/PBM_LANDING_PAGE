@@ -101,6 +101,13 @@ export default function Solution() {
                                     playsInline
                                     preload="metadata"
                                 >
+                                    {/* Safari / iPhone */}
+                                    <source
+                                        src="/images/shaundju/solution_gif.mp4"
+                                        type="video/mp4"
+                                    />
+
+                                    {/* Chrome / Firefox / Edge */}
                                     <source
                                         src="/images/shaundju/solution_gif.webm"
                                         type="video/webm"

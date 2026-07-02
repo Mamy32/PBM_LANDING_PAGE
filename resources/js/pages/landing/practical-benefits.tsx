@@ -26,7 +26,7 @@ export default function PracticalBenefits() {
     return (
         <section
             id="benefits"
-            className="relative overflow-hidden pt-25 pb-12 sm:pb-16"
+            className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20"
             style={{
                 background:
                     'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
@@ -43,7 +43,7 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* Badge */}
-                <div className="mt-10 flex justify-center sm:mt-16">
+                <div className="mt-6 flex justify-center sm:mt-16">
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm text-white">
                         Cuma di Shaundju Academy
                         {/* <ChevronDown className="h-4 w-4" /> */}
@@ -51,7 +51,7 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* Secondary Heading */}
-                <div className="mx-auto mt-14 max-w-4xl text-center">
+                <div className="mx-auto mt-8 max-w-4xl text-center lg:mt-10">
                     <h3 className="font-serif text-3xl leading-tight sm:text-5xl">
                         <span className="text-[#9DFF70]">Gak cuma teori,</span>
                         <br />
@@ -66,7 +66,7 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* Cards */}
-                <div className="mt-12 grid gap-6 md:grid-cols-3 lg:mt-20">
+                <div className="mt-10 grid gap-6 md:grid-cols-3 lg:mt-14">
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
@@ -94,7 +94,7 @@ export default function PracticalBenefits() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-12 flex justify-center lg:mt-20">
+                <div className="mt-10 flex justify-center lg:mt-14">
                     <CtaButton
                         id="benefit-cta"
                         text="Mulai Belajar Sekarang"

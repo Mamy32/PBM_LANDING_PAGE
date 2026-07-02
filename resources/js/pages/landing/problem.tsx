@@ -19,20 +19,21 @@ export default function Problem() {
     return (
         <section
             id="problem"
-  className="
-    py-24
+className="
+    py-16
+    lg:py-20
     bg-gradient-to-r
     from-[#0B3D2E]
     via-[#072B1F]
     to-[#031610]
     overflow-hidden
-  "
+"
 >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                     {/* LEFT */}
                     <div className="text-center lg:text-left">
-                        <div className="mb-6 inline-flex items-center rounded-full border border-[#fff] px-4 py-2 text-xs sm:text-sm text-[#fff]">
+                        <div className="mb-4 inline-flex items-center rounded-full border border-[#fff] px-4 py-2 text-xs sm:text-sm text-[#fff]">
                             The Reality Check
                         </div>
 

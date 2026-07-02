@@ -94,6 +94,13 @@ export default function Testimonials() {
                     <div className="inline-flex items-center rounded-full border border-white/40 px-4 py-1 text-xs text-white sm:text-sm">
                         Testimonials
                     </div>
+                    <h2 className="mt-6 font-serif text-4xl font-bold text-[#9DFF70] sm:text-5xl">
+                        APA Kata Alumni?
+                    </h2>
+
+                    <p className="mt-4 text-base text-white sm:text-lg lg:text-xl">
+                        Mereka Udah Aturan Mainnya, Sekarang Giliran Lo!
+                    </p>
 
                     <h2 className="mt-6 font-serif text-4xl font-bold text-white sm:text-5xl">
                         Dipromosi ke

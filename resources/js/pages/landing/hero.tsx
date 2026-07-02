@@ -22,7 +22,7 @@ export default function Hero() {
             </div>
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-                <div className="grid min-h-screen items-center gap-5 pt-10 md:gap-10 lg:grid-cols-2 lg:pt-10">
+               <div className="grid min-h-screen items-center gap-5 pt-3 md:gap-8 lg:grid-cols-2 lg:pt-4">
                     {/* LEFT SIDE */}
                     <div className="pt-10 pb-12 text-center lg:pt-0 lg:pb-0 lg:text-left">
                         {/* MEMBERS BADGE */}
@@ -89,28 +89,71 @@ export default function Hero() {
                             mempercepat kenaikan penghasilan.
                         </p>
 
-                       {/* CTA + Mobile Hero */}
-                        {/* CTA + MOBILE IMAGE */}
-                        <div className="mt-10 flex items-end justify-between gap-4 lg:block">
-                            {/* Left */}
-                            <button
-                                onClick={handleCtaClick}
-                                className="cursor-pointer rounded-full border border-[#9FFF9F]/20 bg-gradient-to-b from-[#3E6652] to-[#244437] px-6 py-3 text-base font-bold text-[#B8FF8D] shadow-[0_0_40px_rgba(120,255,120,0.15)] transition-all hover:scale-[1.02] sm:px-8 sm:py-4 sm:text-xl lg:px-10 lg:text-2xl"
-                            >
-                                Saya Mau Naik Gaji
-                            </button>
+                      {/* CTA + Mobile Layout */}
+<div className="mt-8 flex items-start justify-between gap-5 lg:block">
+    {/* Left */}
+    <div className="flex flex-col">
+        <button
+            onClick={handleCtaClick}
+            className="cursor-pointer rounded-full border border-[#9FFF9F]/20 bg-gradient-to-b from-[#3E6652] to-[#244437] px-6 py-3 text-base font-bold text-[#B8FF8D] shadow-[0_0_40px_rgba(120,255,120,0.15)] transition-all hover:scale-[1.02] sm:px-8 sm:py-4 sm:text-xl lg:px-10 lg:text-2xl"
+        >
+            Saya Mau Naik Gaji
+        </button>
 
-                            {/* Mobile image */}
-                            <img
-                                src="/images/shaundju/photo_header.webp"
-                                alt="Shaun Djuhari"
-                                width={220}
-                                height={250}
-                                loading="eager"
-                                decoding="async"
-                                className="h-[220px] w-auto object-contain lg:hidden"
-                            />
-                        </div>
+        {/* Benefits */}
+        <div className="mt-6 flex flex-col gap-2 text-xs text-white lg:flex-row lg:flex-wrap lg:gap-x-5">
+            <div className="flex items-center gap-2">
+                <svg className="h-3 w-3" viewBox="0 0 14 14" fill="none">
+                    <path
+                        d="M2.5 7l3 3 6-6"
+                        stroke="#9DFF70"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+                75+ Materi Strategi Naik Gaji
+            </div>
+
+            <div className="flex items-center gap-2">
+                <svg className="h-3 w-3" viewBox="0 0 14 14" fill="none">
+                    <path
+                        d="M2.5 7l3 3 6-6"
+                        stroke="#9DFF70"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+                Lifetime Access
+            </div>
+
+            <div className="flex items-center gap-2">
+                <svg className="h-3 w-3" viewBox="0 0 14 14" fill="none">
+                    <path
+                        d="M2.5 7l3 3 6-6"
+                        stroke="#9DFF70"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+                Join Top Performer Community
+            </div>
+        </div>
+    </div>
+
+    {/* Mobile Image */}
+    <img
+        src="/images/shaundju/photo_header.webp"
+        alt="Shaun Djuhari"
+        width={220}
+        height={250}
+        loading="eager"
+        decoding="async"
+        className="h-[270px] w-auto object-contain lg:hidden"
+    />
+</div>
                         {/* BENEFITS */}
                         <div className="mt-6 flex flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white sm:mt-8 lg:flex-nowrap lg:gap-x-5 lg:text-xs">
                             <div className="flex items-center gap-1 whitespace-nowrap">

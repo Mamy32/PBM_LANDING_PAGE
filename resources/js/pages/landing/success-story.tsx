@@ -11,22 +11,20 @@ export default function SuccessStory() {
     };
 
     return (
-        <section id="success-story" className="bg-[#EEF5EA] py-12">
+    <section
+    id="success-story"
+    className="bg-[#EEF5EA] py-10 lg:py-16"
+>
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
                 {/* Trusted Companies */}
-                <div className="flex flex-col items-center">
-                    <div className="mb-10 rounded-full border border-[#274A3B] px-5 py-2 text-sm text-[#274A3B]">
-                        Dipercaya oleh professional dari
-                    </div>
-                </div>
 
                 {/* Headline */}
-                <h2 className="mt-10 text-center font-serif text-3xl leading-tight text-[#1F3B32] sm:text-4xl lg:mt-20 lg:text-5xl">
+                <h2 className="mt-2 text-center font-serif text-3xl leading-tight text-[#1F3B32] sm:text-4xl lg:mt-4 lg:text-5xl">
                     Gue Dapetin 100 Juta/Bulan di Usia 29
                 </h2>
 
                 {/* Main Content */}
-                <div className="mt-10 grid gap-6 lg:mt-13 lg:grid-cols-[1.4fr_0.9fr]">
+                <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-[1.4fr_0.9fr]">
                     {/* LEFT CARD */}
                     <div className="relative overflow-hidden bg-[#B7D99E] p-5 sm:p-8 lg:p-10">
                         <div className="absolute top-0 left-0 h-full w-4 bg-[#1F3B32]" />
@@ -91,7 +89,7 @@ export default function SuccessStory() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-18 flex justify-center">
+                <div className="mt-12 flex justify-center lg:mt-14">
                     <button
                         id="success-story-cta"
                         type="button"
@@ -100,13 +98,6 @@ export default function SuccessStory() {
                     >
                         Mulai Belajar Sekarang
                     </button>
-                </div>
-
-                {/* Benefits */}
-                <div className="mt-7 flex flex-col items-center gap-3 text-center text-sm text-[#1F3B32] sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
-                    <span>✓ 75+ Materi Strategi Naik Gaji</span>
-                    <span>✓ Lifetime Access</span>
-                    <span>✓ 1000+ Members</span>
                 </div>
             </div>
         </section>

@@ -1,7 +1,11 @@
 import { Check, Quote } from 'lucide-react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
-
+import {
+    Dialog,
+    DialogContent,
+    DialogTrigger,
+} from '@/components/ui/dialog';
 const testimonials = [
     {
         name: 'Thomas',
@@ -40,6 +44,37 @@ const testimonials = [
         quote: 'From observing your work style I really admired how you work very gercep and how you handle clients juga, something that I wanna work towards!',
     },
 ];
+function ZoomableImage({
+    src,
+    alt,
+    className = '',
+}: {
+    src: string;
+    alt: string;
+    className?: string;
+}) {
+    return (
+        <Dialog>
+            <DialogTrigger asChild>
+                <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    decoding="async"
+                    className={`cursor-pointer transition-transform duration-300 hover:scale-[1.02] ${className}`}
+                />
+            </DialogTrigger>
+
+            <DialogContent className="max-w-5xl border-none bg-transparent p-0 shadow-none">
+                <img
+                    src={src}
+                    alt={alt}
+                    className="max-h-[90vh] w-full rounded-xl object-contain"
+                />
+            </DialogContent>
+        </Dialog>
+    );
+}
 
 export default function Testimonials() {
     const { trackCTA } = useAnalytics();
@@ -90,10 +125,8 @@ export default function Testimonials() {
 
                         {/* Proof Screenshot */}
                         <div className="mt-6 rounded-[24px] border-2 border-[#A8FF7E] p-2 shadow-[0_0_20px_rgba(168,255,126,0.15)]">
-                            <img
+                            <ZoomableImage
                                 src="/images/shaundju/proof1.webp"
-                                loading="lazy"
-                                decoding="async"
                                 alt="Phone testimonial"
                                 className="w-[280px] max-w-full rounded-[18px] sm:w-[340px] lg:w-[380px]"
                             />
@@ -142,30 +175,24 @@ export default function Testimonials() {
                 <div className="mx-auto mt-10 flex flex-col gap-3 sm:mt-12 lg:mt-16 lg:w-full lg:max-w-5xl">
                     <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-center lg:gap-6">
                         <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
-                            <img
+                        <ZoomableImage
                                 src="/images/shaundju/testimoni2.webp"
-                                loading="lazy"
-                                decoding="async"
                                 alt="Testimonial 1"
                                 className="h-full w-full object-cover object-top"
                             />
                         </div>
 
                         <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
-                            <img
+                            <ZoomableImage
                                 src="/images/shaundju/Screenshot2.webp"
-                                loading="lazy"
-                                decoding="async"
                                 alt="Testimonial 2"
                                 className="h-full w-full object-cover object-top"
                             />
                         </div>
 
                         <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
-                            <img
+                            <ZoomableImage
                                 src="/images/shaundju/Screenshot3.webp"
-                                loading="lazy"
-                                decoding="async"
                                 alt="Testimonial 3"
                                 className="h-full w-full object-cover object-top"
                             />

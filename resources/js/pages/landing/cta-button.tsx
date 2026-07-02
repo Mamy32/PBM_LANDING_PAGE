@@ -9,6 +9,7 @@ interface CtaButtonProps {
     context?: 'light' | 'dark';
     vertical?: boolean;
     showArrow?: boolean;   // <-- add this
+    compact?: boolean;
     onClick?: () => void;
     href?: string;
 }
@@ -22,12 +23,13 @@ export default function CtaButton({
     context = 'dark',
     vertical = false,
     showArrow = true,
+    compact = false,
     onClick,
     href,
 }: CtaButtonProps) {
-    const sizeClasses =
+const sizeClasses =
     size === 'large'
-        ? 'px-6 py-4 text-[17px] min-w-[170px] sm:px-9 sm:py-5 sm:text-lg'
+        ? 'px-8 py-4 text-base min-w-[190px] sm:px-10 sm:py-5 sm:text-lg'
         : 'px-7 py-4 text-sm sm:text-base';
     const variantClasses =
         variant === 'hero'
@@ -76,7 +78,9 @@ export default function CtaButton({
                             ?.scrollIntoView({ behavior: 'smooth' });
                     }
                 }}
-                className={`group inline-flex w-full items-center justify-center gap-2 rounded-full font-bold tracking-tight transition-all duration-300 ${sizeClasses} ${variantClasses}`}
+                className={`group inline-flex ${
+    compact ? "w-auto" : "w-full"
+} items-center justify-center rounded-full font-bold tracking-tight transition-all duration-300 ${sizeClasses} ${variantClasses}`}
             >
                 <span>{text}</span>
 

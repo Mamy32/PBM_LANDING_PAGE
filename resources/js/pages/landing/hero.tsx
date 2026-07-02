@@ -106,7 +106,7 @@ export default function Hero() {
     <div className="flex items-start justify-between gap-2">
 
         {/* LEFT */}
-        <div className="mt-5 flex w-[42%] flex-col">
+        <div className="mt-5 flex w-[42%] flex-col items-start">
             <CtaButton
                 id="hero-cta"
                 text="Saya Mau Naik Gaji"
@@ -114,8 +114,8 @@ export default function Hero() {
                 vertical
                 variant="hero"
                 showArrow={false}
+                compact
                 onClick={handleCtaClick}
-                className="w-[90%]"
             />
         </div>
 

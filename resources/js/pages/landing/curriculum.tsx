@@ -1,6 +1,4 @@
 import { ChevronDown } from 'lucide-react';
-import { useRef, useState } from 'react';
-
 const modules = [
     {
         number: '01',
@@ -36,9 +34,7 @@ const modules = [
 
 function AccordionItem({
     item,
-    index,
     isOpen,
-    onToggle,
     isLast,
 }: {
     item: (typeof modules)[number];
@@ -47,7 +43,7 @@ function AccordionItem({
     onToggle: () => void;
     isLast: boolean;
 }) {
-    const contentRef = useRef<HTMLDivElement>(null);
+    
 
     return (
         <div
@@ -55,8 +51,7 @@ function AccordionItem({
                 isLast ? '' : 'border-b border-white/8'
             }`}
         >
-            <button
-                onClick={onToggle}
+            <div
                 className="flex w-full items-center gap-4 py-5 text-left sm:py-6 lg:py-7"
             >
                 {/* Module label block */}
@@ -114,25 +109,12 @@ function AccordionItem({
                             : 'bg-white/5 text-white/40 group-hover:bg-white/10 group-hover:text-white/60'
                     }`}
                 >
-                    <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                    />
+                    <ChevronDown className="h-4 w-4" />
                 </div>
-            </button>
+            </div>
 
             {/* Collapsible body */}
-            <div
-                ref={contentRef}
-                className="overflow-hidden transition-all duration-300 ease-in-out"
-                style={{
-                    maxHeight: isOpen
-                        ? contentRef.current?.scrollHeight
-                            ? `${contentRef.current.scrollHeight}px`
-                            : '500px'
-                        : '0px',
-                    opacity: isOpen ? 1 : 0,
-                }}
-            >
+            <div className="overflow-visible">
                 {/* Indent to align with title */}
                 <div className="pb-5 pl-[60px] pr-4 sm:pl-[73px] lg:pr-8">
                     {/* Accent bar */}
@@ -147,12 +129,6 @@ function AccordionItem({
 }
 
 export default function Curriculum() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    const toggle = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
     return (
         <section
             id="curriculum"
@@ -186,8 +162,8 @@ export default function Curriculum() {
                             key={index}
                             item={item}
                             index={index}
-                            isOpen={openIndex === index}
-                            onToggle={() => toggle(index)}
+                            isOpen={true}
+                            onToggle={() =>{}}
                             isLast={index === modules.length - 1}
                         />
                     ))}

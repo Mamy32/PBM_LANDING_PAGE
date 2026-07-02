@@ -82,7 +82,7 @@ export default function Hero() {
                         </h1>
 
                         {/* DESCRIPTION */}
-                        <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/85 sm:text-lg lg:text-base">
+                        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/85 sm:max-w-xl sm:text-lg lg:mx-0 lg:text-base">
                             Capek <strong>networking & kerja keras</strong>{' '}
                             setiap hari tapi gaji gak naik-naik? Pelajari
                             strategi yang digunakan para top performer untuk
@@ -98,9 +98,21 @@ export default function Hero() {
                                 Saya Mau Naik Gaji
                             </button>
                         </div>
+                        {/* MOBILE HERO IMAGE */}
+                        <div className="mt-8 flex justify-center lg:hidden">
+                            <img
+                                src="/images/shaundju/photo_header.webp"
+                                alt="Shaun Djuhari"
+                                width={340}
+                                height={390}
+                                loading="eager"
+                                decoding="async"
+                                className="w-full max-w-[260px] object-contain drop-shadow-[0_0_30px_rgba(0,0,0,0.45)]"
+                            />
+                        </div>
 
                         {/* BENEFITS */}
-                        <div className="mt-6 flex flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white sm:mt-8 lg:flex-nowrap lg:gap-x-5 lg:text-xs">
+                        <div className="mt-8 flex flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white sm:mt-8 lg:flex-nowrap lg:gap-x-5 lg:text-xs">
                             <div className="flex items-center gap-1 whitespace-nowrap">
                                 <svg
                                     className="h-3 w-3 shrink-0"

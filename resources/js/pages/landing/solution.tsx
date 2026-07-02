@@ -15,23 +15,6 @@ export default function Solution() {
         <section id="solusi" className="bg-[#8FB278] py-24 lg:py-32">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-28">
-                    {/* IMAGE */}
-                    <div className="flex justify-center">
-                        <div className="rounded-[28px] border border-[#A8FF7E] p-3">
-                            <div className="overflow-hidden rounded-[24px] bg-[#052E26]">
-                                <img
-                                    src="/images/shaundju/mentor.webp"
-                                    alt="Shaun"
-                                    className="h-[320px] w-auto object-cover sm:h-[420px] lg:h-[520px]"
-                                    width={381}
-                                    height={520}
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
                     {/* CONTENT */}
                     <div className="max-w-[520px] text-center lg:text-left">
                         <div className="mb-4 inline-flex items-center rounded-full border border-[#16352A] px-4 py-2 text-xs text-[#16352A] sm:text-sm">
@@ -102,6 +85,28 @@ export default function Solution() {
                                     {f}
                                 </span>
                             ))}
+                        </div>
+                    </div>
+                    {/* IMAGE */}
+                    <div className="flex justify-center">
+                        <div className="rounded-[28px] border border-[#A8FF7E] p-3">
+                            <div className="overflow-hidden rounded-[24px] bg-[#052E26]">
+                                <video
+                                    className="h-[320px] w-auto object-cover sm:h-[420px] lg:h-[520px]"
+                                    width={381}
+                                    height={520}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    preload="metadata"
+                                >
+                                    <source
+                                        src="/images/shaundju/solution.webm"
+                                        type="video/webm"
+                                    />
+                                </video>
+                            </div>
                         </div>
                     </div>
                 </div>

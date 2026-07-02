@@ -70,15 +70,33 @@ export default function Testimonials() {
                 </div>
 
                 {/* Screenshots */}
-                <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:items-start lg:gap-10">
-                    {/* Left: main proof image */}
-                    <img
-                        src="/images/shaundju/proof.webp"
-                        loading="lazy"
-                        decoding="async"
-                        alt="Phone testimonial"
-                        className="w-[280px] max-w-full rounded-2xl sm:w-[340px] lg:w-[380px]"
-                    />
+               <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:items-start lg:gap-10">
+                    <div className="flex w-full max-w-[380px] flex-col items-center">
+                        {/* Profile Photo */}
+                        <div className="mb-4 overflow-hidden rounded-full border-4 border-white/15 shadow-lg">
+                            <img
+                                src="/images/shaundju/profile.webp"
+                                alt="Niek Astrini"
+                                className="h-28 w-28 object-cover sm:h-32 sm:w-32"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+
+                        {/* Name */}
+                        <h3 className="text-center text-2xl font-semibold text-[#9DFF70] sm:text-3xl">
+                            Niek Astrini
+                        </h3>
+
+                        {/* Proof Screenshot */}
+                        <img
+                            src="/images/shaundju/proof.webp"
+                            loading="lazy"
+                            decoding="async"
+                            alt="Phone testimonial"
+                            className="mt-6 w-[280px] max-w-full rounded-2xl sm:w-[340px] lg:w-[380px]"
+                        />
+                    </div>
                 </div>
 
                 {/* Testimonial Cards */}

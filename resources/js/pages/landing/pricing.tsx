@@ -2,6 +2,7 @@ import { Check } from 'lucide-react';
 
 import { router } from '@inertiajs/react';
 import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
+import CountdownTimer from './countdown-timer';
 export default function Pricing() {
     const { trackCTA, trackInitiateCheckout } = useAnalytics();
 
@@ -23,6 +24,7 @@ export default function Pricing() {
                         Target Karier Lo Saat Ini
                     </h2>
                 </div>
+                <CountdownTimer />
 
                 {/* Pricing Cards */}
                 <div className="mt-10 grid gap-5 lg:grid-cols-2 lg:gap-8">

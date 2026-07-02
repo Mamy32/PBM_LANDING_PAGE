@@ -9,16 +9,16 @@ export default function CompanyLogos() {
 
             <div className="flex w-max animate-marquee items-center">
                 {/* duplicated image for infinite loop */}
-                {[1, 2].map((i) => (
-                    <img
-                        key={i}
-                        src="/images/shaundju/logo_company.webp"
-                        alt="Companies"
-                        className="mr-16 h-12 w-auto lg:h-16"
-                        loading="lazy"
-                        decoding="async"
-                    />
-                ))}
+                {Array.from({ length: 6 }).map((_, i) => (
+    <img
+        key={i}
+        src="/images/shaundju/logo_company.webp"
+        alt="Companies"
+        className="mr-12 h-12 w-auto lg:h-16"
+        loading="lazy"
+        decoding="async"
+    />
+))}
             </div>
         </section>
     );

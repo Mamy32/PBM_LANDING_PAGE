@@ -1,4 +1,4 @@
-import { Check, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 import {

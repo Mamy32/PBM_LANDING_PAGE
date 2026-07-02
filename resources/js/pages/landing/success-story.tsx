@@ -1,5 +1,5 @@
 import { useAnalytics } from '@/hooks/use-analytics';
-
+import CtaButton from './cta-button';
 export default function SuccessStory() {
     const { trackCTA } = useAnalytics();
 
@@ -88,16 +88,17 @@ export default function SuccessStory() {
                     </div>
                 </div>
 
-                {/* CTA */}
+                
+               {/* CTA */}
                 <div className="mt-12 flex justify-center lg:mt-14">
-                    <button
+                    <CtaButton
                         id="success-story-cta"
-                        type="button"
+                        text="Mulai Belajar Sekarang"
+                        size="large"
+                        context="light"
+                        
                         onClick={handleClick}
-                        className="w-full cursor-pointer rounded-full bg-gradient-to-b from-[#3E6652] to-[#234437] px-6 py-3 text-lg font-bold text-[#B8FF8D] shadow-[0_0_30px_rgba(0,0,0,0.15)] sm:w-auto sm:px-10 sm:py-4"
-                    >
-                        Mulai Belajar Sekarang
-                    </button>
+                    />
                 </div>
             </div>
         </section>

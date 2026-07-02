@@ -12,7 +12,7 @@ export default function Solution() {
     };
 
     return (
-        <section id="solusi" className="bg-[#8FB278] py-24 lg:py-32">
+        <section id="solusi" className="bg-[#8FB278] py-21 lg:py-28">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-28">
                     {/* CONTENT */}

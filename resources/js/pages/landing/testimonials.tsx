@@ -105,7 +105,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Screenshots */}
-               <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-6 lg:mt-20 lg:flex-row lg:items-start lg:gap-10">
+               <div className="mx-auto mt-10 flex flex-col items-center justify-center gap-6 lg:mt-17 lg:flex-row lg:items-start lg:gap-10">
                     <div className="flex w-full max-w-[380px] flex-col items-center">
                        {/* Profile Photo */}
                         <div className="mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-white/15 shadow-lg">
@@ -135,7 +135,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Testimonial Cards */}
-                <div className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+                <div className="mt-10 grid gap-4 sm:gap-6 md:grid-cols-2 lg:mt-17 lg:grid-cols-3">
                     {testimonials.map((item) => (
                         <div
                             key={item.name}
@@ -172,7 +172,7 @@ export default function Testimonials() {
                     ))}
                 </div>
                 {/* Right: 3 screenshots — same width as proof, equal height */}
-                <div className="mx-auto mt-10 flex flex-col gap-3 sm:mt-12 lg:mt-16 lg:w-full lg:max-w-5xl">
+                <div className="mx-auto mt-10 flex flex-col gap-3 sm:mt-12 lg:mt-13 lg:w-full lg:max-w-5xl">
                     <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-center lg:gap-6">
                         <div className="aspect-[4/3] w-[280px] overflow-hidden rounded-2xl shadow-lg sm:w-[340px] lg:w-[320px]">
                         <ZoomableImage
@@ -203,7 +203,7 @@ export default function Testimonials() {
 
 
                 {/* CTA */}
-                <div className="mt-12 text-center lg:mt-16">
+                <div className="mt-10 text-center lg:mt-13">
                     <CtaButton
                         id="testimonial-cta"
                         text="Mulai Belajar Sekarang"

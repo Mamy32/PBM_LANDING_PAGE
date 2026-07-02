@@ -97,10 +97,7 @@ export default function Hero() {
                             >
                                 Saya Mau Naik Gaji
                             </button>
-
                         </div>
-                        
-
                         {/* BENEFITS */}
                         <div className="mt-6 flex flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white sm:mt-8 lg:flex-nowrap lg:gap-x-5 lg:text-xs">
                             <div className="flex items-center gap-1 whitespace-nowrap">

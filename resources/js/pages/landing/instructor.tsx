@@ -21,13 +21,25 @@ export default function Instructor() {
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
                     {/* Left */}
                     <div className="flex flex-col items-center">
-                        <img
-                            src="/images/shaundju/oners.webp"
-                            alt="Shaun Djuhari"
-                            className="h-[220px] w-[220px] rounded-full object-cover sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px]"
-                            loading="lazy"
-                            decoding="async"
-                        />
+                       <img
+    src="/images/shaundju/oners.webp"
+    alt="Shaun Djuhari"
+    width={320}
+    height={320}
+    loading="lazy"
+    decoding="async"
+    className="
+        h-[220px]
+        w-[220px]
+        rounded-full
+        object-cover
+        object-center
+        sm:h-[280px]
+        sm:w-[280px]
+        lg:h-[320px]
+        lg:w-[320px]
+    "
+/>
 
                         <div className="mt-6 rounded-full bg-[#9DFF70] px-6 py-2 sm:px-8 sm:py-3">
                             <span className="text-base font-semibold text-[#123C2D] sm:text-lg">

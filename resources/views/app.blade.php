@@ -80,11 +80,35 @@
 <body class="font-sans antialiased">
     <x-inertia::app />
 
+    @if (config('services.meta.pixel_id'))
+        <script>
+        (function(f) {
+        if (f.fbq) return;
+        var n = function() {
+            if (n.callMethod) {
+                n.callMethod.apply(n, arguments);
+            } else {
+                n.queue.push(arguments);
+            }
+        };
+
+        if (!f._fbq) f._fbq = n;
+
+        n.push = n;
+        n.loaded = false;
+        n.version = '2.0';
+        n.queue = [];
+
+        f.fbq = n;
+        })(window);
+        </script>
+        @endif
+
     {{-- Third-party analytics/tracking scripts loaded only after genuine user
-         engagement (scroll, click, touch, or keypress) OR after a generous idle
-         timeout, whichever comes first. This keeps them completely out of the
-         critical render path and away from initial-load performance metrics,
-         while still ensuring real visitors are tracked. --}}
+        engagement (scroll, click, touch, or keypress) OR after a generous idle
+        timeout, whichever comes first. This keeps them completely out of the
+        critical render path and away from initial-load performance metrics,
+        while still ensuring real visitors are tracked. --}}
     <script type="text/javascript">
         (function() {
             var thirdPartyLoaded = false;
@@ -107,26 +131,24 @@
 
                 @if (config('services.meta.pixel_id'))
                     // Meta Pixel
-                    ! function(f, b, e, v, n, t, s) {
-                        if (f.fbq) return;
-                        n = f.fbq = function() {
-                            n.callMethod ?
-                                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                        };
-                        if (!f._fbq) f._fbq = n;
-                        n.push = n;
-                        n.loaded = !0;
-                        n.version = '2.0';
-                        n.queue = [];
-                        t = b.createElement(e);
-                        t.async = !0;
-                        t.src = v;
-                        s = b.getElementsByTagName(e)[0];
-                        s.parentNode.insertBefore(t, s)
-                    }(window, document, 'script',
-                        'https://connect.facebook.net/en_US/fbevents.js');
-                    fbq('init', '{{ config('services.meta.pixel_id') }}');
-                    fbq('track', 'PageView');
+                    if (!window.fbq.loaded) {
+                        (function(f, b, e, v, n, t, s) {
+                            t = b.createElement(e);
+                            t.async = true;
+                            t.src = v;
+                            s = b.getElementsByTagName(e)[0];
+                            s.parentNode.insertBefore(t, s);
+                        })(
+                            window,
+                            document,
+                            'script',
+                            'https://connect.facebook.net/en_US/fbevents.js'
+                        );
+
+                        fbq.loaded = true;
+                        fbq('init', '{{ config('services.meta.pixel_id') }}');
+                        fbq('track', 'PageView');
+                    }
                 @endif
 
                 // Remove listeners once loaded so they don't fire again

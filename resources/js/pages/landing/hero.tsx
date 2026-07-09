@@ -7,7 +7,7 @@ export default function Hero() {
     const handleCtaClick = () => {
         trackCTA('hero_primary', 'Saya Mau Naik Gaji', '#harga');
         document
-            .getElementById('harga')
+            .getElementById('curriculum')
             ?.scrollIntoView({ behavior: 'smooth' });
     };
 

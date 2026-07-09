@@ -5,7 +5,7 @@ export default function Hero() {
     const { trackCTA } = useAnalytics();
 
     const handleCtaClick = () => {
-        trackCTA('hero_primary', 'Saya Mau Naik Gaji', '#harga');
+        trackCTA('hero_primary', 'Saya Mau Naik Gaji', '#curriculum');
         document
             .getElementById('curriculum')
             ?.scrollIntoView({ behavior: 'smooth' });

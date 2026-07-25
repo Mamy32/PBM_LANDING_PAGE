@@ -82,25 +82,22 @@ export default function Problem() {
                 </div>
 
                 {/* BOTTOM CTA BUTTON */}
-                        <div className="mt-2">
-                            <div className="inline-block scale-95 origin-left sm:scale-100">
-                                <CtaButton
-                                    id="bukti-nyata-cta"
-                                    text="Saya Mau Kayak Gini"
-                                    variant="dark"
-                                    context="light"
-                                    showArrow={false}
-                                    align="left" // <-- Simply add this!
-                                    onClick={() =>
-                                        trackCTA(
-                                            'bukti_nyata',
-                                            'Saya Mau Kayak Gini',
-                                            '/checkout?course=first-jobbers'
-                                        )
-                                    }
-                                />
-                            </div>
-                        </div>
+                <div className="mt-12 flex flex-col items-center justify-center sm:mt-16">
+                    <CtaButton
+                        id="cerita-gua-cta"
+                        text="Pelajari Sekarang"
+                        variant="dark" 
+                        context="light"
+                        showArrow={false}
+                        onClick={() =>
+                            trackCTA(
+                                'cerita_gua',
+                                'Pelajari Sekarang',
+                                '/checkout?course=first-jobbers'
+                            )
+                        }
+                    />
+                </div>
             </div>
         </section>
     );

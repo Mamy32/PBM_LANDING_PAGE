@@ -68,7 +68,7 @@ export default function PracticalBenefits() {
                                     id="bukti-nyata-cta"
                                     text="Saya Mau Kayak Gini"
                                     variant="dark"
-                                    size="large"
+                                    align="left"
                                     showArrow={false}
                                     onClick={() =>
                                         trackCTA(

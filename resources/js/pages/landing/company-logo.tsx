@@ -1,6 +1,6 @@
 export default function CompanyLogos() {
     return (
-        <section className="bg-[##F7F3E9] py-10 sm:py-16">
+        <section className="bg-[#F7F3E9] py-10 sm:py-16">
             <div className="mx-auto max-w-7xl px-4 text-center">
                 <h3 className="mb-8 font-serif text-xl font-bold text-[#1A3A22] sm:text-2xl lg:text-3xl">
                     Trusted by Corporate Superstars from

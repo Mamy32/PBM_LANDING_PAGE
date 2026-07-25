@@ -85,7 +85,6 @@ export default function Solution() {
                                 id="solution-cta"
                                 text="Saya Mau Belajar Mindset Ini"
                                 variant="primary"
-                                size="large"
                                 showArrow={false}
                                 onClick={handleClick}
                             />

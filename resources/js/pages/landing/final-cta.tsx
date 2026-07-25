@@ -25,7 +25,6 @@ export default function FinalCta() {
                         id="final-cta"
                         text="Join Now"
                         variant="primary"
-                        size="large"
                         showArrow={false}
                         onClick={() => {
                             // Track the click first

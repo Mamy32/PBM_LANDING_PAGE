@@ -95,7 +95,7 @@ export default function Hero() {
                                 id="hero-cta-desktop"
                                 text="Saya Mau Naik Gaji"
                                 variant="hero"
-                                size="large"
+                                align="left"
                                 compact
                                 showArrow={false}
                                 onClick={handleCtaClick}
@@ -111,8 +111,6 @@ export default function Hero() {
             <CtaButton
                 id="hero-cta"
                 text="Saya Mau Naik Gaji"
-                size="large"
-                align="left"
                 vertical
                 variant="hero"
                 showArrow={false}

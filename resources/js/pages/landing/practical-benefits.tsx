@@ -13,12 +13,13 @@ export default function PracticalBenefits() {
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                     {/* LEFT: Video */}
-                    <div className="w-full overflow-hidden rounded-3xl shadow-lg bg-black/5">
+                    <div className="flex w-full items-center justify-center lg:justify-end">
                         <video 
                             src="/images/shaundju/solution_gif.mp4" 
                             controls
                             playsInline
-                            className="w-full h-auto" 
+                            // Sizing limits the height so it doesn't stretch past the content
+                            className="max-h-[450px] w-auto rounded-2xl shadow-lg sm:max-h-[500px] lg:max-h-[550px]" 
                         />
                     </div>
 

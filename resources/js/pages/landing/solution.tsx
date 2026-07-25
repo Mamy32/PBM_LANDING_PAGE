@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 
@@ -5,80 +6,93 @@ export default function Solution() {
     const { trackCTA } = useAnalytics();
 
     const handleClick = () => {
-        trackCTA('solution_section', 'Bongkar Hacks-nya Sekarang', '#harga');
+        trackCTA('solution_section', 'Saya Mau Belajar Mindset Ini', '#harga');
         document
             .getElementById('harga')
             ?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
-        <section id="solusi" className="bg-[#8FB278] py-21 lg:py-28">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
-               <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-20">
-                    {/* CONTENT */}
-                    <div className="mx-auto max-w-[520px] text-center md:mx-0 md:text-left">
-                        <div className="mb-4 inline-flex items-center rounded-full border border-[#16352A] px-4 py-2 text-xs text-[#16352A] sm:text-sm">
-                            Di ShaunDju Academy
+        <section 
+            id="solusi" 
+            className="py-20 lg:py-32"
+            style={{ background: 'radial-gradient(at 50% 0%, rgb(30, 74, 60) 0%, rgb(15, 42, 32) 55%, rgb(8, 23, 18) 100%)' }}
+        >
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+                
+                {/* TOP SECTION: Grid */}
+                <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+                    
+                    {/* LEFT CONTENT */}
+                    <div>
+                        <div className="mb-6 inline-flex items-center rounded-full border border-gray-500/40 px-4 py-1.5 text-xs font-semibold text-gray-300">
+                            Pernah di posisi lo
                         </div>
-
-                        <h2 className="max-w-[500px] font-serif text-4xl leading-[1.1] font-semibold text-white sm:text-5xl">
-                            Diperebutkan
-                            <br />
-                            Perusahaan-
-                            <br />
-                            Perusahaan Besar
+                        <h2 className="font-serif text-4xl font-bold leading-tight text-white lg:text-[44px]">
+                            Gua Rasain Apa yang Lo<br className="hidden lg:block" /> Rasain
                         </h2>
-
-                        <p className="mt-6 max-w-md text-lg leading-relaxed text-white sm:text-2xl">
-                            Dulu gue yang kirim-kirim CV, sekarang rekruiter yang DM duluan. berkat branding dan reputasi yang bener, banyak alumni Shaun Academy dapet tawaran
-                            <span className="font-semibold text-[#B8FF8B] italic">
-                                {' '}
-                                startup bank, hingga perusahaan multinasional.
-                            </span>
-                        </p>
-
-                    {/* CTA */}
-                    <div className="mt-8 flex justify-center md:justify-start">
-                        <CtaButton
-                            id="solution-cta"
-                            text="Bongkar Hacks-nya Sekarang"
-                            variant="dark"
-                            size="large"
-                            context="light"
-                            onClick={handleClick}
-                        />
+                        <h3 className="mt-4 font-serif text-2xl font-bold text-[#4ADE94] sm:text-3xl lg:text-[32px]">
+                            Pas Masih Awal Karier
+                        </h3>
                     </div>
-                    </div>
-                    {/* IMAGE */}
-                    <div className="flex justify-center">
-                        <div className="rounded-[32px] border-2 border-[#A8FF7E] p-4 shadow-[0_0_30px_rgba(168,255,126,0.18)]">
-                            <div className="overflow-hidden rounded-[28px] bg-[#052E26]">
-                                <video
-                                    className="h-[380px] w-auto object-cover sm:h-[480px] md:h-[560px] lg:h-[700px]"
-                                    width={512}
-                                    height={700}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    preload="metadata"
-                                >
-                                    {/* Safari / iPhone */}
-                                    <source
-                                        src="/images/shaundju/solution_gif.mp4"
-                                        type="video/mp4"
-                                    />
 
-                                    {/* Chrome / Firefox / Edge */}
-                                    <source
-                                        src="/images/shaundju/solution_gif.webm"
-                                        type="video/webm"
-                                    />
-                                </video>
+                    {/* RIGHT CONTENT (Box) */}
+                    <div className="rounded-[32px] border border-[#4ADE9459] p-6 shadow-sm sm:p-8 lg:p-10">
+                        <div className="flex flex-col space-y-6">
+                            {/* Item 1 */}
+                            <div className="flex items-start gap-4">
+                                <Check className="mt-1 h-5 w-5 shrink-0 text-[#4ADE94]" strokeWidth={2.5} />
+                                <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
+                                    <strong className="font-semibold italic text-[#4ADE94]">Udah kerja keras & rajin banget, </strong>
+                                    tapi kerjaan lo tetap nggak pernah bener-bener di-notice atasan
+                                </p>
+                            </div>
+
+                            <hr className="border-[#4ADE9459]" />
+
+                            {/* Item 2 */}
+                            <div className="flex items-start gap-4">
+                                <Check className="mt-1 h-5 w-5 shrink-0 text-[#4ADE94]" strokeWidth={2.5} />
+                                <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
+                                    <strong className="font-semibold italic text-[#4ADE94]">Udah rajin networking, </strong>
+                                    ikut banyak acara & kenal banyak orang penting, tapi gak ngaruh karena belum ada kenaikan gaji nyata
+                                </p>
+                            </div>
+
+                            <hr className="border-[#4ADE9459]" />
+
+                            {/* Item 3 */}
+                            <div className="flex items-start gap-4">
+                                <Check className="mt-1 h-5 w-5 shrink-0 text-[#4ADE94]" strokeWidth={2.5} />
+                                <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
+                                    <strong className="font-semibold italic text-[#4ADE94]">Lo liat orang kayak gua </strong>
+                                    tembus ratusan juta per bulan sebelum umur 30, dan mikir "kayaknya emang ada yang mereka tau yang gue nggak tau"
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {/* BOTTOM CTA SECTION */}
+                <div className="mt-20 text-center lg:mt-28">
+                    <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base">
+                        Bedanya bukan kerja keras, bedanya mindset yang biasanya cuma diajarin lewat <strong className="text-white">executive coaching harga ratusan juta.</strong>
+                    </p>
+
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="inline-block scale-105 sm:scale-110">
+                            <CtaButton
+                                id="solution-cta"
+                                text="Saya Mau Belajar Mindset Ini"
+                                variant="primary"
+                                size="large"
+                                showArrow={false}
+                                onClick={handleClick}
+                            />
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     );

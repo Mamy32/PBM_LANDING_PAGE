@@ -15,7 +15,7 @@ export default function SuccessStory() {
     return (
         <section
             id="success-story"
-            className="bg-[#17241E] py-20 lg:py-32"
+            className="bg-[radial-gradient(at_50%_0%,rgb(30,74,60)_0%,rgb(15,42,32)_55%,rgb(8,23,18)_100%)] py-20 lg:py-32"
         >
             <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
                 

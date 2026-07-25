@@ -88,7 +88,6 @@ export default function Problem() {
                         text="Pelajari Sekarang"
                         variant="dark" // Uses your dark green styling
                         size="large"
-                        showArrow={false}
                         onClick={() =>
                             trackCTA(
                                 'cerita_gua',
@@ -97,22 +96,6 @@ export default function Problem() {
                             )
                         }
                     />
-
-                    {/* Features List */}
-                    <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-gray-500 sm:gap-6 sm:text-sm">
-                        <div className="flex items-center gap-1.5">
-                            <Check className="h-4 w-4 text-[#1A3A22]" />
-                            <span>75+ Materi</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <Check className="h-4 w-4 text-[#1A3A22]" />
-                            <span>Lifetime Access</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <Check className="h-4 w-4 text-[#1A3A22]" />
-                            <span>1000+ Members</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

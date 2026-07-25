@@ -10,10 +10,12 @@ export default function PracticalBenefits() {
             id="benefits"
             className="bg-[#7F9968] py-16 lg:py-24"
         >
-            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            {/* Reduced max-w-6xl to max-w-5xl to bring the content closer together */}
+            <div className="mx-auto max-w-5xl px-4 sm:px-6">
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                     {/* LEFT: Video */}
-                    <div className="flex w-full items-center justify-center lg:justify-end">
+                    {/* Removed lg:justify-end so the video stays perfectly centered */}
+                    <div className="flex w-full items-center justify-center">
                         <video 
                             src="/images/shaundju/solution_gif.mp4" 
                             controls
@@ -78,6 +80,22 @@ export default function PracticalBenefits() {
                                         )
                                     }
                                 />
+                            </div>
+                            
+                            {/* Features List */}
+                            <div className="mt-4 flex flex-wrap items-center gap-4 text-[11px] font-medium text-[#1A3A22] sm:gap-5 sm:text-xs">
+                                <div className="flex items-center gap-1.5">
+                                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+                                    <span>75+ Materi</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+                                    <span>Lifetime Access</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+                                    <span>1000+ Members</span>
+                                </div>
                             </div>
                         </div>
                     </div>

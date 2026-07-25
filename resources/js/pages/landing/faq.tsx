@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import CtaButton from './cta-button';
 import { useAnalytics } from '@/hooks/use-analytics';
 
 const faqItems = [
@@ -109,21 +110,23 @@ export default function Faq() {
                     })}
                 </div>
 
-                {/* Bottom CTA */}
-                {/* <div className="mt-10 text-center lg:mt-14">
-                    <p className="mb-5 text-sm text-white/80 sm:text-base">
-                        Masih ada pertanyaan lain? Hubungi kami sekarang.
-                    </p>
-
-                    <button
-                        type="button"
-                        onClick={handleClick}
-                        className="inline-flex items-center rounded-full bg-[#9DFF70] px-6 py-3 text-base font-semibold text-[#123C2D] transition-all duration-300 hover:scale-105 sm:px-8 sm:py-4 sm:text-lg"
-                    >
-                        Chat via WA
-                        <ChevronDown className="ml-2 h-4 w-4 -rotate-90" />
-                    </button>
-                </div> */}
+                {/* BOTTOM CTA BUTTON */}
+                <div className="mt-12 flex flex-col items-center justify-center sm:mt-16">
+                    <CtaButton
+                        id="cerita-gua-cta"
+                        text="Maish ragu? Tanya dulu"
+                        variant="dark" 
+                        showArrow={false}
+                        size="large"
+                        onClick={() =>
+                            trackCTA(
+                                'cerita_gua',
+                                'Maish ragu? Tanya dulu',
+                                '/checkout?course=first-jobbers'
+                            )
+                        }
+                    />
+                </div>
             </div>
         </section>
     );

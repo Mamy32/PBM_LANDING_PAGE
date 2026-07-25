@@ -10,6 +10,7 @@ interface CtaButtonProps {
     vertical?: boolean;
     showArrow?: boolean;
     compact?: boolean;
+    align?: 'center' | 'left'; // <-- Added here
     onClick?: () => void;
     href?: string;
 }
@@ -24,6 +25,7 @@ export default function CtaButton({
     vertical = false,
     showArrow = true,
     compact = false,
+    align = 'center', // <-- Added here
     onClick,
     href,
 }: CtaButtonProps) {
@@ -53,7 +55,7 @@ export default function CtaButton({
                 ? 'bg-[#0C1F13] text-white shadow-lg shadow-black/30 hover:bg-black hover:-translate-y-0.5 ring-1 ring-white/10'
                 : 'bg-white text-[#0C1F13] shadow-lg hover:bg-[#F0FFF4] hover:-translate-y-0.5 ring-1 ring-white/40';
 
-    // UPDATED: When context="light", this will use black text and darker green icons!
+    // When context="light", this uses black text and darker green icons
     const proofText =
         context === 'dark' ? 'text-white/60' : 'text-black/70 font-medium';
 
@@ -67,7 +69,8 @@ export default function CtaButton({
     ];
 
     return (
-        <div className={`flex flex-col ${vertical ? 'items-start' : 'items-center'} gap-4 ${className}`}>
+        // ALIGNMENT FIX: items-start pushes both the button and the features list to the left
+        <div className={`flex flex-col ${vertical || align === 'left' ? 'items-start' : 'items-center'} gap-4 ${className}`}>
             <button
                 type="button"
                 id={id}
@@ -108,7 +111,8 @@ export default function CtaButton({
                 className={
                     vertical
                         ? `flex flex-col items-start gap-2 text-xs ${proofText}`
-                        : `flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] sm:text-xs ${proofText}`
+                        // ALIGNMENT FIX: justify-start left-aligns the checkmarks
+                        : `flex flex-wrap items-center ${align === 'left' ? 'justify-start' : 'justify-center'} gap-x-4 gap-y-1.5 text-[11px] sm:text-xs ${proofText}`
                 }
             >
                 {features.map((feature) => (

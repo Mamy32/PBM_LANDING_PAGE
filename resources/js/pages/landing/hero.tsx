@@ -112,6 +112,7 @@ export default function Hero() {
                 id="hero-cta"
                 text="Saya Mau Naik Gaji"
                 size="large"
+                align="left"
                 vertical
                 variant="hero"
                 showArrow={false}

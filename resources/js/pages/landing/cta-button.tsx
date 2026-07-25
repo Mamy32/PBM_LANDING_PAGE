@@ -76,7 +76,7 @@ variant === 'hero'
                         window.location.href = href;
                     } else {
                         document
-                            .getElementById('harga')
+                            .getElementById('checkout')
                             ?.scrollIntoView({ behavior: 'smooth' });
                     }
                 }}

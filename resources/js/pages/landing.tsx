@@ -14,9 +14,8 @@ const Solution = lazy(() => import('./landing/solution'));
 const Problem = lazy(() => import('./landing/problem'));
 const PracticalBenefits = lazy(() => import('./landing/practical-benefits'));
 const Testimonials = lazy(() => import('./landing/testimonials'));
-const Instructor = lazy(() => import('./landing/instructor'));
+const FinalCta = lazy(() => import('./landing/final-cta'));
 const MediaFeatures = lazy(() => import('./landing/media-features'));
-const Curriculum = lazy(() => import('./landing/curriculum'));
 const Pricing = lazy(() => import('./landing/pricing'));
 const VideoTeaser = lazy(() => import('./landing/video-teaser'));
 const Faq = lazy(() => import('./landing/faq'));
@@ -77,6 +76,7 @@ export default function Landing() {
                 <MediaFeatures />
                 <Pricing />
                 <VideoTeaser />
+                <FinalCta/>
                 <Faq />
                 <Footer />
             </Suspense>

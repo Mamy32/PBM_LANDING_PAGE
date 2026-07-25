@@ -1,18 +1,14 @@
+import { Check } from 'lucide-react';
+import { useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
+
 export default function Problem() {
-    const timeline = [
-        { role: 'Product Management Intern', salary: '50+jt/thn' },
-        { role: 'CEO Office', company: 'GoTo', salary: '300+jt/thn' },
-        { role: 'Game Operations Associate', company: 'Garena, Singapore', salary: '400+jt/thn' },
-        { role: 'Business Analyst', salary: '500+jt/thn' },
-        { role: 'Senior Business Analyst', salary: '700+jt/thn' },
-        { role: 'Associate', salary: '1,3+ M/thn' },
-        { role: 'Project Manager', company: 'Kearney', salary: '2+ M/thn' },
-    ];
+    const { trackCTA } = useAnalytics();
 
     return (
         <section
             id="problem"
-            className="bg-[#F7F3E9] pb-16 pt-8 lg:pb-24 lg:pt-12"
+            className="bg-[#F5F5F0] pb-16 pt-8 lg:pb-24 lg:pt-12"
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 {/* HEADLINE */}
@@ -20,39 +16,29 @@ export default function Problem() {
                     <div className="mb-5 inline-flex items-center rounded-full border border-gray-300 px-5 py-1.5 text-xs font-bold text-gray-600 sm:text-sm">
                         Cerita Gua
                     </div>
-                    <h2 className="font-serif text-3xl font-bold leading-tight text-[#14312A] sm:text-4xl lg:text-5xl">
+                    {/* The title can now stretch wider on one line on desktop */}
+                    <h2 className="mx-auto max-w-4xl font-serif text-3xl font-bold leading-tight text-[#1A3A22] sm:text-4xl lg:text-5xl">
                         Dulu Disuruh-suruh, Sekarang Bisa Bebas Dengan Gaji 2+ Miliar / Tahun
                     </h2>
                 </div>
 
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-                    {/* LEFT CARD (Timeline) */}
-                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
-                        <div className="space-y-6">
-                            {timeline.map((item, index) => (
-                                <div key={index} className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-100 pb-5 last:border-0 last:pb-0">
-                                    <div className="flex items-start gap-4">
-                                        <div className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1A3A22]" />
-                                        <div>
-                                            <p className="font-bold text-[#1A3A22] sm:text-[17px]">{item.role}</p>
-                                            {item.company && (
-                                                <p className="mt-0.5 text-[13px] text-gray-500">{item.company}</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="whitespace-nowrap rounded-full border border-gray-200 px-4 py-1.5 text-xs font-bold text-[#1A3A22] sm:text-sm">
-                                        {item.salary}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    {/* LEFT CARD (Image Placeholder) */}
+                    <div className="flex h-full min-h-[300px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gray-200 shadow-sm sm:min-h-[400px]">
+                        <img
+                            // CHANGE THIS TO YOUR IMAGE PATH
+                            src="/images/shaundju/promote.webp" 
+                            alt="Cerita Gua"
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                        />
                     </div>
 
                     {/* RIGHT SIDE (Dulu, Titik Balik, Sekarang) */}
                     <div className="flex flex-col justify-center space-y-4">
                         {/* Box 1: Dulu */}
                         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-7">
-                            <h3 className="mb-2 font-bold text-[#17241E]">Dulu</h3>
+                            <h3 className="mb-2 font-bold text-[#1A3A22]">Dulu</h3>
                             <p className="text-sm leading-relaxed text-gray-500 sm:text-[15px]">
                                 Gua cuma disuruh-suruh. Semua kerjaan based on perintah.
                             </p>
@@ -81,17 +67,51 @@ export default function Problem() {
                         </div>
 
                         {/* Box 3: Sekarang */}
-                        <div className="rounded-2xl bg-[#14312A] p-6 shadow-md sm:p-7">
-                            <h3 className="mb-2 font-bold text-[#4ADE94]">Sekarang</h3>
+                        <div className="rounded-2xl bg-[#0F291E] p-6 shadow-md sm:p-7">
+                            <h3 className="mb-2 font-bold text-[#4ADE80]">Sekarang</h3>
                             <p className="text-sm leading-relaxed text-gray-300 sm:text-[15px]">
                                 Dari kerja buat bayar tagihan, sekarang gue punya kebebasan milih proyek, atur waktu, dan hidup dengan gaya yang gue mau
                             </p>
                         </div>
 
                         {/* Footer Text */}
-                        <p className="mt-4 text-sm font-bold leading-relaxed text-[#17241E] sm:text-base">
+                        <p className="mt-4 text-sm font-bold leading-relaxed text-[#1A3A22] sm:text-base">
                             Semua itu bukan sulap. Ada caranya yang bisa lu terapin dan itu Jurus Maut yang gue ajarin di Shaun Dju Academy.
                         </p>
+                    </div>
+                </div>
+
+                {/* BOTTOM CTA BUTTON */}
+                <div className="mt-14 flex flex-col items-center justify-center sm:mt-16">
+                    <CtaButton
+                        id="cerita-gua-cta"
+                        text="Pelajari Sekarang"
+                        variant="dark" // Uses your dark green styling
+                        size="large"
+                        showArrow={false}
+                        onClick={() =>
+                            trackCTA(
+                                'cerita_gua',
+                                'Pelajari Sekarang',
+                                '/checkout?course=first-jobbers'
+                            )
+                        }
+                    />
+
+                    {/* Features List */}
+                    <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-gray-500 sm:gap-6 sm:text-sm">
+                        <div className="flex items-center gap-1.5">
+                            <Check className="h-4 w-4 text-[#1A3A22]" />
+                            <span>75+ Materi</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                            <Check className="h-4 w-4 text-[#1A3A22]" />
+                            <span>Lifetime Access</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                            <Check className="h-4 w-4 text-[#1A3A22]" />
+                            <span>1000+ Members</span>
+                        </div>
                     </div>
                 </div>
             </div>

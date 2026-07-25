@@ -381,15 +381,6 @@ export default function Checkout() {
                 {/* ─── Header & Stepper ─── */}
                 <div className="border-b border-gray-200 bg-white py-6 sm:py-8">
                     <div className="relative mx-auto flex max-w-7xl items-center px-4 sm:px-6">
-                        {/* Logo on the left */}
-                        <div className="absolute left-4 sm:left-6">
-                            <img
-                                src="/images/shaundju/logo_header.webp"
-                                alt="Shaun Dju Academy Logo"
-                                className="h-6 object-contain opacity-20 mix-blend-multiply brightness-0 grayscale sm:h-8"
-                            />
-                        </div>
-
                         {/* Stepper centered */}
                         <div className="relative mx-auto flex w-full max-w-[400px] items-center justify-center sm:max-w-[500px]">
                             {/* Connecting horizontal line */}

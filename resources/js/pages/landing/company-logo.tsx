@@ -1,39 +1,15 @@
-interface CompanyLogosProps {
-    background?: string;
-    badgeBorder?: string;
-    badgeText?: string;
-}
-
-export default function CompanyLogos({
-    background = "#EEF5EA",
-    badgeBorder = "#274A3B",
-    badgeText = "#274A3B",
-}: CompanyLogosProps) {
+export default function CompanyLogos() {
     return (
-        <section
-            className="py-6"
-            style={{ background }}
-        >
-            <div className="mx-auto max-w-7xl px-4">
-                {/* Badge */}
-                <div className="mb-6 flex justify-center">
-                    <div
-                        className="rounded-full border px-5 py-2 text-sm font-medium"
-                        style={{
-                            borderColor: badgeBorder,
-                            color: badgeText,
-                        }}
-                    >
-                        Dipercaya oleh professional dari
-                    </div>
-                </div>
-
-                {/* Logos */}
+        <section className="bg-[##F7F3E9] py-10 sm:py-16">
+            <div className="mx-auto max-w-7xl px-4 text-center">
+                <h3 className="mb-8 font-serif text-xl font-bold text-[#1A3A22] sm:text-2xl lg:text-3xl">
+                    Trusted by Corporate Superstars from
+                </h3>
                 <div className="flex justify-center">
                     <img
                         src="/images/shaundju/logo_company.webp"
                         alt="Companies"
-                        className="w-full max-w-6xl"
+                        className="w-full max-w-5xl mix-blend-multiply opacity-80 grayscale"
                         loading="lazy"
                         decoding="async"
                     />

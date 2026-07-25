@@ -101,46 +101,7 @@ export default function Testimonials() {
                     <p className="mt-4 text-base text-white sm:text-lg lg:text-xl">
                         Mereka Udah Aturan Mainnya, Sekarang Giliran Lo!
                     </p>
-
-                    <h2 className="mt-5 font-serif text-4xl font-bold text-white sm:text-5xl">
-                        Dipromosi ke
-                    </h2>
-
-                    <p className="mt-5 text-2xl font-semibold leading-tight text-[#9DFF70] sm:text-3xl md:text-4xl lg:text-5xl">
-                        Senior Assistant Vice President
-                    </p>
                 </div>
-
-                {/* Screenshots */}
-                <div className="mx-auto mt-9 flex flex-col items-center justify-center gap-6 lg:mt-17 lg:flex-row lg:items-start lg:gap-10">
-                    <div className="flex w-full max-w-[380px] flex-col items-center">
-                       {/* Profile Photo */}
-                        <div className="mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-white/15 shadow-lg">
-                            <img
-                                src="/images/shaundju/profile.webp"
-                                alt="Niek Astrini"
-                                loading="lazy"
-                                decoding="async"
-                                className="h-full w-full object-cover"
-                            />
-                        </div>
-
-                        {/* Name */}
-                        <h3 className="text-center text-2xl font-semibold text-[#9DFF70] sm:text-3xl">
-                            Niek Astrini
-                        </h3>
-
-                        {/* Proof Screenshot */}
-                        <div className="mt-4 rounded-[24px] border-2 border-[#A8FF7E] p-2 shadow-[0_0_20px_rgba(168,255,126,0.15)]">
-                            <ZoomableImage
-                                src="/images/shaundju/proof1.webp"
-                                alt="Phone testimonial"
-                                className="w-[280px] max-w-full rounded-[18px] sm:w-[340px] lg:w-[380px]"
-                            />
-                        </div>
-                    </div>
-                </div>
-
                 {/* Testimonial Cards */}
                 <div className="mt-10 grid gap-4 sm:gap-6 md:grid-cols-2 lg:mt-17 lg:grid-cols-3">
                     {testimonials.map((item) => (

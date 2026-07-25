@@ -1,110 +1,87 @@
+import { Check } from 'lucide-react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 
-const benefits = [
-    {
-        title: 'Jadi Kandidat Rebutan,\nBukan Penunggu Giliran',
-        description: 'Jadi nama yang selalu muncul di pikiran atasan',
-        icon: '/images/shaundju/benefit1.webp',
-    },
-    {
-        title: 'Komunikasi yang Bikin Lo\nKelihatan Lebih Senior\ndari Jabatan Lo',
-        description:
-            'Belajar cara presentasi & ngomong yang bikin orang dengerin lo',
-        icon: '/images/shaundju/benefit2.webp',
-    },
-    {
-        title: 'Ubah Cara\nAtasan Ngeliat Lo',
-        description: 'Dari staff rajin jadi calon manajer',
-        icon: '/images/shaundju/benefit3.webp',
-    },
-];
-
 export default function PracticalBenefits() {
     const { trackCTA } = useAnalytics();
+
     return (
         <section
             id="benefits"
-            className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20"
-            style={{
-                background:
-                    'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
-            }}
+            className="bg-[#7F9968] py-16 lg:py-24"
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
-                {/* Main Heading */}
-                <div className="text-center">
-                    <h2 className="font-serif text-4xl leading-tight sm:text-5xl">
-                        <span className="text-[#9DFF70]">Ini saatnya</span>
-                        <br />
-                        <span className="text-white">ubah arah karier lo</span>
-                    </h2>
-                </div>
-
-                {/* Badge */}
-                <div className="mt-6 flex justify-center sm:mt-16">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm text-white">
-                        Cuma di Shaundju Academy
-                        {/* <ChevronDown className="h-4 w-4" /> */}
+                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+                    
+                    {/* LEFT: Video Placeholder */}
+                    {/* You can remove the border and bg colors once you put a real video here */}
+                    <div className="flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-dashed border-[#1A3A22]/20 bg-[#1A3A22]/5 text-center shadow-sm">
+                        <video 
+                            // CHANGE THIS TO YOUR ACTUAL VIDEO PATH
+                            src="/images/shaundju/solution_gif.mp4" 
+                            controls
+                            className="h-full w-full object-cover" 
+                        />
                     </div>
-                </div>
 
-                {/* Secondary Heading */}
-                <div className="mx-auto mt-8 max-w-4xl text-center lg:mt-10">
-                    <h3 className="font-serif text-3xl leading-tight sm:text-5xl">
-                        <span className="text-[#9DFF70]">Gak cuma teori,</span>
-                        <br />
-                        <span className="text-white">
-                            tapi bisa langsung dipraktikkan
-                        </span>
-                    </h3>
+                    {/* RIGHT: Content */}
+                    <div className="flex flex-col justify-center">
+                        {/* Badge */}
+                        <div className="mb-6 inline-flex self-start rounded-full border border-[#1A3A22]/30 px-4 py-1 text-xs font-semibold text-[#1A3A22] sm:text-sm">
+                            Bukti Nyata
+                        </div>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg lg:text-xl">
-                        ini 3 topik utama yang bakal gue ajarin disini
-                    </p>
-                </div>
+                        {/* Heading */}
+                        <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+                            Diperebutkan Perusahaan-Perusahaan Besar
+                        </h2>
 
-                {/* Cards */}
-                <div className="mt-10 grid gap-6 md:grid-cols-3 lg:mt-14">
-                    {benefits.map((benefit, index) => (
-                        <div
-                            key={index}
-                            className="flex min-h-[260px] flex-col items-center rounded-2xl bg-[#04261B] px-5 py-8 text-center sm:min-h-[300px] sm:px-6 sm:py-10 lg:rounded-[28px] lg:px-8"
-                        >
-                            <div className="mb-8 flex h-24 w-24 items-center justify-center rounded-full border border-[#9DFF70]">
-                                <img
-                                    src={benefit.icon}
-                                    alt=""
-                                    className="h-12 w-12 object-contain"
-                                    loading="lazy"
-                                    decoding="async"
+                        {/* Paragraph */}
+                        <p className="mb-8 text-sm leading-relaxed text-white/95 sm:text-base">
+                            Umur 30, gue udah ngerasain <strong>gaji triple digit</strong> dan rekruter perusahaan-perusahaan gede incer gua. Karena gue tahu:
+                        </p>
+
+                        {/* Checkmark Boxes */}
+                        <div className="mb-8 space-y-3">
+                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-5 py-4 text-[#14312A]">
+                                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
+                                <span className="text-sm font-medium sm:text-[15px]">Cara positioning diri yang bikin dipercaya pegang tanggung jawab besar</span>
+                            </div>
+                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-5 py-4 text-[#14312A]">
+                                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
+                                <span className="text-sm font-medium sm:text-[15px]">Cara negosiasi gaji tanpa rasa canggung</span>
+                            </div>
+                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-5 py-4 text-[#14312A]">
+                                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
+                                <span className="text-sm font-medium sm:text-[15px]">Cara dapetin proyek yang bikin gue nggak tergantikan</span>
+                            </div>
+                        </div>
+
+                        {/* Bold Footer Paragraph */}
+                        <p className="mb-8 text-sm font-bold leading-relaxed text-white sm:text-[15px]">
+                            Shaun Dju Academy bukan tentang motivasi, ini soal strategi karier terstruktur
+                        </p>
+
+                        {/* Button and Features */}
+                        <div>
+                            <div className="inline-block">
+                                <CtaButton
+                                    id="bukti-nyata-cta"
+                                    text="Saya Mau Kayak Gini"
+                                    variant="dark"
+                                    size="large"
+                                    showArrow={false}
+                                    onClick={() =>
+                                        trackCTA(
+                                            'bukti_nyata',
+                                            'Saya Mau Kayak Gini',
+                                            '/checkout?course=first-jobbers'
+                                        )
+                                    }
                                 />
                             </div>
-
-                            <h4 className="text-xl leading-snug font-semibold whitespace-pre-line text-[#9DFF70]">
-                                {benefit.title}
-                            </h4>
-
-                            <p className="mt-5 text-sm leading-relaxed text-white/80">
-                                {benefit.description}
-                            </p>
                         </div>
-                    ))}
-                </div>
-
-                {/* CTA */}
-                <div className="mt-10 flex justify-center lg:mt-14">
-                    <CtaButton
-                        id="benefit-cta"
-                        text="Mulai Belajar Sekarang"
-                        onClick={() =>
-                            trackCTA(
-                                'practical-benefits',
-                                'Mulai Belajar Sekarang',
-                                '#harga',
-                            )
-                        }
-                    />
+                    </div>
                 </div>
             </div>
         </section>

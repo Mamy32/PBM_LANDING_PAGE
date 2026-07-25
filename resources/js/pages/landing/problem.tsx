@@ -8,7 +8,7 @@ export default function Problem() {
     return (
         <section
             id="problem"
-            className="bg-[#F5F5F0] pb-16 pt-8 lg:pb-24 lg:pt-12"
+            className="bg-[#F7F3E9] pb-16 pt-8 lg:pb-24 lg:pt-12"
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 {/* HEADLINE */}
@@ -87,6 +87,7 @@ export default function Problem() {
                         id="cerita-gua-cta"
                         text="Pelajari Sekarang"
                         variant="dark" // Uses your dark green styling
+                        showArrow={false}
                         size="large"
                         onClick={() =>
                             trackCTA(

@@ -74,9 +74,7 @@ export default function Landing() {
                 <SuccessStory />
                 <Solution />
                 <Testimonials />
-                <Instructor />
                 <MediaFeatures />
-                <Curriculum />
                 <Pricing />
                 <VideoTeaser />
                 <Faq />

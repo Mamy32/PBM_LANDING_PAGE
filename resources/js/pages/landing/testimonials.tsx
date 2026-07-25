@@ -84,8 +84,7 @@ export default function Testimonials() {
             id="testimoni"
             className="relative overflow-hidden pt-12 pb-24 sm:pt-16"
             style={{
-                background:
-                    'linear-gradient(90deg,#123C2D 0%,#1E4D3A 50%,#123C2D 100%)',
+                background: 'radial-gradient(at 50% 0%, rgb(30, 74, 60) 0%, rgb(15, 42, 32) 55%, rgb(8, 23, 18) 100%)'
             }}
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">

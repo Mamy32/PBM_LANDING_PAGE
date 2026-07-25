@@ -75,9 +75,9 @@ export default function Landing() {
                 <Testimonials />
                 <MediaFeatures />
                 <Pricing />
+                <Faq />
                 <VideoTeaser />
                 <FinalCta/>
-                <Faq />
                 <Footer />
             </Suspense>
             </div>

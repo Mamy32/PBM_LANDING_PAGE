@@ -59,17 +59,17 @@ export default function Faq() {
     return (
         <section
             id="faq"
-            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-16 lg:py-24"
+            className="bg-[#F7F3E9] py-16 lg:py-24"
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 {/* Header */}
                 <div className="text-center">
-                    <div className="inline-flex items-center rounded-full border border-white px-4 py-2 text-xs text-white sm:text-sm">
+                    <div className="inline-flex items-center rounded-full border border-[#000] px-4 py-2 text-xs text-black sm:text-sm">
                         FAQ
                         <ChevronDown className="ml-2 h-4 w-4" />
                     </div>
 
-                    <h2 className="mt-6 font-serif text-4xl leading-tight font-semibold text-[#9DFF70] sm:text-5xl">
+                    <h2 className="mt-6 font-serif text-4xl leading-tight font-semibold text-[#14312A] sm:text-5xl">
                         Pertanyaan yang sering ditanyakan
                     </h2>
                 </div>

@@ -116,7 +116,7 @@ export default function Faq() {
                         id="cerita-gua-cta"
                         text="Maish ragu? Tanya dulu"
                         variant="dark" 
-                        context='dark'
+                        context="light"
                         showArrow={false}
                         onClick={() =>
                             trackCTA(

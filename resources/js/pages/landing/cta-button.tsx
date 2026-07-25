@@ -8,7 +8,7 @@ interface CtaButtonProps {
     size?: 'default' | 'large';
     context?: 'light' | 'dark';
     vertical?: boolean;
-    showArrow?: boolean;   // <-- add this
+    showArrow?: boolean;
     compact?: boolean;
     onClick?: () => void;
     href?: string;
@@ -27,33 +27,35 @@ export default function CtaButton({
     onClick,
     href,
 }: CtaButtonProps) {
-const sizeClasses =
-    size === 'large'
-        ? 'px-4 py-3 text-[14px] min-w-[130px] sm:px-10 sm:py-5 sm:text-lg sm:min-w-[220px]'
-        : 'px-7 py-4 text-sm sm:text-base';
+    const sizeClasses =
+        size === 'large'
+            ? 'px-4 py-3 text-[14px] min-w-[130px] sm:px-10 sm:py-5 sm:text-lg sm:min-w-[220px]'
+            : 'px-7 py-4 text-sm sm:text-base';
+            
     const variantClasses =
-variant === 'hero'
-    ? `
-        bg-gradient-to-b
-        from-[#466D59]
-        to-[#2F5442]
-        text-[#C8FF88]
-        text-[14px]
-        sm:text-lg
-        border border-[#5C846F]
-        shadow-[0_8px_25px_rgba(0,0,0,0.18)]
-        hover:from-[#507764]
-        hover:to-[#385D4B]
-        whitespace-nowrap
-      `
+        variant === 'hero'
+            ? `
+                bg-gradient-to-b
+                from-[#466D59]
+                to-[#2F5442]
+                text-[#C8FF88]
+                text-[14px]
+                sm:text-lg
+                border border-[#5C846F]
+                shadow-[0_8px_25px_rgba(0,0,0,0.18)]
+                hover:from-[#507764]
+                hover:to-[#385D4B]
+                whitespace-nowrap
+              `
             : variant === 'primary'
               ? 'bg-[#4ADE80] text-[#0C1F13] shadow-lg shadow-[#4ADE80]/25 hover:bg-[#22C55E] hover:shadow-[#4ADE80]/40 hover:-translate-y-0.5 ring-1 ring-[#22C55E]/60'
               : variant === 'dark'
                 ? 'bg-[#0C1F13] text-white shadow-lg shadow-black/30 hover:bg-black hover:-translate-y-0.5 ring-1 ring-white/10'
                 : 'bg-white text-[#0C1F13] shadow-lg hover:bg-[#F0FFF4] hover:-translate-y-0.5 ring-1 ring-white/40';
 
+    // UPDATED: When context="light", this will use black text and darker green icons!
     const proofText =
-        context === 'dark' ? 'text-white/60' : 'text-[#0C1F13]/60';
+        context === 'dark' ? 'text-white/60' : 'text-black/70 font-medium';
 
     const proofIcon =
         context === 'dark' ? 'text-[#4ADE80]' : 'text-[#16A34A]';
@@ -81,19 +83,19 @@ variant === 'hero'
                     }
                 }}
                 className={`
-    group
-    inline-flex
-    ${compact ? "w-auto" : "w-full sm:w-auto"}
-    items-center
-    justify-center
-    rounded-full
-    font-bold
-    tracking-tight
-    transition-all
-    duration-300
-    ${sizeClasses}
-    ${variantClasses}
-`}
+                    group
+                    inline-flex
+                    ${compact ? "w-auto" : "w-full sm:w-auto"}
+                    items-center
+                    justify-center
+                    rounded-full
+                    font-bold
+                    tracking-tight
+                    transition-all
+                    duration-300
+                    ${sizeClasses}
+                    ${variantClasses}
+                `}
             >
                 <span>{text}</span>
 
@@ -103,11 +105,10 @@ variant === 'hero'
             </button>
 
             <div
-
                 className={
                     vertical
                         ? `flex flex-col items-start gap-2 text-xs ${proofText}`
-                        : `flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:text-sm ${proofText}`
+                        : `flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] sm:text-xs ${proofText}`
                 }
             >
                 {features.map((feature) => (

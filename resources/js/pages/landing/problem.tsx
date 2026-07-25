@@ -87,7 +87,7 @@ export default function Problem() {
                         id="cerita-gua-cta"
                         text="Pelajari Sekarang"
                         variant="dark" 
-                        context='dark'
+                        context="light"
                         showArrow={false}
                         onClick={() =>
                             trackCTA(

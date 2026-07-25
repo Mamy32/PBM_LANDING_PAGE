@@ -24,45 +24,46 @@ export default function PracticalBenefits() {
 
                     {/* RIGHT: Content */}
                     <div className="flex flex-col justify-center">
-                        {/* Badge */}
-                        <div className="mb-5 inline-flex self-start rounded-full border border-[#1A3A22]/30 px-4 py-1 text-xs font-semibold text-[#1A3A22] sm:text-sm">
+                        {/* Badge (Scaled down) */}
+                        <div className="mb-4 inline-flex self-start rounded-full border border-[#1A3A22]/30 px-3 py-1 text-xs font-semibold text-[#1A3A22]">
                             Bukti Nyata
                         </div>
 
-                        {/* Heading */}
-                        <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[42px]">
+                        {/* Heading (Scaled down) */}
+                        <h2 className="mb-5 font-serif text-3xl font-bold leading-tight text-white lg:text-[34px]">
                             Diperebutkan Perusahaan-Perusahaan Besar
                         </h2>
 
-                        {/* Paragraph */}
-                        <p className="mb-8 text-sm leading-relaxed text-white/95 sm:text-base">
+                        {/* Paragraph (Scaled down) */}
+                        <p className="mb-6 text-sm leading-relaxed text-white/95">
                             Umur 30, gue udah ngerasain <strong>gaji triple digit</strong> dan rekruter perusahaan-perusahaan gede incer gua. Karena gue tahu:
                         </p>
 
-                        {/* Checkmark Boxes */}
-                        <div className="mb-8 space-y-4">
-                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-5 py-4 text-[#14312A]">
-                                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
-                                <span className="text-sm font-medium sm:text-base">Cara positioning diri yang bikin dipercaya pegang tanggung jawab besar</span>
+                        {/* Checkmark Boxes (Reduced padding and text size) */}
+                        <div className="mb-6 space-y-3">
+                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-4 py-3 text-[#14312A]">
+                                <Check className="h-4 w-4 shrink-0" strokeWidth={2.5} />
+                                <span className="text-[13px] font-medium sm:text-sm">Cara positioning diri yang bikin dipercaya pegang tanggung jawab besar</span>
                             </div>
-                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-5 py-4 text-[#14312A]">
-                                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
-                                <span className="text-sm font-medium sm:text-base">Cara negosiasi gaji tanpa rasa canggung</span>
+                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-4 py-3 text-[#14312A]">
+                                <Check className="h-4 w-4 shrink-0" strokeWidth={2.5} />
+                                <span className="text-[13px] font-medium sm:text-sm">Cara negosiasi gaji tanpa rasa canggung</span>
                             </div>
-                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-5 py-4 text-[#14312A]">
-                                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
-                                <span className="text-sm font-medium sm:text-base">Cara dapetin proyek yang bikin gue nggak tergantikan</span>
+                            <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-4 py-3 text-[#14312A]">
+                                <Check className="h-4 w-4 shrink-0" strokeWidth={2.5} />
+                                <span className="text-[13px] font-medium sm:text-sm">Cara dapetin proyek yang bikin gue nggak tergantikan</span>
                             </div>
                         </div>
 
                         {/* Bold Footer Paragraph */}
-                        <p className="mb-8 text-sm font-bold leading-relaxed text-white sm:text-[15px]">
+                        <p className="mb-6 text-[13px] font-bold leading-relaxed text-white sm:text-sm">
                             Shaun Dju Academy bukan tentang motivasi, ini soal strategi karier terstruktur
                         </p>
 
                         {/* Button and Features */}
                         <div>
-                            <div className="inline-block">
+                            {/* Adjusted button size slightly */}
+                            <div className="inline-block scale-95 origin-left sm:scale-100">
                                 <CtaButton
                                     id="bukti-nyata-cta"
                                     text="Saya Mau Kayak Gini"
@@ -77,22 +78,6 @@ export default function PracticalBenefits() {
                                         )
                                     }
                                 />
-                            </div>
-                            
-                            {/* Features List */}
-                            <div className="mt-5 flex flex-wrap items-center gap-4 text-[11px] font-medium text-[#1A3A22] sm:gap-5 sm:text-xs">
-                                <div className="flex items-center gap-1.5">
-                                    <Check className="h-3.5 w-3.5 shrink-0" strokeWidth={2.5} />
-                                    <span>75+ Materi</span>
-                                </div>
-                                <div className="flex items-center gap-1.5">
-                                    <Check className="h-3.5 w-3.5 shrink-0" strokeWidth={2.5} />
-                                    <span>Lifetime Access</span>
-                                </div>
-                                <div className="flex items-center gap-1.5">
-                                    <Check className="h-3.5 w-3.5 shrink-0" strokeWidth={2.5} />
-                                    <span>1000+ Members</span>
-                                </div>
                             </div>
                         </div>
                     </div>

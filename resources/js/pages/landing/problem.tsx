@@ -35,9 +35,6 @@ export default function Problem() {
                             loading="lazy"
                         />
                     </div>
-
-                    {/* RIGHT SIDE (Dulu, Titik Balik, Sekarang) */}
-                    {/* CRITICAL FIX: Set max-w-[460px] so the boxes stay compact and don't stretch */}
                     <div className="flex w-full flex-col justify-center space-y-3 lg:max-w-[460px]">
                         {/* Box 1: Dulu */}
                         <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">

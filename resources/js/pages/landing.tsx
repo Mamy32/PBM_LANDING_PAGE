@@ -21,6 +21,9 @@ const VideoTeaser = lazy(() => import('./landing/video-teaser'));
 const Faq = lazy(() => import('./landing/faq'));
 const CompanyLogos = lazy(() => import('./landing/company-logo'));
 const Footer = lazy(() => import('./landing/footer'));
+const ProgramIntro = lazy(() => import('./landing/program-intro'));
+const TestimoIt = lazy(() => import('./landing/testimoni-it'));
+const ExpectedResult = lazy(() => import('./landing/expected-result'));
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -72,6 +75,9 @@ export default function Landing() {
                 <PracticalBenefits />
                 <SuccessStory />
                 <Solution />
+                <ProgramIntro/>
+                <TestimoIt/>
+                <ExpectedResult/>
                 <Testimonials />
                 <MediaFeatures />
                 <Pricing />

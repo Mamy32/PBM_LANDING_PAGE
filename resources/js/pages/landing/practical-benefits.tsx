@@ -12,15 +12,13 @@ export default function PracticalBenefits() {
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-                    
-                    {/* LEFT: Video Placeholder */}
-                    {/* You can remove the border and bg colors once you put a real video here */}
-                    <div className="flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-dashed border-[#1A3A22]/20 bg-[#1A3A22]/5 text-center shadow-sm">
+                    {/* LEFT: Video */}
+                    <div className="w-full overflow-hidden rounded-3xl shadow-lg bg-black/5">
                         <video 
-                            // CHANGE THIS TO YOUR ACTUAL VIDEO PATH
                             src="/images/shaundju/solution_gif.mp4" 
                             controls
-                            className="h-full w-full object-cover" 
+                            playsInline
+                            className="w-full h-auto" 
                         />
                     </div>
 

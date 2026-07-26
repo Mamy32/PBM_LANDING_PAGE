@@ -1,15 +1,25 @@
 import { Check } from 'lucide-react';
-import { useAnalytics } from '@/hooks/use-analytics';
+import { router } from '@inertiajs/react';
+import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 
 export default function Solution() {
-    const { trackCTA } = useAnalytics();
+    const { trackCTA, trackInitiateCheckout } = useAnalytics();
 
     const handleClick = () => {
-        trackCTA('solution_section', 'Saya Mau Belajar Mindset Ini', '#harga');
-        document
-            .getElementById('harga')
-            ?.scrollIntoView({ behavior: 'smooth' });
+        const eventId = generateEventId();
+        trackCTA(
+            'solution_section', 
+            'Saya Mau Belajar Mindset Ini', 
+            '/checkout?course=first-jobbers',
+            'AddToCart',
+            eventId
+        );
+        trackInitiateCheckout('first-jobbers');
+        // Delay slightly to ensure tracking fires before navigation
+        setTimeout(() => {
+            router.visit('/checkout?course=first-jobbers');
+        }, 300);
     };
 
     return (
@@ -28,10 +38,12 @@ export default function Solution() {
                         <div className="mb-6 inline-flex items-center rounded-full border border-gray-500/40 px-4 py-1.5 text-xs font-semibold text-gray-300">
                             Pernah di posisi lo
                         </div>
-                        <h2 className="font-serif text-4xl font-bold leading-tight text-white lg:text-[44px]">
+                    
+                        <h2 className="font-serif text-3xl font-bold leading-tight text-white lg:text-4xl">
                             Gua Rasain Apa yang Lo<br className="hidden lg:block" /> Rasain
                         </h2>
-                        <h3 className="mt-4 font-serif text-2xl font-bold text-[#4ADE94] sm:text-3xl lg:text-[32px]">
+                        
+                        <h3 className="mt-4 font-serif text-xl font-bold text-[#4ADE94] sm:text-2xl lg:text-3xl">
                             Pas Masih Awal Karier
                         </h3>
                     </div>
@@ -80,15 +92,13 @@ export default function Solution() {
                     </p>
 
                     <div className="flex flex-col items-center justify-center">
-                        <div className="inline-block scale-105 sm:scale-110">
-                            <CtaButton
-                                id="solution-cta"
-                                text="Saya Mau Belajar Mindset Ini"
-                                variant="primary"
-                                showArrow={false}
-                                onClick={handleClick}
-                            />
-                        </div>
+                        <CtaButton
+                            id="solution-cta"
+                            text="Saya Mau Belajar Mindset Ini"
+                            variant="primary"
+                            showArrow={false}
+                            onClick={handleClick}
+                        />
                     </div>
                 </div>
 

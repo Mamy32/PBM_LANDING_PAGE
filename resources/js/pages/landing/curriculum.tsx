@@ -1,4 +1,7 @@
-import { ChevronDown } from 'lucide-react';
+import { router } from '@inertiajs/react';
+import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
+import CtaButton from './cta-button';
+
 const modules = [
     {
         number: '01',
@@ -32,142 +35,89 @@ const modules = [
     },
 ];
 
-function AccordionItem({
-    item,
-    isOpen,
-    isLast,
-}: {
-    item: (typeof modules)[number];
-    index: number;
-    isOpen: boolean;
-    onToggle: () => void;
-    isLast: boolean;
-}) {
-    
-
-    return (
-        <div
-            className={`group transition-all duration-200 ${
-                isLast ? '' : 'border-b border-white/8'
-            }`}
-        >
-            <div
-                className="flex w-full items-center gap-4 py-5 text-left sm:py-6 lg:py-7"
-            >
-                {/* Module label block */}
-                <div className="flex shrink-0 flex-col items-center gap-1">
-                    <span
-                        className={`flex h-10 w-10 items-center justify-center rounded-xl text-xs font-bold tracking-wider transition-all duration-300 sm:h-11 sm:w-11 sm:text-sm ${
-                            isOpen
-                                ? 'bg-[#9DFF70] text-[#0C1F13] shadow-[0_0_16px_rgba(157,255,112,0.35)]'
-                                : 'bg-white/8 text-white/60 group-hover:bg-white/12 group-hover:text-white/80'
-                        }`}
-                    >
-                        {item.number}
-                    </span>
-                    <span
-                        className={`text-[9px] font-semibold tracking-widest uppercase transition-colors duration-300 sm:text-[10px] ${
-                            isOpen ? 'text-[#9DFF70]' : 'text-white/30 group-hover:text-white/50'
-                        }`}
-                    >
-                        Module
-                    </span>
-                </div>
-
-                {/* Divider line */}
-                <div
-                    className={`hidden h-10 w-px transition-colors duration-300 sm:block ${
-                        isOpen ? 'bg-[#9DFF70]/30' : 'bg-white/10'
-                    }`}
-                />
-
-                {/* Title + tag */}
-                <div className="flex min-w-0 flex-1 flex-col gap-1.5 pr-2">
-                    <span
-                        className={`text-sm leading-snug font-semibold transition-colors duration-200 sm:text-base lg:text-lg ${
-                            isOpen ? 'text-white' : 'text-white/85 group-hover:text-white'
-                        }`}
-                    >
-                        {item.title}
-                    </span>
-                    <span
-                        className={`inline-flex w-fit items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide uppercase transition-all duration-300 sm:text-xs ${
-                            isOpen
-                                ? 'bg-[#9DFF70]/15 text-[#9DFF70]'
-                                : 'bg-white/5 text-white/35 group-hover:bg-white/8 group-hover:text-white/50'
-                        }`}
-                    >
-                        {item.tag}
-                    </span>
-                </div>
-
-                {/* Chevron */}
-                <div
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 sm:h-8 sm:w-8 ${
-                        isOpen
-                            ? 'bg-[#9DFF70]/15 text-[#9DFF70]'
-                            : 'bg-white/5 text-white/40 group-hover:bg-white/10 group-hover:text-white/60'
-                    }`}
-                >
-                    <ChevronDown className="h-4 w-4" />
-                </div>
-            </div>
-
-            {/* Collapsible body */}
-            <div className="overflow-visible">
-                {/* Indent to align with title */}
-                <div className="pb-5 pl-[60px] pr-4 sm:pl-[73px] lg:pr-8">
-                    {/* Accent bar */}
-                    <div className="mb-4 h-px w-full bg-gradient-to-r from-[#9DFF70]/40 via-[#9DFF70]/10 to-transparent" />
-                    <p className="text-sm leading-relaxed text-white/65 sm:text-base">
-                        {item.body}
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 export default function Curriculum() {
+    const { trackCTA, trackInitiateCheckout } = useAnalytics();
+
     return (
         <section
             id="curriculum"
-            className="bg-gradient-to-r from-[#123C2D] via-[#1E4D3A] to-[#123C2D] py-16 lg:py-24"
+            // White background to match the light theme in your screenshot
+            className="bg-white py-16 lg:py-24"
         >
-            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="mx-auto max-w-4xl px-4 sm:px-6">
+                
                 {/* Header */}
                 <div className="text-center">
-                    <div className="inline-flex items-center rounded-full border border-white px-4 py-2 text-xs text-white sm:text-sm">
-                        Modules
-                        <ChevronDown className="ml-2 h-4 w-4" />
+                    <div className="inline-flex items-center rounded-full border border-gray-300 px-5 py-1.5 text-xs font-medium text-gray-600 sm:text-sm">
+                        Kurikulum
                     </div>
 
-                    <h2 className="mt-6 font-serif text-3xl leading-tight font-semibold sm:text-4xl lg:mt-8 lg:text-5xl">
-                        <span className="text-white">Apa Aja</span>{' '}
-                        <span className="text-white">yang Bakal</span>
-                        <br />
-                        <span className="text-[#9DFF70]">Lo Pelajari</span>
+                    <h2 className="mt-6 font-serif text-3xl font-bold text-[#14312A] sm:text-4xl lg:mt-8 lg:text-[40px]">
+                        Apa Aja yang Bakal Lo Pelajari
                     </h2>
 
-                    <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-6 sm:text-base lg:max-w-2xl lg:text-lg">
-                        5 modul intensif yang dirancang biar lo langsung bisa
-                        aplikasiin di kerjaan, bukan sekadar teori.
+                    <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-base">
+                        5 modul intensif yang dirancang biar lo langsung bisa aplikasiin di kerjaan, bukan sekadar teori.
                     </p>
                 </div>
 
-                {/* Accordion card */}
-                <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-[#04261B] px-4 sm:px-6 lg:mt-14 lg:rounded-[28px] lg:px-10">
+                {/* Cards List */}
+                <div className="mt-12 flex flex-col gap-4 sm:mt-16 sm:gap-6">
                     {modules.map((item, index) => (
-                        <AccordionItem
-                            key={index}
-                            item={item}
-                            index={index}
-                            isOpen={true}
-                            onToggle={() =>{}}
-                            isLast={index === modules.length - 1}
-                        />
+                        <div 
+                            key={index} 
+                            // Using a flex-row even on mobile keeps the number nicely aligned to the left
+                            className="flex flex-row gap-5 rounded-[24px] bg-[#F7F3E9] p-6 sm:gap-8 sm:p-8"
+                        >
+                            {/* Number */}
+                            <div className="shrink-0 sm:pt-1">
+                                <span className="font-serif text-3xl font-bold text-[#A4B5A8] sm:text-4xl">
+                                    {item.number}
+                                </span>
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="flex flex-col">
+                                <span className="mb-2 text-[10px] font-bold tracking-widest text-gray-400 uppercase sm:mb-1 sm:text-xs">
+                                    {item.tag}
+                                </span>
+                                <h3 className="mb-3 text-base font-bold text-[#17241E] sm:mb-2 sm:text-lg lg:text-xl">
+                                    {item.title}
+                                </h3>
+                                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+                                    {item.body}
+                                </p>
+                            </div>
+                        </div>
                     ))}
                 </div>
+                
+                {/* CTA */}
+                <div className="mt-12 flex justify-center sm:mt-16">
+                    <CtaButton
+                        id="curriculum-cta"
+                        text="Amankan Slot Sekarang"
+                        variant="dark"
+                        context="light"
+                        showArrow={false}
+                        onClick={() => {
+                            const eventId = generateEventId();
+                            trackCTA(
+                                'curriculum',
+                                'Amankan Slot Sekarang',
+                                '/checkout?course=first-jobbers',
+                                'AddToCart',
+                                eventId
+                            );
+                            trackInitiateCheckout('first-jobbers');
+                            // Delay slightly to ensure tracking fires before navigation
+                            setTimeout(() => {
+                                router.visit('/checkout?course=first-jobbers');
+                            }, 300);
+                        }}
+                    />
+                </div>
+
             </div>
         </section>
     );

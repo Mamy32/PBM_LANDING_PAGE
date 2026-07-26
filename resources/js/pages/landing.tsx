@@ -24,6 +24,7 @@ const Footer = lazy(() => import('./landing/footer'));
 const ProgramIntro = lazy(() => import('./landing/program-intro'));
 const TestimoIt = lazy(() => import('./landing/testimoni-it'));
 const ExpectedResult = lazy(() => import('./landing/expected-result'));
+const Curriculum = lazy(() => import('./landing/curriculum'));
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -78,6 +79,7 @@ export default function Landing() {
                 <ProgramIntro/>
                 <TestimoIt/>
                 <ExpectedResult/>
+                <Curriculum/>
                 <Testimonials />
                 <MediaFeatures />
                 <Pricing />

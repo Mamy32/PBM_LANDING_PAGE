@@ -11,7 +11,8 @@ export default function Footer() {
                         <img
                             src="/images/shaundju/logo_footer.webp"
                             alt="Shaundju Academy"
-                            className="h-10 w-auto brightness-0 invert sm:h-12 lg:h-14"
+                            // CHANGED: Reduced from h-14 to h-8 so it elegantly matches the navbar logo size
+                            className="h-6 w-auto brightness-0 invert sm:h-7 lg:h-8"
                             loading="lazy"
                             decoding="async"
                         />

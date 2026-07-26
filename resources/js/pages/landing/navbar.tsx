@@ -1,9 +1,10 @@
-import { useAnalytics } from '@/hooks/use-analytics';
+import { router } from '@inertiajs/react';
+import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
 import { useEffect, useState } from 'react';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
-    const { trackCTA } = useAnalytics();
+    const { trackCTA, trackInitiateCheckout } = useAnalytics();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -13,10 +14,19 @@ export default function Navbar() {
     }, []);
 
     const handleClick = () => {
-        trackCTA('navbar', 'Belajar Sekarang', '#harga');
-        document
-            .getElementById('harga')
-            ?.scrollIntoView({ behavior: 'smooth' });
+        const eventId = generateEventId();
+        trackCTA(
+            'navbar',
+            'Belajar Sekarang',
+            '/checkout?course=first-jobbers',
+            'AddToCart',
+            eventId
+        );
+        trackInitiateCheckout('first-jobbers');
+        // Delay slightly to ensure tracking fires before navigation
+        setTimeout(() => {
+            router.visit('/checkout?course=first-jobbers');
+        }, 300);
     };
 
     return (

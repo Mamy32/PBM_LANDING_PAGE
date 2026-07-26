@@ -1,15 +1,25 @@
 import { Star } from 'lucide-react';
-import { useAnalytics } from '@/hooks/use-analytics';
+import { router } from '@inertiajs/react';
+import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 
 export default function Hero() {
-    const { trackCTA } = useAnalytics();
+    const { trackCTA, trackInitiateCheckout } = useAnalytics();
 
     const handleCtaClick = () => {
-        trackCTA('hero_primary', 'Saya Mau Naik Gaji', '#curriculum');
-        document
-            .getElementById('curriculum')
-            ?.scrollIntoView({ behavior: 'smooth' }); 
+        const eventId = generateEventId();
+        trackCTA(
+            'hero_primary', 
+            'Saya Mau Naik Gaji', 
+            '/checkout?course=first-jobbers',
+            'AddToCart',
+            eventId
+        );
+        trackInitiateCheckout('first-jobbers');
+        // Delay slightly to ensure tracking fires before navigation
+        setTimeout(() => {
+            router.visit('/checkout?course=first-jobbers');
+        }, 300);
     };
 
     return (
@@ -107,7 +117,6 @@ export default function Hero() {
                                 id="hero-cta-desktop"
                                 text="Saya Mau Naik Gaji"
                                 variant="hero"
-                                size="large"
                                 compact
                                 showArrow={false}
                                 align="left"

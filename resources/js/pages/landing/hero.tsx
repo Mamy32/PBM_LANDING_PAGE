@@ -92,23 +92,20 @@ export default function Hero() {
                         {/* HEADLINE */}
                         {/* CHANGED: Made font sizes smaller */}
                         <h1 className="mt-8 text-left font-serif text-4xl leading-[1.1] text-white sm:text-5xl lg:text-[52px] xl:text-[58px]">
-                            Cara Dapet Gaji
+                            Naikkan Gajimu 
                             <br />
-                            <span className="text-[#A8FF7E]">
-                                Ratusan Juta/Bulan
+                            <span className="text-[#4ADE94]">
+                                Hingga 3X Lipat
                             </span>
                             <br />
-                            Sebelum{' '}
-                            <span className="text-[#A8FF7E]">Umur 30</span>
+                            Tanpa Harus Kerja Lebih Keras{' '}
                         </h1>
 
                         {/* DESCRIPTION */}
                         {/* CHANGED: Made font sizes smaller */}
                         <p className="mt-6 max-w-[500px] text-left text-[15px] leading-relaxed text-white/85 sm:text-base lg:text-lg">
-                            Capek <strong>networking & kerja keras</strong>{' '}
-                            setiap hari tapi gaji gak naik-naik? Pelajari strategi yang
-                            digunakan para top performer untuk mempercepat kenaikan
-                            penghasilan.
+                            <strong>Kalau kerja keras saja cukup, semua orang sudah bergaji tinggi.</strong>{' '}
+                            Pelajari strategi yang dipakai banyak atasan capai<strong> gaji 3 digit per bulan.</strong>
                         </p>
                         
                         {/* Desktop CTA */}
@@ -125,10 +122,12 @@ export default function Hero() {
                         </div>
 
                        {/* MOBILE CTA + IMAGE */}
-                       <div className="mt-8 lg:hidden">
+                       {/* CHANGED: Reduced margin from mt-8 to mt-4 to pull the row up */}
+                       <div className="mt-4 lg:hidden">
                             <div className="flex items-start justify-between gap-2">
                                 {/* LEFT */}
-                                <div className="mt-4 flex w-[35%] flex-col items-start">
+                                {/* CHANGED: Removed the mt-4 margin entirely so the button sits right against the text */}
+                                <div className="flex w-[40%] flex-col items-start">
                                     <CtaButton
                                         id="hero-cta"
                                         text="Saya Mau Naik Gaji"

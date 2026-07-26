@@ -4,30 +4,32 @@ export default function Footer() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
                 
                 {/* Content Row */}
-                <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
+                <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
                     
-                    {/* LEFT SIDE: Brand Logo & Address */}
-                    <div className="flex flex-col gap-4 text-left">
+                    {/* Left Column (Logo + Address) */}
+                    <div className="flex flex-col items-start text-left">
+                        {/* FIX: Added object-contain and dimensions so it doesn't stretch on mobile! */}
                         <img
                             src="/images/shaundju/logo_footer.webp"
                             alt="Shaundju Academy"
-                            // CHANGED: Reduced from h-14 to h-8 so it elegantly matches the navbar logo size
-                            className="h-6 w-auto brightness-0 invert sm:h-7 lg:h-8"
+                            width="180"
+                            height="60"
+                            className="h-10 w-auto object-contain brightness-0 invert sm:h-12"
                             loading="lazy"
                             decoding="async"
                         />
-                        
-                        <div className="text-[13px] leading-relaxed text-white/70 sm:text-sm">
-                            <p>PT Akademi Jurus Maut</p>
-                            <p>JL. Pantai Indah Utara 2 C1, Kapuk Muara, Jakarta</p>
-                            <p>Utara</p>
+                        <div className="mt-6 space-y-1 text-sm leading-relaxed text-white/80">
+                            <p className="font-semibold text-white/90">PT Akademi Jurus Maut</p>
+                            <p>JL. Pantai Indah Utara 2 C1, Kapuk Muara, Jakarta Utara</p>
                         </div>
                     </div>
 
-                    {/* RIGHT SIDE: Contact Info */}
-                    <div className="flex flex-col gap-1 text-left text-[13px] text-white/70 sm:text-sm md:text-right">
-                        <p>WhatsApp: +62 878-4139-3601</p>
-                        <p>Instagram: @shaundju</p>
+                    {/* Right Column (Contact Info) */}
+                    <div className="flex flex-col items-start text-left md:items-start">
+                        <div className="mt-1 space-y-1 text-sm leading-relaxed text-white/80">
+                            <p>WhatsApp: +62 878-4139-3601</p>
+                            <p>Instagram: @shaundju</p>
+                        </div>
                     </div>
 
                 </div>
@@ -38,8 +40,7 @@ export default function Footer() {
                 {/* Copyright */}
                 <div className="text-center">
                     <p className="text-xs text-white/50 sm:text-sm">
-                        © {new Date().getFullYear()} PT Akademi Jurus Maut. All
-                        rights reserved
+                        © {new Date().getFullYear()} PT Akademi Jurus Maut. All rights reserved
                     </p>
                 </div>
 

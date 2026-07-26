@@ -18,19 +18,19 @@ export default function TestimonialIT() {
                         Bukti dari Program Ini
                     </div>
                     
-                    <h2 className="mt-6 font-serif text-3xl font-bold text-[#14312A] sm:text-4xl lg:mt-8 lg:text-5xl">
+                    {/* CHANGED: Shrunk the text size down (to 40px on desktop) so it fits on one line */}
+                    <h2 className="mt-6 font-serif text-2xl font-bold text-[#14312A] sm:text-3xl lg:mt-8 lg:text-[40px]">
                         Dari IT Biasa, Dipromosi ke <span className="text-[#81D99B]">Senior AVP</span>
                     </h2>
                 </div>
 
-                {/* Testimonial Image (Replace src with your actual screenshot) */}
+                {/* Testimonial Image */}
                 <div className="mt-10 flex justify-center sm:mt-14">
+                    {/* CHANGED: Brought the max width down to 380px so the tall image doesn't stretch too high */}
                     <img
                         src="/images/shaundju/Screenshot1.webp"
                         alt="Testimoni Niek Astrini"
-                        className="w-full max-w-[600px] rounded-2xl object-cover shadow-sm"
-                        // Optional fallback styling while image is missing
-                        style={{ minHeight: '300px', backgroundColor: '#EFEBE0' }} 
+                        className="w-full max-w-[380px] rounded-2xl object-contain shadow-md"
                     />
                 </div>
 
@@ -47,7 +47,7 @@ export default function TestimonialIT() {
                         id="testimoni-niek-cta"
                         text="Saya Mau Dipromosi Juga"
                         variant="dark"
-                        context="light" // Automatically makes the features list text dark!
+                        context="light" 
                         showArrow={false}
                         onClick={() => {
                             const eventId = generateEventId();

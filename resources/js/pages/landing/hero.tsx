@@ -26,7 +26,8 @@ export default function Hero() {
         <section
             id="hero"
             // REMOVED min-h-screen so the section wraps exactly to the content height
-            className="relative overflow-hidden bg-gradient-to-r from-[#4A645A] via-[#06261A] to-[#000000]"
+            className="relative overflow-hidden"
+            style={{background: 'radial-gradient(at 50% 0%, rgb(30, 74, 60) 0%, rgb(15, 42, 32) 55%, rgb(8, 23, 18) 100%)'}}
         >
             {/* Background Glow */}
             <div className="absolute inset-0">

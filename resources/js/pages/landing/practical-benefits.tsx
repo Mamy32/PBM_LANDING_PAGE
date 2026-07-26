@@ -2,9 +2,23 @@ import { Check } from 'lucide-react';
 import { router } from '@inertiajs/react';
 import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
+import { useEffect, useRef } from 'react';
 
 export default function PracticalBenefits() {
     const { trackCTA, trackInitiateCheckout } = useAnalytics();
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    // FIX: Force the video to mute and play on the raw DOM node 
+    // This bypasses React's rendering quirks that sometimes cause iOS Safari to ignore autoplay
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.defaultMuted = true;
+            videoRef.current.muted = true;
+            videoRef.current.play().catch((error) => {
+                console.log("Video autoplay was prevented by mobile browser", error);
+            });
+        }
+    }, []);
 
     const handleCtaClick = () => {
         const eventId = generateEventId();
@@ -31,12 +45,8 @@ export default function PracticalBenefits() {
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                     {/* LEFT: Video */}
                     <div className="flex w-full items-center justify-center">
-                        {/* 
-                            CHANGED: Removed 'controls'.
-                            ADDED: autoPlay, loop, and muted.
-                            This makes the MP4 behave exactly like an auto-looping GIF! 
-                        */}
                         <video 
+                            ref={videoRef}
                             src="/images/shaundju/solution_gif.mp4" 
                             autoPlay
                             loop
@@ -48,22 +58,22 @@ export default function PracticalBenefits() {
 
                     {/* RIGHT: Content */}
                     <div className="flex flex-col justify-center">
-                        {/* Badge (Scaled down) */}
+                        {/* Badge */}
                         <div className="mb-4 inline-flex self-start rounded-full border border-[#1A3A22]/30 px-3 py-1 text-xs font-semibold text-[#1A3A22]">
                             Bukti Nyata
                         </div>
 
-                        {/* Heading (Scaled down) */}
+                        {/* Heading */}
                         <h2 className="mb-5 font-serif text-3xl font-bold leading-tight text-white lg:text-[34px]">
                             Diperebutkan Perusahaan-Perusahaan Besar
                         </h2>
 
-                        {/* Paragraph (Scaled down) */}
+                        {/* Paragraph */}
                         <p className="mb-6 text-sm leading-relaxed text-white/95">
                             Umur 30, gue udah ngerasain <strong>gaji triple digit</strong> dan rekruter perusahaan-perusahaan gede incer gua. Karena gue tahu:
                         </p>
 
-                        {/* Checkmark Boxes (Reduced padding and text size) */}
+                        {/* Checkmark Boxes */}
                         <div className="mb-6 space-y-3">
                             <div className="flex items-center gap-3 rounded-xl bg-[#FFFFFF59] px-4 py-3 text-[#14312A]">
                                 <Check className="h-4 w-4 shrink-0" strokeWidth={2.5} />
@@ -86,7 +96,6 @@ export default function PracticalBenefits() {
 
                         {/* Button and Features */}
                         <div>
-                            {/* CHANGED: Removed scale wrapper and added size="large" for consistency */}
                             <CtaButton
                                 id="bukti-nyata-cta"
                                 text="Saya Mau Kayak Gini"

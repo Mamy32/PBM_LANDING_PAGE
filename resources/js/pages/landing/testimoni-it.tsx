@@ -26,7 +26,7 @@ export default function TestimonialIT() {
                 {/* Testimonial Image (Replace src with your actual screenshot) */}
                 <div className="mt-10 flex justify-center sm:mt-14">
                     <img
-                        src="/images/shaundju/testimoni-niek.webp"
+                        src="/images/shaundju/Screenshot1.webp"
                         alt="Testimoni Niek Astrini"
                         className="w-full max-w-[600px] rounded-2xl object-cover shadow-sm"
                         // Optional fallback styling while image is missing

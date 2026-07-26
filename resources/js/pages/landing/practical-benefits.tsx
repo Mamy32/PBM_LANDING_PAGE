@@ -1,9 +1,26 @@
 import { Check } from 'lucide-react';
-import { useAnalytics } from '@/hooks/use-analytics';
+import { router } from '@inertiajs/react';
+import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
 import CtaButton from './cta-button';
 
 export default function PracticalBenefits() {
-    const { trackCTA } = useAnalytics();
+    const { trackCTA, trackInitiateCheckout } = useAnalytics();
+
+    const handleCtaClick = () => {
+        const eventId = generateEventId();
+        trackCTA(
+            'bukti_nyata',
+            'Saya Mau Kayak Gini',
+            '/checkout?course=first-jobbers',
+            'AddToCart',
+            eventId
+        );
+        trackInitiateCheckout('first-jobbers');
+        // Delay slightly to ensure tracking fires before navigation
+        setTimeout(() => {
+            router.visit('/checkout?course=first-jobbers');
+        }, 300);
+    };
 
     return (
         <section
@@ -14,9 +31,16 @@ export default function PracticalBenefits() {
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                     {/* LEFT: Video */}
                     <div className="flex w-full items-center justify-center">
+                        {/* 
+                            CHANGED: Removed 'controls'.
+                            ADDED: autoPlay, loop, and muted.
+                            This makes the MP4 behave exactly like an auto-looping GIF! 
+                        */}
                         <video 
                             src="/images/shaundju/solution_gif.mp4" 
-                            controls
+                            autoPlay
+                            loop
+                            muted
                             playsInline
                             className="max-h-[450px] w-auto rounded-2xl shadow-lg sm:max-h-[500px] lg:max-h-[550px]" 
                         />
@@ -62,23 +86,16 @@ export default function PracticalBenefits() {
 
                         {/* Button and Features */}
                         <div>
-                            {/* Adjusted button size slightly */}
-                            <div className="inline-block scale-95 origin-left sm:scale-100">
-                                <CtaButton
-                                    id="bukti-nyata-cta"
-                                    text="Saya Mau Kayak Gini"
-                                    variant="dark"
-                                    align="left"
-                                    showArrow={false}
-                                    onClick={() =>
-                                        trackCTA(
-                                            'bukti_nyata',
-                                            'Saya Mau Kayak Gini',
-                                            '/checkout?course=first-jobbers'
-                                        )
-                                    }
-                                />
-                            </div>
+                            {/* CHANGED: Removed scale wrapper and added size="large" for consistency */}
+                            <CtaButton
+                                id="bukti-nyata-cta"
+                                text="Saya Mau Kayak Gini"
+                                variant="dark"
+                                size="large"
+                                align="left"
+                                showArrow={false}
+                                onClick={handleCtaClick}
+                            />
                         </div>
                     </div>
                 </div>

@@ -14,14 +14,17 @@ const Solution = lazy(() => import('./landing/solution'));
 const Problem = lazy(() => import('./landing/problem'));
 const PracticalBenefits = lazy(() => import('./landing/practical-benefits'));
 const Testimonials = lazy(() => import('./landing/testimonials'));
-const Instructor = lazy(() => import('./landing/instructor'));
+const FinalCta = lazy(() => import('./landing/final-cta'));
 const MediaFeatures = lazy(() => import('./landing/media-features'));
-const Curriculum = lazy(() => import('./landing/curriculum'));
 const Pricing = lazy(() => import('./landing/pricing'));
 const VideoTeaser = lazy(() => import('./landing/video-teaser'));
 const Faq = lazy(() => import('./landing/faq'));
 const CompanyLogos = lazy(() => import('./landing/company-logo'));
 const Footer = lazy(() => import('./landing/footer'));
+const ProgramIntro = lazy(() => import('./landing/program-intro'));
+const TestimoIt = lazy(() => import('./landing/testimoni-it'));
+const ExpectedResult = lazy(() => import('./landing/expected-result'));
+const Curriculum = lazy(() => import('./landing/curriculum'));
 export default function Landing() {
     const { trackVisit } = useAnalytics();
 
@@ -54,9 +57,9 @@ export default function Landing() {
         <>
             <Head>
                 <title>
-                    Hero V1 | Shaundju Academy
+                    Cara Dapet Gaji Ratusan Juta/Bulan Sebelum Umur 30 —
+                    Shaundju Academy
                 </title>
-
                 <meta
                     name="description"
                     content="Pelajari strategi yang digunakan para top performer untuk mempercepat kenaikan penghasilan. 75+ materi, lifetime access, komunitas privat. Dipercaya 1.000+ professionals."
@@ -73,13 +76,16 @@ export default function Landing() {
                 <PracticalBenefits />
                 <SuccessStory />
                 <Solution />
+                <ProgramIntro/>
+                <TestimoIt/>
+                <ExpectedResult/>
+                <Curriculum/>
                 <Testimonials />
-                <Instructor />
                 <MediaFeatures />
-                <Curriculum />
                 <Pricing />
-                <VideoTeaser />
                 <Faq />
+                <VideoTeaser />
+                <FinalCta/>
                 <Footer />
             </Suspense>
             </div>

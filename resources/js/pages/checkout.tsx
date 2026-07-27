@@ -2,6 +2,8 @@ import { Head, router, usePage } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
 import { useAnalytics } from '@/hooks/use-analytics';
 import { Quote } from 'lucide-react';
+// Import the Dialog components needed for zooming images!
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 const alumniTestimonials = [
     {
@@ -42,6 +44,39 @@ const alumniTestimonials = [
     },
 ];
 
+// Reusable component to make any image zoomable
+function ZoomableImage({
+    src,
+    alt,
+    className = '',
+}: {
+    src: string;
+    alt: string;
+    className?: string;
+}) {
+    return (
+        <Dialog>
+            <DialogTrigger asChild>
+                <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    decoding="async"
+                    className={`cursor-pointer transition-transform duration-300 hover:scale-[1.02] ${className}`}
+                />
+            </DialogTrigger>
+
+            <DialogContent className="max-w-5xl border-none bg-transparent p-0 shadow-none">
+                <img
+                    src={src}
+                    alt={alt}
+                    className="max-h-[90vh] w-full rounded-xl object-contain"
+                />
+            </DialogContent>
+        </Dialog>
+    );
+}
+
 function CheckoutTestimonials() {
     return (
         <div className="mt-8 border-t border-gray-100 pt-8 sm:mt-12 sm:pt-10">
@@ -75,12 +110,10 @@ function CheckoutTestimonials() {
                     <h3 className="text-lg font-semibold text-[#1A3A22]">
                         Niek Astrini
                     </h3>
-                    <div className="mt-3 rounded-2xl border border-[#22C55E]/30 bg-[#22C55E]/5 p-2 shadow-sm">
-                        <img
+                    <div className="mt-3 overflow-hidden rounded-2xl border border-[#22C55E]/30 bg-[#22C55E]/5 p-2 shadow-sm">
+                        <ZoomableImage
                             src="/images/shaundju/proof1.webp"
                             alt="Phone testimonial"
-                            loading="lazy"
-                            decoding="async"
                             className="w-[280px] max-w-full rounded-[14px] sm:w-[320px]"
                         />
                     </div>
@@ -120,29 +153,23 @@ function CheckoutTestimonials() {
 
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
-                    <img
+                    <ZoomableImage
                         src="/images/shaundju/testimoni2.webp"
                         alt="Testimonial 1"
-                        loading="lazy"
-                        decoding="async"
                         className="w-full object-cover"
                     />
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
-                    <img
+                    <ZoomableImage
                         src="/images/shaundju/Screenshot2.webp"
                         alt="Testimonial 2"
-                        loading="lazy"
-                        decoding="async"
                         className="w-full object-cover"
                     />
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
-                    <img
+                    <ZoomableImage
                         src="/images/shaundju/Screenshot3.webp"
                         alt="Testimonial 3"
-                        loading="lazy"
-                        decoding="async"
                         className="w-full object-cover"
                     />
                 </div>
@@ -381,6 +408,7 @@ export default function Checkout() {
                 {/* ─── Header & Stepper ─── */}
                 <div className="border-b border-gray-200 bg-white py-6 sm:py-8">
                     <div className="relative mx-auto flex max-w-7xl items-center px-4 sm:px-6">
+
                         {/* Stepper centered */}
                         <div className="relative mx-auto flex w-full max-w-[400px] items-center justify-center sm:max-w-[500px]">
                             {/* Connecting horizontal line */}
@@ -564,7 +592,7 @@ export default function Checkout() {
                             </ul>
                         </div>
                     </div>
-                
+                </div>
 
                 {/* ─── Company Logos Header ─── */}
                 <section className="py-4 sm:py-6">
@@ -620,7 +648,7 @@ export default function Checkout() {
                                                     e.target.value,
                                                 )
                                             }
-                                            placeholder="fullName"
+                                            placeholder="Enter your full name"
                                             className={`w-full rounded-lg border bg-white px-4 py-3 text-sm text-[#1A3A22] placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-[#4ADE80] ${
                                                 errors.fullName
                                                     ? 'border-red-400'
@@ -655,7 +683,7 @@ export default function Checkout() {
                                                     e.target.value,
                                                 )
                                             }
-                                            placeholder="youremail@gmail.com"
+                                            placeholder="Enter your email"
                                             className={`w-full rounded-lg border bg-white px-4 py-3 text-sm text-[#1A3A22] placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-[#4ADE80] ${
                                                 errors.email
                                                     ? 'border-red-400'
@@ -691,7 +719,7 @@ export default function Checkout() {
                                             );
                                             handleChange('whatsapp', val);
                                         }}
-                                        placeholder="08138525844"
+                                        placeholder="Enter your WhatsApp number"
                                         className={`w-full rounded-lg border bg-white px-4 py-3 text-sm text-[#1A3A22] placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-[#4ADE80] ${
                                             errors.whatsapp
                                                 ? 'border-red-400'
@@ -858,7 +886,6 @@ export default function Checkout() {
                         </div>
                     </div>
                 </section>
-            </div>
             </div>
         </>
     );

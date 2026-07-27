@@ -1,4 +1,4 @@
-name: Deploy Split Structure (Laravel & Public)
+name: Deploy Standard Structure (Laravel in public_html)
 
 on:
   push:
@@ -10,11 +10,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      SERVER_IP: '72.61.142.238'
+      SERVER_IP: '72.61.210.213'
       SERVER_USER: 'root'
-      TARGET_DIR_LARAVEL: '/home/pbmagency.id/laravel-sub1'
-      TARGET_DIR_PUBLIC: '/home/pbmagency.id/sub1'
-      DOMAIN_USERNAME: 'pbmag2242'
+      TARGET_DIR: '/home/shaundjuacademy.com/public_html'
+      # Make sure this matches your CyberPanel username for this domain!
+      DOMAIN_USERNAME: 'shaun6841'
 
     steps:
       - name: Checkout Code
@@ -71,9 +71,9 @@ jobs:
           chmod 600 ~/.ssh/known_hosts
 
       # ---------------------------------------------------------
-      # SYNC 1: Pindahkan Core Laravel
+      # SYNC: Move all Laravel files to public_html
       # ---------------------------------------------------------
-      - name: Sync Core Laravel to Server
+      - name: Sync Project to Server
         run: |
           rsync -avz --delete \
           --exclude='.env' \
@@ -81,40 +81,27 @@ jobs:
           --exclude='/bootstrap/cache/' \
           --exclude='/.git/' \
           --exclude='/node_modules/' \
-          --exclude='/public/' \
-          ./ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.TARGET_DIR_LARAVEL }}
-
-      # ---------------------------------------------------------
-      # SYNC 2: Pindahkan Aset Public
-      # ---------------------------------------------------------
-      - name: Sync Public Assets to public_html
-        run: |
-          rsync -avz --delete \
-          --exclude='index.php' \
-          --exclude='.htaccess' \
-          ./public/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.TARGET_DIR_PUBLIC }}
+          ./ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.TARGET_DIR }}
 
       # ---------------------------------------------------------
       # POST-DEPLOYMENT
       # ---------------------------------------------------------
-      - name: Run Artisan & Move Manifest
+      - name: Run Artisan & Set Permissions
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ env.SERVER_IP }}
           username: ${{ env.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            mkdir -p ${{ env.TARGET_DIR_LARAVEL }}/public/build
-            cp ${{ env.TARGET_DIR_PUBLIC }}/build/manifest.json ${{ env.TARGET_DIR_LARAVEL }}/public/build/manifest.json
-
-            cd ${{ env.TARGET_DIR_PUBLIC }}
-            ln -sfn ../laravel/storage/app/public storage
-
-            cd ${{ env.TARGET_DIR_LARAVEL }}
+            cd ${{ env.TARGET_DIR }}
             php artisan optimize:clear
             php artisan migrate --force
 
-            chown -R ${{ env.DOMAIN_USERNAME }}:${{ env.DOMAIN_USERNAME }} ${{ env.TARGET_DIR_LARAVEL }}
-            chown -R ${{ env.DOMAIN_USERNAME }}:${{ env.DOMAIN_USERNAME }} ${{ env.TARGET_DIR_PUBLIC }}
-            chown -R ${{ env.DOMAIN_USERNAME }}:${{ env.DOMAIN_USERNAME }} ${{ env.TARGET_DIR_LARAVEL }}/storage
-            chown -R ${{ env.DOMAIN_USERNAME }}:${{ env.DOMAIN_USERNAME }} ${{ env.TARGET_DIR_LARAVEL }}/bootstrap/cache
+            # Create symbolic link for storage if it doesn't exist
+            cd public
+            if [ ! -L storage ]; then
+              ln -sfn ../storage/app/public storage
+            fi
+            
+            # Set ownership back to the CyberPanel user so it can access files
+            chown -R ${{ env.DOMAIN_USERNAME }}:${{ env.DOMAIN_USERNAME }} ${{ env.TARGET_DIR }}

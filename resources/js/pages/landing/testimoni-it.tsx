@@ -20,7 +20,7 @@ export default function TestimonialIT() {
                     
                     {/* CHANGED: Shrunk the text size down (to 40px on desktop) so it fits on one line */}
                     <h2 className="mt-6 font-serif text-2xl font-bold text-[#14312A] sm:text-3xl lg:mt-8 lg:text-[40px]">
-                        Dari IT Biasa, Dipromosi ke <span className="text-[#81D99B]">Senior AVP</span>
+                        Dari IT Biasa, Dipromosi ke <span className="text-[#225230]">Senior Asst. Vice President</span>
                     </h2>
                 </div>
 

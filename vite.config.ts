@@ -33,6 +33,11 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 assetFileNames: 'assets/[name]-[hash][extname]',
+                // Optimization: Splits heavy libraries into separate cacheable files
+                manualChunks: {
+                    vendor: ['react', 'react-dom', '@inertiajs/react'],
+                    ui: ['lucide-react']
+                }
             },
         },
         chunkSizeWarningLimit: 1000,

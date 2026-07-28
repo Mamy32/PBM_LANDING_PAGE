@@ -1,7 +1,8 @@
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { router } from '@inertiajs/react';
 import CtaButton from './cta-button';
-import { useAnalytics } from '@/hooks/use-analytics';
+import { generateEventId, useAnalytics } from '@/hooks/use-analytics';
 
 const faqItems = [
     {
@@ -46,15 +47,26 @@ const faqItems = [
 
 export default function Faq() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-    const { trackCTA } = useAnalytics();
+    const { trackCTA, trackInitiateCheckout } = useAnalytics();
 
     const toggle = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-    const handleClick = () => {
-        trackCTA('faq_section', 'Chat via WA', '#harga');
-        window.open('https://wa.me/62881080545047', '_blank');
+    const handleCtaClick = () => {
+        const eventId = generateEventId();
+        trackCTA(
+            'faq_section',
+            'Gabung Sekarang',
+            '/checkout?course=first-jobbers',
+            'AddToCart',
+            eventId
+        );
+        trackInitiateCheckout('first-jobbers');
+        // Delay slightly to ensure tracking fires before navigation
+        setTimeout(() => {
+            router.visit('/checkout?course=first-jobbers');
+        }, 300);
     };
 
     return (
@@ -113,18 +125,13 @@ export default function Faq() {
                 {/* BOTTOM CTA BUTTON */}
                 <div className="mt-12 flex flex-col items-center justify-center sm:mt-16">
                     <CtaButton
-                        id="cerita-gua-cta"
-                        text="Maish ragu? Tanya dulu"
+                        id="faq-cta"
+                        text="Gabung Sekarang"
                         variant="dark" 
+                        size="large"
                         context="light"
                         showArrow={false}
-                        onClick={() =>
-                            trackCTA(
-                                'cerita_gua',
-                                'Maish ragu? Tanya dulu',
-                                '/checkout?course=first-jobbers'
-                            )
-                        }
+                        onClick={handleCtaClick}
                     />
                 </div>
             </div>
